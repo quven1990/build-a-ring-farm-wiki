@@ -4,7 +4,7 @@ export const siteConfig = {
     "Unofficial fan guide. Compare seeds, redeem codes, calculate earnings, learn mutations, and plan your best farm route.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://build-a-ring-farm-wiki.vercel.app",
+    "https://buildaring.online",
   locale: "en",
   lastUpdated: "May 2026",
   /** ISO date for sitemap lastmod (May 2026) */

@@ -8,7 +8,7 @@ export function getSiteHostname(): string {
   try {
     return new URL(siteConfig.url).hostname
   } catch {
-    return "build-a-ring-farm-wiki.vercel.app"
+    return "buildaring.online"
   }
 }
 

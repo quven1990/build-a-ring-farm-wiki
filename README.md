@@ -1,5 +1,7 @@
 # build-a-ring-farm-wiki
 
+Production site: [https://buildaring.online](https://buildaring.online)
+
 Unofficial fan wiki for **Build A Ring Farm** on Roblox — seeds, mutations, weather events, rings, redeem codes, profit calculator, and progression guides.
 
 ## Stack
@@ -28,7 +30,8 @@ pnpm start
 
 ```bash
 cp .env.example .env.local
-# Set NEXT_PUBLIC_SITE_URL to your production domain
+# Production: https://buildaring.online (also set in Cloudflare Workers env if needed)
+NEXT_PUBLIC_SITE_URL=https://buildaring.online
 ```
 
 ## Deploy to Cloudflare Workers
