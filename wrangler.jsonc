@@ -14,6 +14,16 @@
       "service": "build-a-ring-farm-wiki"
     }
   ],
+  "routes": [
+    {
+      "pattern": "buildaring.online/*",
+      "zone_name": "buildaring.online"
+    },
+    {
+      "pattern": "www.buildaring.online/*",
+      "zone_name": "buildaring.online"
+    }
+  ],
   "images": {
     "binding": "IMAGES"
   },
