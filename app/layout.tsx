@@ -38,6 +38,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLMPPNFBGN" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-CLMPPNFBGN');
+            `,
+          }}
+        />
         <meta name="google-adsense-account" content="ca-pub-9101692675645964" />
         <script
           async
