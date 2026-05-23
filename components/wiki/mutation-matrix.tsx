@@ -53,7 +53,7 @@ function StatCell({
       </p>
       <p
         className={cn(
-          "mt-1 text-sm font-semibold tabular-nums leading-tight",
+          "mt-1 break-words text-sm font-semibold leading-tight tabular-nums",
           highlight ? "text-secondary-foreground" : "text-foreground"
         )}
       >
@@ -109,7 +109,7 @@ function MutationCard({ mutation, rank }: { mutation: WikiMutation; rank: number
           <p className="mt-2 text-xs font-medium text-muted-foreground">Harvest multiplier</p>
         </div>
 
-        <div className="mt-auto grid grid-cols-3 gap-2">
+        <div className="mt-auto grid grid-cols-1 gap-2 min-[400px]:grid-cols-3">
           <StatCell label="Chance" value={formatChance(mutation.chancePercent)} />
           <StatCell label="Trigger" value={mutation.trigger} />
           <StatCell

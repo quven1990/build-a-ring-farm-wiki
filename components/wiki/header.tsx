@@ -23,9 +23,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2.5">
-          <SiteLogo size={36} />
-          <span className="hidden font-bold text-foreground sm:inline-block">
+        <Link href="/" className="flex min-w-0 items-center gap-2">
+          <SiteLogo size={36} className="shrink-0" />
+          <span className="max-w-[9.5rem] truncate font-bold text-sm text-foreground sm:max-w-none sm:text-base">
             Build A Ring Farm
           </span>
         </Link>
@@ -47,7 +47,17 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          <Button asChild size="icon" className="sm:hidden" variant="secondary" title="Play on Roblox">
+            <a
+              href={siteConfig.robloxGameUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <ExternalLink className="h-4 w-4" />
+              <span className="sr-only">Play on Roblox</span>
+            </a>
+          </Button>
           <Button asChild className="hidden sm:flex" variant="secondary">
             <a
               href={siteConfig.robloxGameUrl}

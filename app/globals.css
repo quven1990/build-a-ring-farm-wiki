@@ -122,8 +122,19 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply overflow-x-clip;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply min-w-0 overflow-x-clip bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Wide data tables: scroll on small screens without clipping page layout */
+  .wiki-table-scroll {
+    @apply -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

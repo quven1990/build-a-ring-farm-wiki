@@ -99,8 +99,8 @@ function LevelControl({
           </span>
         )}
       </div>
-      <div className="flex items-center gap-3">
-        <div className="relative shrink-0">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="relative w-full shrink-0 sm:w-[88px]">
           <Input
             type="number"
             min={min}
@@ -110,7 +110,7 @@ function LevelControl({
             onChange={(e) => commit(e.target.value, value)}
             onBlur={(e) => commit(e.target.value, sliderValue)}
             className={cn(
-              "h-11 w-[88px] text-center font-mono text-lg font-bold tabular-nums",
+              "h-11 w-full text-center font-mono text-lg font-bold tabular-nums sm:w-[88px]",
               accent
             )}
           />
@@ -261,7 +261,7 @@ export function ProfitCalculator() {
             <Calculator className="h-4 w-4" />
             Profit Calculator
           </div>
-          <h1 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="mb-3 text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
             {pageMeta.calculator.h1}
           </h1>
           <p className="text-pretty text-base text-muted-foreground sm:text-lg">
@@ -413,7 +413,7 @@ export function ProfitCalculator() {
                 <Label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Ring placement
                 </Label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 gap-2 min-[360px]:grid-cols-3">
                   {ringOptions.map((opt) => (
                     <OptionTile
                       key={opt.key}
@@ -433,7 +433,7 @@ export function ProfitCalculator() {
                 <Label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Mutation
                 </Label>
-                <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
                   {calculatorMutationOptions.map((opt) => (
                     <OptionTile
                       key={opt.key}
@@ -467,7 +467,7 @@ export function ProfitCalculator() {
                 <Label className="mb-2 block text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Cash multiplier
                 </Label>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                   {cashMultiplierOptions.map((opt) => (
                     <OptionTile
                       key={opt.value}
@@ -558,7 +558,7 @@ export function ProfitCalculator() {
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                       Total earnings
                     </p>
-                    <p className="bg-gradient-to-r from-primary to-chart-5 bg-clip-text font-mono text-4xl font-bold tabular-nums text-transparent transition-all duration-300">
+                    <p className="bg-gradient-to-r from-primary to-chart-5 bg-clip-text font-mono text-2xl font-bold tabular-nums text-transparent transition-all duration-300 sm:text-3xl md:text-4xl">
                       {formatCalculatorMoney(result.totalEarnings)}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-4 text-sm">
@@ -583,17 +583,17 @@ export function ProfitCalculator() {
 
                   <div>
                     <p className="mb-3 text-sm font-bold text-foreground">Calculation breakdown</p>
-                    <div className="overflow-hidden rounded-xl border border-border/60">
+                    <div className="wiki-table-scroll overflow-hidden rounded-xl border border-border/60 sm:mx-0 sm:px-0">
                       <Table>
                         <TableHeader>
                           <TableRow className="hover:bg-transparent">
-                            <TableHead>Factor</TableHead>
+                            <TableHead className="min-w-[8rem]">Factor</TableHead>
                             <TableHead className="text-right">Value</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
                           <TableRow>
-                            <TableCell>Seed value (current level)</TableCell>
+                            <TableCell className="max-w-[14rem] sm:max-w-none">Seed value (current level)</TableCell>
                             <TableCell className="text-right font-mono text-sm">
                               {formatCalculatorMoneyFull(result.unitPriceAtLevel)}
                             </TableCell>

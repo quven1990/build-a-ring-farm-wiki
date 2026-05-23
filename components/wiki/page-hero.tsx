@@ -32,10 +32,10 @@ export function PageHero({ title, description, breadcrumbs }: PageHeroProps) {
             ))}
           </nav>
         )}
-        <h1 className="mb-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="mb-3 text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
           {title}
         </h1>
-        <p className="max-w-2xl text-lg text-muted-foreground">{description}</p>
+        <p className="max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">{description}</p>
       </div>
     </section>
   )

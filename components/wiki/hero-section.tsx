@@ -28,28 +28,28 @@ export function HeroSection() {
               <span>Unofficial Fan Guide</span>
             </div>
 
-            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-5xl xl:text-6xl">
+            <h1 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl">
               Build A Ring Farm Wiki &amp; Calculator
             </h1>
 
-            <p className="mx-auto mb-8 max-w-xl text-pretty text-lg text-muted-foreground sm:text-xl lg:mx-0">
+            <p className="mx-auto mb-8 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
               Your complete unofficial guide to seeds, mutations, codes, rings, and earnings on Roblox.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start sm:gap-4">
-              <Button size="lg" asChild>
+            <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
+              <Button size="lg" className="w-full sm:w-auto" asChild>
                 <Link href="/seeds">
                   <Sprout className="mr-2 h-5 w-5" />
                   Explore Seeds
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
                 <Link href="/progression">
                   <BookOpen className="mr-2 h-5 w-5" />
                   Progression Guide
                 </Link>
               </Button>
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" className="w-full sm:w-auto" variant="secondary" asChild>
                 <Link href="/codes">View Codes</Link>
               </Button>
             </div>

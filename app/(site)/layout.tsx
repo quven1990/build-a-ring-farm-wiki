@@ -9,7 +9,7 @@ export default function SiteLayout({
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>{children}</main>
+      <main className="min-w-0">{children}</main>
       <Footer />
     </div>
   )

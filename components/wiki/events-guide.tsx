@@ -123,8 +123,8 @@ export function EventsGuide() {
         </div>
 
         <div className="mb-10 overflow-hidden rounded-2xl border border-border/80 bg-card/90 shadow-sm backdrop-blur-sm">
-          <div className="overflow-x-auto">
-            <Table>
+          <div className="wiki-table-scroll">
+            <Table className="min-w-[36rem]">
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
                   <TableHead>Event</TableHead>
