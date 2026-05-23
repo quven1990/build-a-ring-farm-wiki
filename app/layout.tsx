@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
@@ -39,11 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <head>
-        <Script
+        <meta name="google-adsense-account" content="ca-pub-9101692675645964" />
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9101692675645964"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
         />
       </head>
       <body className="font-sans antialiased">
