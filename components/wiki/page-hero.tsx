@@ -1,0 +1,42 @@
+import Link from "next/link"
+import { ChevronRight } from "lucide-react"
+
+type Breadcrumb = {
+  label: string
+  href?: string
+}
+
+type PageHeroProps = {
+  title: string
+  description: string
+  breadcrumbs?: Breadcrumb[]
+}
+
+export function PageHero({ title, description, breadcrumbs }: PageHeroProps) {
+  return (
+    <section className="border-b border-border bg-gradient-to-b from-primary/10 to-background py-10 sm:py-14">
+      <div className="container mx-auto px-4">
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
+            {breadcrumbs.map((item, index) => (
+              <span key={item.label} className="flex items-center gap-1">
+                {index > 0 && <ChevronRight className="h-3.5 w-3.5 shrink-0" />}
+                {item.href ? (
+                  <Link href={item.href} className="hover:text-foreground transition-colors">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="text-foreground font-medium">{item.label}</span>
+                )}
+              </span>
+            ))}
+          </nav>
+        )}
+        <h1 className="mb-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          {title}
+        </h1>
+        <p className="max-w-2xl text-lg text-muted-foreground">{description}</p>
+      </div>
+    </section>
+  )
+}
