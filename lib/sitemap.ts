@@ -53,5 +53,14 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
     }
   })
 
-  return [...toolEntries, ...guideEntries]
+  const legalEntries: MetadataRoute.Sitemap = [
+    {
+      url: absoluteUrl("/privacy"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.35,
+    },
+  ]
+
+  return [...toolEntries, ...guideEntries, ...legalEntries]
 }

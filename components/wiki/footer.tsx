@@ -70,9 +70,16 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             Last updated: {formatSiteLastUpdatedLabel()}
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">Contact</span>
-            <span className="text-sm text-muted-foreground">Privacy Policy</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:justify-end">
+            <a
+              href="mailto:privacy@buildaring.online"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Contact
+            </a>
+            <Link href="/privacy" className={footerLinkClass}>
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </div>

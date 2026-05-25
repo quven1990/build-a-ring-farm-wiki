@@ -7,6 +7,7 @@ import { RelatedGuides } from "@/components/wiki/related-guides"
 import { RichText } from "@/components/wiki/rich-text"
 import { getFaqForPage } from "@/lib/faq-data"
 import type { RelatedPageKey } from "@/lib/related-guides"
+import { AdsenseAd } from "@/components/wiki/adsense-ad"
 import { cn } from "@/lib/utils"
 
 type EnhancedSeoSectionProps = {
@@ -43,6 +44,7 @@ export function EnhancedSeoSection({
               className="mb-6 text-base text-muted-foreground sm:text-lg"
             />
           )}
+          <AdsenseAd placement="article" />
           <PageTableOfContents blocks={blocks} />
           <article className="prose prose-sm max-w-none sm:prose-base dark:prose-invert prose-headings:scroll-mt-24 prose-h2:text-balance prose-h2:text-xl sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-lg prose-p:text-pretty prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:break-words">
             {blocks.map((block, index) => {

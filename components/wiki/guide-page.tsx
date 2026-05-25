@@ -21,6 +21,7 @@ import {
 import { siteConfig } from "@/lib/site-config"
 import { getSitemapLastModified } from "@/lib/sitemap"
 import { cn } from "@/lib/utils"
+import { AdsenseAd } from "@/components/wiki/adsense-ad"
 import { ArrowRight } from "lucide-react"
 
 type GuidePageProps = {
@@ -114,6 +115,7 @@ export function GuidePage({ pageId }: GuidePageProps) {
               </Button>
             </div>
           )}
+          <AdsenseAd placement="article" />
           <PageTableOfContents blocks={config.blocks} />
           <article className="prose prose-sm max-w-none sm:prose-base dark:prose-invert prose-headings:scroll-mt-24 prose-h2:text-balance prose-h2:text-xl sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-lg prose-p:text-pretty prose-p:text-muted-foreground prose-p:leading-relaxed">
             {renderBlocks(config.blocks)}
