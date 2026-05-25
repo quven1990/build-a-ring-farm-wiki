@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next"
 import { buildSitemapEntries } from "@/lib/sitemap"
 
-/** Regenerate sitemap at most once per day so lastmod stays current. */
-export const revalidate = 86400
+/** Compute lastmod at request time (avoids build-time freeze on Cloudflare). */
+export const dynamic = "force-dynamic"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return buildSitemapEntries()
