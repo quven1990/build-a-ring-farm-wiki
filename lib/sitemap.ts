@@ -9,8 +9,21 @@ export function absoluteUrl(path: string): string {
   return `${base}${path.startsWith("/") ? path : `/${path}`}`
 }
 
+/** Start of the current UTC day — sitemap lastmod advances daily without manual edits. */
 export function getSitemapLastModified(): Date {
-  return new Date(siteConfig.siteLastModified)
+  const now = new Date()
+  return new Date(
+    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
+  )
+}
+
+/** Human-readable label for “Last updated” UI (matches sitemap day). */
+export function formatSiteLastUpdatedLabel(date = getSitemapLastModified()): string {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date)
 }
 
 export function buildSitemapEntries(): MetadataRoute.Sitemap {

@@ -9,9 +9,8 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://buildaring.online",
   locale: "en",
+  /** Fallback label if formatSiteLastUpdatedLabel is unavailable */
   lastUpdated: "May 2026",
-  /** ISO date for sitemap lastmod (May 2026) */
-  siteLastModified: "2026-05-23T00:00:00.000Z",
   robloxGameUrl:
     "https://www.roblox.com/games/107646426076756/Build-A-Ring-Farm",
 }

@@ -19,6 +19,7 @@ import {
   webApplicationJsonLd,
 } from "@/lib/json-ld"
 import { siteConfig } from "@/lib/site-config"
+import { getSitemapLastModified } from "@/lib/sitemap"
 import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
 
@@ -65,7 +66,7 @@ export function GuidePage({ pageId }: GuidePageProps) {
         headline: meta.h1,
         description: meta.description,
         path: config.path,
-        dateModified: siteConfig.siteLastModified,
+        dateModified: getSitemapLastModified().toISOString(),
       })
     )
   } else if (config.schema === "HowTo" && config.howToSteps) {

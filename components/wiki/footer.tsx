@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { SiteLogo } from "@/components/wiki/site-logo"
 import { footerGuideLinks, footerLinks, siteConfig } from "@/lib/site-config"
+import { formatSiteLastUpdatedLabel } from "@/lib/sitemap"
 
 const footerLinkClass =
   "text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -67,7 +68,7 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            Last updated: {siteConfig.lastUpdated}
+            Last updated: {formatSiteLastUpdatedLabel()}
           </p>
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">Contact</span>
