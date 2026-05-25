@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "build-a-ring-farm-wiki",
+  "account_id": "a17c720d27e1e3b502bef6b0d57c5472",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-05-23",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],

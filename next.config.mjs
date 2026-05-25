@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Avoid 304 + stale RSC payloads on Cloudflare (opennextjs/cloudflare#517).
-  generateEtag: false,
   typescript: {
     ignoreBuildErrors: true,
   },
