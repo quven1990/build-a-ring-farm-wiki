@@ -7,6 +7,7 @@ export type SeoPageKey =
   | "calculator"
   | "codes"
   | "progression"
+  | "faq"
 
 export type SeoBlock =
   | { type: "h2"; text: string; id?: string }
@@ -17,38 +18,39 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
   home: [
     {
       type: "h2",
-      id: "what-is-build-a-ring-farm",
-      text: "What Is Build A Ring Farm on Roblox?",
+      id: "toolkit-sections",
+      text: "What Each Section on buildaring.online Does",
     },
     {
       type: "p",
-      text: "Build A Ring Farm is a Roblox farming simulator built around circular plots, ring-based multipliers, and a deep mutation system. Players plant seeds, wait for crops to grow, harvest for cash, and reinvest into better seeds, ring placement, saw yield, sprinklers, and Gear Shop sprays. The loop is simple to learn but difficult to master because every decision — which seed to roll, which ring slot to use, and whether to wait for a weather event — changes your long-term income curve. This wiki exists to document those systems with data you can trust while planning your next upgrade.",
+      text: "Use the [wiki index](/build-a-ring-wiki) when you are unsure where to click. Databases: [seeds](/seeds), [mutations](/mutations), [events](/events), [rings](/rings). Tools: [active codes](/codes), [profit calculator](/calculator). Written guides: [beginner](/build-a-ring-guide), [farm efficiency](/build-a-ring-farm), [codes help](/build-a-ring-codes), [tier list framework](/build-a-ring-tier-list), [best rings](/build-a-ring-best-rings), [FAQ hub](/build-a-ring-faq), and [update log](/build-a-ring-update-log). Each URL has unique metadata and intros — we avoid copying the same “what is the game” block on every page.",
     },
     {
       type: "h2",
-      id: "wiki-tools",
-      text: "How This Wiki Helps You Progress Faster",
+      id: "verified-data",
+      text: "Verified Tools vs Community Tables",
     },
     {
       type: "p",
-      text: "Our Build A Ring Farm seed database lists more than fifty crops across ten rarity tiers, including grow times, base income, and roll weights so you can compare value before spending currency. The mutation matrix ranks every harvest buff from Wet at 1.5x through Honeycomb at 6.5x, with shop prices and event-only tags. Active codes are checked regularly with reward details and copy buttons. The profit calculator uses the verified in-game formula so you can model seed level, Inner/Middle/Outer rings, mutations, saw bonus, and cash multipliers before you commit to an expensive setup. Together these tools answer the questions players ask every day: what should I plant, when should I harvest, and what upgrade pays for itself first?",
+      text: "The calculator follows a documented community formula with listed exceptions. Codes use verified, community-reported, and needs-testing labels. Seed and mutation tables aggregate player reports — check in-game before irreversible purchases, especially transcended-tier crops and rare event mutations.",
     },
     {
-      type: "h3",
-      text: "Start With Seeds, Then Rings and Mutations",
+      type: "h2",
+      id: "recommended-paths",
+      text: "Recommended Paths by Player Type",
     },
     {
       type: "p",
-      text: "New players should begin on the seeds page to understand which common and uncommon crops fund early upgrades, then read the progression guide for a staged upgrade path. Once your farm has multiple plots, study Build A Ring Farm rings — Inner at 7x, Middle at 13x, and Outer at 19x — so high-value slow crops sit on the best multipliers. Mutations and weather events come next; even a modest Wet buff during Rain beats harvesting with no buff at all. Bookmark the codes page for free sprays and packs, and use the calculator whenever you debate whether a higher-tier seed is worth the slot opportunity cost.",
+      text: "Daily players: start at [codes](/codes) and [events](/events). Optimizers: [calculator](/calculator) plus [farm guide](/build-a-ring-farm). New accounts: [beginner guide](/build-a-ring-guide) then [progression](/progression). This home page stays a navigation hub; deep mechanics live on dedicated routes to keep duplicate content low.",
     },
     {
       type: "h2",
       id: "staying-updated",
-      text: "Staying Updated on Build A Ring Farm",
+      text: "Updates and Patch Days",
     },
     {
       type: "p",
-      text: "Build A Ring Farm receives balance changes, new seeds, and fresh redeem codes as the experience grows on Roblox. We update guides when community reports confirm new values or when codes expire. Because the game is unofficially documented here, always cross-check extreme edge cases in-game after major patches — especially transcended-tier seeds and rare event-only mutations like Honeycomb. If you play daily, check codes and mutation pages first; if you play casually, lean on the calculator and progression guide to make each session efficient without memorizing every number.",
+      text: "After Roblox patches, read the [update log](/build-a-ring-update-log), refresh codes, then spot-check mutations. We are an unofficial fan toolkit — not affiliated with Roblox or the game developers.",
     },
   ],
   seeds: [
@@ -307,7 +309,27 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
     },
     {
       type: "p",
-      text: "Late-game players optimize event timing, Honeycomb and Rainbow procs, max saw level, and full Outer plots of exotic or transcended seeds. Every harvest should consider mutation status, ring tier, and whether reinvesting cash into the next seed tier beats waiting for a perfect event. Cross-link the seeds, mutations, events, rings, and calculator pages whenever you change layout — Build A Ring Farm endgame is a spreadsheet disguised as a cozy farm sim, and that depth is why the community keeps playing.",
+      text: "Late-game players optimize event timing, Honeycomb and Rainbow procs, max saw level, and full Outer plots of exotic or transcended seeds. Every harvest should consider mutation status, ring tier, and whether reinvesting cash into the next seed tier beats waiting for a perfect event. Cross-link the [seeds](/seeds), [mutations](/mutations), [events](/events), [rings](/rings), and [calculator](/calculator) pages whenever you change layout — Build A Ring Farm endgame is a spreadsheet disguised as a cozy farm sim, and that depth is why the community keeps playing.",
+    },
+  ],
+  faq: [
+    {
+      type: "h2",
+      id: "quick-faq-purpose",
+      text: "Quick FAQ vs FAQ Hub",
+    },
+    {
+      type: "p",
+      text: "This page uses a short accordion for fast answers. For longer troubleshooting and policy notes, open the [FAQ hub](/build-a-ring-faq). Mechanics deep dives live on [mutations](/mutations), [rings](/rings), and [events](/events) — not duplicated here.",
+    },
+    {
+      type: "h2",
+      id: "when-to-use-wiki",
+      text: "When to Leave FAQ for Other Pages",
+    },
+    {
+      type: "p",
+      text: "Code strings change often — use [active codes](/codes) and the [codes guide](/build-a-ring-codes). Harvest math questions belong on the [calculator](/calculator). Crop comparisons belong in the [seeds database](/seeds). This structure keeps duplicate content low across buildaring.online.",
     },
   ],
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ProgressionGuide } from "@/components/wiki/progression-guide"
-import { SeoArticle } from "@/components/wiki/seo-article"
+import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import { createPageMetadata } from "@/lib/metadata"
 import { WikiPageShell } from "@/lib/page-shell"
 
@@ -10,7 +10,7 @@ export default function ProgressionPage() {
   return (
     <WikiPageShell pageKey="progression">
       <ProgressionGuide showTitle={false} />
-      <SeoArticle pageKey="progression" />
+      <EnhancedSeoSection pageKey="progression" relatedKey="progression" />
     </WikiPageShell>
   )
 }

@@ -32,9 +32,9 @@ export function QuickNavigation() {
           <Badge variant="outline" className="mb-2">
             Quick Navigation
           </Badge>
-          <h2 className="mb-2 text-balance text-2xl font-bold text-foreground sm:text-3xl">Explore the Wiki</h2>
+          <h2 className="mb-2 text-balance text-2xl font-bold text-foreground sm:text-3xl">Tools & Databases</h2>
           <p className="text-muted-foreground">
-            Jump to any section of the wiki
+            Interactive tables and calculators — see written guides in the hub below
           </p>
         </div>
 

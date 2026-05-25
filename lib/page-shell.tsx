@@ -1,5 +1,7 @@
 import { PageHero } from "@/components/wiki/page-hero"
+import { JsonLdScript } from "@/components/wiki/json-ld-script"
 import { pageMeta } from "@/lib/site-config"
+import { breadcrumbJsonLd } from "@/lib/json-ld"
 
 type PageKey = keyof typeof pageMeta
 
@@ -21,9 +23,16 @@ export function WikiPageShell({
   showHero?: boolean
 }) {
   const meta = pageMeta[pageKey]
+  const breadcrumbs = getPageBreadcrumbs(pageKey)
 
   return (
     <>
+      <JsonLdScript
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "/" },
+          { name: meta.breadcrumb, url: `/${pageKey}` },
+        ])}
+      />
       {showHero && (
         <PageHero
           title={meta.h1}

@@ -1,14 +1,10 @@
 import type { Metadata } from "next"
-import { pageMeta, siteConfig } from "@/lib/site-config"
+import { guidePageMeta, pageMeta, siteConfig } from "@/lib/site-config"
 import { absoluteUrl } from "@/lib/sitemap"
 import { getOgImageUrl, truncateMetaDescription } from "@/lib/seo"
+import type { GuidePageId } from "@/lib/seo-pages/types"
 
-export function createPageMetadata(
-  key: keyof typeof pageMeta,
-  path: string,
-  options?: { robots?: Metadata["robots"] }
-): Metadata {
-  const meta = pageMeta[key]
+function buildMetadata(meta: (typeof pageMeta)[string], path: string, options?: { robots?: Metadata["robots"] }): Metadata {
   const url = absoluteUrl(path)
   const description = truncateMetaDescription(meta.description)
   const ogImage = getOgImageUrl(meta.ogImage)
@@ -45,4 +41,16 @@ export function createPageMetadata(
       images: [ogImage],
     },
   }
+}
+
+export function createPageMetadata(
+  key: keyof typeof pageMeta,
+  path: string,
+  options?: { robots?: Metadata["robots"] }
+): Metadata {
+  return buildMetadata(pageMeta[key], path, options)
+}
+
+export function createGuidePageMetadata(pageId: GuidePageId): Metadata {
+  return buildMetadata(guidePageMeta[pageId], `/${pageId}`)
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { RingsGuide } from "@/components/wiki/rings-guide"
-import { SeoArticle } from "@/components/wiki/seo-article"
+import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import { createPageMetadata } from "@/lib/metadata"
 import { WikiPageShell } from "@/lib/page-shell"
 
@@ -10,7 +10,7 @@ export default function RingsPage() {
   return (
     <WikiPageShell pageKey="rings">
       <RingsGuide showTitle={false} />
-      <SeoArticle pageKey="rings" />
+      <EnhancedSeoSection pageKey="rings" relatedKey="rings" />
     </WikiPageShell>
   )
 }

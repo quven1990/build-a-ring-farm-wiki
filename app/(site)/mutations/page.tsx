@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { MutationGuide } from "@/components/wiki/mutation-guide"
-import { SeoArticle } from "@/components/wiki/seo-article"
+import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import { MutationMatrix } from "@/components/wiki/mutation-matrix"
 import { createPageMetadata } from "@/lib/metadata"
 import { WikiPageShell } from "@/lib/page-shell"
@@ -12,7 +12,7 @@ export default function MutationsPage() {
     <WikiPageShell pageKey="mutations" showHero={false}>
       <MutationMatrix />
       <MutationGuide />
-      <SeoArticle pageKey="mutations" />
+      <EnhancedSeoSection pageKey="mutations" relatedKey="mutations" />
     </WikiPageShell>
   )
 }

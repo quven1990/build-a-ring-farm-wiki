@@ -1,7 +1,10 @@
+import type { GuidePageId } from "@/lib/seo-pages/types"
+
 export const siteConfig = {
   name: "Build A Ring Farm Wiki",
+  tagline: "Data, codes & profit tools for Roblox players",
   description:
-    "Unofficial fan guide. Compare seeds, redeem codes, calculate earnings, learn mutations, and plan your best farm route.",
+    "Unofficial player toolkit: seed database, verified profit calculator, active codes, mutations, rings, and farming guides for Build A Ring Farm on Roblox.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://buildaring.online",
@@ -121,13 +124,13 @@ export type PageMeta = {
 
 export const pageMeta: Record<string, PageMeta> = {
   home: {
-    title: "Build A Ring Farm Wiki & Calculator | Build A Ring Farm Wiki",
+    title: "Build A Ring Farm Wiki & Calculator | Player Toolkit",
     h1: "Build A Ring Farm Wiki & Calculator",
     description:
-      "Complete Build A Ring Farm wiki: 51 seeds, 9 mutations, active codes, profit calculator & progression guides. Free Roblox farming tips updated May 2026.",
+      "Unofficial Build A Ring Farm toolkit: 51 seeds, profit calculator, active codes, mutations, rings, and guides. Plan your best Roblox farm route — updated May 2026.",
     heroDescription:
-      "Your complete unofficial guide to seeds, mutations, codes, rings, and earnings on Roblox.",
-    ogTitle: "Build A Ring Farm Wiki — Seeds, Codes, Mutations & Calculator",
+      "Data, codes & profit tools — your all-in-one companion for seeds, mutations, rings, and earnings on Roblox.",
+    ogTitle: "Build A Ring Farm Player Toolkit — Wiki, Codes & Calculator",
     ogImageAlt: "Build A Ring Farm wiki hero — farmer, crops, and glowing ring portal",
     breadcrumb: "Home",
     keywords: [
@@ -282,3 +285,126 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
 }
+
+export const guidePageMeta: Record<
+  GuidePageId,
+  PageMeta & { breadcrumb: string }
+> = {
+  "build-a-ring-farm": {
+    title: "Build A Ring Farm Guide — Farming & Efficiency | buildaring.online",
+    h1: "Build A Ring Farm Efficiency Guide",
+    description:
+      "Farming efficiency guide for Build A Ring Farm: harvest rhythm, event timing, ring placement, and reinvestment order. Community data — verify in-game after patches.",
+    heroDescription:
+      "Plan faster sessions, smarter harvests, and better reinvestment — without repeating a beginner tutorial.",
+    ogTitle: "Build A Ring Farm Efficiency Guide",
+    ogImageAlt: "Build A Ring Farm farming efficiency guide",
+    breadcrumb: "Farm Guide",
+    keywords: ["build a ring farm guide", "farming efficiency", "harvest timing", "Roblox farm"],
+  },
+  "build-a-ring-guide": {
+    title: "Build A Ring Beginner Guide — Start on Roblox | buildaring.online",
+    h1: "Build A Ring Farm Beginner Guide",
+    description:
+      "New player guide for Build A Ring Farm: first session checklist, codes, seeds, rings, and what to read next on Roblox.",
+    heroDescription:
+      "First hours on Roblox — clear steps from planting your first crop to your first smart upgrade.",
+    ogTitle: "Build A Ring Farm Beginner Guide",
+    ogImageAlt: "Build A Ring Farm beginner guide for new players",
+    breadcrumb: "Beginner Guide",
+    keywords: ["build a ring beginner guide", "how to play", "new player", "Roblox"],
+  },
+  "build-a-ring-codes": {
+    title: "Build A Ring Codes Guide — Redeem & Track | buildaring.online",
+    h1: "Build A Ring Farm Codes Guide",
+    description:
+      "How to redeem Build A Ring Farm codes, read verified labels, handle expired strings, and use the active codes list with copy buttons.",
+    heroDescription:
+      "Redeem safely, understand status labels, and know what to do when a code stops working.",
+    ogTitle: "Build A Ring Farm Codes Guide",
+    ogImageAlt: "Build A Ring Farm codes redemption guide",
+    breadcrumb: "Codes Guide",
+    keywords: ["build a ring codes guide", "redeem codes", "promo codes", "Roblox codes"],
+  },
+  "build-a-ring-calculator": {
+    title: "Build A Ring Calculator Guide — Profit Tool | buildaring.online",
+    h1: "Build A Ring Farm Calculator Guide",
+    description:
+      "When to use the Build A Ring Farm profit calculator, how each input maps to in-game settings, and how to debug mismatches with live harvests.",
+    heroDescription:
+      "Run scenarios before big purchases — seed level, rings, mutations, saw, and farm totals explained.",
+    ogTitle: "Build A Ring Calculator Guide",
+    ogImageAlt: "Build A Ring Farm calculator usage guide",
+    breadcrumb: "Calculator Guide",
+    keywords: ["build a ring calculator guide", "profit tool", "earnings formula"],
+  },
+  "build-a-ring-wiki": {
+    title: "Build A Ring Wiki Index — Databases & Tools | buildaring.online",
+    h1: "Build A Ring Farm Wiki Index",
+    description:
+      "Directory of Build A Ring Farm databases, calculators, codes, guides, and FAQ pages on buildaring.online.",
+    heroDescription:
+      "One hub to find seeds, mutations, events, rings, tools, and written guides.",
+    ogTitle: "Build A Ring Farm Wiki Index",
+    ogImageAlt: "Build A Ring Farm wiki directory",
+    breadcrumb: "Wiki Index",
+    keywords: ["build a ring wiki", "database index", "Roblox wiki"],
+  },
+  "build-a-ring-faq": {
+    title: "Build A Ring FAQ Hub — Long-Tail Answers | buildaring.online",
+    h1: "Build A Ring Farm FAQ Hub",
+    description:
+      "Extended FAQ for Build A Ring Farm: codes, rings, calculator, official status, and mechanics. Conservative answers — verify in-game.",
+    heroDescription:
+      "Long-tail questions in one place — codes, rings, mutations, calculator, and site data policy.",
+    ogTitle: "Build A Ring Farm FAQ Hub",
+    ogImageAlt: "Build A Ring Farm FAQ hub",
+    breadcrumb: "FAQ Hub",
+    keywords: ["build a ring faq", "questions", "help"],
+  },
+  "build-a-ring-tier-list": {
+    title: "Build A Ring Tier List — Seeds by Rarity | buildaring.online",
+    h1: "Build A Ring Farm Tier List Framework",
+    description:
+      "Tier list framework for Build A Ring Farm seeds by rarity and role — early, mid, and late game. Use the seeds database for exact stats.",
+    heroDescription:
+      "Compare crops by band and play style — not a stale single ranking chart.",
+    ogTitle: "Build A Ring Farm Tier List Framework",
+    ogImageAlt: "Build A Ring Farm seed tier list framework",
+    breadcrumb: "Tier List",
+    keywords: ["build a ring tier list", "best seeds", "rarity tiers"],
+  },
+  "build-a-ring-best-rings": {
+    title: "Best Rings Build A Ring Farm — Placement Guide | buildaring.online",
+    h1: "Best Rings in Build A Ring Farm",
+    description:
+      "Which Build A Ring Farm ring to unlock first, where to plant crops, and how saw level synergizes with Inner, Middle, and Outer zones.",
+    heroDescription:
+      "Unlock order and placement — 7x Inner, 13x Middle, 19x Outer explained for real farms.",
+    ogTitle: "Best Rings Build A Ring Farm Guide",
+    ogImageAlt: "Build A Ring Farm best rings placement guide",
+    breadcrumb: "Best Rings",
+    keywords: ["build a ring best rings", "ring placement", "outer ring"],
+  },
+  "build-a-ring-update-log": {
+    title: "Build A Ring Update Log — Site Changelog | buildaring.online",
+    h1: "Build A Ring Farm Update Log",
+    description:
+      "Changelog for buildaring.online and community-reported Build A Ring Farm updates — codes, balance, and data reviews.",
+    heroDescription:
+      "Track site edits and what to re-check after Roblox patches.",
+    ogTitle: "Build A Ring Farm Update Log",
+    ogImageAlt: "Build A Ring Farm update log",
+    breadcrumb: "Update Log",
+    keywords: ["build a ring update", "changelog", "patch notes"],
+  },
+}
+
+export const footerGuideLinks = [
+  { label: "Farm Guide", href: "/build-a-ring-farm" },
+  { label: "Beginner Guide", href: "/build-a-ring-guide" },
+  { label: "Wiki Index", href: "/build-a-ring-wiki" },
+  { label: "Tier List", href: "/build-a-ring-tier-list" },
+  { label: "Best Rings", href: "/build-a-ring-best-rings" },
+  { label: "Update Log", href: "/build-a-ring-update-log" },
+] as const

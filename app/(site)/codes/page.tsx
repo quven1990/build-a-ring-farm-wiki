@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { CodesSection } from "@/components/wiki/codes-section"
-import { SeoArticle } from "@/components/wiki/seo-article"
+import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import { createPageMetadata } from "@/lib/metadata"
 import { WikiPageShell } from "@/lib/page-shell"
 
@@ -10,7 +10,7 @@ export default function CodesPage() {
   return (
     <WikiPageShell pageKey="codes">
       <CodesSection showTitle={false} />
-      <SeoArticle pageKey="codes" />
+      <EnhancedSeoSection pageKey="codes" relatedKey="codes" />
     </WikiPageShell>
   )
 }

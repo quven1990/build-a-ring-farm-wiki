@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SeedDatabase } from "@/components/wiki/seed-database"
-import { SeoArticle } from "@/components/wiki/seo-article"
+import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import { createPageMetadata } from "@/lib/metadata"
 import { WikiPageShell } from "@/lib/page-shell"
 
@@ -10,7 +10,7 @@ export default function SeedsPage() {
   return (
     <WikiPageShell pageKey="seeds" showHero={false}>
       <SeedDatabase />
-      <SeoArticle pageKey="seeds" />
+      <EnhancedSeoSection pageKey="seeds" relatedKey="seeds" />
     </WikiPageShell>
   )
 }

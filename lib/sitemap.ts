@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { navItems, siteConfig, sitemapRouteSettings } from "@/lib/site-config"
+import { guideRoutes, guideSitemapSettings } from "@/lib/seo-routes"
 
 /** Canonical absolute URL for sitemap, robots, and metadata */
 export function absoluteUrl(path: string): string {
@@ -15,7 +16,7 @@ export function getSitemapLastModified(): Date {
 export function buildSitemapEntries(): MetadataRoute.Sitemap {
   const lastModified = getSitemapLastModified()
 
-  return navItems.map((item) => {
+  const toolEntries = navItems.map((item) => {
     const settings = sitemapRouteSettings[item.href]
     if (!settings) {
       throw new Error(`Missing sitemap settings for route: ${item.href}`)
@@ -28,4 +29,16 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
       priority: settings.priority,
     }
   })
+
+  const guideEntries = guideRoutes.map((path) => {
+    const settings = guideSitemapSettings[path]
+    return {
+      url: absoluteUrl(path),
+      lastModified,
+      changeFrequency: settings.changeFrequency,
+      priority: settings.priority,
+    }
+  })
+
+  return [...toolEntries, ...guideEntries]
 }

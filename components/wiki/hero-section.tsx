@@ -3,13 +3,13 @@ import { HeroCarousel } from "@/components/wiki/hero-carousel"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { wikiStats } from "@/lib/wiki-stats"
-import { Calculator, Sprout, Database, GitBranch, BookOpen } from "lucide-react"
+import { Calculator, Sprout, Database, GitBranch, Gift } from "lucide-react"
 
 const stats = [
   { icon: Database, label: "SEEDS", value: wikiStats.seeds },
   { icon: GitBranch, label: "RARITIES", value: wikiStats.rarities },
   { icon: Calculator, label: "MUTATIONS", value: wikiStats.mutations },
-  { icon: BookOpen, label: "CODES", value: wikiStats.codes },
+  { icon: Gift, label: "CODES", value: wikiStats.codes },
 ]
 
 export function HeroSection() {
@@ -25,7 +25,7 @@ export function HeroSection() {
           <div className="text-center lg:text-left">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Sprout className="h-4 w-4" />
-              <span>Unofficial Fan Guide</span>
+              <span>Unofficial Player Toolkit</span>
             </div>
 
             <h1 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl">
@@ -33,24 +33,27 @@ export function HeroSection() {
             </h1>
 
             <p className="mx-auto mb-8 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
-              Your complete unofficial guide to seeds, mutations, codes, rings, and earnings on Roblox.
+              Data, codes &amp; profit tools — plan your best farm on Roblox with verified databases and guides.
             </p>
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
               <Button size="lg" className="w-full sm:w-auto" asChild>
-                <Link href="/seeds">
-                  <Sprout className="mr-2 h-5 w-5" />
-                  Explore Seeds
+                <Link href="/codes">
+                  <Gift className="mr-2 h-5 w-5" />
+                  View Codes
                 </Link>
               </Button>
               <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="/progression">
-                  <BookOpen className="mr-2 h-5 w-5" />
-                  Progression Guide
+                <Link href="/calculator">
+                  <Calculator className="mr-2 h-5 w-5" />
+                  Open Calculator
                 </Link>
               </Button>
               <Button size="lg" className="w-full sm:w-auto" variant="secondary" asChild>
-                <Link href="/codes">View Codes</Link>
+                <Link href="/seeds">
+                  <Sprout className="mr-2 h-5 w-5" />
+                  Browse Seeds
+                </Link>
               </Button>
             </div>
           </div>
