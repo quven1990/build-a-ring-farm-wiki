@@ -61,12 +61,29 @@ Do **not** run `npx wrangler deploy` alone without the OpenNext build output.
 
 Workflow: [`.github/workflows/deploy-cloudflare.yml`](.github/workflows/deploy-cloudflare.yml) — runs on push to `main`.
 
-Add repository secrets:
+**If CI fails with `CLOUDFLARE_API_TOKEN environment variable`**, the workflow is fine — you need to add GitHub repository secrets (not Cloudflare env vars).
 
-| Secret | Description |
-|--------|-------------|
-| `CLOUDFLARE_API_TOKEN` | API token with **Workers Scripts: Edit** and **Workers Routes: Edit** (account + zone for `buildaring.online`) |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID |
+#### Step 1: Create API token
+
+1. Open [Create API Token](https://dash.cloudflare.com/profile/api-tokens).
+2. Use template **Edit Cloudflare Workers**, or custom token with:
+   - **Account** → Workers Scripts: **Edit**
+   - **Account** → Workers Observability: **Edit** (optional)
+   - **Zone** → Workers Routes: **Edit** (zone: `buildaring.online`)
+3. Copy the token (shown once).
+
+#### Step 2: Add GitHub secrets
+
+Repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**:
+
+| Secret name | Value |
+|-------------|--------|
+| `CLOUDFLARE_API_TOKEN` | Token from step 1 |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → any page → **Account ID** in the right sidebar (e.g. `a17c720d...`) |
+
+#### Step 3: Re-run deploy
+
+**Actions** → **Deploy to Cloudflare Workers** → **Re-run all jobs**, or push an empty commit to `main`.
 
 Then in Cloudflare: **Workers → build-a-ring-farm-wiki → Settings → Builds** — disconnect Git / disable automatic builds so only Actions (or local CLI) deploys.
 

@@ -1,5 +1,8 @@
 # Deploy without Cloudflare Dashboard builds (avoids Queued build pipeline).
-# Requires repo secrets: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+#
+# Required repository secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN  — https://developers.cloudflare.com/fundamentals/api/get-started/create-token/
+#   CLOUDFLARE_ACCOUNT_ID — Cloudflare dashboard → Workers → right sidebar
 
 name: Deploy to Cloudflare Workers
 
@@ -16,9 +19,30 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Verify Cloudflare secrets are configured
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          missing=0
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Missing secret CLOUDFLARE_API_TOKEN. Add it at: https://github.com/${{ github.repository }}/settings/secrets/actions"
+            missing=1
+          fi
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Missing secret CLOUDFLARE_ACCOUNT_ID (Account ID from Cloudflare dashboard)."
+            missing=1
+          fi
+          if [ "$missing" -ne 0 ]; then
+            echo "::error::See README → Deploy → GitHub Actions for token permissions."
+            exit 1
+          fi
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
