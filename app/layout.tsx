@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
-import { PlausibleAnalytics } from '@/components/wiki/plausible-analytics'
+import { PlausibleHeadScripts } from '@/components/wiki/plausible-head-scripts'
 import { ThirdPartyScripts } from '@/components/wiki/third-party-scripts'
 import { siteConfig } from '@/lib/site-config'
 import { createPageMetadata } from '@/lib/metadata'
@@ -42,11 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background" suppressHydrationWarning>
+      <head>
+        <PlausibleHeadScripts />
+      </head>
       <body className="font-sans antialiased">
         {children}
         <Toaster richColors position="top-center" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
-        <PlausibleAnalytics />
         <ThirdPartyScripts />
       </body>
     </html>
