@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
+import { ThirdPartyScripts } from '@/components/wiki/third-party-scripts'
 import { siteConfig } from '@/lib/site-config'
 import { createPageMetadata } from '@/lib/metadata'
 import './globals.css'
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
   openGraph: homeMetadata.openGraph,
   twitter: homeMetadata.twitter,
   robots: homeMetadata.robots,
+  other: {
+    "google-adsense-account": "ca-pub-9101692675645964",
+  },
 }
 
 export const viewport = {
@@ -37,29 +41,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background" suppressHydrationWarning>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLMPPNFBGN" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-CLMPPNFBGN');
-            `,
-          }}
-        />
-        <meta name="google-adsense-account" content="ca-pub-9101692675645964" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9101692675645964"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className="font-sans antialiased">
         {children}
         <Toaster richColors position="top-center" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <ThirdPartyScripts />
       </body>
     </html>
   )
