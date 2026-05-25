@@ -1,9 +1,7 @@
-"use client"
-
-import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronDown, HelpCircle } from "lucide-react"
+import { HelpCircle } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface FAQItem {
   question: string
@@ -53,12 +51,6 @@ type FAQSectionProps = {
 }
 
 export function FAQSection({ showTitle = true }: FAQSectionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
@@ -77,25 +69,27 @@ export function FAQSection({ showTitle = true }: FAQSectionProps) {
 
         <div className="mx-auto max-w-3xl space-y-3">
           {faqItems.map((item, index) => (
-            <Card
-              key={index}
-              className={`cursor-pointer transition-all ${openIndex === index ? "border-primary/30 shadow-md" : ""}`}
-              onClick={() => toggleFAQ(index)}
-            >
+            <Card key={item.question} className="overflow-hidden py-0">
               <CardContent className="p-0">
-                <div className="flex items-center justify-between p-4">
-                  <h3 className="font-medium text-foreground pr-4">{item.question}</h3>
-                  <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${openIndex === index ? "rotate-180" : ""}`}
-                  />
-                </div>
-                {openIndex === index && (
+                <details className="group" open={index === 0}>
+                  <summary
+                    className={cn(
+                      "flex cursor-pointer list-none items-center justify-between gap-4 p-4 font-medium text-foreground",
+                      "[&::-webkit-details-marker]:hidden"
+                    )}
+                  >
+                    <span className="pr-4">{item.question}</span>
+                    <span
+                      className="text-muted-foreground transition-transform group-open:rotate-180"
+                      aria-hidden
+                    >
+                      ▾
+                    </span>
+                  </summary>
                   <div className="border-t px-4 pb-4 pt-3">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.answer}
-                    </p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{item.answer}</p>
                   </div>
-                )}
+                </details>
               </CardContent>
             </Card>
           ))}

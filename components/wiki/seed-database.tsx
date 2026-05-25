@@ -185,7 +185,8 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
                   <button
                     key={filter}
                     type="button"
-                    data-active={isActive}
+                    aria-pressed={isActive}
+                    {...(isActive ? { "data-active": "true" as const } : {})}
                     onClick={() => setRarity(filter)}
                     className={cn(
                       "rounded-lg border border-border/80 bg-background px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",

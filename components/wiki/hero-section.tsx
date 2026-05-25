@@ -1,9 +1,24 @@
+"use client"
+
 import Link from "next/link"
-import { HeroCarousel } from "@/components/wiki/hero-carousel"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { wikiStats } from "@/lib/wiki-stats"
-import { Calculator, Sprout, Database, GitBranch, Gift } from "lucide-react"
+import { Sprout, Calculator, Database, GitBranch, Gift } from "lucide-react"
+
+const HeroCarousel = dynamic(
+  () => import("@/components/wiki/hero-carousel").then((m) => m.HeroCarousel),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="relative aspect-[16/9] w-full animate-pulse rounded-2xl border border-border/70 bg-muted/50 sm:aspect-[2/1]"
+        aria-hidden
+      />
+    ),
+  }
+)
 
 const stats = [
   { icon: Database, label: "SEEDS", value: wikiStats.seeds },

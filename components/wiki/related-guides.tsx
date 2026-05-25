@@ -25,8 +25,8 @@ export function RelatedGuides({
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {links.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="group block h-full">
-                <Card className="h-full transition-colors hover:border-primary/40 hover:bg-muted/30">
+              <Card className="h-full transition-colors hover:border-primary/40 hover:bg-muted/30">
+                <Link href={link.href} className="group block h-full">
                   <CardHeader className="pb-2">
                     <CardTitle className="flex items-center justify-between gap-2 text-base group-hover:text-primary">
                       {link.title}
@@ -36,8 +36,8 @@ export function RelatedGuides({
                   <CardContent>
                     <CardDescription>{link.description}</CardDescription>
                   </CardContent>
-                </Card>
-              </Link>
+                </Link>
+              </Card>
             </li>
           ))}
         </ul>

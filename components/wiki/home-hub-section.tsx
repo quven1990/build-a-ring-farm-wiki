@@ -29,16 +29,16 @@ export function HomeHubSection() {
         <h3 className="mb-4 text-lg font-semibold text-foreground">Popular tools</h3>
         <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {toolLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="group block">
-              <Card className="h-full transition-colors hover:border-primary/40">
+            <Card key={item.href} className="h-full transition-colors hover:border-primary/40">
+              <Link href={item.href} className="group block h-full">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-base group-hover:text-primary">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>{item.description}</CardDescription>
                 </CardContent>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           ))}
         </div>
 
