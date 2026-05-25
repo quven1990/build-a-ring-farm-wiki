@@ -1,19 +1,13 @@
-type PlausibleProps = Record<string, string | number | boolean>
+import type { CustomProperties } from "@plausible-analytics/tracker"
 
-declare global {
-  interface Window {
-    plausible?: (
-      event: string,
-      options?: { props?: PlausibleProps }
-    ) => void
-  }
-}
-
-/** Fire a custom Plausible event (client-only; requires head snippet). */
+/** Fire a custom Plausible event (client-only). */
 export function trackPlausibleEvent(
   eventName: string,
-  options?: { props?: PlausibleProps }
+  options?: { props?: CustomProperties; interactive?: boolean }
 ) {
   if (typeof window === "undefined") return
-  window.plausible?.(eventName, options)
+
+  void import("@plausible-analytics/tracker").then(({ track }) => {
+    track(eventName, options ?? {})
+  })
 }
