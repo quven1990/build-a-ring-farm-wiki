@@ -4,7 +4,11 @@ import { absoluteUrl } from "@/lib/sitemap"
 import { getOgImageUrl, truncateMetaDescription } from "@/lib/seo"
 import type { GuidePageId } from "@/lib/seo-pages/types"
 
-function buildMetadata(meta: (typeof pageMeta)[string], path: string, options?: { robots?: Metadata["robots"] }): Metadata {
+function buildMetadata(
+  meta: (typeof pageMeta)[string],
+  path: string,
+  options?: { robots?: Metadata["robots"]; openGraphType?: "website" | "article" }
+): Metadata {
   const url = absoluteUrl(path)
   const description = truncateMetaDescription(meta.description)
   const ogImage = getOgImageUrl(meta.ogImage)
@@ -22,7 +26,7 @@ function buildMetadata(meta: (typeof pageMeta)[string], path: string, options?: 
       title: ogTitle,
       description,
       url,
-      type: "website",
+      type: options?.openGraphType ?? "website",
       locale: `${siteConfig.locale}_US`,
       siteName: siteConfig.name,
       images: [
@@ -52,5 +56,5 @@ export function createPageMetadata(
 }
 
 export function createGuidePageMetadata(pageId: GuidePageId): Metadata {
-  return buildMetadata(guidePageMeta[pageId], `/${pageId}`)
+  return buildMetadata(guidePageMeta[pageId], `/${pageId}`, { openGraphType: "article" })
 }

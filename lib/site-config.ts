@@ -11,7 +11,7 @@ export const siteConfig = {
   locale: "en",
   lastUpdated: "May 2026",
   /** ISO date for sitemap lastmod (May 2026) */
-  siteLastModified: "2026-05-01T00:00:00.000Z",
+  siteLastModified: "2026-05-23T00:00:00.000Z",
   robloxGameUrl:
     "https://www.roblox.com/games/107646426076756/Build-A-Ring-Farm",
 }
@@ -268,10 +268,10 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   faq: {
-    title: "FAQ | Build A Ring Farm Wiki",
-    h1: "Frequently Asked Questions",
+    title: "Build A Ring Farm FAQ — Quick Answers | buildaring.online",
+    h1: "Build A Ring Farm FAQ",
     description:
-      "Answers to common Build A Ring Farm questions: how mutations work, best rings, code redemption, offline earnings, and beginner farming mistakes to avoid.",
+      "Quick FAQ for Build A Ring Farm: codes, rings, mutations, calculator, and beginner tips. For detailed answers see the FAQ hub at buildaring.online.",
     heroDescription:
       "Quick answers about mechanics, rings, codes, and getting started.",
     ogTitle: "Build A Ring Farm FAQ — Game Mechanics & Tips",
