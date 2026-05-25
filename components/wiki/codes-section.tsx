@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Gift, AlertCircle, HelpCircle, Check } from "lucide-react"
 import { toast } from "sonner"
 import { formatLastCheckedDate, wikiCodes, type CodeStatus } from "@/lib/codes-data"
+import { trackPlausibleEvent } from "@/lib/plausible-events"
 
 const statusConfig: Record<CodeStatus, { label: string; variant: "default" | "secondary" | "outline"; icon: typeof AlertCircle }> = {
   verified: { label: "Verified", variant: "default", icon: Check },
@@ -21,6 +22,7 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
   const copyToClipboard = async (code: string) => {
     try {
       await navigator.clipboard.writeText(code)
+      trackPlausibleEvent("Code Copy", { props: { code } })
       toast("✅ Code copied to clipboard!")
     } catch {
       toast.error("Could not copy code. Please copy manually.")
