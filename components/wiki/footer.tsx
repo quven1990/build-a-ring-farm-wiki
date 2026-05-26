@@ -72,7 +72,7 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:justify-end">
             <a
-              href="mailto:privacy@buildaring.online"
+              href="mailto:contact@buildaring.online"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Contact

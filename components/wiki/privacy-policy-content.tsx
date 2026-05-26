@@ -158,14 +158,21 @@ export function PrivacyPolicyContent() {
       <section id="contact" className={sectionClass}>
         <h2 className={headingClass}>Contact</h2>
         <p className={paragraphClass}>
-          For privacy-related questions about {siteConfig.name}, email the site operator at{" "}
+          For privacy-related questions about {siteConfig.name}, email{" "}
           <a
             href="mailto:privacy@buildaring.online"
             className="text-primary underline-offset-4 hover:underline"
           >
             privacy@buildaring.online
-          </a>{" "}
-          (replace with your active inbox if different). You can also return to the{" "}
+          </a>
+          . For general inquiries, email{" "}
+          <a
+            href="mailto:contact@buildaring.online"
+            className="text-primary underline-offset-4 hover:underline"
+          >
+            contact@buildaring.online
+          </a>
+          . You can also return to the{" "}
           <Link href="/" className="text-primary underline-offset-4 hover:underline">
             home page
           </Link>{" "}

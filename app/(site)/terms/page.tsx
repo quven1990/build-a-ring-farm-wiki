@@ -99,8 +99,9 @@ export default function TermsPage() {
             <h2>8. Contact</h2>
             <p>
               For questions, contact{" "}
-              <a href="mailto:privacy@buildaring.online">privacy@buildaring.online</a> (replace with
-              your active inbox if different).
+              <a href="mailto:contact@buildaring.online">contact@buildaring.online</a>. For privacy
+              requests, email{" "}
+              <a href="mailto:privacy@buildaring.online">privacy@buildaring.online</a>.
             </p>
           </article>
         </div>
