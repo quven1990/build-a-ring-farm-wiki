@@ -14,6 +14,8 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
     whatYouCanDo: [
       "Plan harvest rhythm around weather events instead of random logins",
       "Decide which crops belong on Inner vs Outer ring slots",
+      "Run the Big Lion two-crop focus loop after recent community-reported metas",
+      "Farm Plant Rush for event currency and Cosmic Spray when you have coin budget",
       "Track when to reinvest roller budget vs stabilize current plots",
       "Cross-link mutations and events before holding crops an extra cycle",
     ],
@@ -64,12 +66,63 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "big-lion-two-crop",
+        text: "Big Lion Two-Crop Focus (Post-Update Community Meta)",
+      },
+      {
+        type: "p",
+        text: "After recent updates, many players report that a full farm of mixed crops is no longer the fastest coin path for everyone. An alternative meta centers on the Big Lion pet (Epic rarity): its ability applies a super fertilizer to a random crop about every five minutes. Community guides suggest clearing every plot except your two strongest plants so those buffs cannot land on weak crops. You then level only those two plants and let repeated super fertilizer stacks drive income.",
+      },
+      {
+        type: "h3",
+        text: "Why Players Use This Instead of a Full Farm",
+      },
+      {
+        type: "p",
+        text: "Big Lion’s cash multiplier is lower than some legendary pets, but targeted super fertilizer can outperform spreading buffs across dozens of low-tier plants. Reports mention roughly six times effective value on the focused pair versus diluting the same procs across the whole field — treat that multiplier as community-sourced until you confirm in your own session. The pet is considered accessible: normal egg rolls, no Robux requirement, often obtainable within a few hours of play according to player reports.",
+      },
+      {
+        type: "h3",
+        text: "How This Fits Ring and Reinvestment Advice",
+      },
+      {
+        type: "p",
+        text: "This loop is a deliberate exception to “fill every plot” early advice. Use the seeds database to pick your two highest base-income crops for your stage, place them on your best available ring tiers, and pause roller spending on filler commons until the pair is stable. Once income spikes, return to the reinvestment order above for rings, saw, and mutation sprays. If you are already leaderboard-competitive, the focus loop may still help; if you prefer variety or collection goals, keep a standard multi-plot layout instead.",
+      },
+      {
+        type: "h2",
+        id: "plant-rush-cosmic-spray",
+        text: "Plant Rush Events and Cosmic Spray",
+      },
+      {
+        type: "p",
+        text: "Plant Rush is a limited combat-style event separate from weather on the events reference page. Community reports say it is currently the main source of new event currency and the most practical way to obtain Cosmic Spray. The Plant Rush shop shows a timer above the UI so you can plan when the next run starts. Cosmic Spray purchases are reported around twenty-five thousand coins — budget a grind session before you commit.",
+      },
+      {
+        type: "h3",
+        text: "Farming Event Coins Efficiently",
+      },
+      {
+        type: "p",
+        text: "Join or create a low-population server when you only care about coin yield, not social play. Players report roughly one thousand to fifteen hundred coins per event with one or two people in the instance, though your gear and boss clear speed still matter. Pair Plant Rush sessions with the Big Lion loop: use event coins for sprays and upgrades while your two main crops absorb offline-style fertilizer ticks between runs. Redeem active codes first if any grant fertilizers or coin boosts that shorten the grind.",
+      },
+      {
+        type: "h2",
+        id: "full-farm-vs-focus",
+        text: "When to Stay on a Full Farm vs Switch to Two Crops",
+      },
+      {
+        type: "p",
+        text: "Stay on a full farm if you are still unlocking plots and rings, learning weather timing, or enjoy rolling many seed types. Switch toward the Big Lion two-crop setup when Epic pets are realistic for you, your top two plants are clearly ahead of everything else in the seeds table, and you are willing to remove decorative or low-income plants. Re-evaluate after every patch — developers can change pet abilities, spray pricing, or event rewards without notice.",
+      },
+      {
+        type: "h2",
         id: "pair-with-tools",
         text: "Pair This Guide With On-Site Tools",
       },
       {
         type: "p",
-        text: "Open the profit calculator before moving a secret-tier plant to Outer. Scan the mutation matrix when you debate shop sprays vs waiting for weather. Bookmark active codes for sprays that accelerate testing. The wiki index lists every database in one place. Together these tools turn vague advice into checklists you can run every session.",
+        text: "Open the profit calculator before moving a secret-tier plant to Outer or before deleting plots for the two-crop focus. Scan the mutation matrix when you debate shop sprays vs waiting for weather — Cosmic Spray may appear there once confirmed. Bookmark active codes for sprays that accelerate testing. The wiki index lists every database in one place. Together these tools turn vague advice into checklists you can run every session.",
       },
     ],
   },
@@ -493,7 +546,7 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "p",
-        text: "Site: Expanded SEO guide routes, related links module, FAQ structured data, and sitemap coverage for build-a-ring-* pages. Data: Codes list reviewed with verified / community / needs-testing labels. Seeds database holds fifty-one crops across ten rarities. Calculator documents verified formula with Carrot exception noted.",
+        text: "Site: Expanded SEO guide routes, related links module, FAQ structured data, and sitemap coverage for build-a-ring-* pages. Farm efficiency guide: added community-reported Big Lion two-crop focus, Plant Rush / Cosmic Spray notes, and FAQ entries including a third-person Plant Rush workaround (may be patched anytime). Data: Codes list reviewed with verified / community / needs-testing labels. Seeds database holds fifty-one crops across ten rarities. Calculator documents verified formula with Carrot exception noted.",
       },
       {
         type: "h2",

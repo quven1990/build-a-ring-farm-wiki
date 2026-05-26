@@ -293,13 +293,21 @@ export const guidePageMeta: Record<
     title: "Build A Ring Farm Guide — Farming & Efficiency | buildaring.online",
     h1: "Build A Ring Farm Efficiency Guide",
     description:
-      "Farming efficiency guide for Build A Ring Farm: harvest rhythm, event timing, ring placement, and reinvestment order. Community data — verify in-game after patches.",
+      "Farming efficiency guide for Build A Ring Farm: Big Lion two-crop focus, Plant Rush and Cosmic Spray, harvest rhythm, rings, and reinvestment. Community data — verify in-game after patches.",
     heroDescription:
-      "Plan faster sessions, smarter harvests, and better reinvestment — without repeating a beginner tutorial.",
+      "Plan faster sessions, post-update money metas, smarter harvests, and better reinvestment — without repeating a beginner tutorial.",
     ogTitle: "Build A Ring Farm Efficiency Guide",
     ogImageAlt: "Build A Ring Farm farming efficiency guide",
     breadcrumb: "Farm Guide",
-    keywords: ["build a ring farm guide", "farming efficiency", "harvest timing", "Roblox farm"],
+    keywords: [
+      "build a ring farm guide",
+      "farming efficiency",
+      "big lion",
+      "plant rush",
+      "cosmic spray",
+      "harvest timing",
+      "Roblox farm",
+    ],
   },
   "build-a-ring-guide": {
     title: "Build A Ring Beginner Guide — Start on Roblox | buildaring.online",

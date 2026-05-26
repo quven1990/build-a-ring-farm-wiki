@@ -101,7 +101,22 @@ export const faqByPage: Record<string, FAQEntry[]> = {
     {
       question: "How many plots should I fill before rare events?",
       answer:
-        "More independent rolls mean more expected procs. Fill every unlocked slot when Black Hole, Galaxy, or similar events are active if your crops are mature.",
+        "More independent rolls mean more expected procs. Fill every unlocked slot when Black Hole, Galaxy, or similar events are active if your crops are mature — unless you are deliberately running the Big Lion two-crop focus described in the farm guide.",
+    },
+    {
+      question: "Should I clear my farm for the Big Lion two-crop method?",
+      answer:
+        "Only if you already own Big Lion (or plan to roll Epic pets soon) and two plants clearly outperform everything else. Remove other crops so super fertilizer cannot proc on weak plants, then level only those two. This trades variety for focused buffs; confirm pet ability text in-game after patches.",
+    },
+    {
+      question: "How do I get Cosmic Spray and Plant Rush coins?",
+      answer:
+        "Community reports point to Plant Rush events as the main source of event currency and Cosmic Spray. The shop timer shows when the next run starts. Cosmic Spray is reported around 25,000 coins — farm low-population servers for roughly 1,000–1,500 coins per event according to players, then buy when you can afford it.",
+    },
+    {
+      question: "Is there a third-person workaround for Plant Rush?",
+      answer:
+        "Some players report a community glitch (not official, may break or violate Roblox rules): equip a gun, open the gear shop and interact with it, when the menu appears without a mouse cursor navigate to Restock and confirm, then exit — Plant Rush may run in third person with wider hits and easier AFK clears. We document this only because players ask; it can be patched without warning. Prefer normal first-person play when possible.",
     },
   ],
   "build-a-ring-guide": [
