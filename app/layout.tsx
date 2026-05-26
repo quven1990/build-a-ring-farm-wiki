@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
-import { PlausibleAnalytics } from '@/components/wiki/plausible-analytics'
-import { ThirdPartyScripts } from '@/components/wiki/third-party-scripts'
+import { ClientConsentScripts } from "@/components/wiki/client-consent-scripts"
 import { siteConfig } from '@/lib/site-config'
 import { createPageMetadata } from '@/lib/metadata'
 import './globals.css'
@@ -46,8 +45,7 @@ export default function RootLayout({
         {children}
         <Toaster richColors position="top-center" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
-        <PlausibleAnalytics />
-        <ThirdPartyScripts />
+        <ClientConsentScripts />
       </body>
     </html>
   )

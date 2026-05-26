@@ -1,10 +1,13 @@
+"use client"
+
 import Script from "next/script"
 import { ADSENSE_CLIENT_ID } from "@/lib/adsense-config"
 
 const GA_ID = "G-CLMPPNFBGN"
 
 /** Loaded after hydration — avoids head script SSR/client mismatch. */
-export function ThirdPartyScripts() {
+export function ThirdPartyScripts({ enabled }: { enabled: boolean }) {
+  if (!enabled) return null
   return (
     <>
       <Script

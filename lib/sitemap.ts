@@ -60,6 +60,18 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.35,
     },
+    {
+      url: absoluteUrl("/terms"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.25,
+    },
+    {
+      url: absoluteUrl("/cookie-policy"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.25,
+    },
   ]
 
   return [...toolEntries, ...guideEntries, ...legalEntries]

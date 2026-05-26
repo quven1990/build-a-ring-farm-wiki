@@ -7,8 +7,9 @@ import { getPlausibleInitConfig } from "@/lib/plausible-config"
  * Plausible Analytics (@plausible-analytics/tracker).
  * Dynamic import avoids SSR "location is not defined" from the tracker bundle.
  */
-export function PlausibleAnalytics() {
+export function PlausibleAnalytics({ enabled }: { enabled: boolean }) {
   useEffect(() => {
+    if (!enabled) return
     const config = getPlausibleInitConfig()
     if (!config) return
 
@@ -25,7 +26,7 @@ export function PlausibleAnalytics() {
         throw error
       }
     })
-  }, [])
+  }, [enabled])
 
   return null
 }

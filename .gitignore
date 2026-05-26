@@ -15,3 +15,6 @@ node_modules
 .open-next/
 .wrangler/
 .DS_Store
+
+# Local Cursor skills (do not commit)
+skills/student-site-compliance-pipeline/

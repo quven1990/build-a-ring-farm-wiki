@@ -77,6 +77,12 @@ export function Footer() {
             >
               Contact
             </a>
+            <Link href="/terms" className={footerLinkClass}>
+              Terms
+            </Link>
+            <Link href="/cookie-policy" className={footerLinkClass}>
+              Cookie Policy
+            </Link>
             <Link href="/privacy" className={footerLinkClass}>
               Privacy Policy
             </Link>
