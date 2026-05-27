@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Gift, AlertCircle, HelpCircle, Check } from "lucide-react"
 import { toast } from "sonner"
-import { formatLastCheckedDate, wikiCodes, type CodeStatus } from "@/lib/codes-data"
+import { formatLastCheckedDate, wikiCodesSorted, type CodeStatus } from "@/lib/codes-data"
 import { trackPlausibleEvent } from "@/lib/plausible-events"
 
 const statusConfig: Record<CodeStatus, { label: string; variant: "default" | "secondary" | "outline"; icon: typeof AlertCircle }> = {
@@ -46,7 +46,7 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
         )}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {wikiCodes.map((item) => {
+          {wikiCodesSorted.map((item) => {
             const status = statusConfig[item.status]
             const StatusIcon = status.icon
             return (
@@ -56,10 +56,17 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
                     <code className="rounded bg-muted px-2 py-1 font-mono text-lg font-bold text-foreground">
                       {item.code}
                     </code>
-                    <Badge variant={status.variant} className="flex items-center gap-1">
-                      <StatusIcon className="h-3 w-3" />
-                      {status.label}
-                    </Badge>
+                    <div className="flex flex-wrap items-center justify-end gap-2">
+                      {item.isNew && (
+                        <Badge className="border border-emerald-500/40 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
+                          New
+                        </Badge>
+                      )}
+                      <Badge variant={status.variant} className="flex items-center gap-1">
+                        <StatusIcon className="h-3 w-3" />
+                        {status.label}
+                      </Badge>
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent>
