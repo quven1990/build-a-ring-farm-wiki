@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
-import { PlausibleAnalytics } from "@/components/wiki/plausible-analytics"
 import { ThirdPartyScripts } from "@/components/wiki/third-party-scripts"
 import { cn } from "@/lib/utils"
 import { COOKIE_CONSENT_COOKIE, type CookieConsentValue } from "@/lib/cookie-consent"
@@ -31,7 +30,6 @@ export function ClientConsentScripts() {
 
   return (
     <>
-      <PlausibleAnalytics enabled={enabled} />
       <ThirdPartyScripts enabled={enabled} />
 
       {showBanner && (
