@@ -27,16 +27,16 @@ export type WikiCode = {
 export const wikiCodes: WikiCode[] = [
   {
     code: "PLANTRUSH",
-    reward: "Plant Rush Boss Box x1",
+    reward: "1 Plant Rush Boss Box",
     status: "needs-testing",
     lastChecked: defaultLastChecked,
     isNew: true,
   },
-  { code: "UPDATE2", reward: "Tropical Seed Pack x1", status: "community", lastChecked: defaultLastChecked },
-  { code: "THANKYOU", reward: "Autumn Spray x1", status: "community", lastChecked: defaultLastChecked },
-  { code: "BARF:3", reward: "Acid Spray x1", status: "community", lastChecked: defaultLastChecked },
+  { code: "UPDATE2", reward: "Tropical Seed Pack (x1)", status: "community", lastChecked: defaultLastChecked },
+  { code: "THANKYOU", reward: "Autumn Spray (x1)", status: "community", lastChecked: defaultLastChecked },
+  { code: "BARF:3", reward: "Acid Spray (x1)", status: "community", lastChecked: defaultLastChecked },
   { code: "2KLIKES", reward: "Tropical Seed Pack", status: "needs-testing", lastChecked: defaultLastChecked },
-  { code: "UPDATE1", reward: "Strong Fertilizer x3", status: "needs-testing", lastChecked: defaultLastChecked },
+  { code: "UPDATE1", reward: "3 Strong Fertilizers", status: "needs-testing", lastChecked: defaultLastChecked },
   { code: "100KVISITS", reward: "5-minute Time Skip", status: "needs-testing", lastChecked: defaultLastChecked },
 ]
 
