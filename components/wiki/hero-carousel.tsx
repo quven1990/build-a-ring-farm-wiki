@@ -40,6 +40,7 @@ export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const onSelect = useCallback((carouselApi: CarouselApi) => {
+    if (!carouselApi) return
     setActiveIndex(carouselApi.selectedScrollSnap())
   }, [])
 
