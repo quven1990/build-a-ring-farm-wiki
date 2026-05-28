@@ -66,7 +66,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
-        <Toaster richColors position="top-center" />
+        <Toaster richColors position="bottom-center" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
         <ClientConsentScripts />
       </body>

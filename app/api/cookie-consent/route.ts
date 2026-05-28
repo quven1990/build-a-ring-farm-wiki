@@ -18,7 +18,7 @@ export function GET(request: Request) {
     name: COOKIE_CONSENT_COOKIE,
     value,
     httpOnly: false,
-    sameSite: "Lax",
+    sameSite: "lax",
     secure: true,
     path: "/",
     maxAge: 60 * 60 * 24 * 365,

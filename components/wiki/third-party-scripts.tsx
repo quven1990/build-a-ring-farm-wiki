@@ -1,13 +1,15 @@
 "use client"
 
 import Script from "next/script"
-import { ADSENSE_CLIENT_ID } from "@/lib/adsense-config"
+import { ADSENSE_CLIENT_ID, isAdsenseSlotConfigured } from "@/lib/adsense-config"
 
 const GA_ID = "G-CLMPPNFBGN"
 
 /** Loaded after hydration — avoids head script SSR/client mismatch. */
 export function ThirdPartyScripts({ enabled }: { enabled: boolean }) {
   if (!enabled) return null
+  const adsenseEnabled =
+    isAdsenseSlotConfigured("home") || isAdsenseSlotConfigured("article")
   return (
     <>
       <Script
@@ -22,13 +24,15 @@ export function ThirdPartyScripts({ enabled }: { enabled: boolean }) {
           gtag('config', '${GA_ID}');
         `}
       </Script>
-      <Script
-        id="google-adsense"
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
+      {adsenseEnabled && (
+        <Script
+          id="google-adsense"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      )}
     </>
   )
 }

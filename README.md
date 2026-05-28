@@ -34,6 +34,12 @@ cp .env.example .env.local
 NEXT_PUBLIC_SITE_URL=https://buildaring.online
 ```
 
+## YouTube promotion & analytics
+
+- **Comment link (recommended):** `https://buildaring.online/yt` → codes page with `utm_source=youtube` for Plausible campaigns.
+- **Calculator link:** `https://buildaring.online/yt/calculator`
+- **Plausible goals & dashboard privacy:** see [docs/analytics-plausible.md](docs/analytics-plausible.md).
+
 ## Deploy to Cloudflare Workers
 
 This project uses [@opennextjs/cloudflare](https://opennext.js.org/cloudflare/get-started). **You do not need Cloudflare Dashboard “Queued” builds** — deploy from your machine or GitHub Actions.

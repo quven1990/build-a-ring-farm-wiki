@@ -3,10 +3,10 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Gift, AlertCircle, HelpCircle, Check } from "lucide-react"
+import { Gift, AlertCircle, HelpCircle, Check, Copy } from "lucide-react"
 import { toast } from "sonner"
 import { formatLastCheckedDate, wikiCodesSorted, type CodeStatus } from "@/lib/codes-data"
-import { trackPlausibleEvent } from "@/lib/plausible-events"
+import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 
 const statusConfig: Record<CodeStatus, { label: string; variant: "default" | "secondary" | "outline"; icon: typeof AlertCircle }> = {
   verified: { label: "Verified", variant: "default", icon: Check },
@@ -22,7 +22,10 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
   const copyToClipboard = async (code: string) => {
     try {
       await navigator.clipboard.writeText(code)
-      trackPlausibleEvent("Code Copy", { props: { code } })
+      trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
+        props: { code },
+        interactive: true,
+      })
       toast("✅ Code copied to clipboard!")
     } catch {
       toast.error("Could not copy code. Please copy manually.")
@@ -82,8 +85,10 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
                       variant="outline"
                       onClick={() => copyToClipboard(item.code)}
                       className="transition-all"
+                      aria-label={`Copy code ${item.code}`}
                     >
-                      Active
+                      <Copy className="mr-1 h-3.5 w-3.5" />
+                      Copy code
                     </Button>
                   </div>
                 </CardContent>

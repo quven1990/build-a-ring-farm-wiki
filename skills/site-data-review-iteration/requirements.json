@@ -1,0 +1,18 @@
+{
+  "id": "site-data-review-iteration",
+  "difficulty": "medium",
+  "accounts": [
+    "GA4/Clarity/Bing/GSC/Plausible 等分析后台"
+  ],
+  "env": [],
+  "browserSessions": [
+    "分析后台登录态"
+  ],
+  "blockingRules": [
+    "缺数据源不能做结论性 Kill/Iterate/Scale",
+    "不能编造转化/流量数据"
+  ],
+  "canContinueWithout": [
+    "可先生成数据需求清单和复盘模板"
+  ]
+}

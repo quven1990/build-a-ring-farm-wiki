@@ -1,6 +1,12 @@
 /** Plausible custom events via global `window.plausible` (Shipsolo snippet in root layout). */
 export type PlausibleEventProps = Record<string, string | number | boolean>
 
+/** Register matching names as Goals in Plausible → Site settings → Goals → Add custom event. */
+export const PLAUSIBLE_GOALS = {
+  codeCopy: "Code Copy",
+  calculatorRun: "Calculator Run",
+} as const
+
 export function trackPlausibleEvent(
   eventName: string,
   options?: { props?: PlausibleEventProps; interactive?: boolean }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
@@ -41,6 +41,7 @@ import {
 import { pageMeta } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 import { Calculator, Sparkles } from "lucide-react"
+import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 
 const calculatorSeeds = seeds.filter((s) => (s.baseIncome ?? 0) > 0)
 
@@ -247,6 +248,54 @@ export function ProfitCalculator() {
   ])
 
   const ringLabel = ringOptions.find((r) => r.key === ring)?.label ?? ring
+
+  // Track calculator usage without spamming events on every slider tick.
+  const lastTrackedKeyRef = useRef<string>("")
+  const trackTimerRef = useRef<number | null>(null)
+  useEffect(() => {
+    if (!selectedSeed?.baseIncome || !result) return
+
+    const key = JSON.stringify({
+      seed: selectedSeed.id,
+      level,
+      sawLevel,
+      sprinklerLevel,
+      plants,
+      ring,
+      mutationKey,
+      cashMultiplier,
+    })
+    if (key === lastTrackedKeyRef.current) return
+
+    if (trackTimerRef.current) window.clearTimeout(trackTimerRef.current)
+    trackTimerRef.current = window.setTimeout(() => {
+      lastTrackedKeyRef.current = key
+      trackPlausibleEvent(PLAUSIBLE_GOALS.calculatorRun, {
+        interactive: true,
+        props: {
+          seed: selectedSeed.id,
+          ring,
+          mutation: mutationKey,
+          plants,
+          level,
+        },
+      })
+    }, 600)
+
+    return () => {
+      if (trackTimerRef.current) window.clearTimeout(trackTimerRef.current)
+    }
+  }, [
+    selectedSeed,
+    result,
+    level,
+    sawLevel,
+    sprinklerLevel,
+    plants,
+    ring,
+    mutationKey,
+    cashMultiplier,
+  ])
 
   return (
     <section className="relative overflow-hidden py-12 sm:py-16">
