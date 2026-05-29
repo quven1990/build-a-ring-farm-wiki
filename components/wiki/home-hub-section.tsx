@@ -5,10 +5,10 @@ import { guideCards, footerGuideLinks } from "@/lib/site-config"
 import { LayoutGrid } from "lucide-react"
 
 const toolLinks = [
+  { title: "Profit Calculator", href: "/calculator", description: "Verified harvest formula — test mutations & rings" },
+  { title: "Mutations Matrix", href: "/mutations", description: "Full 2026 list with multipliers & shop prices" },
   { title: "Active Codes", href: "/codes", description: "Copy redeem codes with status labels" },
-  { title: "Profit Calculator", href: "/calculator", description: "Verified harvest formula" },
   { title: "Seeds Database", href: "/seeds", description: "51 crops, 10 rarities" },
-  { title: "Wiki Index", href: "/build-a-ring-wiki", description: "Full directory of pages" },
 ]
 
 export function HomeHubSection() {

@@ -41,7 +41,7 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
     },
     {
       type: "p",
-      text: "Daily players: start at [codes](/codes) and [events](/events). Optimizers: [calculator](/calculator) plus [farm guide](/build-a-ring-farm). New accounts: [beginner guide](/build-a-ring-guide) then [progression](/progression). This home page stays a navigation hub; deep mechanics live on dedicated routes to keep duplicate content low.",
+      text: "Daily players: start at [codes](/codes) and [events](/events). Optimizers: [profit calculator](/calculator), [mutations list](/mutations), and [farm guide](/build-a-ring-farm). New accounts: [beginner guide](/build-a-ring-guide) then [progression](/progression). This home page stays a navigation hub; deep mechanics live on dedicated routes to keep duplicate content low.",
     },
     {
       type: "h2",

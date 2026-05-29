@@ -48,20 +48,20 @@ export function HeroSection() {
             </h1>
 
             <p className="mx-auto mb-8 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
-              Data, codes &amp; profit tools — plan your best farm on Roblox with verified databases and guides.
+              Free profit calculator, seed database &amp; active codes — plan harvest earnings with verified multipliers and guides.
             </p>
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
               <Button size="lg" className="w-full sm:w-auto" asChild>
-                <Link href="/codes">
-                  <Gift className="mr-2 h-5 w-5" />
-                  View Codes
-                </Link>
-              </Button>
-              <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
                 <Link href="/calculator">
                   <Calculator className="mr-2 h-5 w-5" />
                   Open Calculator
+                </Link>
+              </Button>
+              <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
+                <Link href="/codes">
+                  <Gift className="mr-2 h-5 w-5" />
+                  View Codes
                 </Link>
               </Button>
               <Button size="lg" className="w-full sm:w-auto" variant="secondary" asChild>

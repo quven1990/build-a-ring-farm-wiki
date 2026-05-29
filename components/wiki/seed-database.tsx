@@ -1,7 +1,9 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Link from "next/link"
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import {
   Select,
   SelectContent,
@@ -23,7 +25,7 @@ import {
   type SortOption,
 } from "@/lib/seeds-data"
 import { pageMeta } from "@/lib/site-config"
-import { Search } from "lucide-react"
+import { Calculator, Search } from "lucide-react"
 
 type SeedDatabaseProps = {
   showTitle?: boolean
@@ -229,6 +231,18 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
             No seeds found matching your search.
           </p>
         )}
+
+        <div className="mt-10 flex flex-col items-center gap-3 rounded-2xl border border-primary/15 bg-primary/5 px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
+          <p className="max-w-xl text-sm text-muted-foreground">
+            Picked a seed? Run the profit calculator with your ring tier, mutation, and plant count to see exact harvest earnings before you reorganize plots.
+          </p>
+          <Button asChild variant="secondary" className="shrink-0 rounded-xl font-semibold">
+            <Link href="/calculator">
+              <Calculator className="mr-2 h-4 w-4" />
+              Open calculator
+            </Link>
+          </Button>
+        </div>
 
       </div>
     </section>

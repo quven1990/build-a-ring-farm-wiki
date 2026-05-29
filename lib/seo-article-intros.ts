@@ -3,15 +3,15 @@ import type { SeoPageKey } from "@/lib/seo-article-content"
 /** Unique opening copy per page (≈200 words target across intro + first heading avoided duplication) */
 export const pageIntros: Partial<Record<SeoPageKey, string>> = {
   home:
-    "buildaring.online is your player toolkit hub — not a single long wiki article. Jump to databases, calculators, or focused guides below. Each section has its own page title, summary, and FAQs so you do not wade through repeated game introductions.",
+    "buildaring.online is your player toolkit hub — start with the [profit calculator](/calculator) to test harvest math, then jump to databases or focused guides below. Each section has its own page title, summary, and FAQs so you do not wade through repeated game introductions.",
   seeds:
-    "This page is the live seed database only: sort fifty-one crops by rarity, income, grow time, and roll weight. For farming strategy without table noise, read the [farm efficiency guide](/build-a-ring-farm). For rarity bands without exact stats, see the [tier list framework](/build-a-ring-tier-list).",
+    "This page is the live seed database only: sort fifty-one crops by rarity, income, grow time, and roll weight. After picking crops, run the [profit calculator](/calculator) with your ring and mutation. For farming strategy without table noise, read the [farm efficiency guide](/build-a-ring-farm).",
   mutations:
     "Every harvest multiplier in one matrix — shop sprays, weather procs, and event-only tags. This page does not re-explain ring placement; pair it with [weather events](/events) for timing and the [profit calculator](/calculator) before you buy Rainbow-tier sprays.",
   events:
     "Weather events control free mutation rolls. Use this reference for activation rates and per-plant odds — then plan harvests using the [mutations matrix](/mutations) and [farm efficiency guide](/build-a-ring-farm).",
   rings:
-    "Inner, Middle, and Outer multipliers with placement notes. For unlock order and crop matching, read [best rings guide](/build-a-ring-best-rings); for raw seed stats, open the [seeds database](/seeds).",
+    "Inner, Middle, and Outer multipliers with placement notes. Use the [profit calculator](/calculator) to compare per-plant earnings at each ring tier. For unlock order and crop matching, read [best rings guide](/build-a-ring-best-rings); for raw seed stats, open the [seeds database](/seeds).",
   calculator:
     "Interactive profit tool with step-by-step breakdown. Read the [calculator guide](/build-a-ring-calculator) for when to run scenarios; use [seeds](/seeds) and [rings](/rings) pages to pick inputs.",
   codes:

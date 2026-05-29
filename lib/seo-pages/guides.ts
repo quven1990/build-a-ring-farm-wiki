@@ -541,6 +541,15 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "late-may-2026",
+        text: "Late May 2026",
+      },
+      {
+        type: "p",
+        text: "Site infrastructure: added middleware to 301 all www and HTTP requests to https://buildaring.online (fixes Google Search Console duplicate URL reporting). Fixed cookie-consent API 500 when requests lacked a Referer header. SEO: refreshed /mutations title and meta description for higher CTR, added FAQPage structured data on the mutations page, and strengthened internal links to the profit calculator from home, seeds, rings, and mutations. Home hero now leads with the calculator CTA; popular tools section highlights calculator and mutations matrix first.",
+      },
+      {
+        type: "h2",
         id: "may-2026",
         text: "May 2026",
       },

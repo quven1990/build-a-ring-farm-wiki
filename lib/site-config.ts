@@ -126,10 +126,10 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Build A Ring Farm Wiki & Calculator | Player Toolkit",
     h1: "Build A Ring Farm Wiki & Calculator",
     description:
-      "Unofficial Build A Ring Farm toolkit: 51 seeds, profit calculator, active codes, mutations, rings, and guides. Plan your best Roblox farm route — updated May 2026.",
+      "Free Build A Ring Farm profit calculator plus 51 seeds, active codes, full mutations list, rings & guides. Plan Roblox harvest earnings — updated May 2026.",
     heroDescription:
-      "Data, codes & profit tools — your all-in-one companion for seeds, mutations, rings, and earnings on Roblox.",
-    ogTitle: "Build A Ring Farm Player Toolkit — Wiki, Codes & Calculator",
+      "Free profit calculator, seed database, codes & mutation multipliers — plan harvest earnings in one toolkit.",
+    ogTitle: "Build A Ring Farm Calculator & Wiki — Profit Tool + Databases",
     ogImageAlt: "Build A Ring Farm wiki hero — farmer, crops, and glowing ring portal",
     breadcrumb: "Home",
     keywords: [
@@ -159,18 +159,19 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   mutations: {
-    title: "Build A Ring Farm Mutations | Build A Ring Farm Wiki",
+    title: "Build A Ring Farm Mutations (2026) — Full List & Multipliers",
     h1: "Build A Ring Farm Mutations",
     description:
-      "All Build A Ring Farm mutations ranked: multipliers from Wet 1.5x to Honeycomb 6.5x, Gear Shop prices, weather triggers & event-only buffs explained.",
+      "Complete Build A Ring Farm mutations list 2026: Wet 1.5x through Honeycomb 6.5x multipliers, Gear Shop prices, weather triggers & event-only buffs. Compare before you buy sprays.",
     heroDescription:
-      "Nine mutations, harvest multipliers, shop prices, and which buffs are event-only.",
-    ogTitle: "Build A Ring Farm Mutations — Multipliers & How to Get Them",
+      "Full 2026 mutation list — harvest multipliers, Gear Shop prices, weather triggers, and event-only tags.",
+    ogTitle: "Build A Ring Farm Mutations (2026) — Complete Multiplier List",
     ogImageAlt: "Build A Ring Farm mutation matrix with harvest multipliers",
     breadcrumb: "Mutations",
     keywords: [
       "build a ring farm mutations",
-      "mutation multipliers",
+      "build a ring farm mutations list",
+      "mutation multipliers 2026",
       "Wet mutation",
       "Rainbow mutation",
       "Honeycomb",

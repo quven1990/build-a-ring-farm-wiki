@@ -53,6 +53,28 @@ export const faqByPage: Record<string, FAQEntry[]> = {
         "Developers retire codes after milestones or updates without notice. Try newer strings from the active list and mark failed codes in community channels so others avoid wasting time.",
     },
   ],
+  mutations: [
+    {
+      question: "How many mutations are in Build A Ring Farm?",
+      answer:
+        "Nine total: six purchasable from the Gear Shop (Wet through Rainbow) and three event-only entries (Alien, Farm, Honeycomb). The matrix on this page lists every multiplier, trigger, and shop price.",
+    },
+    {
+      question: "What is the highest mutation multiplier?",
+      answer:
+        "Honeycomb at 6.5x is the top event-only proc. Rainbow at 5x is the strongest shop spray. Wet at 1.5x is the most common free boost from Rain — stack any mutation with ring and seed level for final harvest value.",
+    },
+    {
+      question: "Should I buy Rainbow or wait for event mutations?",
+      answer:
+        "Rainbow is reliable but expensive. Event procs are free but unpredictable. Run the profit calculator with your actual seed and ring before spending billions on sprays — sometimes a 3x event buff on Outer beats a 5x spray on Inner.",
+    },
+    {
+      question: "Which mutations are event-only?",
+      answer:
+        "Alien, Farm, and Honeycomb cannot be bought in the Gear Shop. They require specific weather or world events. Filter the matrix to event-only rows and read the events page for trigger rates.",
+    },
+  ],
   calculator: [
     {
       question: "Does the calculator include sprinkler payout bonus?",

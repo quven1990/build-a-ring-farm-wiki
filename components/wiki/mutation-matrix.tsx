@@ -153,7 +153,11 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
             </h1>
             <p className="text-pretty text-base text-muted-foreground sm:text-lg">
               {pageMeta.mutations.heroDescription} Browse all {mutationSummary.total}{" "}
-              mutations ranked by multiplier and event rarity.
+              mutations ranked by multiplier and event rarity.{" "}
+              <Link href="/calculator" className="text-primary underline-offset-4 hover:underline">
+                Test harvest value in the calculator
+              </Link>{" "}
+              before buying shop sprays.
             </p>
           </div>
         )}

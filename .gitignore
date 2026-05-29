@@ -16,5 +16,8 @@ node_modules
 .wrangler/
 .DS_Store
 
-# Local Cursor skills (do not commit)
-skills/
+# Local Cursor agent skills (do not commit — see .cursor/README.md)
+.cursor/skills/
+
+# Legacy root-level skills folder only (do not use; kept for old local paths)
+/skills/
