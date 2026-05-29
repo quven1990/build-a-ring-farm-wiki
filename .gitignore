@@ -17,4 +17,4 @@ node_modules
 .DS_Store
 
 # Local Cursor skills (do not commit)
-skills/student-site-compliance-pipeline/
+skills/
