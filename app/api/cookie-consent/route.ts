@@ -1,5 +1,22 @@
 import { NextResponse } from "next/server"
 import { COOKIE_CONSENT_COOKIE, isValidCookieConsentValue } from "@/lib/cookie-consent"
+import { siteConfig } from "@/lib/site-config"
+import { absoluteUrl } from "@/lib/sitemap"
+
+function resolveRedirectTarget(request: Request): string {
+  const fallback = absoluteUrl("/")
+  const referer = request.headers.get("referer")
+  if (!referer) return fallback
+
+  try {
+    const refererUrl = new URL(referer)
+    const siteOrigin = new URL(siteConfig.url).origin
+    if (refererUrl.origin !== siteOrigin) return fallback
+    return referer
+  } catch {
+    return fallback
+  }
+}
 
 export function GET(request: Request) {
   const url = new URL(request.url)
@@ -12,8 +29,7 @@ export function GET(request: Request) {
     )
   }
 
-  const redirectTo = request.headers.get("referer") ?? "/"
-  const response = NextResponse.redirect(redirectTo, 302)
+  const response = NextResponse.redirect(resolveRedirectTarget(request), 302)
   response.cookies.set({
     name: COOKIE_CONSENT_COOKIE,
     value,
@@ -25,4 +41,3 @@ export function GET(request: Request) {
   })
   return response
 }
-
