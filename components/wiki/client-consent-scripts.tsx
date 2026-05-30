@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { ThirdPartyScripts } from "@/components/wiki/third-party-scripts"
 import { cn } from "@/lib/utils"
@@ -20,6 +20,7 @@ function readConsentCookie(): CookieConsentValue | null {
 
 export function ClientConsentScripts() {
   const [consent, setConsent] = useState<CookieConsentValue | null>(null)
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     setConsent(readConsentCookie())
@@ -27,6 +28,22 @@ export function ClientConsentScripts() {
 
   const enabled = consent === "accepted"
   const showBanner = useMemo(() => consent === null, [consent])
+
+  const handleConsent = useCallback(async (value: CookieConsentValue) => {
+    if (submitting) return
+    setSubmitting(true)
+    try {
+      await fetch(`/api/cookie-consent?value=${value}`, {
+        credentials: "same-origin",
+        redirect: "manual",
+      })
+      setConsent(value)
+    } catch {
+      setConsent(value)
+    } finally {
+      setSubmitting(false)
+    }
+  }, [submitting])
 
   return (
     <>
@@ -57,20 +74,22 @@ export function ClientConsentScripts() {
               .
             </p>
             <div className="flex flex-wrap gap-2 sm:flex-nowrap sm:justify-end">
-              <a
-                className="inline-flex h-9 items-center justify-center rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-                href="/api/cookie-consent?value=rejected"
-                onClick={() => setConsent("rejected")}
+              <button
+                type="button"
+                disabled={submitting}
+                className="inline-flex h-9 items-center justify-center rounded-md border border-border bg-background px-3 text-sm font-medium text-foreground transition-colors hover:bg-muted disabled:opacity-60"
+                onClick={() => handleConsent("rejected")}
               >
                 Reject
-              </a>
-              <a
-                className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                href="/api/cookie-consent?value=accepted"
-                onClick={() => setConsent("accepted")}
+              </button>
+              <button
+                type="button"
+                disabled={submitting}
+                className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60"
+                onClick={() => handleConsent("accepted")}
               >
                 Accept
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -78,4 +97,3 @@ export function ClientConsentScripts() {
     </>
   )
 }
-

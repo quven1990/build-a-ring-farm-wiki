@@ -17,18 +17,33 @@ type AdsenseAdProps = {
 
 /**
  * Responsive display ad unit. Set NEXT_PUBLIC_ADSENSE_SLOT_* in env after creating units in AdSense.
+ * Ad markup is mounted imperatively so Google-injected iframes are never reconciled by React.
  */
 export function AdsenseAd({ placement, className }: AdsenseAdProps) {
   const slot = getAdsenseSlot(placement)
-  const pushed = useRef(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!slot || pushed.current) return
+    const container = containerRef.current
+    if (!slot || !container) return
+
+    const ins = document.createElement("ins")
+    ins.className = "adsbygoogle block min-h-[90px] w-full text-center"
+    ins.style.display = "block"
+    ins.setAttribute("data-ad-client", ADSENSE_CLIENT_ID)
+    ins.setAttribute("data-ad-slot", slot)
+    ins.setAttribute("data-ad-format", "auto")
+    ins.setAttribute("data-full-width-responsive", "true")
+    container.appendChild(ins)
+
     try {
       ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-      pushed.current = true
     } catch {
       // Script may not be loaded yet on first paint
+    }
+
+    return () => {
+      container.replaceChildren()
     }
   }, [slot])
 
@@ -45,14 +60,7 @@ export function AdsenseAd({ placement, className }: AdsenseAdProps) {
       <p className="mb-2 text-center text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
         Advertisement
       </p>
-      <ins
-        className="adsbygoogle block min-h-[90px] w-full text-center"
-        style={{ display: "block" }}
-        data-ad-client={ADSENSE_CLIENT_ID}
-        data-ad-slot={slot}
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
+      <div ref={containerRef} className="min-h-[90px] w-full text-center" />
     </aside>
   )
 }
