@@ -232,13 +232,13 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   codes: {
-    title: "Build A Ring Farm Codes | Build A Ring Farm Wiki",
+    title: "Build A Ring Farm Codes (2026) — Active List & Weekly Sync",
     h1: "Build A Ring Farm Codes",
     description:
       "Build A Ring Farm codes synced weekly from public lists — copy redeem codes with community sync status (not in-game verified).",
     heroDescription:
       "Weekly community sync from public sources — copy codes with source counts, not fake daily verification.",
-    ogTitle: "Build A Ring Farm Codes — Active Redeem Codes List",
+    ogTitle: "Build A Ring Farm Codes (2026) — Active Redeem List",
     ogImageAlt: "Build A Ring Farm active promo and redeem codes list",
     breadcrumb: "Codes",
     keywords: [

@@ -10,11 +10,6 @@ export function webSiteJsonLd() {
     url: siteConfig.url,
     description: siteConfig.description,
     inLanguage: "en-US",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteConfig.url}/build-a-ring-wiki`,
-      "query-input": "required name=search_term_string",
-    },
   }
 }
 
