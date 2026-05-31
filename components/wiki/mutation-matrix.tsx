@@ -15,6 +15,8 @@ import {
   formatChance,
   formatMultiplier,
   formatMutationPrice,
+  formatGameDataSyncDate,
+  gameDataSyncMeta,
   getMutationTier,
   mutationSummary,
   mutationTierStyles,
@@ -23,6 +25,7 @@ import {
   type WikiMutation,
 } from "@/lib/mutations-data"
 import { pageMeta } from "@/lib/site-config"
+import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
 import { CloudRain, Coins, ShoppingBag, Sparkles, Zap } from "lucide-react"
 
 type MutationMatrixProps = {
@@ -66,9 +69,15 @@ function StatCell({
 function MutationCard({ mutation, rank }: { mutation: WikiMutation; rank: number }) {
   const tier = getMutationTier(mutation.multiplier)
   const styles = mutationTierStyles[tier]
+  const chanceLabel = mutation.chanceIsEstimate
+    ? `≈${formatChance(mutation.chancePercent)}`
+    : formatChance(mutation.chancePercent)
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-card shadow-sm ring-1 ring-black/[0.03] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md">
+      <div className="absolute right-3 top-3 z-10">
+        <DataConfidenceBadge confidence={mutation.confidence} compact />
+      </div>
       <div className={cn("h-1.5 w-full bg-gradient-to-r", styles.bar)} />
 
       <div className="flex flex-1 flex-col p-5">
@@ -110,7 +119,10 @@ function MutationCard({ mutation, rank }: { mutation: WikiMutation; rank: number
         </div>
 
         <div className="mt-auto grid grid-cols-1 gap-2 min-[400px]:grid-cols-3">
-          <StatCell label="Chance" value={formatChance(mutation.chancePercent)} />
+          <StatCell
+            label="Chance"
+            value={chanceLabel}
+          />
           <StatCell label="Trigger" value={mutation.trigger} />
           <StatCell
             label="Price"
@@ -159,6 +171,12 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
               </Link>{" "}
               before buying shop sprays.
             </p>
+            <div className="mt-6 text-left">
+              <DataConfidenceLegend
+                lastReviewed={formatGameDataSyncDate(gameDataSyncMeta.lastSyncedAt)}
+                summary={`Multipliers & shop prices — weekly sync from ${gameDataSyncMeta.okSourceCount} public lists. Event chance % are estimates.`}
+              />
+            </div>
           </div>
         )}
 

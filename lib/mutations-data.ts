@@ -1,3 +1,6 @@
+import type { DataConfidence } from "@/lib/data-confidence"
+import { wikiMutationsGenerated } from "@/lib/mutations-data.generated"
+
 export type WikiMutation = {
   name: string
   emoji: string
@@ -6,92 +9,17 @@ export type WikiMutation = {
   trigger: string
   price: string | null
   eventOnly: boolean
+  confidence: DataConfidence
+  /** Event proc % are community estimates unless verified in-game */
+  chanceIsEstimate?: boolean
+  /** Public lists that agreed on the last sync (never auto-verified). */
+  sourceCount?: number
+  notes?: string
 }
 
-/** Source: https://buildaringfarm.net/mutations/ */
-export const wikiMutations: WikiMutation[] = [
-  {
-    name: "Honeycomb",
-    emoji: "🍯",
-    multiplier: 6.5,
-    chancePercent: 0.5,
-    trigger: "Bee Swarm",
-    price: null,
-    eventOnly: true,
-  },
-  {
-    name: "Rainbow",
-    emoji: "🌈",
-    multiplier: 5,
-    chancePercent: 1,
-    trigger: "Galaxy",
-    price: "$1T",
-    eventOnly: false,
-  },
-  {
-    name: "Farm",
-    emoji: "🚜",
-    multiplier: 4,
-    chancePercent: 1.5,
-    trigger: "Mega Farm",
-    price: null,
-    eventOnly: true,
-  },
-  {
-    name: "Alien",
-    emoji: "👽",
-    multiplier: 3.25,
-    chancePercent: 2.5,
-    trigger: "UFO",
-    price: null,
-    eventOnly: true,
-  },
-  {
-    name: "Radioactive",
-    emoji: "☢️",
-    multiplier: 3,
-    chancePercent: 2,
-    trigger: "Nuclear",
-    price: "$10B",
-    eventOnly: false,
-  },
-  {
-    name: "Void",
-    emoji: "🌑",
-    multiplier: 2.25,
-    chancePercent: 3,
-    trigger: "Black Hole",
-    price: "$1B",
-    eventOnly: false,
-  },
-  {
-    name: "Autumn",
-    emoji: "🍂",
-    multiplier: 2,
-    chancePercent: 3.5,
-    trigger: "Harvest",
-    price: "$850M",
-    eventOnly: false,
-  },
-  {
-    name: "Frozen",
-    emoji: "❄️",
-    multiplier: 1.75,
-    chancePercent: 4,
-    trigger: "Blizzard",
-    price: "$750M",
-    eventOnly: false,
-  },
-  {
-    name: "Wet",
-    emoji: "💧",
-    multiplier: 1.5,
-    chancePercent: 8,
-    trigger: "Rain",
-    price: "$10M",
-    eventOnly: false,
-  },
-]
+export { gameDataSyncMeta, formatGameDataSyncDate } from "@/lib/game-data-sync-meta"
+
+export const wikiMutations: WikiMutation[] = wikiMutationsGenerated
 
 export type MutationSortOption = "multiplier-desc" | "chance-asc"
 

@@ -1,0 +1,161 @@
+{
+  "lastSyncedAt": "2026-05-31T04:29:45.831Z",
+  "sources": [
+    {
+      "id": "pgg-seeds",
+      "name": "Pro Game Guides — Seeds Index",
+      "url": "https://progameguides.com/roblox/all-build-a-ring-farm-seeds/"
+    },
+    {
+      "id": "pgg-mutations",
+      "name": "Pro Game Guides — Mutations Guide",
+      "url": "https://progameguides.com/roblox/build-a-ring-farm-mutations-multipliers-how-to-get/"
+    },
+    {
+      "id": "gamerant-codes",
+      "name": "Game Rant — Codes",
+      "url": "https://gamerant.com/build-a-ring-farm-codes-roblox/"
+    },
+    {
+      "id": "beebom-codes",
+      "name": "Beebom — Codes",
+      "url": "https://beebom.com/build-a-ring-farm-codes/"
+    },
+    {
+      "id": "techtimes-codes",
+      "name": "Tech Times — Codes",
+      "url": "https://www.techtimes.com/articles/316716/20260516/roblox-build-ring-farm-codes-may-20226-expand-your-farm-grow-crops-reap-rewards.htm"
+    }
+  ],
+  "sourceResults": [
+    {
+      "sourceId": "pgg-seeds",
+      "name": "Pro Game Guides — Seeds Index",
+      "ok": true
+    },
+    {
+      "sourceId": "pgg-mutations",
+      "name": "Pro Game Guides — Mutations Guide",
+      "ok": true
+    },
+    {
+      "sourceId": "gamerant-codes",
+      "name": "Game Rant — Codes",
+      "ok": true
+    },
+    {
+      "sourceId": "beebom-codes",
+      "name": "Beebom — Codes",
+      "ok": true
+    },
+    {
+      "sourceId": "techtimes-codes",
+      "name": "Tech Times — Codes",
+      "ok": true
+    }
+  ],
+  "seedChanges": [],
+  "mutationChanges": [],
+  "mutationsSnapshot": [
+    {
+      "name": "Honeycomb",
+      "emoji": "🍯",
+      "multiplier": 6.5,
+      "chancePercent": 0.5,
+      "trigger": "Bee Swarm",
+      "price": null,
+      "eventOnly": true,
+      "confidence": "community"
+    },
+    {
+      "name": "Rainbow",
+      "emoji": "🌈",
+      "multiplier": 5,
+      "chancePercent": 1,
+      "trigger": "Galaxy",
+      "price": "$1T",
+      "eventOnly": false,
+      "confidence": "community"
+    },
+    {
+      "name": "Farm",
+      "emoji": "🚜",
+      "multiplier": 4,
+      "chancePercent": 1.5,
+      "trigger": "Mega Farm",
+      "price": null,
+      "eventOnly": true,
+      "confidence": "community"
+    },
+    {
+      "name": "Alien",
+      "emoji": "👽",
+      "multiplier": 3.25,
+      "chancePercent": 2.5,
+      "trigger": "UFO",
+      "price": null,
+      "eventOnly": true,
+      "confidence": "community"
+    },
+    {
+      "name": "Radioactive",
+      "emoji": "☢️",
+      "multiplier": 3,
+      "chancePercent": 2,
+      "trigger": "Nuclear",
+      "price": "$10B",
+      "eventOnly": false,
+      "confidence": "community"
+    },
+    {
+      "name": "Void",
+      "emoji": "🌑",
+      "multiplier": 2.25,
+      "chancePercent": 3,
+      "trigger": "Black Hole",
+      "price": "$1B",
+      "eventOnly": false,
+      "confidence": "community"
+    },
+    {
+      "name": "Autumn",
+      "emoji": "🍂",
+      "multiplier": 2,
+      "chancePercent": 3.5,
+      "trigger": "Harvest",
+      "price": "$850M",
+      "eventOnly": false,
+      "confidence": "community"
+    },
+    {
+      "name": "Frozen",
+      "emoji": "❄️",
+      "multiplier": 1.75,
+      "chancePercent": 4,
+      "trigger": "Blizzard",
+      "price": "$750M",
+      "eventOnly": false,
+      "confidence": "community"
+    },
+    {
+      "name": "Wet",
+      "emoji": "💧",
+      "multiplier": 1.5,
+      "chancePercent": 8,
+      "trigger": "Rain",
+      "price": "$10M",
+      "eventOnly": false,
+      "confidence": "community"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-05-31",
+      "summary": "Synced 51 seeds & 9 mutations from 5 public lists. No consensus field changes this run."
+    },
+    {
+      "date": "2026-05-31",
+      "summary": "Synced 51 seeds & 9 mutations from 5 public lists. No consensus field changes this run."
+    }
+  ]
+}

@@ -41,16 +41,37 @@ const nextConfig = {
       "/codes?utm_source=youtube&utm_medium=comment&utm_campaign=yt_codes"
     const ytCalculator =
       "/calculator?utm_source=youtube&utm_medium=comment&utm_campaign=yt_calculator"
+    const redditCodes =
+      "/codes?utm_source=reddit&utm_medium=post&utm_campaign=reddit_codes"
+    const redditCalculator =
+      "/calculator?utm_source=reddit&utm_medium=post&utm_campaign=reddit_calculator"
+    const discordCodes =
+      "/codes?utm_source=discord&utm_medium=message&utm_campaign=discord_codes"
+    const discordCalculator =
+      "/calculator?utm_source=discord&utm_medium=message&utm_campaign=discord_calculator"
+    const forumCodes =
+      "/codes?utm_source=forum&utm_medium=comment&utm_campaign=forum_codes"
+    const forumCalculator =
+      "/calculator?utm_source=forum&utm_medium=comment&utm_campaign=forum_calculator"
 
     return [
       { source: "/home", destination: "/", permanent: true },
       { source: "/index", destination: "/", permanent: true },
       { source: "/build-a-ring", destination: "/build-a-ring-farm", permanent: true },
       { source: "/build-a-ring/", destination: "/build-a-ring-farm", permanent: true },
-      /** Short links for YouTube comments — tracks campaign in Plausible. */
+      /** Short links for outreach — UTM tracked in Plausible. */
       { source: "/yt", destination: ytCodes, permanent: false },
       { source: "/yt/codes", destination: ytCodes, permanent: false },
       { source: "/yt/calculator", destination: ytCalculator, permanent: false },
+      { source: "/reddit", destination: redditCodes, permanent: false },
+      { source: "/reddit/codes", destination: redditCodes, permanent: false },
+      { source: "/reddit/calculator", destination: redditCalculator, permanent: false },
+      { source: "/discord", destination: discordCodes, permanent: false },
+      { source: "/discord/codes", destination: discordCodes, permanent: false },
+      { source: "/discord/calculator", destination: discordCalculator, permanent: false },
+      { source: "/forum", destination: forumCodes, permanent: false },
+      { source: "/forum/codes", destination: forumCodes, permanent: false },
+      { source: "/forum/calculator", destination: forumCalculator, permanent: false },
     ]
   },
 }

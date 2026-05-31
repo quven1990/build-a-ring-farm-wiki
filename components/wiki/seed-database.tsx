@@ -15,15 +15,19 @@ import { cn } from "@/lib/utils"
 import {
   formatBaseIncome,
   formatCompactNumber,
+  formatGameDataSyncDate,
   formatGrowTime,
   formatRollChance,
   rarityConfig,
   rarityFilters,
   seeds,
+  seedsDataMeta,
+  resolveSeedConfidence,
   type RarityFilter,
   type Seed,
   type SortOption,
 } from "@/lib/seeds-data"
+import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
 import { pageMeta } from "@/lib/site-config"
 import { Calculator, Search } from "lucide-react"
 
@@ -65,6 +69,7 @@ function sortSeeds(list: Seed[], sort: SortOption): Seed[] {
 
 function SeedCard({ seed }: { seed: Seed }) {
   const config = rarityConfig[seed.rarity]
+  const confidence = resolveSeedConfidence(seed)
 
   return (
     <article
@@ -74,6 +79,9 @@ function SeedCard({ seed }: { seed: Seed }) {
         config.borderClass
       )}
     >
+      <div className="absolute right-3 top-3">
+        <DataConfidenceBadge confidence={confidence} compact />
+      </div>
       <span
         className="mb-3 block text-5xl leading-none drop-shadow-md"
         role="img"
@@ -121,6 +129,9 @@ function SeedCard({ seed }: { seed: Seed }) {
       <div className="mt-4 border-t border-border pt-3 text-sm">
         <span className="text-muted-foreground">Source </span>
         <span className="font-medium text-foreground">{seed.source}</span>
+        {seed.notes ? (
+          <p className="mt-2 text-left text-xs text-muted-foreground">{seed.notes}</p>
+        ) : null}
       </div>
     </article>
   )
@@ -155,6 +166,12 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
           <p className="text-pretty text-muted-foreground sm:text-lg">
             {pageMeta.seeds.heroDescription}
           </p>
+          <div className="mt-6">
+            <DataConfidenceLegend
+              lastReviewed={formatGameDataSyncDate(seedsDataMeta.lastSyncedAt)}
+              summary={`${seeds.length} crops — weekly sync from ${seedsDataMeta.sourceCount} public gaming lists (never auto-verified).`}
+            />
+          </div>
         </div>
 
         <div className="mb-8 rounded-2xl border border-border/80 bg-card/90 p-4 shadow-sm backdrop-blur-sm sm:p-5">

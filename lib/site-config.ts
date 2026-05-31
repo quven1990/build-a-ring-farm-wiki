@@ -104,7 +104,7 @@ export const sitemapRouteSettings: Record<
   "/events": { priority: 0.8, changeFrequency: "weekly" },
   "/rings": { priority: 0.8, changeFrequency: "monthly" },
   "/calculator": { priority: 0.9, changeFrequency: "monthly" },
-  "/codes": { priority: 0.95, changeFrequency: "daily" },
+  "/codes": { priority: 0.95, changeFrequency: "weekly" },
   "/progression": { priority: 0.85, changeFrequency: "monthly" },
   "/faq": { priority: 0.7, changeFrequency: "monthly" },
 }

@@ -27,7 +27,7 @@ export const guideSitemapSettings: Record<
 > = {
   "/build-a-ring-farm": { priority: 0.88, changeFrequency: "weekly" },
   "/build-a-ring-guide": { priority: 0.88, changeFrequency: "monthly" },
-  "/build-a-ring-codes": { priority: 0.92, changeFrequency: "daily" },
+  "/build-a-ring-codes": { priority: 0.92, changeFrequency: "weekly" },
   "/build-a-ring-calculator": { priority: 0.87, changeFrequency: "monthly" },
   "/build-a-ring-wiki": { priority: 0.86, changeFrequency: "weekly" },
   "/build-a-ring-faq": { priority: 0.75, changeFrequency: "monthly" },

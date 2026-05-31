@@ -1,4 +1,6 @@
 import seedsJson from "./seeds-data.json"
+import type { DataConfidence } from "@/lib/data-confidence"
+import { formatGameDataSyncDate, gameDataSyncMeta } from "@/lib/game-data-sync-meta"
 
 export type SeedRarity =
   | "common"
@@ -22,9 +24,46 @@ export type Seed = {
   rollWeight: number
   seedCost: number | null
   source: string
+  /** Override inferred confidence when you have in-game proof */
+  confidence?: DataConfidence
+  /** Public lists that agreed on the last sync (never auto-verified). */
+  sourceCount?: number
+  notes?: string
 }
 
+export const seedsDataMeta = {
+  lastReviewed: gameDataSyncMeta.lastSyncedAt.slice(0, 10),
+  lastSyncedAt: gameDataSyncMeta.lastSyncedAt,
+  sourceCount: gameDataSyncMeta.okSourceCount,
+  totalSeeds: (seedsJson as Seed[]).length,
+} as const
+
+export { formatGameDataSyncDate }
+
 export const seeds = seedsJson as Seed[]
+
+export function resolveSeedConfidence(seed: Seed): DataConfidence {
+  if (seed.confidence) return seed.confidence
+  const missingIncome = seed.baseIncome == null || seed.baseIncome <= 0
+  const missingGrow = seed.growTimeSeconds == null
+  if (missingIncome || missingGrow) return "needs-testing"
+  if (seed.sourceCount != null && seed.sourceCount >= 2) return "community"
+  if (seed.sourceCount != null && seed.sourceCount >= 1) return "community"
+  return "community"
+}
+
+export function countSeedsByConfidence(): Record<DataConfidence, number> {
+  const counts: Record<DataConfidence, number> = {
+    verified: 0,
+    community: 0,
+    conflicting: 0,
+    "needs-testing": 0,
+  }
+  for (const seed of seeds) {
+    counts[resolveSeedConfidence(seed)] += 1
+  }
+  return counts
+}
 
 export const rarityOrder: SeedRarity[] = [
   "common",

@@ -8,7 +8,9 @@
     "growTimeSeconds": 3,
     "rollWeight": 80,
     "seedCost": 100,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "beetroot",
@@ -19,7 +21,9 @@
     "growTimeSeconds": 3.5,
     "rollWeight": 75,
     "seedCost": 250,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "pumpkin",
@@ -30,7 +34,9 @@
     "growTimeSeconds": 4,
     "rollWeight": 65,
     "seedCost": 500,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "wheat",
@@ -41,7 +47,9 @@
     "growTimeSeconds": 5,
     "rollWeight": 10,
     "seedCost": 600,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "melon",
@@ -52,7 +60,9 @@
     "growTimeSeconds": 6,
     "rollWeight": 8,
     "seedCost": 1200,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "onion",
@@ -63,7 +73,9 @@
     "growTimeSeconds": 6,
     "rollWeight": 5,
     "seedCost": 2500,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "cantaloupe",
@@ -74,7 +86,9 @@
     "growTimeSeconds": 7,
     "rollWeight": 4,
     "seedCost": 3500,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "watermelon",
@@ -85,7 +99,9 @@
     "growTimeSeconds": 10,
     "rollWeight": 3,
     "seedCost": 5000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "blueberry",
@@ -96,7 +112,9 @@
     "growTimeSeconds": 9,
     "rollWeight": 2,
     "seedCost": 15000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "cabbage",
@@ -107,7 +125,9 @@
     "growTimeSeconds": 11,
     "rollWeight": 1,
     "seedCost": 40000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "grape",
@@ -118,7 +138,9 @@
     "growTimeSeconds": 13,
     "rollWeight": 0.6,
     "seedCost": 65000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "peach",
@@ -129,7 +151,9 @@
     "growTimeSeconds": 12,
     "rollWeight": 0.5,
     "seedCost": 120000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "bamboo",
@@ -140,7 +164,9 @@
     "growTimeSeconds": 10,
     "rollWeight": 0.4,
     "seedCost": 90000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "corn",
@@ -151,7 +177,9 @@
     "growTimeSeconds": 12,
     "rollWeight": 0.45,
     "seedCost": 200000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "plum",
@@ -162,7 +190,9 @@
     "growTimeSeconds": 14,
     "rollWeight": 0.3,
     "seedCost": 300000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "cauliflower",
@@ -173,7 +203,9 @@
     "growTimeSeconds": 17,
     "rollWeight": 0.2,
     "seedCost": 500000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "nectarine",
@@ -184,7 +216,9 @@
     "growTimeSeconds": 16,
     "rollWeight": 0.18,
     "seedCost": 600000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "sunflower",
@@ -195,7 +229,9 @@
     "growTimeSeconds": 14,
     "rollWeight": 0.15,
     "seedCost": 650000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "citrus",
@@ -206,7 +242,9 @@
     "growTimeSeconds": 19,
     "rollWeight": 0.1,
     "seedCost": 850000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "honeysuckle",
@@ -217,7 +255,9 @@
     "growTimeSeconds": 14,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "twinflame tulip",
@@ -228,7 +268,9 @@
     "growTimeSeconds": 15,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "martian melon",
@@ -239,7 +281,9 @@
     "growTimeSeconds": 15,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "spring onion",
@@ -250,7 +294,9 @@
     "growTimeSeconds": 25,
     "rollWeight": 0.008,
     "seedCost": 2500000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "mango",
@@ -261,7 +307,9 @@
     "growTimeSeconds": 23,
     "rollWeight": 0.006,
     "seedCost": 4000000,
-    "source": "Seed Collector"
+    "source": "Seed Collector",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "mushroom",
@@ -272,7 +320,9 @@
     "growTimeSeconds": 30,
     "rollWeight": 0.004,
     "seedCost": 7000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "banana",
@@ -283,7 +333,9 @@
     "growTimeSeconds": 27,
     "rollWeight": 0.003,
     "seedCost": 9000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "conflicting",
+    "sourceCount": 1
   },
   {
     "id": "amulet anemone",
@@ -294,7 +346,9 @@
     "growTimeSeconds": 26,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "strawberry",
@@ -305,7 +359,9 @@
     "growTimeSeconds": 35,
     "rollWeight": 0.0002,
     "seedCost": 30000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "glowshroom",
@@ -316,7 +372,9 @@
     "growTimeSeconds": 38,
     "rollWeight": 0.00015,
     "seedCost": 45000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "beanstalk",
@@ -327,7 +385,9 @@
     "growTimeSeconds": 40,
     "rollWeight": 0.0001,
     "seedCost": 55000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "conflicting",
+    "sourceCount": 1
   },
   {
     "id": "tomato",
@@ -338,7 +398,9 @@
     "growTimeSeconds": 45,
     "rollWeight": 0.00005,
     "seedCost": 100000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "starfruit",
@@ -349,7 +411,9 @@
     "growTimeSeconds": 42,
     "rollWeight": 0,
     "seedCost": 130000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "apple",
@@ -360,7 +424,9 @@
     "growTimeSeconds": 50,
     "rollWeight": 0.00002,
     "seedCost": 500000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "cherry blossom",
@@ -371,7 +437,9 @@
     "growTimeSeconds": 55,
     "rollWeight": 0.00001,
     "seedCost": 1500000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "blood orange",
@@ -382,7 +450,9 @@
     "growTimeSeconds": 50,
     "rollWeight": 0.000008,
     "seedCost": 1200000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "pineapple",
@@ -393,7 +463,9 @@
     "growTimeSeconds": 52,
     "rollWeight": 0,
     "seedCost": 800000000,
-    "source": "Seed Packs"
+    "source": "Seed Packs",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "diamond blossom",
@@ -404,7 +476,9 @@
     "growTimeSeconds": 58,
     "rollWeight": 0,
     "seedCost": 2500000000,
-    "source": "Seed Collector"
+    "source": "Seed Collector",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "pomegranate",
@@ -415,7 +489,9 @@
     "growTimeSeconds": 55,
     "rollWeight": 0,
     "seedCost": 4000000000,
-    "source": "Seed Packs"
+    "source": "Seed Packs",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "golden apple",
@@ -426,7 +502,9 @@
     "growTimeSeconds": 56,
     "rollWeight": 0.000006,
     "seedCost": 5000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "hornet",
@@ -437,7 +515,10 @@
     "growTimeSeconds": null,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "notes": "Stats TBA — verify in-game after next patch.",
+    "confidence": "needs-testing",
+    "sourceCount": 0
   },
   {
     "id": "kiwi",
@@ -448,7 +529,9 @@
     "growTimeSeconds": 54,
     "rollWeight": 0,
     "seedCost": 60000000000,
-    "source": "Seed Packs"
+    "source": "Seed Packs",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "moonflower",
@@ -459,7 +542,9 @@
     "growTimeSeconds": 58,
     "rollWeight": 0.0000035,
     "seedCost": 70000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "pepper",
@@ -470,7 +555,9 @@
     "growTimeSeconds": 60,
     "rollWeight": 0.0000018,
     "seedCost": 900000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "void fruit",
@@ -481,7 +568,9 @@
     "growTimeSeconds": 70,
     "rollWeight": 9e-7,
     "seedCost": 15000000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "passion fruit",
@@ -492,7 +581,9 @@
     "growTimeSeconds": 50,
     "rollWeight": 2.5e-7,
     "seedCost": 50000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "dragonfruit",
@@ -503,7 +594,9 @@
     "growTimeSeconds": 55,
     "rollWeight": 0,
     "seedCost": 8000000000,
-    "source": "Seed Packs"
+    "source": "Seed Packs",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "durian",
@@ -514,7 +607,9 @@
     "growTimeSeconds": 60,
     "rollWeight": 5e-10,
     "seedCost": 100000000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "ghost pepper",
@@ -525,7 +620,9 @@
     "growTimeSeconds": 55,
     "rollWeight": 1e-11,
     "seedCost": 275000000000000,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "soulbound orchid",
@@ -536,7 +633,9 @@
     "growTimeSeconds": 68,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   },
   {
     "id": "queen blossom",
@@ -547,7 +646,10 @@
     "growTimeSeconds": null,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "notes": "Stats TBA — Queen Bee event crop; confirm in-game.",
+    "confidence": "needs-testing",
+    "sourceCount": 0
   },
   {
     "id": "truckers delight",
@@ -558,6 +660,8 @@
     "growTimeSeconds": 62,
     "rollWeight": 0,
     "seedCost": 0,
-    "source": "Rolling"
+    "source": "Rolling",
+    "confidence": "community",
+    "sourceCount": 1
   }
 ]
