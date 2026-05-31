@@ -38,10 +38,5 @@ jobs:
             echo "No code list changes to commit."
             exit 0
           fi
-          git commit -m "$(cat <<'EOF'
-chore: weekly community codes sync.
-
-Automated scan of public Build A Ring Farm code lists; updates codes-data.ts and sync changelog only.
-EOF
-)"
+          git commit -m "chore: weekly community codes sync" -m "Automated scan of public Build A Ring Farm code lists; updates codes-data.ts and sync changelog only."
           git push
