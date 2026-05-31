@@ -45,7 +45,7 @@ export const faqByPage: Record<string, FAQEntry[]> = {
     {
       question: "How often are codes updated?",
       answer:
-        "An automated job scans 10 public code lists every Monday — including Pro Game Guides, Pocket Tactics, Radio Times, GamesRadar+, Destructoid, Beebom, and game wikis — and updates this page. The banner at the top shows the last sync time and which sources were checked. We never mark codes as in-game verified unless explicitly tested.",
+        "An automated job refreshes this list every Monday from major gaming-media code roundups. We do not play-test every string — always redeem in-game to confirm.",
     },
     {
       question: "Where do I paste Build A Ring Farm codes?",

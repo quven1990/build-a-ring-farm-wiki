@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-05-31T01:40:49.639Z",
+  "lastSyncedAt": "2026-05-31T01:44:25.818Z",
   "sources": [
     {
       "id": "progameguides",
@@ -30,21 +30,6 @@
       "id": "beebom",
       "name": "Beebom",
       "url": "https://beebom.com/build-a-ring-farm-codes/"
-    },
-    {
-      "id": "buildaringfarm-net",
-      "name": "buildaringfarm.net",
-      "url": "https://buildaringfarm.net/codes/"
-    },
-    {
-      "id": "buildaringfarm-co",
-      "name": "buildaringfarm.co",
-      "url": "https://buildaringfarm.co/codes/"
-    },
-    {
-      "id": "buildaringfarmgame-wiki",
-      "name": "buildaringfarmgame.wiki",
-      "url": "https://buildaringfarmgame.wiki/"
     },
     {
       "id": "allthings",
@@ -96,27 +81,6 @@
       "count": 7
     },
     {
-      "sourceId": "buildaringfarm-net",
-      "name": "buildaringfarm.net",
-      "url": "https://buildaringfarm.net/codes/",
-      "ok": true,
-      "count": 7
-    },
-    {
-      "sourceId": "buildaringfarm-co",
-      "name": "buildaringfarm.co",
-      "url": "https://buildaringfarm.co/codes/",
-      "ok": true,
-      "count": 7
-    },
-    {
-      "sourceId": "buildaringfarmgame-wiki",
-      "name": "buildaringfarmgame.wiki",
-      "url": "https://buildaringfarmgame.wiki/",
-      "ok": true,
-      "count": 6
-    },
-    {
       "sourceId": "allthings",
       "name": "AllThings.how",
       "url": "https://allthings.how/build-a-ring-farm-codes-latest-working-list/",
@@ -139,8 +103,8 @@
     "2KLIKES": "1x Tropical Seed Pack",
     "BARF:3": "1x Acid Spray",
     "THANKYOU": "1x Autumn Spray",
-    "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE1": "3 Strong Fertilizers",
+    "UPDATE2": "1x Tropical Seed Pack",
     "PLANTRUSH": "1x Plant Rush Boss Box"
   },
   "archived": [
@@ -151,6 +115,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-05-31",
+      "summary": "7 codes matched across 7 public gaming lists. Dropped: RELATED."
+    },
     {
       "date": "2026-05-31",
       "summary": "Synced 7 codes from 10/10 public sources. Removed from public lists: RELATED."

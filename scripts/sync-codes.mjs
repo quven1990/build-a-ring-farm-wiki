@@ -176,16 +176,10 @@ async function main() {
   )
 
   const summaryParts = [
-    `Synced ${merged.length} codes from ${okSources.length}/${CODE_SYNC_SOURCES.length} public sources.`,
+    `${merged.length} codes matched across ${okSources.length} public gaming lists.`,
   ]
-  if (added.length) summaryParts.push(`Added: ${added.join(", ")}.`)
-  if (removed.length) summaryParts.push(`Removed from public lists: ${removed.join(", ")}.`)
-  if (!added.length && !removed.length) summaryParts.push("No code list changes.")
-
-  const failedSources = sourceResults.filter((item) => !item.ok)
-  if (failedSources.length) {
-    summaryParts.push(`Fetch warnings: ${failedSources.map((s) => s.name).join(", ")}.`)
-  }
+  if (added.length) summaryParts.push(`New: ${added.join(", ")}.`)
+  if (removed.length) summaryParts.push(`Dropped: ${removed.join(", ")}.`)
 
   const changelogEntry = {
     date: today,
@@ -232,10 +226,6 @@ async function main() {
  * @param {{ lastSyncedAt: string, archived?: Array<{ code: string, reward: string, removedAt: string }> }} syncState
  */
 function generateCodesDataTs(merged, overrides, codeFirstSeen, syncState) {
-  const sourceNameById = Object.fromEntries(
-    CODE_SYNC_SOURCES.map((source) => [source.id, source.name])
-  )
-
   const entries = merged.map((item) => {
     const sourceCount = item.sourceIds.length
     const status =
@@ -243,14 +233,12 @@ function generateCodesDataTs(merged, overrides, codeFirstSeen, syncState) {
     const reward = overrides[item.code]?.reward ?? item.reward ?? "See in-game reward"
     const firstSeen = codeFirstSeen[item.code] ?? syncState.lastSyncedAt.slice(0, 10)
     const isNew = isWithinDays(firstSeen, NEW_CODE_DAYS)
-    const sources = item.sourceIds.map((id) => sourceNameById[id] ?? id)
 
     return {
       code: item.code,
       reward: reward.replace(/\\/g, "\\\\").replace(/"/g, '\\"'),
       status,
       sourceCount,
-      sources,
       firstSeen,
       isNew,
     }
@@ -270,9 +258,7 @@ function generateCodesDataTs(merged, overrides, codeFirstSeen, syncState) {
     code: "${item.code}",
     reward: "${item.reward}",
     status: "${item.status}",
-    sourceCount: ${item.sourceCount},
-    sources: ${JSON.stringify(item.sources)},
-    firstSeen: "${item.firstSeen}",${item.isNew ? "\n    isNew: true," : ""}
+    sourceCount: ${item.sourceCount},${item.isNew ? "\n    isNew: true," : ""}
   }`
     )
     .join(",\n")
@@ -297,24 +283,18 @@ import syncState from "./codes-sync-state.json"
 
 export type CodeStatus = "verified" | "community" | "needs-testing"
 
-/** Mirrors lib/codes-sync-state.json for use in React server/client components. */
+/** Public sync metadata — no third-party URLs exposed on the codes page. */
 export const codesSyncMeta = {
   lastSyncedAt: syncState.lastSyncedAt,
-  sources: syncState.sources,
-  sourceResults: syncState.sourceResults,
-  changelog: syncState.changelog,
+  sourceCount: syncState.sources.length,
 } as const
 
 export type WikiCode = {
   code: string
   reward: string
   status: CodeStatus
-  /** Number of public lists that included this code on last sync. */
+  /** Number of gaming-media lists that included this code on last sync. */
   sourceCount: number
-  /** Human-readable source names from last sync. */
-  sources: string[]
-  /** ISO date when this code first appeared in our sync. */
-  firstSeen: string
   isNew?: boolean
 }
 

@@ -6,24 +6,18 @@ import syncState from "./codes-sync-state.json"
 
 export type CodeStatus = "verified" | "community" | "needs-testing"
 
-/** Mirrors lib/codes-sync-state.json for use in React server/client components. */
+/** Public sync metadata — no third-party URLs exposed on the codes page. */
 export const codesSyncMeta = {
   lastSyncedAt: syncState.lastSyncedAt,
-  sources: syncState.sources,
-  sourceResults: syncState.sourceResults,
-  changelog: syncState.changelog,
+  sourceCount: syncState.sources.length,
 } as const
 
 export type WikiCode = {
   code: string
   reward: string
   status: CodeStatus
-  /** Number of public lists that included this code on last sync. */
+  /** Number of gaming-media lists that included this code on last sync. */
   sourceCount: number
-  /** Human-readable source names from last sync. */
-  sources: string[]
-  /** ISO date when this code first appeared in our sync. */
-  firstSeen: string
   isNew?: boolean
 }
 
@@ -38,63 +32,49 @@ export const wikiCodes: WikiCode[] = [
     code: "100KVISITS",
     reward: "5-minute Time Skip (some sources report cash instead — check in-game)",
     status: "community",
-    sourceCount: 10,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.net","buildaringfarm.co","buildaringfarmgame.wiki","AllThings.how"],
-    firstSeen: "2026-05-31",
+    sourceCount: 7,
     isNew: true,
   },
   {
     code: "2KLIKES",
     reward: "1x Tropical Seed Pack",
     status: "community",
-    sourceCount: 10,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.net","buildaringfarm.co","buildaringfarmgame.wiki","AllThings.how"],
-    firstSeen: "2026-05-31",
+    sourceCount: 7,
     isNew: true,
   },
   {
     code: "BARF:3",
     reward: "1x Acid Spray",
     status: "community",
-    sourceCount: 10,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.net","buildaringfarm.co","buildaringfarmgame.wiki","AllThings.how"],
-    firstSeen: "2026-05-31",
+    sourceCount: 7,
     isNew: true,
   },
   {
     code: "THANKYOU",
     reward: "1x Autumn Spray",
     status: "community",
-    sourceCount: 10,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.net","buildaringfarm.co","buildaringfarmgame.wiki","AllThings.how"],
-    firstSeen: "2026-05-31",
-    isNew: true,
-  },
-  {
-    code: "UPDATE2",
-    reward: "1x Tropical Seed Pack",
-    status: "community",
-    sourceCount: 10,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.net","buildaringfarm.co","buildaringfarmgame.wiki","AllThings.how"],
-    firstSeen: "2026-05-31",
+    sourceCount: 7,
     isNew: true,
   },
   {
     code: "UPDATE1",
     reward: "3 Strong Fertilizers",
     status: "community",
-    sourceCount: 9,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.co","buildaringfarmgame.wiki","AllThings.how"],
-    firstSeen: "2026-05-31",
+    sourceCount: 7,
+    isNew: true,
+  },
+  {
+    code: "UPDATE2",
+    reward: "1x Tropical Seed Pack",
+    status: "community",
+    sourceCount: 7,
     isNew: true,
   },
   {
     code: "PLANTRUSH",
     reward: "1x Plant Rush Boss Box",
     status: "community",
-    sourceCount: 8,
-    sources: ["Pro Game Guides","Pocket Tactics","Radio Times","GamesRadar+","Destructoid","Beebom","buildaringfarm.net","buildaringfarm.co"],
-    firstSeen: "2026-05-31",
+    sourceCount: 6,
     isNew: true,
   }
 ]

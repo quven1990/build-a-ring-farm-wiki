@@ -1,15 +1,10 @@
 /**
- * Public pages scanned by scripts/sync-codes.mjs — no login required.
- *
- * Tier notes (for humans; all sources count equally in consensus math):
- * - Tier A: major gaming media (PGG, Pocket Tactics, Radio Times, GamesRadar+, Destructoid, Beebom)
- * - Tier B: game-specific wikis (buildaringfarm.net, buildaringfarm.co, buildaringfarmgame.wiki)
- * - Tier C: codes aggregators (AllThings.how)
+ * Public gaming-media pages scanned by scripts/sync-codes.mjs — no login required.
+ * Competitor wiki domains are intentionally excluded (no scrape, no outbound links).
  *
  * Official Gamecreates Discord #game-codes is the true source but requires login — not scraped.
  */
 export const CODE_SYNC_SOURCES = [
-  // Tier A — major Roblox / gaming media
   {
     id: "progameguides",
     name: "Pro Game Guides",
@@ -40,23 +35,6 @@ export const CODE_SYNC_SOURCES = [
     name: "Beebom",
     url: "https://beebom.com/build-a-ring-farm-codes/",
   },
-  // Tier B — game-focused wikis / guides
-  {
-    id: "buildaringfarm-net",
-    name: "buildaringfarm.net",
-    url: "https://buildaringfarm.net/codes/",
-  },
-  {
-    id: "buildaringfarm-co",
-    name: "buildaringfarm.co",
-    url: "https://buildaringfarm.co/codes/",
-  },
-  {
-    id: "buildaringfarmgame-wiki",
-    name: "buildaringfarmgame.wiki",
-    url: "https://buildaringfarmgame.wiki/",
-  },
-  // Tier C — codes specialists
   {
     id: "allthings",
     name: "AllThings.how",
