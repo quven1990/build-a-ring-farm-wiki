@@ -23,7 +23,7 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: a17c720d27e1e3b502bef6b0d57c5472
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Verify Cloudflare API token
         env:
@@ -68,7 +68,7 @@ jobs:
           version: 10
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: pnpm
