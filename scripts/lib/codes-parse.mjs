@@ -17,9 +17,11 @@ const CODE_DENYLIST = new Set([
   "HTTPS",
   "IMAGE",
   "MAY",
+  "MILESTONES",
   "NEW",
   "NEWS",
   "REDEEM",
+  "RELATED",
   "RING",
   "ROBLOX",
   "SETTINGS",
@@ -30,9 +32,15 @@ const CODE_DENYLIST = new Set([
   "WORKING",
 ])
 
+/** Known typos / alternate spellings on third-party lists. */
+const CODE_ALIASES = {
+  BARF3: "BARF:3",
+}
+
 /** @param {string} code */
 export function normalizeCode(code) {
-  return code.trim().toUpperCase()
+  const normalized = code.trim().toUpperCase()
+  return CODE_ALIASES[normalized] ?? normalized
 }
 
 /** @param {string} reward */
@@ -127,6 +135,89 @@ export function extractCodeListFromProse(text) {
 }
 
 /** @param {string} html @returns {ParsedCode[]} */
+export function extractFromProGameGuidesHtml(html) {
+  /** @type {ParsedCode[]} */
+  const found = []
+  const pattern =
+    /<span class="code-text">([A-Z0-9:]+)<\/span>[\s\S]*?<span class="description-text">([^<]+)<\/span>/gi
+  for (const match of html.matchAll(pattern)) {
+    const code = normalizeCode(match[1])
+    if (!isLikelyGameCode(code)) continue
+    found.push({ code, reward: normalizeReward(match[2]) })
+  }
+  return found
+}
+
+/** @param {string} html @returns {ParsedCode[]} */
+export function extractFromPocketTacticsHtml(html) {
+  /** @type {ParsedCode[]} */
+  const found = []
+  const pattern = /<strong>([A-Z0-9:]+)<\/strong>\s*-\s*([^<]+)/gi
+  for (const match of html.matchAll(pattern)) {
+    const code = normalizeCode(match[1])
+    if (!isLikelyGameCode(code)) continue
+    found.push({ code, reward: normalizeReward(match[2]) })
+  }
+  return found
+}
+
+/** @param {string} html @returns {ParsedCode[]} */
+export function extractFromAllthingsHtml(html) {
+  /** @type {ParsedCode[]} */
+  const found = []
+  const pattern =
+    /<span>([A-Z0-9:]+)<\/span>[\s\S]*?[—–-]\s*([^<]+)<\/li>/gi
+  for (const match of html.matchAll(pattern)) {
+    const code = normalizeCode(match[1])
+    if (!isLikelyGameCode(code)) continue
+    found.push({ code, reward: normalizeReward(match[2]) })
+  }
+  return found
+}
+
+/** @param {string} html @returns {ParsedCode[]} */
+export function extractFromRadioTimesHtml(html) {
+  /** @type {ParsedCode[]} */
+  const found = []
+  const pattern =
+    /<strong>([A-Z0-9:]+)\s*[–—-]\s*<\/strong>\s*([^<]+)<\/li>/gi
+  for (const match of html.matchAll(pattern)) {
+    const code = normalizeCode(match[1])
+    if (!isLikelyGameCode(code)) continue
+    found.push({ code, reward: normalizeReward(match[2]) })
+  }
+  return found
+}
+
+/** @param {string} html @returns {ParsedCode[]} */
+export function extractFromBuildaringFarmNetHtml(html) {
+  /** @type {ParsedCode[]} */
+  const found = []
+  const pattern =
+    /data-code="([A-Z0-9:]+)"[^>]*>[\s\S]*?<div[^>]*>([^<]+)<\/div>/gi
+  for (const match of html.matchAll(pattern)) {
+    const code = normalizeCode(match[1])
+    if (!isLikelyGameCode(code)) continue
+    found.push({ code, reward: normalizeReward(match[2]) })
+  }
+  return found
+}
+
+/** @param {string} html @returns {ParsedCode[]} */
+export function extractFromGameWikiTableHtml(html) {
+  /** @type {ParsedCode[]} */
+  const found = []
+  const pattern =
+    /<code[^>]*>([A-Z0-9:]+)<\/code>\s*<\/td>\s*<td[^>]*>([^<]+)<\/td>/gi
+  for (const match of html.matchAll(pattern)) {
+    const code = normalizeCode(match[1])
+    if (!isLikelyGameCode(code)) continue
+    found.push({ code, reward: normalizeReward(match[2]) })
+  }
+  return found
+}
+
+/** @param {string} html @returns {ParsedCode[]} */
 export function extractFromBeebomHtml(html) {
   /** @type {ParsedCode[]} */
   const found = []
@@ -190,29 +281,7 @@ export function extractFromBuildaringFarmHtml(html) {
 
 /** @param {string} html @returns {ParsedCode[]} */
 export function extractFromDestructoidHtml(html) {
-  const fromList = extractFromListItemHtml(html)
-  if (fromList.length > 0) return fromList
-
-  const text = htmlToText(html)
-  /** @type {ParsedCode[]} */
-  const found = []
-  for (const line of text.split(/\s{2,}|\n/g)) {
-    const match = line.match(
-      /^([A-Z0-9:]+)\s*[—–-]\s*(?:Redeem for\s*)?(.+?)\.?(?:\s+Image|\s+Related|\s*$)/i
-    )
-    if (!match) continue
-    const code = normalizeCode(match[1])
-    if (!isLikelyGameCode(code)) continue
-    let reward = normalizeReward(match[2])
-    reward = reward.replace(/\s+[A-Z0-9_:.-]{4,}\s*$/, "").trim()
-    found.push({ code, reward })
-  }
-  for (const code of extractCodeListFromProse(text)) {
-    if (!found.some((item) => item.code === code)) {
-      found.push({ code, reward: "" })
-    }
-  }
-  return found
+  return extractFromListItemHtml(html)
 }
 
 /**
@@ -222,6 +291,20 @@ export function extractFromDestructoidHtml(html) {
  */
 export function extractCodesForSource(sourceId, html) {
   switch (sourceId) {
+    case "progameguides":
+      return extractFromProGameGuidesHtml(html)
+    case "pockettactics":
+      return extractFromPocketTacticsHtml(html)
+    case "radiotimes":
+      return extractFromRadioTimesHtml(html)
+    case "allthings":
+      return extractFromAllthingsHtml(html)
+    case "buildaringfarm-net":
+      return extractFromBuildaringFarmNetHtml(html)
+    case "buildaringfarmgame-wiki":
+      return extractFromGameWikiTableHtml(html)
+    case "gamingdose":
+      return extractFromBeebomHtml(html)
     case "beebom":
       return extractFromBeebomHtml(html)
     case "gamesradar":

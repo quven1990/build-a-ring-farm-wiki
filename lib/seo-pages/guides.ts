@@ -546,7 +546,7 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "p",
-        text: "Codes: added weekly GitHub Action (scripts/sync-codes.mjs) that scans public lists — buildaringfarm.co, Destructoid, Beebom, GamesRadar+ — and updates /codes without in-game testing. Labels changed to Community sync (2+ sources) or Single source; rewards use scripts/codes-sync-overrides.json when community sources disagree (e.g. 100KVISITS time skip vs cash). Never auto-marked Verified.",
+        text: "Codes: added weekly GitHub Action (scripts/sync-codes.mjs) that scans 10 public lists — Pro Game Guides, Pocket Tactics, Radio Times, GamesRadar+, Destructoid, Beebom, buildaringfarm.net, buildaringfarm.co, buildaringfarmgame.wiki, AllThings.how — and updates /codes without in-game testing. Labels changed to Community sync (2+ sources) or Single source; rewards use scripts/codes-sync-overrides.json when community sources disagree (e.g. 100KVISITS time skip vs cash). Never auto-marked Verified.",
       },
       {
         type: "h2",

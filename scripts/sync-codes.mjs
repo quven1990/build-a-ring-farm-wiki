@@ -22,6 +22,7 @@ const OVERRIDES_PATH = join(__dirname, "codes-sync-overrides.json")
 const STATE_PATH = join(ROOT, "lib/codes-sync-state.json")
 const OUTPUT_PATH = join(ROOT, "lib/codes-data.ts")
 
+const MIN_SOURCES_TO_LIST = 2
 const MIN_SOURCES_FOR_COMMUNITY = 2
 const NEW_CODE_DAYS = 14
 const FETCH_TIMEOUT_MS = 20_000
@@ -140,24 +141,7 @@ async function main() {
       return a.code.localeCompare(b.code)
     })
 
-  const TRUSTED_STRUCTURED_SOURCES = new Set([
-    "beebom",
-    "gamesradar",
-    "buildaringfarm-co",
-  ])
-
-  merged = merged.filter((item) => {
-    if (item.sourceIds.length >= 2) return true
-    if (
-      item.sourceIds.length === 1 &&
-      item.reward &&
-      item.reward !== "See in-game reward" &&
-      TRUSTED_STRUCTURED_SOURCES.has(item.sourceIds[0])
-    ) {
-      return true
-    }
-    return false
-  })
+  merged = merged.filter((item) => item.sourceIds.length >= MIN_SOURCES_TO_LIST)
 
   /** @type {Record<string, string>} */
   const codeFirstSeen = { ...previousState.codeFirstSeen }

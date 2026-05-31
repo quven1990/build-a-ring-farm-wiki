@@ -4,7 +4,7 @@ Codes on `/codes` are **not** play-tested daily. A script aggregates public list
 
 ## How it works
 
-1. `scripts/sync-codes.mjs` fetches URLs in `scripts/codes-sync-sources.mjs`
+1. `scripts/sync-codes.mjs` fetches URLs in `scripts/codes-sync-sources.mjs` (10 public lists: Pro Game Guides, Pocket Tactics, Radio Times, GamesRadar+, Destructoid, Beebom, buildaringfarm.net/co, buildaringfarmgame.wiki, AllThings.how)
 2. Parses code + reward pairs from each page’s HTML
 3. Keeps codes seen on **2+ sources** as `community` (shown as **Community sync**)
 4. Single-source entries stay `needs-testing` (**Single source**)

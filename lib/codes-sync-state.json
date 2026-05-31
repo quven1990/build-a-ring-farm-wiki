@@ -1,10 +1,25 @@
 {
-  "lastSyncedAt": "2026-05-31T01:34:50.299Z",
+  "lastSyncedAt": "2026-05-31T01:40:49.639Z",
   "sources": [
     {
-      "id": "buildaringfarm-co",
-      "name": "buildaringfarm.co",
-      "url": "https://buildaringfarm.co/codes/"
+      "id": "progameguides",
+      "name": "Pro Game Guides",
+      "url": "https://progameguides.com/roblox/build-a-ring-farm-codes/"
+    },
+    {
+      "id": "pockettactics",
+      "name": "Pocket Tactics",
+      "url": "https://www.pockettactics.com/build-a-ring-farm-codes"
+    },
+    {
+      "id": "radiotimes",
+      "name": "Radio Times",
+      "url": "https://www.radiotimes.com/technology/gaming/roblox-build-a-ring-farm-codes/"
+    },
+    {
+      "id": "gamesradar",
+      "name": "GamesRadar+",
+      "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/"
     },
     {
       "id": "destructoid",
@@ -17,16 +32,52 @@
       "url": "https://beebom.com/build-a-ring-farm-codes/"
     },
     {
-      "id": "gamesradar",
-      "name": "GamesRadar+",
-      "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/"
+      "id": "buildaringfarm-net",
+      "name": "buildaringfarm.net",
+      "url": "https://buildaringfarm.net/codes/"
+    },
+    {
+      "id": "buildaringfarm-co",
+      "name": "buildaringfarm.co",
+      "url": "https://buildaringfarm.co/codes/"
+    },
+    {
+      "id": "buildaringfarmgame-wiki",
+      "name": "buildaringfarmgame.wiki",
+      "url": "https://buildaringfarmgame.wiki/"
+    },
+    {
+      "id": "allthings",
+      "name": "AllThings.how",
+      "url": "https://allthings.how/build-a-ring-farm-codes-latest-working-list/"
     }
   ],
   "sourceResults": [
     {
-      "sourceId": "buildaringfarm-co",
-      "name": "buildaringfarm.co",
-      "url": "https://buildaringfarm.co/codes/",
+      "sourceId": "progameguides",
+      "name": "Pro Game Guides",
+      "url": "https://progameguides.com/roblox/build-a-ring-farm-codes/",
+      "ok": true,
+      "count": 7
+    },
+    {
+      "sourceId": "pockettactics",
+      "name": "Pocket Tactics",
+      "url": "https://www.pockettactics.com/build-a-ring-farm-codes",
+      "ok": true,
+      "count": 8
+    },
+    {
+      "sourceId": "radiotimes",
+      "name": "Radio Times",
+      "url": "https://www.radiotimes.com/technology/gaming/roblox-build-a-ring-farm-codes/",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "sourceId": "gamesradar",
+      "name": "GamesRadar+",
+      "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
       "ok": true,
       "count": 7
     },
@@ -35,7 +86,7 @@
       "name": "Destructoid",
       "url": "https://www.destructoid.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 8
+      "count": 7
     },
     {
       "sourceId": "beebom",
@@ -45,11 +96,32 @@
       "count": 7
     },
     {
-      "sourceId": "gamesradar",
-      "name": "GamesRadar+",
-      "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
+      "sourceId": "buildaringfarm-net",
+      "name": "buildaringfarm.net",
+      "url": "https://buildaringfarm.net/codes/",
       "ok": true,
       "count": 7
+    },
+    {
+      "sourceId": "buildaringfarm-co",
+      "name": "buildaringfarm.co",
+      "url": "https://buildaringfarm.co/codes/",
+      "ok": true,
+      "count": 7
+    },
+    {
+      "sourceId": "buildaringfarmgame-wiki",
+      "name": "buildaringfarmgame.wiki",
+      "url": "https://buildaringfarmgame.wiki/",
+      "ok": true,
+      "count": 6
+    },
+    {
+      "sourceId": "allthings",
+      "name": "AllThings.how",
+      "url": "https://allthings.how/build-a-ring-farm-codes-latest-working-list/",
+      "ok": true,
+      "count": 6
     }
   ],
   "codeFirstSeen": {
@@ -59,19 +131,34 @@
     "PLANTRUSH": "2026-05-31",
     "THANKYOU": "2026-05-31",
     "UPDATE1": "2026-05-31",
-    "UPDATE2": "2026-05-31"
+    "UPDATE2": "2026-05-31",
+    "RELATED": "2026-05-31"
   },
   "lastRewards": {
     "100KVISITS": "5-minute Time Skip (some sources report cash instead — check in-game)",
-    "2KLIKES": "Tropical Seed Pack",
-    "BARF:3": "Acid Spray",
-    "PLANTRUSH": "Plant Rush Boss Box",
-    "THANKYOU": "Autumn Spray",
+    "2KLIKES": "1x Tropical Seed Pack",
+    "BARF:3": "1x Acid Spray",
+    "THANKYOU": "1x Autumn Spray",
+    "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE1": "3 Strong Fertilizers",
-    "UPDATE2": "Tropical Seed Pack"
+    "PLANTRUSH": "1x Plant Rush Boss Box"
   },
-  "archived": [],
+  "archived": [
+    {
+      "code": "RELATED",
+      "reward": "left corner.",
+      "removedAt": "2026-05-31"
+    }
+  ],
   "changelog": [
+    {
+      "date": "2026-05-31",
+      "summary": "Synced 7 codes from 10/10 public sources. Removed from public lists: RELATED."
+    },
+    {
+      "date": "2026-05-31",
+      "summary": "Synced 8 codes from 10/10 public sources. Added: RELATED."
+    },
     {
       "date": "2026-05-31",
       "summary": "Synced 7 codes from 4/4 public sources. Added: 100KVISITS, 2KLIKES, BARF:3, PLANTRUSH, THANKYOU, UPDATE1, UPDATE2."
