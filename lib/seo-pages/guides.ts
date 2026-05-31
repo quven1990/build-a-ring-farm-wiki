@@ -541,6 +541,15 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "late-may-2026-sync",
+        text: "Late May 2026 — Automated codes sync",
+      },
+      {
+        type: "p",
+        text: "Codes: added weekly GitHub Action (scripts/sync-codes.mjs) that scans public lists — buildaringfarm.co, Destructoid, Beebom, GamesRadar+ — and updates /codes without in-game testing. Labels changed to Community sync (2+ sources) or Single source; rewards use scripts/codes-sync-overrides.json when community sources disagree (e.g. 100KVISITS time skip vs cash). Never auto-marked Verified.",
+      },
+      {
+        type: "h2",
         id: "late-may-2026",
         text: "Late May 2026",
       },

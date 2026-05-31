@@ -7,7 +7,7 @@ export const globalFaqItems: FAQEntry[] = [
   {
     question: "Are the codes on this wiki verified?",
     answer:
-      'We label codes in three tiers: "Verified" means confirmed by multiple sources; "Community Reported" means player-submitted and may expire; "Needs Testing" is unconfirmed. Codes can break after updates — always check in-game.',
+      'We sync codes weekly from public community lists (Destructoid, Beebom, GamesRadar+, and others). "Community sync" means the code appeared on multiple sources — not that we played the game to test it. Codes can expire anytime; always redeem in-game.',
   },
   {
     question: "Is this the official Build A Ring Farm website?",
@@ -42,6 +42,11 @@ export const faqByPage: Record<string, FAQEntry[]> = {
     },
   ],
   codes: [
+    {
+      question: "How often are codes updated?",
+      answer:
+        "An automated job scans public code lists every Monday and updates this page. The banner at the top shows the last sync time and which sources were checked. We never mark codes as in-game verified unless explicitly tested.",
+    },
     {
       question: "Where do I paste Build A Ring Farm codes?",
       answer:

@@ -235,9 +235,9 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Build A Ring Farm Codes | Build A Ring Farm Wiki",
     h1: "Build A Ring Farm Codes",
     description:
-      "Active Build A Ring Farm codes for May 2026: redeem free sprays, seed packs & time skips. Copy codes in one click with community verification status.",
+      "Build A Ring Farm codes synced weekly from public lists — copy redeem codes with community sync status (not in-game verified).",
     heroDescription:
-      "Latest redeem codes, rewards, and verification status — updated regularly.",
+      "Weekly community sync from public sources — copy codes with source counts, not fake daily verification.",
     ogTitle: "Build A Ring Farm Codes — Active Redeem Codes List",
     ogImageAlt: "Build A Ring Farm active promo and redeem codes list",
     breadcrumb: "Codes",

@@ -1,17 +1,38 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Gift, AlertCircle, HelpCircle, Check, Copy } from "lucide-react"
+import {
+  Gift,
+  AlertCircle,
+  HelpCircle,
+  Copy,
+  RefreshCw,
+  ExternalLink,
+} from "lucide-react"
 import { toast } from "sonner"
-import { formatLastCheckedDate, wikiCodesSorted, type CodeStatus } from "@/lib/codes-data"
+import {
+  codesSyncMeta,
+  formatSyncDate,
+  wikiCodesArchived,
+  wikiCodesSorted,
+  type CodeStatus,
+} from "@/lib/codes-data"
 import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 
-const statusConfig: Record<CodeStatus, { label: string; variant: "default" | "secondary" | "outline"; icon: typeof AlertCircle }> = {
-  verified: { label: "Verified", variant: "default", icon: Check },
-  community: { label: "Community Reported", variant: "secondary", icon: AlertCircle },
-  "needs-testing": { label: "Needs Testing", variant: "outline", icon: HelpCircle },
+const statusConfig: Record<
+  CodeStatus,
+  { label: string; variant: "default" | "secondary" | "outline"; icon: typeof AlertCircle }
+> = {
+  verified: { label: "Verified in-game", variant: "default", icon: HelpCircle },
+  community: {
+    label: "Community sync",
+    variant: "secondary",
+    icon: RefreshCw,
+  },
+  "needs-testing": { label: "Single source", variant: "outline", icon: HelpCircle },
 }
 
 type CodesSectionProps = {
@@ -32,6 +53,8 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
     }
   }
 
+  const latestSync = codesSyncMeta.changelog[0]
+
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
@@ -42,11 +65,35 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
               Redeem Codes
             </Badge>
             <h2 className="mb-2 text-2xl font-bold text-foreground">Active redeem codes</h2>
-            <p className="text-muted-foreground">
-              Claim free rewards — codes may expire at any time
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              Aggregated from public community lists — synced automatically each week. We do not
+              play-test every code; always confirm rewards in-game.
             </p>
           </div>
         )}
+
+        <div className="mx-auto mb-8 max-w-3xl rounded-2xl border border-primary/15 bg-primary/5 px-5 py-4 text-sm text-muted-foreground">
+          <p className="font-medium text-foreground">
+            Last synced: {formatSyncDate(codesSyncMeta.lastSyncedAt)} UTC
+          </p>
+          {latestSync && <p className="mt-1">{latestSync.summary}</p>}
+          <p className="mt-2">
+            Sources scanned:{" "}
+            {codesSyncMeta.sources.map((source, index) => (
+              <span key={source.id}>
+                {index > 0 ? " · " : ""}
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline-offset-4 hover:underline"
+                >
+                  {source.name}
+                </a>
+              </span>
+            ))}
+          </p>
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {wikiCodesSorted.map((item) => {
@@ -55,7 +102,7 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
             return (
               <Card key={item.code} className="group relative overflow-hidden transition-shadow hover:shadow-lg">
                 <CardHeader className="pb-2">
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between gap-2">
                     <code className="rounded bg-muted px-2 py-1 font-mono text-lg font-bold text-foreground">
                       {item.code}
                     </code>
@@ -76,9 +123,13 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
                   <p className="mb-3 text-sm text-muted-foreground">
                     Reward: <span className="font-medium text-foreground">{item.reward}</span>
                   </p>
+                  <p className="mb-3 text-xs text-muted-foreground">
+                    Listed on {item.sourceCount} public source
+                    {item.sourceCount === 1 ? "" : "s"}: {item.sources.join(", ")}
+                  </p>
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">
-                      Last checked: {formatLastCheckedDate(item.lastChecked)}
+                      First seen here: {item.firstSeen}
                     </span>
                     <Button
                       size="sm"
@@ -97,8 +148,44 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
           })}
         </div>
 
-        <p className="mt-6 text-center text-sm text-muted-foreground">
-          Code status is community-reported and may change with game updates. Let us know if a code stops working.
+        {wikiCodesArchived.length > 0 && (
+          <div className="mx-auto mt-10 max-w-3xl">
+            <h3 className="mb-3 text-lg font-semibold text-foreground">
+              Removed from public lists
+            </h3>
+            <p className="mb-4 text-sm text-muted-foreground">
+              These codes disappeared from our scanned sources. They may still work or may be
+              expired — try in-game before deleting from your notes.
+            </p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {wikiCodesArchived.map((item) => (
+                <li key={item.code} className="rounded-lg border border-border/70 px-3 py-2">
+                  <span className="font-mono font-semibold text-foreground">{item.code}</span>
+                  {" — "}
+                  {item.reward}. Removed {item.removedAt}.
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
+          Status labels reflect how many public lists included each code — not in-game verification.
+          See the{" "}
+          <Link href="/build-a-ring-update-log" className="text-primary underline-offset-4 hover:underline">
+            update log
+          </Link>{" "}
+          for sync history, or{" "}
+          <a
+            href="https://github.com/quven1990/build-a-ring-farm-wiki/blob/main/scripts/codes-sync-sources.mjs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-primary underline-offset-4 hover:underline"
+          >
+            view sync sources
+            <ExternalLink className="h-3 w-3" />
+          </a>
+          .
         </p>
       </div>
     </section>
