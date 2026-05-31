@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-05-31T01:44:25.818Z",
+  "lastSyncedAt": "2026-05-31T01:46:37.271Z",
   "sources": [
     {
       "id": "progameguides",
@@ -115,6 +115,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-05-31",
+      "summary": "7 codes matched across 7 public gaming lists. Dropped: RELATED."
+    },
     {
       "date": "2026-05-31",
       "summary": "7 codes matched across 7 public gaming lists. Dropped: RELATED."
