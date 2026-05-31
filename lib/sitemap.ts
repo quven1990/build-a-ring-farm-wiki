@@ -57,20 +57,20 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
     {
       url: absoluteUrl("/privacy"),
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.35,
+      changeFrequency: "yearly",
+      priority: 0.1,
     },
     {
       url: absoluteUrl("/terms"),
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.25,
+      changeFrequency: "yearly",
+      priority: 0.1,
     },
     {
       url: absoluteUrl("/cookie-policy"),
       lastModified,
-      changeFrequency: "monthly",
-      priority: 0.25,
+      changeFrequency: "yearly",
+      priority: 0.1,
     },
   ]
 

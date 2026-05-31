@@ -26,6 +26,7 @@ import {
 } from "@/lib/mutations-data"
 import { pageMeta } from "@/lib/site-config"
 import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
+import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 import { CloudRain, Coins, ShoppingBag, Sparkles, Zap } from "lucide-react"
 
 type MutationMatrixProps = {
@@ -163,6 +164,9 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
             <h1 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {pageMeta.mutations.h1}
             </h1>
+            <div className="mb-4 flex justify-center">
+              <LastUpdatedBadge />
+            </div>
             <p className="text-pretty text-base text-muted-foreground sm:text-lg">
               {pageMeta.mutations.heroDescription} Browse all {mutationSummary.total}{" "}
               mutations ranked by multiplier and event rarity.{" "}

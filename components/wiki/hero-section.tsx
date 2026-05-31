@@ -5,7 +5,7 @@ import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { wikiStats } from "@/lib/wiki-stats"
-import { Sprout, Calculator, Database, GitBranch, Gift } from "lucide-react"
+import { Sprout, Calculator, Database, GitBranch, Gift, Sparkles } from "lucide-react"
 
 const HeroCarousel = dynamic(
   () => import("@/components/wiki/hero-carousel").then((m) => m.HeroCarousel),
@@ -48,7 +48,7 @@ export function HeroSection() {
             </h1>
 
             <p className="mx-auto mb-8 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
-              Free profit calculator, seed database &amp; active codes — plan harvest earnings with verified multipliers and guides.
+              Free profit calculator &amp; full mutations matrix — compare multipliers, browse seeds, and plan harvest earnings.
             </p>
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
@@ -59,18 +59,34 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="/codes">
-                  <Gift className="mr-2 h-5 w-5" />
-                  View Codes
+                <Link href="/mutations">
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Mutations List
                 </Link>
               </Button>
               <Button size="lg" className="w-full sm:w-auto" variant="secondary" asChild>
-                <Link href="/seeds">
-                  <Sprout className="mr-2 h-5 w-5" />
-                  Browse Seeds
+                <Link href="/codes">
+                  <Gift className="mr-2 h-5 w-5" />
+                  Active Codes
                 </Link>
               </Button>
             </div>
+
+            <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground lg:mx-0">
+              Jump to{" "}
+              <Link href="/mutations" className="font-medium text-primary underline-offset-4 hover:underline">
+                full mutations list
+              </Link>
+              ,{" "}
+              <Link href="/codes" className="font-medium text-primary underline-offset-4 hover:underline">
+                active redeem codes
+              </Link>
+              , or the{" "}
+              <Link href="/seeds" className="font-medium text-primary underline-offset-4 hover:underline">
+                seeds database
+              </Link>
+              .
+            </p>
           </div>
 
           <HeroCarousel />

@@ -28,6 +28,7 @@ import {
   type SortOption,
 } from "@/lib/seeds-data"
 import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
+import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 import { pageMeta } from "@/lib/site-config"
 import { Calculator, Search } from "lucide-react"
 
@@ -163,6 +164,9 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
           <h1 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {pageMeta.seeds.h1}
           </h1>
+          <div className="mb-4 flex justify-center">
+            <LastUpdatedBadge />
+          </div>
           <p className="text-pretty text-muted-foreground sm:text-lg">
             {pageMeta.seeds.heroDescription}
           </p>

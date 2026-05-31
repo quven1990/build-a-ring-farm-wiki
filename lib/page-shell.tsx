@@ -17,10 +17,12 @@ export function WikiPageShell({
   pageKey,
   children,
   showHero = true,
+  showLastUpdated = false,
 }: {
   pageKey: Exclude<PageKey, "home">
   children: React.ReactNode
   showHero?: boolean
+  showLastUpdated?: boolean
 }) {
   const meta = pageMeta[pageKey]
   const breadcrumbs = getPageBreadcrumbs(pageKey)
@@ -38,6 +40,7 @@ export function WikiPageShell({
           title={meta.h1}
           description={meta.heroDescription ?? meta.description}
           breadcrumbs={getPageBreadcrumbs(pageKey)}
+          showLastUpdated={showLastUpdated}
         />
       )}
       {children}
