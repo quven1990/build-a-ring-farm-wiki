@@ -5,7 +5,21 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { HeroCarousel } from "@/components/wiki/hero-carousel"
 import { wikiStats } from "@/lib/wiki-stats"
-import { Sprout, Calculator, Database, GitBranch, Gift, Sparkles } from "lucide-react"
+import { siteConfig } from "@/lib/site-config"
+import { wikiCodesSorted } from "@/lib/codes-data"
+import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { toast } from "sonner"
+import {
+  Sprout,
+  Calculator,
+  Database,
+  GitBranch,
+  Gift,
+  Sparkles,
+  Copy,
+  ExternalLink,
+  Gamepad2,
+} from "lucide-react"
 
 const stats = [
   { icon: Database, label: "SEEDS", value: wikiStats.seeds },
@@ -15,6 +29,22 @@ const stats = [
 ]
 
 export function HeroSection() {
+  const latestCode = wikiCodesSorted[0]?.code
+
+  const copyLatestCode = async () => {
+    if (!latestCode) return
+    try {
+      await navigator.clipboard.writeText(latestCode)
+      trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
+        props: { code: latestCode, placement: "hero" },
+        interactive: true,
+      })
+      toast(`✅ Copied ${latestCode}`)
+    } catch {
+      toast.error("Could not copy code. Please copy manually.")
+    }
+  }
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background py-12 sm:py-16 lg:py-20">
       <div className="absolute inset-0 overflow-hidden">
@@ -31,30 +61,66 @@ export function HeroSection() {
             </div>
 
             <h1 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl">
-              Build A Ring Farm Wiki &amp; Calculator
+              Build A Ring Farm Wiki — Codes, Seeds &amp; Calculator
             </h1>
 
             <p className="mx-auto mb-8 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
-              Free profit calculator &amp; full mutations matrix — compare multipliers, browse seeds, and plan harvest earnings.
+              Active <strong className="font-medium text-foreground">redeem codes</strong>, free{" "}
+              <strong className="font-medium text-foreground">profit calculator</strong>, full{" "}
+              <strong className="font-medium text-foreground">mutations list</strong>, and a{" "}
+              <strong className="font-medium text-foreground">51-seed database</strong> for Build A
+              Ring Farm on Roblox — updated for June 2026.
             </p>
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
               <Button size="lg" className="w-full sm:w-auto" asChild>
-                <Link href="/calculator">
-                  <Calculator className="mr-2 h-5 w-5" />
-                  Open Calculator
-                </Link>
+                <a
+                  href={siteConfig.robloxGameUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Gamepad2 className="mr-2 h-5 w-5" />
+                  Play on Roblox
+                  <ExternalLink className="ml-2 h-4 w-4 opacity-70" aria-hidden />
+                </a>
               </Button>
+              {latestCode ? (
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto"
+                  variant="secondary"
+                  type="button"
+                  onClick={copyLatestCode}
+                >
+                  <Copy className="mr-2 h-5 w-5" />
+                  Copy latest code
+                </Button>
+              ) : null}
               <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="/mutations">
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  Mutations List
+                <Link href="#latest-codes">
+                  <Gift className="mr-2 h-5 w-5" />
+                  Working codes
                 </Link>
               </Button>
-              <Button size="lg" className="w-full sm:w-auto" variant="secondary" asChild>
-                <Link href="/codes">
-                  <Gift className="mr-2 h-5 w-5" />
-                  Active Codes
+            </div>
+
+            <div className="mt-4 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
+              <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
+                <Link href="/calculator">
+                  <Calculator className="mr-2 h-4 w-4" />
+                  Calculator
+                </Link>
+              </Button>
+              <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
+                <Link href="/mutations">
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  Mutations
+                </Link>
+              </Button>
+              <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
+                <Link href="/seeds">
+                  <Database className="mr-2 h-4 w-4" />
+                  51 Seeds
                 </Link>
               </Button>
             </div>
