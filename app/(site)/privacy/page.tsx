@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Build A Ring Farm Wiki",
   description,
   alternates: { canonical: absoluteUrl("/privacy") },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Privacy Policy | Build A Ring Farm Wiki",
     description,

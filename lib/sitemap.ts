@@ -53,26 +53,6 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
     }
   })
 
-  const legalEntries: MetadataRoute.Sitemap = [
-    {
-      url: absoluteUrl("/privacy"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.1,
-    },
-    {
-      url: absoluteUrl("/terms"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.1,
-    },
-    {
-      url: absoluteUrl("/cookie-policy"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.1,
-    },
-  ]
-
-  return [...toolEntries, ...guideEntries, ...legalEntries]
+  /** Legal pages use noindex — omit from sitemap to avoid low-value URL noise in Search Console. */
+  return [...toolEntries, ...guideEntries]
 }

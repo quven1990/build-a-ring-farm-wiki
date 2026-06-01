@@ -2,6 +2,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Circle } from "lucide-react"
 import Link from "next/link"
+import { pageMeta } from "@/lib/site-config"
+import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 
 const rings = [
   {
@@ -30,8 +32,35 @@ type RingsGuideProps = {
 
 export function RingsGuide({ showTitle = true }: RingsGuideProps) {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden py-12 sm:py-16">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.1,transparent)]"
+        aria-hidden
+      />
+      <div className="container relative mx-auto px-4">
+        {!showTitle && (
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <h1 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              {pageMeta.rings.h1}
+            </h1>
+            <div className="mb-4 flex justify-center">
+              <LastUpdatedBadge />
+            </div>
+            <p className="text-pretty text-muted-foreground sm:text-lg">
+              {pageMeta.rings.heroDescription}
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Placement strategy and unlock order:{" "}
+              <Link
+                href="/build-a-ring-best-rings"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                best rings guide
+              </Link>
+            </p>
+          </div>
+        )}
+
         {showTitle && (
           <div className="mb-8 text-center">
             <Badge variant="outline" className="mb-2">
@@ -57,7 +86,11 @@ export function RingsGuide({ showTitle = true }: RingsGuideProps) {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Select this ring in the calculator to see per-plant price at that multiplier.
+                  Select this ring in the{" "}
+                  <Link href="/calculator" className="text-primary underline-offset-4 hover:underline">
+                    calculator
+                  </Link>{" "}
+                  to see per-plant price at that multiplier.
                 </p>
               </CardContent>
             </Card>

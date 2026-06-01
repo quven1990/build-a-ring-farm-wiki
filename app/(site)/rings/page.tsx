@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata("rings", "/rings")
 
 export default function RingsPage() {
   return (
-    <WikiPageShell pageKey="rings" showLastUpdated>
+    <WikiPageShell pageKey="rings" showHero={false}>
       <RingsGuide showTitle={false} />
       <EnhancedSeoSection pageKey="rings" relatedKey="rings" />
     </WikiPageShell>

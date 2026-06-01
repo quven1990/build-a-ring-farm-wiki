@@ -14,6 +14,8 @@ import {
   type CodeStatus,
 } from "@/lib/codes-data"
 import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { pageMeta } from "@/lib/site-config"
+import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 
 const statusConfig: Record<
   CodeStatus,
@@ -49,6 +51,30 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
+        {!showTitle && (
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <h1 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              {pageMeta.codes.h1}
+            </h1>
+            <div className="mb-4 flex justify-center">
+              <LastUpdatedBadge />
+            </div>
+            <p className="text-pretty text-muted-foreground sm:text-lg">
+              {pageMeta.codes.heroDescription}
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              New to redeeming? Read the{" "}
+              <Link
+                href="/build-a-ring-codes"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                step-by-step codes guide
+              </Link>{" "}
+              (how-to only — this page is the live copy list).
+            </p>
+          </div>
+        )}
+
         {showTitle && (
           <div className="mb-8 text-center">
             <Badge variant="outline" className="mb-2">

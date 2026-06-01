@@ -412,7 +412,10 @@ export const guidePageMeta: Record<
 export const footerGuideLinks = [
   { label: "Farm Guide", href: "/build-a-ring-farm" },
   { label: "Beginner Guide", href: "/build-a-ring-guide" },
+  { label: "Codes Guide", href: "/build-a-ring-codes" },
+  { label: "Calculator Guide", href: "/build-a-ring-calculator" },
   { label: "Wiki Index", href: "/build-a-ring-wiki" },
+  { label: "FAQ Hub", href: "/build-a-ring-faq" },
   { label: "Tier List", href: "/build-a-ring-tier-list" },
   { label: "Best Rings", href: "/build-a-ring-best-rings" },
   { label: "Update Log", href: "/build-a-ring-update-log" },

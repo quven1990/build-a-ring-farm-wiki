@@ -246,7 +246,7 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
     },
     {
       type: "p",
-      text: "Redeem codes distribute free sprays, seed packs, fertilizers, and time skips in Build A Ring Farm. Developers and community campaigns release strings for milestones such as visits, likes, and updates. Codes expire without warning, so this page tracks active strings, reward text, verification status, and last-checked dates. Tap Active on any card to copy the code, then open the in-game redeem menu and paste before the offer ends.",
+      text: "Redeem codes distribute free sprays, seed packs, fertilizers, and time skips in Build A Ring Farm. This page is the live copy list with weekly sync status — for redemption steps and label meanings, use the [codes redemption guide](/build-a-ring-codes). Tap Active on any card to copy, then paste in-game before the offer ends.",
     },
     {
       type: "h2",

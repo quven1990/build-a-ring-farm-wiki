@@ -92,6 +92,72 @@ export const faqByPage: Record<string, FAQEntry[]> = {
         "Recent patches, unlisted boosts, or rounding in the UI can shift results. Use the breakdown table to see each multiplier step, then verify one test harvest.",
     },
   ],
+  rings: [
+    {
+      question: "What are the ring multipliers in Build A Ring Farm?",
+      answer:
+        "Community-reported values: Inner (Base) 7x, Middle 13x, Outer 19x. These multiply harvest value on top of seed level and mutations. Confirm in-game after patches.",
+    },
+    {
+      question: "Should I put my best seed on the Outer Ring?",
+      answer:
+        "Only when base income and grow time justify the wait. Fast commons belong on Inner for cash flow; slow high-unit secrets and exotics belong on Outer when you can harvest during events.",
+    },
+    {
+      question: "When should I upgrade to the Middle Ring?",
+      answer:
+        "Upgrade when you regularly plant epic or legendary crops and Inner income funds the unlock. Middle is often the best cost-to-benefit jump before chasing Outer.",
+    },
+    {
+      question: "How do rings work with the profit calculator?",
+      answer:
+        "Pick Inner, Middle, or Outer in the calculator to model the same multiplier you use in-game. Compare rings before moving a leveled plant — a 19x Outer only wins if the crop earns enough per harvest.",
+    },
+  ],
+  events: [
+    {
+      question: "How often do weather events happen?",
+      answer:
+        "Events typically roll every 10–15 minutes on a server. The countdown shows at the top of the screen, but the event name is hidden until it starts — plan mature crops ahead of time.",
+    },
+    {
+      question: "Can I get mutations while offline?",
+      answer:
+        "Weather procs generally require you to be online when the event runs and crops are ready. Shop sprays are the reliable way to apply a chosen mutation without waiting for RNG.",
+    },
+    {
+      question: "Which event should I wait for?",
+      answer:
+        "Galaxy (Rainbow), Nuclear (Radioactive), and Queen Bee (Honeycomb) are the highest-value targets for ready Outer crops. Rain (Wet) is a good practice event when you are still learning timing.",
+    },
+    {
+      question: "Where are event trigger rates listed?",
+      answer:
+        "This page lists activation rates and per-roll odds. Pair it with the mutations matrix for multipliers and the farm guide for session rhythm.",
+    },
+  ],
+  progression: [
+    {
+      question: "What should I upgrade first in Build A Ring Farm?",
+      answer:
+        "Fill every plot, redeem active codes, then upgrade your weakest seed on the best ring you own before chasing rare rollers. Saw level helps most when Middle and Outer already hold strong crops.",
+    },
+    {
+      question: "When is mid-game in Build A Ring Farm?",
+      answer:
+        "Mid-game usually means epic or legendary seeds on Middle ring, purposeful mutation buys, and using the calculator before large spends. You are past tutorial but not yet full Outer optimization.",
+    },
+    {
+      question: "Is offline farming enough for late game?",
+      answer:
+        "Offline income is supplemental. Active harvests during Galaxy, Nuclear, or similar events still dominate because you choose when mutated crops pay out.",
+    },
+    {
+      question: "How do codes fit into progression?",
+      answer:
+        "Redeem codes early for sprays, packs, and time skips — they compress grind but do not replace ring placement. Use the active codes list, then read this page for what to upgrade next.",
+    },
+  ],
   faq: globalFaqItems.concat([
     {
       question: "What is Build A Ring Farm?",
@@ -152,12 +218,42 @@ export const faqByPage: Record<string, FAQEntry[]> = {
       answer:
         "Plant every slot, redeem any active codes, harvest on a schedule, and read the seeds database for your next upgrade. Avoid chasing transcended crops before your rings are organized.",
     },
+    {
+      question: "Where do I redeem codes as a beginner?",
+      answer:
+        "Open in-game Settings, find Codes, paste a string from the active codes list, and tap Redeem. For step-by-step help and label meanings, use the codes redemption guide.",
+    },
+    {
+      question: "How does the seed roller work?",
+      answer:
+        "Pull the lever at your base to roll a seed on the pedestal — you can buy or reroll. Luck upgrades improve rare odds over time. Compare results in the seeds database before spending your budget.",
+    },
+    {
+      question: "What should I read after the beginner guide?",
+      answer:
+        "Follow the progression page for upgrade order, the farm guide for efficiency, and the calculator when you are choosing between ring unlocks or mutation sprays.",
+    },
   ],
   "build-a-ring-codes": [
     {
+      question: "Where is the copy-paste codes list?",
+      answer:
+        "Use the active codes page on this site for one-click copy buttons and weekly sync status. This guide explains how to redeem and read labels — it does not duplicate the full list.",
+    },
+    {
       question: "Are expired codes listed here?",
       answer:
-        "We focus on active and recently tested strings. The update log notes when community reports suggest a code stopped working. Remove dead codes from your personal list.",
+        "Expired strings are removed from the active list when community reports pile up. The update log notes site changes; the active tool may show recently dropped codes separately.",
+    },
+    {
+      question: "What does community sync mean on codes?",
+      answer:
+        "The code appeared on multiple public gaming lists in our weekly sync — we do not play-test every string. Always redeem in-game to confirm rewards.",
+    },
+    {
+      question: "Why did my code fail after an update?",
+      answer:
+        "Developers retire codes without notice. Try the next active string, rejoin a server if needed, and never enter passwords on fake code sites — only the official Roblox game UI.",
     },
   ],
   "build-a-ring-calculator": [
