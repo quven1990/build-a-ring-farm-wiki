@@ -37,21 +37,21 @@ export const wikiCodes: WikiCode[] = [
   },
   {
     code: "2KLIKES",
-    reward: "1x Tropical Seed Pack",
+    reward: "Tropical Seed Pack",
     status: "community",
     sourceCount: 7,
     isNew: true,
   },
   {
     code: "BARF:3",
-    reward: "1x Acid Spray",
+    reward: "Acid Spray",
     status: "community",
     sourceCount: 7,
     isNew: true,
   },
   {
     code: "THANKYOU",
-    reward: "1x Autumn Spray",
+    reward: "Autumn Spray",
     status: "community",
     sourceCount: 7,
     isNew: true,
@@ -65,7 +65,7 @@ export const wikiCodes: WikiCode[] = [
   },
   {
     code: "UPDATE2",
-    reward: "1x Tropical Seed Pack",
+    reward: "Tropical Seed Pack",
     status: "community",
     sourceCount: 7,
     isNew: true,
@@ -75,6 +75,13 @@ export const wikiCodes: WikiCode[] = [
     reward: "1x Plant Rush Boss Box",
     status: "community",
     sourceCount: 6,
+    isNew: true,
+  },
+  {
+    code: "250KUSERS",
+    reward: "3-minute Time Skip",
+    status: "community",
+    sourceCount: 4,
     isNew: true,
   }
 ]
