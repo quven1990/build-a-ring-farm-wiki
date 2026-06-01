@@ -14,22 +14,22 @@ import { cn } from "@/lib/utils"
 
 const heroSlides = [
   {
-    src: "/images/home-hero-farm.png",
+    src: "/images/home-hero-farm.webp",
     alt: "Build A Ring Farm — farmer in the crop field with a glowing ring portal",
     width: 1024,
     height: 512,
   },
   {
-    src: "/images/home-hero-farm-2.png",
+    src: "/images/home-hero-farm-2.webp",
     alt: "Build A Ring Farm — wiki overview with seeds, mutations, codes, and calculator",
-    width: 1672,
-    height: 941,
+    width: 1200,
+    height: 676,
   },
   {
-    src: "/images/home-hero-farm-3.png",
+    src: "/images/home-hero-farm-3.webp",
     alt: "Build A Ring Farm — colorful farm with glowing ring portals and crystal crops",
-    width: 1672,
-    height: 941,
+    width: 1200,
+    height: 676,
   },
 ] as const
 
@@ -82,6 +82,8 @@ export function HeroCarousel() {
                   width={slide.width}
                   height={slide.height}
                   priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
                   className="h-full w-full object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />

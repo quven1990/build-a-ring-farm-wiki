@@ -1,14 +1,23 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import { Toaster } from 'sonner'
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import { Toaster } from "sonner"
 import { ClientConsentScripts } from "@/components/wiki/client-consent-scripts"
-import { siteConfig } from '@/lib/site-config'
-import { createPageMetadata } from '@/lib/metadata'
-import './globals.css'
+import { DeferredAnalytics } from "@/components/wiki/deferred-analytics"
+import { siteConfig } from "@/lib/site-config"
+import { createPageMetadata } from "@/lib/metadata"
+import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist-sans",
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist-mono",
+})
 
 const homeMetadata = createPageMetadata("home", "/")
 
@@ -40,34 +49,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background" suppressHydrationWarning>
-      <head>
-        {/* Privacy-friendly analytics by Plausible */}
-        <script
-          async
-          src="https://plausible.shipsolo.io/js/pa-fRMIEoUqLkrWCpfCd6Q0h.js"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()`,
-          }}
-        />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wx6wv9epyf");`,
-          }}
-        />
-      </head>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} bg-background`} suppressHydrationWarning>
+      <body className={`${geist.className} font-sans antialiased`}>
         {children}
         <Toaster richColors position="bottom-center" />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <DeferredAnalytics />
         <ClientConsentScripts />
       </body>
     </html>

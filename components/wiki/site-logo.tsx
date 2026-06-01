@@ -9,10 +9,10 @@ type SiteLogoProps = {
 export function SiteLogo({ size = 36, className }: SiteLogoProps) {
   return (
     <Image
-      src="/images/logo.png"
+      src="/images/logo.webp"
       alt="Build A Ring Farm wiki logo"
-      width={453}
-      height={453}
+      width={144}
+      height={144}
       className={cn("shrink-0 rounded-full object-cover", className)}
       style={{ width: size, height: size }}
       priority

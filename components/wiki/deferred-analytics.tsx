@@ -1,0 +1,35 @@
+"use client"
+
+import Script from "next/script"
+
+const PLAUSIBLE_SRC =
+  "https://plausible.shipsolo.io/js/pa-fRMIEoUqLkrWCpfCd6Q0h.js"
+const CLARITY_ID = "wx6wv9epyf"
+
+/** Non-blocking analytics — loads after page is interactive. */
+export function DeferredAnalytics() {
+  return (
+    <>
+      <Script
+        id="plausible-init"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init()`,
+        }}
+      />
+      <Script src={PLAUSIBLE_SRC} strategy="lazyOnload" />
+      <Script
+        id="microsoft-clarity"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "${CLARITY_ID}");`,
+        }}
+      />
+    </>
+  )
+}

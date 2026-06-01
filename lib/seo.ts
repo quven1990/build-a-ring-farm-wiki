@@ -19,7 +19,7 @@ export function buildSeoTitle(pageName: string): string {
   return full.length <= 60 ? full : `${base} | ${getSiteHostname()}`
 }
 
-export const defaultOgImage = "/images/home-hero-farm-2.png"
+export const defaultOgImage = "/images/home-hero-farm-2.webp"
 
 export function getOgImageUrl(path: string = defaultOgImage): string {
   return absoluteUrl(path)

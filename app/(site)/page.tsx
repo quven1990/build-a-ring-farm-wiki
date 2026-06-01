@@ -1,3 +1,4 @@
+import { preload } from "react-dom"
 import { HeroSection } from "@/components/wiki/hero-section"
 import { HomeHubSection } from "@/components/wiki/home-hub-section"
 import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
@@ -7,6 +8,7 @@ import { AdsenseAd } from "@/components/wiki/adsense-ad"
 import { webSiteJsonLd } from "@/lib/json-ld"
 
 export default function HomePage() {
+  preload("/images/home-hero-farm.webp", { as: "image", fetchPriority: "high" })
   return (
     <>
       <JsonLdScript data={webSiteJsonLd()} />
