@@ -19,14 +19,54 @@ export const globalFaqItems: FAQEntry[] = [
 export const faqByPage: Record<string, FAQEntry[]> = {
   home: [
     {
-      question: "What can I do on buildaring.online?",
+      question: "What is Build A Ring Farm?",
       answer:
-        "Browse the seed database, mutation matrix, weather events, ring multipliers, active codes, profit calculator, and written guides. Each section is designed for a different planning task — codes for free rewards, calculator for harvest math, seeds for crop comparison.",
+        "Build A Ring Farm is a Roblox farming game with circular ring plots, seed rollers, weather events, and mutation multipliers. Players grow crops on Inner, Middle, and Outer rings to scale income. This wiki documents community-reported numbers to help you plan — not replace the in-game tutorial.",
     },
     {
-      question: "How often is the site updated?",
+      question: "Where are the latest Build A Ring Farm codes?",
       answer:
-        "Codes and balance-sensitive tables are reviewed when the community reports changes. Check the update log page for a summary of recent edits. Major patches may take a few days to reflect everywhere.",
+        "The working codes table at the top of this page lists active redeem strings with copy buttons. For the full list and sync details, open the codes page. Redeem in Settings → Codes inside Roblox.",
+    },
+    {
+      question: "How do mutations work in Build A Ring Farm?",
+      answer:
+        "Mutations multiply sell value on harvested crops. Some are bought in the Gear Shop (Wet through Rainbow); others proc from weather events (Alien, Farm, Honeycomb). See the mutations summary table on this page or the full matrix for every multiplier and trigger.",
+    },
+    {
+      question: "How many seeds are in the game?",
+      answer:
+        "Our database tracks 51 crops across ten rarities with base income, grow time, and roll weights. The seeds summary on this page highlights beginner and endgame examples — open the seeds database for the complete sortable list.",
+    },
+    {
+      question: "What is the best early-game farm layout?",
+      answer:
+        "Fill every plot with fast crops on Inner ring first, redeem codes for sprays and packs, then expand to Middle when epics are affordable. Keep paths short for quick harvests. The farm layout section on this page outlines early, mid, and late goals — read the full farm efficiency guide for event timing.",
+    },
+    {
+      question: "Which ring should I use first?",
+      answer:
+        "Inner (Base) ring has the lowest multiplier but fastest turnover. Middle and Outer pay more per harvest but suit slower, higher-income crops. Community-reported multipliers are 7x / 13x / 19x — confirm in-game after patches and model setups in the profit calculator.",
+    },
+    {
+      question: "Is buildaring.online official?",
+      answer:
+        "No. buildaring.online is an independent fan-made wiki and toolkit, not affiliated with Roblox Corporation or the game developers. Always confirm rewards and prices in-game.",
+    },
+    {
+      question: "How do I use the Build A Ring Farm calculator?",
+      answer:
+        "Pick seed, level, ring tier, mutation, plant count, and cash multiplier on the calculator page. It uses a documented community formula with listed exceptions — run a test harvest in-game if a patch just dropped.",
+    },
+    {
+      question: "What causes big income spikes?",
+      answer:
+        "Stacking a high mutation on Outer ring during Galaxy, Nuclear, or similar events, plus leveling the right seed. Codes and free packs compress early grind but do not replace ring placement. Check the events page before holding crops an extra cycle.",
+    },
+    {
+      question: "How often is this wiki updated?",
+      answer:
+        "Codes sync weekly from public gaming lists. Seeds and mutations tables refresh on community sync jobs. See the update log for site changes; balance patches may take a few days to appear everywhere.",
     },
   ],
   seeds: [
