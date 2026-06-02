@@ -1,10 +1,11 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { ThirdPartyScripts } from "@/components/wiki/third-party-scripts"
 import { cn } from "@/lib/utils"
 import { COOKIE_CONSENT_COOKIE, type CookieConsentValue } from "@/lib/cookie-consent"
+import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 
 function readConsentCookie(): CookieConsentValue | null {
   if (typeof document === "undefined") return null
@@ -21,6 +22,7 @@ function readConsentCookie(): CookieConsentValue | null {
 export function ClientConsentScripts() {
   const [consent, setConsent] = useState<CookieConsentValue | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const bannerViewTracked = useRef(false)
 
   useEffect(() => {
     setConsent(readConsentCookie())
@@ -29,9 +31,21 @@ export function ClientConsentScripts() {
   const enabled = consent === "accepted"
   const showBanner = useMemo(() => consent === null, [consent])
 
+  useEffect(() => {
+    if (!showBanner || bannerViewTracked.current) return
+    bannerViewTracked.current = true
+    trackPlausibleEvent(PLAUSIBLE_GOALS.cookieBannerView, { interactive: false })
+  }, [showBanner])
+
   const handleConsent = useCallback(async (value: CookieConsentValue) => {
     if (submitting) return
     setSubmitting(true)
+    trackPlausibleEvent(
+      value === "accepted"
+        ? PLAUSIBLE_GOALS.cookieConsentAccept
+        : PLAUSIBLE_GOALS.cookieConsentReject,
+      { props: { choice: value }, interactive: true }
+    )
     try {
       await fetch(`/api/cookie-consent?value=${value}`, {
         credentials: "same-origin",

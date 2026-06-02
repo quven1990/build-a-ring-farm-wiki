@@ -5,6 +5,10 @@ export type PlausibleEventProps = Record<string, string | number | boolean>
 export const PLAUSIBLE_GOALS = {
   codeCopy: "Code Copy",
   calculatorRun: "Calculator Run",
+  /** First-time banner render (no consent cookie yet). */
+  cookieBannerView: "Cookie Banner View",
+  cookieConsentAccept: "Cookie Consent Accept",
+  cookieConsentReject: "Cookie Consent Reject",
 } as const
 
 export function trackPlausibleEvent(
