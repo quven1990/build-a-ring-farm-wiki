@@ -1,13 +1,22 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Script from "next/script"
 
 const PLAUSIBLE_SRC =
   "https://plausible.shipsolo.io/js/pa-fRMIEoUqLkrWCpfCd6Q0h.js"
 const CLARITY_ID = "wx6wv9epyf"
 
-/** Non-blocking analytics — loads after page is interactive. */
+/** Non-blocking analytics — client-only to avoid Script hydration mismatch. */
 export function DeferredAnalytics() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   return (
     <>
       <Script

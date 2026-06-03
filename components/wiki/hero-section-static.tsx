@@ -1,14 +1,11 @@
-"use client"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { HeroCarousel } from "@/components/wiki/hero-carousel"
+import { HeroCarouselDeferred } from "@/components/wiki/hero-carousel-deferred"
+import { HeroCopyLatest } from "@/components/wiki/hero-copy-latest"
 import { wikiStats } from "@/lib/wiki-stats"
 import { siteConfig } from "@/lib/site-config"
 import { wikiCodesSorted } from "@/lib/codes-data"
-import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
-import { toast } from "sonner"
 import {
   Sprout,
   Calculator,
@@ -16,7 +13,6 @@ import {
   GitBranch,
   Gift,
   Sparkles,
-  Copy,
   ExternalLink,
   Gamepad2,
 } from "lucide-react"
@@ -28,22 +24,9 @@ const stats = [
   { icon: Gift, label: "CODES", value: wikiStats.codes },
 ]
 
-export function HeroSection() {
+/** Server-rendered hero — LCP image + copy in first HTML; carousel JS deferred. */
+export function HeroSectionStatic() {
   const latestCode = wikiCodesSorted[0]?.code
-
-  const copyLatestCode = async () => {
-    if (!latestCode) return
-    try {
-      await navigator.clipboard.writeText(latestCode)
-      trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
-        props: { code: latestCode, placement: "hero" },
-        interactive: true,
-      })
-      toast(`✅ Copied ${latestCode}`)
-    } catch {
-      toast.error("Could not copy code. Please copy manually.")
-    }
-  }
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background py-12 sm:py-16 lg:py-20">
@@ -72,7 +55,7 @@ export function HeroSection() {
               Ring Farm on Roblox — updated for June 2026.
             </p>
 
-            <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
+            <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:justify-start">
               <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a
                   href={siteConfig.robloxGameUrl}
@@ -84,18 +67,7 @@ export function HeroSection() {
                   <ExternalLink className="ml-2 h-4 w-4 opacity-70" aria-hidden />
                 </a>
               </Button>
-              {latestCode ? (
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto"
-                  variant="secondary"
-                  type="button"
-                  onClick={copyLatestCode}
-                >
-                  <Copy className="mr-2 h-5 w-5" />
-                  Copy latest code
-                </Button>
-              ) : null}
+              {latestCode ? <HeroCopyLatest code={latestCode} /> : null}
               <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
                 <Link href="#latest-codes">
                   <Gift className="mr-2 h-5 w-5" />
@@ -104,7 +76,7 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-4 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-start sm:gap-4">
+            <div className="mt-4 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:justify-start">
               <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
                 <Link href="/calculator">
                   <Calculator className="mr-2 h-4 w-4" />
@@ -142,7 +114,7 @@ export function HeroSection() {
             </p>
           </div>
 
-          <HeroCarousel />
+          <HeroCarouselDeferred />
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">

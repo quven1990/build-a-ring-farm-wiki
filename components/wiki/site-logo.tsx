@@ -6,6 +6,12 @@ type SiteLogoProps = {
   className?: string
 }
 
+const logoSizeClass: Record<number, string> = {
+  36: "size-9",
+  40: "size-10",
+  48: "size-12",
+}
+
 export function SiteLogo({ size = 36, className }: SiteLogoProps) {
   return (
     <Image
@@ -13,8 +19,11 @@ export function SiteLogo({ size = 36, className }: SiteLogoProps) {
       alt="Build A Ring Farm wiki logo"
       width={144}
       height={144}
-      className={cn("shrink-0 rounded-full object-cover", className)}
-      style={{ width: size, height: size }}
+      className={cn(
+        "shrink-0 rounded-full object-cover",
+        logoSizeClass[size] ?? "size-9",
+        className
+      )}
       priority
     />
   )

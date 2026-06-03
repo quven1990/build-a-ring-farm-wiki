@@ -1,11 +1,16 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { ThirdPartyScripts } from "@/components/wiki/third-party-scripts"
 import { cn } from "@/lib/utils"
-import { COOKIE_CONSENT_COOKIE, type CookieConsentValue } from "@/lib/cookie-consent"
+import {
+  COOKIE_CONSENT_COOKIE,
+  isValidCookieConsentValue,
+  type CookieConsentValue,
+} from "@/lib/cookie-consent"
 import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { scheduleIdle } from "@/lib/schedule-idle"
 
 function readConsentCookie(): CookieConsentValue | null {
   if (typeof document === "undefined") return null
@@ -16,36 +21,42 @@ function readConsentCookie(): CookieConsentValue | null {
 
   if (!match) return null
   const value = decodeURIComponent(match.split("=").slice(1).join("="))
-  return value === "accepted" || value === "rejected" ? value : null
+  return isValidCookieConsentValue(value) ? value : null
 }
 
 export function ClientConsentScripts() {
   const [consent, setConsent] = useState<CookieConsentValue | null>(null)
+  const [ready, setReady] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const bannerViewTracked = useRef(false)
 
   useEffect(() => {
     setConsent(readConsentCookie())
+    setReady(true)
   }, [])
 
   const enabled = consent === "accepted"
-  const showBanner = useMemo(() => consent === null, [consent])
+  const showBanner = ready && consent === null
 
   useEffect(() => {
     if (!showBanner || bannerViewTracked.current) return
     bannerViewTracked.current = true
-    trackPlausibleEvent(PLAUSIBLE_GOALS.cookieBannerView, { interactive: false })
+    scheduleIdle(() => {
+      trackPlausibleEvent(PLAUSIBLE_GOALS.cookieBannerView, { interactive: false })
+    })
   }, [showBanner])
 
   const handleConsent = useCallback(async (value: CookieConsentValue) => {
     if (submitting) return
     setSubmitting(true)
-    trackPlausibleEvent(
-      value === "accepted"
-        ? PLAUSIBLE_GOALS.cookieConsentAccept
-        : PLAUSIBLE_GOALS.cookieConsentReject,
-      { props: { choice: value }, interactive: true }
-    )
+    scheduleIdle(() => {
+      trackPlausibleEvent(
+        value === "accepted"
+          ? PLAUSIBLE_GOALS.cookieConsentAccept
+          : PLAUSIBLE_GOALS.cookieConsentReject,
+        { props: { choice: value }, interactive: true }
+      )
+    })
     try {
       await fetch(`/api/cookie-consent?value=${value}`, {
         credentials: "same-origin",
@@ -61,9 +72,9 @@ export function ClientConsentScripts() {
 
   return (
     <>
-      <ThirdPartyScripts enabled={enabled} />
+      {enabled ? <ThirdPartyScripts enabled /> : null}
 
-      {showBanner && (
+      {showBanner ? (
         <div
           className={cn(
             "fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70"
@@ -107,7 +118,7 @@ export function ClientConsentScripts() {
             </div>
           </div>
         </div>
-      )}
+      ) : null}
     </>
   )
 }

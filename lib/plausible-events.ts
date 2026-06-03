@@ -16,24 +16,38 @@ export function trackPlausibleEvent(
   options?: { props?: PlausibleEventProps; interactive?: boolean }
 ) {
   if (typeof window === "undefined") return
-  const plausible = (
-    window as unknown as {
-      plausible?: (
-        name: string,
-        opts?: { props?: PlausibleEventProps; interactive?: boolean }
-      ) => void
-    }
-  ).plausible
-  if (typeof plausible !== "function") return
 
-  const interactive = options?.interactive
-  const props = options?.props
-  if (props === undefined && interactive === undefined) {
-    plausible(eventName)
+  const run = () => {
+    const plausible = (
+      window as unknown as {
+        plausible?: (
+          name: string,
+          opts?: { props?: PlausibleEventProps; interactive?: boolean }
+        ) => void
+      }
+    ).plausible
+    if (typeof plausible !== "function") return
+
+    const interactive = options?.interactive
+    const props = options?.props
+    if (props === undefined && interactive === undefined) {
+      plausible(eventName)
+      return
+    }
+    plausible(eventName, {
+      ...(props ? { props } : {}),
+      ...(typeof interactive === "boolean" ? { interactive } : {}),
+    })
+  }
+
+  if (options?.interactive) {
+    const schedule =
+      typeof requestIdleCallback === "function"
+        ? (cb: () => void) => requestIdleCallback(cb, { timeout: 2000 })
+        : (cb: () => void) => setTimeout(cb, 1)
+    schedule(run)
     return
   }
-  plausible(eventName, {
-    ...(props ? { props } : {}),
-    ...(typeof interactive === "boolean" ? { interactive } : {}),
-  })
+
+  run()
 }

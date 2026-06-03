@@ -1,9 +1,5 @@
-"use client"
-
-import { startTransition } from "react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import {
   Table,
   TableBody,
@@ -12,15 +8,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Copy, Gift } from "lucide-react"
-import { toast } from "sonner"
+import { Gift } from "lucide-react"
 import {
   codesSyncMeta,
   formatSyncDate,
   wikiCodesSorted,
 } from "@/lib/codes-data"
-import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
-import { scheduleIdle } from "@/lib/schedule-idle"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 
 const PREVIEW_COUNT = 8
@@ -30,27 +23,9 @@ function shortenReward(reward: string, max = 56): string {
   return `${reward.slice(0, max).trim()}…`
 }
 
-export function HomeCodesPreview() {
+/** Server HTML for codes — visible before interactive copy buttons hydrate. */
+export function HomeCodesPreviewStatic() {
   const previewCodes = wikiCodesSorted.slice(0, PREVIEW_COUNT)
-
-  const copyToClipboard = (code: string) => {
-    startTransition(() => {
-      void navigator.clipboard.writeText(code).then(
-        () => {
-          scheduleIdle(() => {
-            trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
-              props: { code, placement: "home" },
-              interactive: true,
-            })
-            toast("✅ Code copied to clipboard!")
-          })
-        },
-        () => {
-          toast.error("Could not copy code. Please copy manually.")
-        }
-      )
-    })
-  }
 
   return (
     <section
@@ -88,7 +63,6 @@ export function HomeCodesPreview() {
                 <TableHead className="w-[140px]">Code</TableHead>
                 <TableHead>Reward</TableHead>
                 <TableHead className="w-[100px]">Status</TableHead>
-                <TableHead className="w-[100px] text-right">Action</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -107,17 +81,6 @@ export function HomeCodesPreview() {
                       <Badge variant="secondary">Active</Badge>
                     )}
                   </TableCell>
-                  <TableCell className="text-right">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => copyToClipboard(item.code)}
-                      aria-label={`Copy code ${item.code}`}
-                    >
-                      <Copy className="mr-1 h-3.5 w-3.5" aria-hidden />
-                      Copy
-                    </Button>
-                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -130,13 +93,6 @@ export function HomeCodesPreview() {
             className="font-medium text-primary underline-offset-4 hover:underline"
           >
             View full Build A Ring Farm codes list →
-          </Link>
-          {" · "}
-          <Link
-            href="/build-a-ring-codes"
-            className="text-primary underline-offset-4 hover:underline"
-          >
-            How to redeem
           </Link>
         </p>
       </div>

@@ -1,23 +1,8 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Toaster } from "sonner"
-import { ClientConsentScripts } from "@/components/wiki/client-consent-scripts"
-import { DeferredAnalytics } from "@/components/wiki/deferred-analytics"
+import { DeferredClientShell } from "@/components/wiki/deferred-client-shell"
 import { siteConfig } from "@/lib/site-config"
 import { createPageMetadata } from "@/lib/metadata"
 import "./globals.css"
-
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-sans",
-})
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-mono",
-})
 
 const homeMetadata = createPageMetadata("home", "/")
 
@@ -49,12 +34,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable} bg-background`} suppressHydrationWarning>
-      <body className={`${geist.className} font-sans antialiased`}>
+    <html lang="en" className="bg-background" suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `(function(){function c(){try{var e=document.getElementById("rcr-wrapper");e&&(e.removeAttribute("id"),e.removeAttribute("class"),e.hidden=!0);var t=document.body;if(t){var s=t.getAttribute("style")||"";(/margin-top:\\s*36px/i.test(s)||/position:\\s*absolute/i.test(s))&&t.removeAttribute("style")}document.querySelectorAll("header").forEach(function(h){var o=h.style&&h.style.top;if(o&&/calc\\(36px\\)/i.test(o))h.style.removeProperty("top")})}catch(r){}}c()})();`,
+          }}
+        />
         {children}
-        <Toaster richColors position="bottom-center" />
-        <DeferredAnalytics />
-        <ClientConsentScripts />
+        <DeferredClientShell />
       </body>
     </html>
   )
