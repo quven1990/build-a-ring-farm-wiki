@@ -9,6 +9,7 @@ export const PLAUSIBLE_GOALS = {
   cookieBannerView: "Cookie Banner View",
   cookieConsentAccept: "Cookie Consent Accept",
   cookieConsentReject: "Cookie Consent Reject",
+  pageShare: "Page Share",
 } as const
 
 export function trackPlausibleEvent(

@@ -80,6 +80,9 @@ export function UpdateArticlePage({ article }: UpdateArticlePageProps) {
         description={article.meta.heroDescription}
         breadcrumbs={breadcrumbs}
         showLastUpdated
+        sharePath={path}
+        shareTitle={article.meta.title}
+        shareText={article.meta.description}
       />
       <section className={cn("border-b border-border bg-muted/20 py-10 sm:py-12")}>
         <div className="container mx-auto max-w-3xl px-4 sm:px-6">

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
-import { guidePageMeta, pageMeta, siteConfig } from "@/lib/site-config"
-import { absoluteUrl } from "@/lib/sitemap"
-import { getOgImageUrl, truncateMetaDescription } from "@/lib/seo"
+import { guidePageMeta, pageMeta } from "@/lib/site-config"
+import { buildSocialMetadata } from "@/lib/social-metadata"
 import type { GuidePageId } from "@/lib/seo-pages/types"
 
 function buildMetadata(
@@ -9,41 +8,18 @@ function buildMetadata(
   path: string,
   options?: { robots?: Metadata["robots"]; openGraphType?: "website" | "article" }
 ): Metadata {
-  const url = absoluteUrl(path)
-  const description = truncateMetaDescription(meta.description)
-  const ogImage = getOgImageUrl(meta.ogImage)
-  const ogTitle = meta.ogTitle ?? meta.title
-
   return {
-    title: meta.title,
-    description,
+    ...buildSocialMetadata({
+      title: meta.title,
+      description: meta.description,
+      ogTitle: meta.ogTitle,
+      ogImage: meta.ogImage,
+      ogImageAlt: meta.ogImageAlt,
+      path,
+      openGraphType: options?.openGraphType,
+      robots: options?.robots,
+    }),
     keywords: meta.keywords,
-    robots: options?.robots ?? { index: true, follow: true },
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title: ogTitle,
-      description,
-      url,
-      type: options?.openGraphType ?? "website",
-      locale: `${siteConfig.locale}_US`,
-      siteName: siteConfig.name,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: meta.ogImageAlt,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: ogTitle,
-      description,
-      images: [ogImage],
-    },
   }
 }
 
@@ -56,5 +32,17 @@ export function createPageMetadata(
 }
 
 export function createGuidePageMetadata(pageId: GuidePageId): Metadata {
-  return buildMetadata(guidePageMeta[pageId], `/${pageId}`, { openGraphType: "article" })
+  const meta = guidePageMeta[pageId]
+  return {
+    ...buildSocialMetadata({
+      title: meta.title,
+      description: meta.description,
+      ogTitle: meta.ogTitle,
+      ogImage: meta.ogImage,
+      ogImageAlt: meta.ogImageAlt,
+      path: `/${pageId}`,
+      openGraphType: "article",
+    }),
+    keywords: meta.keywords,
+  }
 }

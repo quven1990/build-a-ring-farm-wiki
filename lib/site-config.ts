@@ -13,6 +13,8 @@ export const siteConfig = {
   lastUpdated: "June 2026",
   robloxGameUrl:
     "https://www.roblox.com/games/107646426076756/Build-A-Ring-Farm",
+  /** Optional @handle for Twitter Card site attribution (e.g. "@buildaringonline"). */
+  twitterSite: process.env.NEXT_PUBLIC_TWITTER_SITE?.trim() || undefined,
 }
 
 export const navItems = [
@@ -130,6 +132,7 @@ export const pageMeta: Record<string, PageMeta> = {
     heroDescription:
       "Active redeem codes, profit calculator, mutations matrix, and 51-seed database — updated June 2026.",
     ogTitle: "Build A Ring Farm Wiki — Codes, Seeds & Calculator",
+    ogImage: "/images/og-share.png",
     ogImageAlt: "Build A Ring Farm wiki hero — farmer, crops, and glowing ring portal",
     breadcrumb: "Home",
     keywords: [

@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { HeroCarouselDeferred } from "@/components/wiki/hero-carousel-deferred"
 import { HeroCopyLatest } from "@/components/wiki/hero-copy-latest"
 import { wikiStats } from "@/lib/wiki-stats"
-import { siteConfig } from "@/lib/site-config"
+import { siteConfig, pageMeta } from "@/lib/site-config"
+import { PageShareButtons } from "@/components/wiki/page-share-buttons"
 import { wikiCodesSorted } from "@/lib/codes-data"
 import {
   Sprout,
@@ -112,6 +113,13 @@ export function HeroSectionStatic() {
               </Link>
               .
             </p>
+
+            <PageShareButtons
+              path="/"
+              title={pageMeta.home.title}
+              text={pageMeta.home.description}
+              className="mt-6 items-center sm:items-start"
+            />
           </div>
 
           <HeroCarouselDeferred />

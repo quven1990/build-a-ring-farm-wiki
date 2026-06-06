@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
+import { PageShareButtons } from "@/components/wiki/page-share-buttons"
 
 type Breadcrumb = {
   label: string
@@ -12,9 +13,21 @@ type PageHeroProps = {
   description: string
   breadcrumbs?: Breadcrumb[]
   showLastUpdated?: boolean
+  /** Enable social share row — pass canonical path (e.g. /codes) */
+  sharePath?: string
+  shareTitle?: string
+  shareText?: string
 }
 
-export function PageHero({ title, description, breadcrumbs, showLastUpdated }: PageHeroProps) {
+export function PageHero({
+  title,
+  description,
+  breadcrumbs,
+  showLastUpdated,
+  sharePath,
+  shareTitle,
+  shareText,
+}: PageHeroProps) {
   return (
     <section className="border-b border-border bg-gradient-to-b from-primary/10 to-background py-10 sm:py-14">
       <div className="container mx-auto px-4">
@@ -39,6 +52,14 @@ export function PageHero({ title, description, breadcrumbs, showLastUpdated }: P
         </h1>
         {showLastUpdated && <LastUpdatedBadge />}
         <p className="max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg">{description}</p>
+        {sharePath ? (
+          <PageShareButtons
+            path={sharePath}
+            title={shareTitle ?? title}
+            text={shareText ?? description}
+            className="mt-5"
+          />
+        ) : null}
       </div>
     </section>
   )

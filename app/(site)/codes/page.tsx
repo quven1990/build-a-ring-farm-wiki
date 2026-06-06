@@ -8,7 +8,7 @@ export const metadata: Metadata = createPageMetadata("codes", "/codes")
 
 export default function CodesPage() {
   return (
-    <WikiPageShell pageKey="codes" showHero={false}>
+    <WikiPageShell pageKey="codes" showHero={false} showShare={false}>
       <CodesSection showTitle={false} />
       <EnhancedSeoSection pageKey="codes" relatedKey="codes" />
     </WikiPageShell>

@@ -16,6 +16,7 @@ import {
 import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 import { pageMeta } from "@/lib/site-config"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
+import { PageShareButtons } from "@/components/wiki/page-share-buttons"
 
 const statusConfig: Record<
   CodeStatus,
@@ -72,6 +73,12 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
               </Link>{" "}
               (how-to only — this page is the live copy list).
             </p>
+            <PageShareButtons
+              path="/codes"
+              title={pageMeta.codes.title}
+              text={pageMeta.codes.description}
+              className="mt-6 items-center"
+            />
           </div>
         )}
 

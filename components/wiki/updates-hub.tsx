@@ -53,6 +53,9 @@ export function UpdatesHub() {
         description={updatesHubMeta.heroDescription}
         breadcrumbs={breadcrumbs}
         showLastUpdated
+        sharePath="/updates"
+        shareTitle={updatesHubMeta.title}
+        shareText={updatesHubMeta.description}
       />
       <section className="border-b border-border bg-muted/20 py-10 sm:py-12">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6">

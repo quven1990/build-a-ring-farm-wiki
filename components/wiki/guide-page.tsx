@@ -98,7 +98,14 @@ export function GuidePage({ pageId }: GuidePageProps) {
   return (
     <>
       <JsonLdScript data={jsonLd} />
-      <PageHero title={meta.h1} description={meta.heroDescription ?? meta.description} breadcrumbs={breadcrumbs} />
+      <PageHero
+        title={meta.h1}
+        description={meta.heroDescription ?? meta.description}
+        breadcrumbs={breadcrumbs}
+        sharePath={config.path}
+        shareTitle={meta.title}
+        shareText={meta.description}
+      />
       <section className={cn("border-b border-border bg-muted/20 py-10 sm:py-12")}>
         <div className="container mx-auto max-w-3xl px-4 sm:px-6">
           <LastUpdatedBadge />
