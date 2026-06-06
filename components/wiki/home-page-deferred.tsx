@@ -20,14 +20,6 @@ const LazyAdsenseAd = dynamic(
   { ssr: false }
 )
 
-const EnhancedSeoSection = dynamic(
-  () =>
-    import("@/components/wiki/enhanced-seo-section").then((m) => ({
-      default: m.EnhancedSeoSection,
-    })),
-  { ssr: false }
-)
-
 export function HomeCodesSectionDeferred() {
   return (
     <LazyOnView fallback={<HomeCodesPreviewStatic />} minHeight={420}>
@@ -48,17 +40,6 @@ export function HomeMidAdDeferred() {
       minHeight={250}
     >
       <LazyAdsenseAd placement="home" />
-    </LazyOnView>
-  )
-}
-
-export function HomeSeoDeferred() {
-  return (
-    <LazyOnView
-      fallback={<div className="border-t border-border py-12" aria-hidden />}
-      minHeight={400}
-    >
-      <EnhancedSeoSection pageKey="home" relatedKey="home" showFaq={false} />
     </LazyOnView>
   )
 }

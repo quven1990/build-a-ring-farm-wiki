@@ -4,10 +4,10 @@ import { HomeWikiSections } from "@/components/wiki/home-wiki-sections"
 import { QuickNavigation } from "@/components/wiki/quick-navigation"
 import { HomeHubSection } from "@/components/wiki/home-hub-section"
 import { HomeFaqSection } from "@/components/wiki/home-faq-section"
+import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import {
   HomeCodesSectionDeferred,
   HomeMidAdDeferred,
-  HomeSeoDeferred,
 } from "@/components/wiki/home-page-deferred"
 import { JsonLdScript } from "@/components/wiki/json-ld-script"
 import { getFaqForPage } from "@/lib/faq-data"
@@ -33,7 +33,7 @@ export default function HomePage() {
       </div>
       <HomeHubSection />
       <HomeFaqSection />
-      <HomeSeoDeferred />
+      <EnhancedSeoSection pageKey="home" relatedKey="home" showFaq={false} />
     </>
   )
 }
