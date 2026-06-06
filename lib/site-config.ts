@@ -181,7 +181,7 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   events: {
-    title: "Build A Ring Farm Events | Build A Ring Farm Wiki",
+    title: "Build A Ring Farm Events — Weather & Rolls (2026)",
     h1: "Build A Ring Farm Events",
     description:
       "Build A Ring Farm weather events guide: Rain, Blizzard, Black Hole, Nuclear & Galaxy trigger rates, per-roll odds & free mutation income boosts.",
@@ -199,10 +199,10 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   rings: {
-    title: "Build A Ring Farm Rings — 7x, 13x & 19x Guide (2026)",
+    title: "Build A Ring Farm Rings — 7x, 13x & 19x Multipliers",
     h1: "Build A Ring Farm Rings",
     description:
-      "Build A Ring Farm rings guide (June 2026): Inner 7x, Middle 13x & Outer 19x multipliers. Placement strategy, saw bonus synergy & endgame layout tips.",
+      "Build A Ring Farm rings reference (June 2026): Inner 7x, Middle 13x & Outer 19x multipliers. Compare zones, saw bonus synergy & ring unlock costs.",
     heroDescription:
       "Inner, Middle, and Outer ring multipliers — where to plant each crop for max profit. Updated May 2026.",
     ogTitle: "Build A Ring Farm Rings — Multipliers & Placement (2026)",
@@ -217,7 +217,7 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   calculator: {
-    title: "Build A Ring Farm Calculator | Build A Ring Farm Wiki",
+    title: "Build A Ring Farm Profit Calculator — Free (2026)",
     h1: "Build A Ring Farm Calculator",
     description:
       "Free Build A Ring Farm calculator: verified per-plant & total harvest formula. Test seed level, rings, mutations, saw, sprinkler & cash multipliers.",
@@ -253,7 +253,7 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   progression: {
-    title: "Build A Ring Farm Progression | Build A Ring Farm Wiki",
+    title: "Build A Ring Farm Progression — Upgrade Path (2026)",
     h1: "Build A Ring Farm Progression",
     description:
       "Build A Ring Farm progression guide: early, mid & late game upgrade paths. Which seeds, rings & tools to unlock first for the fastest cash growth.",
