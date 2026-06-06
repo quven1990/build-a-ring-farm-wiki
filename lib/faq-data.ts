@@ -317,6 +317,23 @@ export const faqByPage: Record<string, FAQEntry[]> = {
         "Usually unlock rings in order so each tier has crops worth the multiplier. Middle is strong for legendaries before you can fill Outer with secrets.",
     },
   ],
+  "build-a-ring-beginner-mistakes": [
+    {
+      question: "What is the biggest beginner mistake in Build A Ring Farm?",
+      answer:
+        "Skipping active codes and bad ring placement — redeem every working string first, keep fast crops on Inner, and save Outer for slow high-income plants.",
+    },
+    {
+      question: "Should I buy Rainbow spray early?",
+      answer:
+        "Only after the profit calculator shows positive ROI for your seed level and ring. Free weather procs often beat expensive shop sprays on weak plots.",
+    },
+    {
+      question: "Where do I find codes that actually work?",
+      answer:
+        "Use the active codes page — synced weekly from public gaming lists. For major drops like 250KUSERS, read the updates hub article for context.",
+    },
+  ],
 }
 
 export function getFaqForPage(pageKey: string): FAQEntry[] {

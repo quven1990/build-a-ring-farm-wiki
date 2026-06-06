@@ -3,6 +3,7 @@ import type { SeoBlock } from "@/lib/seo-article-content"
 export type GuidePageId =
   | "build-a-ring-farm"
   | "build-a-ring-guide"
+  | "build-a-ring-beginner-mistakes"
   | "build-a-ring-codes"
   | "build-a-ring-calculator"
   | "build-a-ring-wiki"

@@ -31,6 +31,7 @@ export function articleJsonLd(params: {
   description: string
   path: string
   dateModified: string
+  datePublished?: string
 }) {
   return {
     "@context": "https://schema.org",
@@ -39,6 +40,7 @@ export function articleJsonLd(params: {
     description: params.description,
     url: absoluteUrl(params.path),
     dateModified: params.dateModified,
+    ...(params.datePublished ? { datePublished: params.datePublished } : {}),
     author: {
       "@type": "Organization",
       name: siteConfig.name,

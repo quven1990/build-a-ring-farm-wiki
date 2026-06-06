@@ -36,12 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background" suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: `(function(){function c(){try{var e=document.getElementById("rcr-wrapper");e&&(e.removeAttribute("id"),e.removeAttribute("class"),e.hidden=!0);var t=document.body;if(t){var s=t.getAttribute("style")||"";(/margin-top:\\s*36px/i.test(s)||/position:\\s*absolute/i.test(s))&&t.removeAttribute("style")}document.querySelectorAll("header").forEach(function(h){var o=h.style&&h.style.top;if(o&&/calc\\(36px\\)/i.test(o))h.style.removeProperty("top")})}catch(r){}}c()})();`,
-          }}
-        />
         {children}
         <DeferredClientShell />
       </body>

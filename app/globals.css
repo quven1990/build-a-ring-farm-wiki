@@ -159,3 +159,21 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
+
+/*
+ * Privacy/cookie extensions inject #rcr-wrapper and push body/header down.
+ * CSS only — no pre-hydration DOM mutation (avoids React 19 hydration mismatch).
+ */
+#rcr-wrapper,
+#rcr-anchor {
+  display: contents !important;
+}
+
+body:has(#rcr-wrapper) {
+  margin-top: 0 !important;
+  position: static !important;
+}
+
+header[style*="calc(36px"] {
+  top: 0 !important;
+}

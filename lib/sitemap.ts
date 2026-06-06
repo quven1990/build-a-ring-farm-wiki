@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 import { navItems, siteConfig, sitemapRouteSettings } from "@/lib/site-config"
 import { guideRoutes, guideSitemapSettings } from "@/lib/seo-routes"
+import { updateArticleSlugs } from "@/lib/updates/articles"
 
 /** Canonical absolute URL for sitemap, robots, and metadata */
 export function absoluteUrl(path: string): string {
@@ -53,6 +54,20 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
     }
   })
 
+  const updateHubEntry = {
+    url: absoluteUrl("/updates"),
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }
+
+  const updateArticleEntries = updateArticleSlugs.map((slug) => ({
+    url: absoluteUrl(`/updates/${slug}`),
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.88,
+  }))
+
   /** Legal pages use noindex — omit from sitemap to avoid low-value URL noise in Search Console. */
-  return [...toolEntries, ...guideEntries]
+  return [...toolEntries, ...guideEntries, updateHubEntry, ...updateArticleEntries]
 }

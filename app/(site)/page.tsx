@@ -1,5 +1,6 @@
 import { preload } from "react-dom"
 import { HeroSectionStatic } from "@/components/wiki/hero-section-static"
+import { LatestCodeSyncBanner } from "@/components/wiki/latest-code-sync-banner"
 import { HomeWikiSections } from "@/components/wiki/home-wiki-sections"
 import { QuickNavigation } from "@/components/wiki/quick-navigation"
 import { HomeHubSection } from "@/components/wiki/home-hub-section"
@@ -25,6 +26,7 @@ export default function HomePage() {
       <JsonLdScript data={webSiteJsonLd()} />
       <JsonLdScript data={faqPageJsonLd(getFaqForPage("home"))} />
       <HeroSectionStatic />
+      <LatestCodeSyncBanner />
       <HomeCodesSectionDeferred />
       <HomeWikiSections />
       <QuickNavigation />

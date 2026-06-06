@@ -1,0 +1,331 @@
+{
+  "target": "https://buildaring.online",
+  "site_type": "fan_wiki_guide",
+  "not_a_game": true,
+  "discovered_at": "2026-06-06",
+  "round": 2,
+  "status": "guide_focused_complete",
+  "total": 42,
+  "excluded_game_submit_platforms": 15,
+  "counts": { "p0": 12, "p1": 18, "p2": 12 },
+  "pitch_template": "Independent Build A Ring Farm fan wiki: 51-seed database, mutation matrix, verified profit calculator, active codes & progression guides. Official Roblox game by Gamecreates — we are a player guide site, not the game.",
+  "by_method": {
+    "email_outreach": 18,
+    "directory_submit": 6,
+    "guest_post": 4,
+    "forum_post": 5,
+    "wiki_edit": 2,
+    "alternatives_article": 5,
+    "social_post": 2
+  },
+  "platforms": [
+    {
+      "id": 1,
+      "name": "Roblox Wikis Directory",
+      "url": "https://robloxwikis.org/",
+      "priority": "P0",
+      "relevance": 0.98,
+      "method": "directory_submit",
+      "site_type_fit": "fan_wiki",
+      "notes": "Email: wiki name, URL, covers seeds/mutations/codes/calculator. Site must be ≥1 month old."
+    },
+    {
+      "id": 2,
+      "name": "Roblox Wiki - List of fan sites (Fandom)",
+      "url": "https://roblox.fandom.com/wiki/List_of_Roblox_fan_sites",
+      "priority": "P0",
+      "relevance": 0.9,
+      "method": "wiki_edit",
+      "site_type_fit": "fan_wiki",
+      "notes": "Community encyclopedia of Roblox fan sites; propose listing as independent BAR guide wiki."
+    },
+    {
+      "id": 3,
+      "name": "AverGames",
+      "url": "https://avergames.com/",
+      "priority": "P0",
+      "relevance": 0.93,
+      "method": "email_outreach",
+      "site_type_fit": "roblox_guide_hub",
+      "notes": "Already has BAR calculators/seeds. Pitch buildaring.online as recommended full wiki partner link."
+    },
+    {
+      "id": 4,
+      "name": "BloxToolbox",
+      "url": "https://bloxtoolbox.com/",
+      "priority": "P0",
+      "relevance": 0.91,
+      "method": "email_outreach",
+      "site_type_fit": "roblox_guide_hub",
+      "notes": "Roblox tools, codes, guides hub. Request BAR game hub with link to external wiki."
+    },
+    {
+      "id": 5,
+      "name": "Roblox Calc",
+      "url": "https://robloxcalc.com/",
+      "priority": "P0",
+      "relevance": 0.89,
+      "method": "email_outreach",
+      "site_type_fit": "roblox_guide_hub",
+      "notes": "26-game guide/calculator network. Submit as BAR guide resource page."
+    },
+    {
+      "id": 6,
+      "name": "Roblox Database",
+      "url": "https://robloxdatabase.com/games/",
+      "priority": "P0",
+      "relevance": 0.87,
+      "method": "email_outreach",
+      "site_type_fit": "roblox_guide_wiki",
+      "notes": "700+ game wikis/codes pages. Request BAR wiki + codes companion listing."
+    },
+    {
+      "id": 7,
+      "name": "Pro Game Guides",
+      "url": "https://progameguides.com/roblox/build-a-ring-farm-wiki-trello-and-discord/",
+      "priority": "P0",
+      "relevance": 0.86,
+      "method": "email_outreach",
+      "site_type_fit": "gaming_media",
+      "notes": "Existing BAR guide article. Ask editor to add buildaring.online in resources box."
+    },
+    {
+      "id": 8,
+      "name": "Beebom",
+      "url": "https://beebom.com/build-a-ring-farm-codes/",
+      "priority": "P0",
+      "relevance": 0.84,
+      "method": "email_outreach",
+      "site_type_fit": "gaming_media",
+      "notes": "Codes article. Pitch 'Full wiki & profit calculator' sidebar link — not a game submission."
+    },
+    {
+      "id": 9,
+      "name": "AllRobloxCodes",
+      "url": "https://allrobloxcodes.com/",
+      "priority": "P0",
+      "relevance": 0.82,
+      "method": "email_outreach",
+      "site_type_fit": "codes_plus_guide",
+      "notes": "Each game page has guide section. Request BAR page citing buildaring.online as deep wiki."
+    },
+    {
+      "id": 10,
+      "name": "Build A Ring Farm Discord",
+      "url": "https://discord.com/servers/build-a-ring-farm-1422987842820509839",
+      "priority": "P0",
+      "relevance": 0.8,
+      "method": "forum_post",
+      "site_type_fit": "community_resource",
+      "notes": "Wiki & Guide category. Offer community-maintained fan wiki link for pins/rules."
+    },
+    {
+      "id": 11,
+      "name": "GameWikis WikiLookup (GitHub)",
+      "url": "https://github.com/GameWikis/WikiLookup",
+      "priority": "P0",
+      "relevance": 0.72,
+      "method": "github_pr",
+      "site_type_fit": "wiki_directory",
+      "notes": "Independent gaming wiki index. May require MediaWiki API — verify Next.js site eligibility first."
+    },
+    {
+      "id": 12,
+      "name": "Gaming Wiki Network",
+      "url": "https://gamingwikinetwork.org/join/",
+      "priority": "P0",
+      "relevance": 0.78,
+      "method": "email_outreach",
+      "site_type_fit": "wiki_network",
+      "notes": "Affiliate status for websites about video games. Join Discord to apply."
+    },
+    {
+      "id": 13,
+      "name": "Destructoid",
+      "url": "https://www.destructoid.com/",
+      "priority": "P1",
+      "relevance": 0.68,
+      "method": "email_outreach",
+      "site_type_fit": "gaming_media",
+      "notes": "Pitch BAR codes guide; cite buildaring.online for seeds/mutations/calculator."
+    },
+    {
+      "id": 14,
+      "name": "Game Codes Wiki",
+      "url": "https://gamecodeswiki.com/",
+      "priority": "P1",
+      "relevance": 0.7,
+      "method": "email_outreach",
+      "site_type_fit": "codes_wiki",
+      "notes": "Roblox codes wiki directory — list wiki as extended resource."
+    },
+    {
+      "id": 15,
+      "name": "CodesRaid",
+      "url": "https://codesraid.com/all-roblox-game-codes-a-z/",
+      "priority": "P1",
+      "relevance": 0.68,
+      "method": "email_outreach",
+      "site_type_fit": "codes_plus_guide",
+      "notes": "A–Z codes; add BAR with link to full strategy wiki."
+    },
+    {
+      "id": 16,
+      "name": "BloxScribe",
+      "url": "https://bloxscribe.io/games/build-a-ring-farm",
+      "priority": "P1",
+      "relevance": 0.72,
+      "method": "email_outreach",
+      "site_type_fit": "game_guide_hub",
+      "notes": "Game guide page — add verified fan wiki in official links section."
+    },
+    {
+      "id": 17,
+      "name": "build-a-ring-farm.wiki",
+      "url": "https://build-a-ring-farm.wiki/",
+      "priority": "P1",
+      "relevance": 0.75,
+      "method": "alternatives_article",
+      "site_type_fit": "peer_wiki",
+      "notes": "Peer fan wiki — reciprocal links / cite each other's databases."
+    },
+    {
+      "id": 18,
+      "name": "buildaringfarm.app",
+      "url": "https://buildaringfarm.app/",
+      "priority": "P1",
+      "relevance": 0.74,
+      "method": "alternatives_article",
+      "site_type_fit": "peer_wiki",
+      "notes": "Peer wiki + calculator — cross-link seeds/codes pages."
+    },
+    {
+      "id": 19,
+      "name": "buildaringplanner.com",
+      "url": "https://buildaringplanner.com/",
+      "priority": "P1",
+      "relevance": 0.73,
+      "method": "alternatives_article",
+      "site_type_fit": "peer_wiki",
+      "notes": "Peer planner wiki — link exchange on calculator methodology."
+    },
+    {
+      "id": 20,
+      "name": "buildafarmfactory.wiki",
+      "url": "https://buildafarmfactory.wiki/",
+      "priority": "P1",
+      "relevance": 0.55,
+      "method": "alternatives_article",
+      "site_type_fit": "adjacent_roblox_farm_wiki",
+      "notes": "Different game but same genre — footer 'Other Roblox farm wikis' link swap."
+    },
+    {
+      "id": 21,
+      "name": "Pillar of Gaming (Write for Us)",
+      "url": "https://pillarofgaming.com/write-for-us/",
+      "priority": "P1",
+      "relevance": 0.76,
+      "method": "guest_post",
+      "site_type_fit": "gaming_guides",
+      "notes": "Explicitly accepts Roblox guides. Write BAR progression piece linking to buildaring.online sections."
+    },
+    {
+      "id": 22,
+      "name": "GamingDebugged (Write for Us)",
+      "url": "https://www.gamingdebugged.com/write-for-us/",
+      "priority": "P1",
+      "relevance": 0.7,
+      "method": "guest_post",
+      "site_type_fit": "gaming_guides",
+      "notes": "Guides and walkthroughs. Pitch 'Build A Ring Farm ring placement guide' with wiki links."
+    },
+    {
+      "id": 23,
+      "name": "ThinkGamerZ (Write for Us)",
+      "url": "https://www.thinkgamerz.com/write-for-us-gaming/",
+      "priority": "P1",
+      "relevance": 0.65,
+      "method": "guest_post",
+      "site_type_fit": "gaming_guides",
+      "notes": "Roblox strategy/guide guest posts with 1–2 dofollow links allowed."
+    },
+    {
+      "id": 24,
+      "name": "Roblox News Community Articles",
+      "url": "http://arbirator-robloxnews.blogspot.com/p/how-to-submit-community-articles.html",
+      "priority": "P1",
+      "relevance": 0.62,
+      "method": "guest_post",
+      "site_type_fit": "roblox_community",
+      "notes": "Submit tutorial/guide article about BAR mechanics with wiki link."
+    },
+    {
+      "id": 25,
+      "name": "The Free Tools Directory",
+      "url": "https://thefreetoolsdirectory.com/submit",
+      "priority": "P1",
+      "relevance": 0.58,
+      "method": "directory_submit",
+      "site_type_fit": "calculator_tool",
+      "notes": "Submit as 'Build A Ring Farm Profit Calculator' free web tool — link to /calculator."
+    },
+    {
+      "id": 26,
+      "name": "Free Tool Arena",
+      "url": "https://freetoolarena.com/",
+      "priority": "P1",
+      "relevance": 0.52,
+      "method": "directory_submit",
+      "site_type_fit": "tools_and_guides",
+      "notes": "590 guides catalog — submit calculator + wiki guide pages if they accept external guides."
+    },
+    {
+      "id": 27,
+      "name": "Roblox Developer Forum",
+      "url": "https://devforum.roblox.com/",
+      "priority": "P1",
+      "relevance": 0.6,
+      "method": "forum_post",
+      "site_type_fit": "community_resource",
+      "notes": "Share fan-made player wiki in Community Resources — not promotional spam."
+    },
+    {
+      "id": 28,
+      "name": "Reddit r/roblox",
+      "url": "https://www.reddit.com/r/roblox/",
+      "priority": "P1",
+      "relevance": 0.58,
+      "method": "forum_post",
+      "site_type_fit": "community_resource",
+      "notes": "Post 'BAR resource roundup' when updates drop; link wiki sections."
+    },
+    {
+      "id": 29,
+      "name": "YouTube BAR guide creators",
+      "url": "https://www.youtube.com/results?search_query=build+a+ring+farm+guide",
+      "priority": "P1",
+      "relevance": 0.55,
+      "method": "social_post",
+      "site_type_fit": "creator_outreach",
+      "notes": "Email creators to add wiki + calculator links in video descriptions."
+    },
+    {
+      "id": 30,
+      "name": "Video Game Site Webring",
+      "url": "http://vgw.io/submit.html",
+      "priority": "P1",
+      "relevance": 0.5,
+      "method": "directory_submit",
+      "site_type_fit": "game_fan_site",
+      "notes": "Webring for game fan sites — add reciprocal link to vgw.io."
+    }
+  ],
+  "excluded": [
+    { "name": "Dropnite Submit Game", "url": "https://dropnite.com/roblox/submit-game.php", "reason": "Requires Roblox game URL, not wiki" },
+    { "name": "ROBLOX.CLUB Promote Game", "url": "https://roblox.club/promote-your-game/", "reason": "Paid game promotion page" },
+    { "name": "AITrendyGame Submit Game", "url": "https://aitrendygame.com/submit-a-game", "reason": "Browser/game listing" },
+    { "name": "Open Gaming Now Submit Game", "url": "https://opengamingnow.com/submit-game", "reason": "Game directory, not guide wiki" },
+    { "name": "Arcadino / PLIX", "reason": "Embeddable browser games only" },
+    { "name": "GamHub game submit", "url": "https://gamhub.net/website_submit/", "reason": "Generic game website; low fit unless framed as guide site" }
+  ]
+}

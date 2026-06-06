@@ -325,6 +325,23 @@ export const guidePageMeta: Record<
     breadcrumb: "Beginner Guide",
     keywords: ["build a ring beginner guide", "how to play", "new player", "Roblox"],
   },
+  "build-a-ring-beginner-mistakes": {
+    title: "Build A Ring Beginner Mistakes — What to Avoid (2026)",
+    h1: "Build A Ring Farm Beginner Mistakes",
+    description:
+      "Ten common Build A Ring Farm mistakes new players make — bad ring placement, expired codes, spray waste, and event timing. Fixes plus links to calculator and progression guides.",
+    heroDescription:
+      "Stop wasting hours on codes, rings, and sprays — quick fixes for the mistakes that slow most farms.",
+    ogTitle: "Build A Ring Farm Beginner Mistakes Guide",
+    ogImageAlt: "Build A Ring Farm beginner mistakes to avoid",
+    breadcrumb: "Beginner Mistakes",
+    keywords: [
+      "build a ring farm mistakes",
+      "beginner errors",
+      "what not to do",
+      "new player tips",
+    ],
+  },
   "build-a-ring-codes": {
     title: "How to Redeem Build A Ring Farm Codes (2026)",
     h1: "Build A Ring Farm Codes Guide",
@@ -412,8 +429,10 @@ export const guidePageMeta: Record<
 }
 
 export const footerGuideLinks = [
+  { label: "Updates", href: "/updates" },
   { label: "Farm Guide", href: "/build-a-ring-farm" },
   { label: "Beginner Guide", href: "/build-a-ring-guide" },
+  { label: "Beginner Mistakes", href: "/build-a-ring-beginner-mistakes" },
   { label: "Codes Guide", href: "/build-a-ring-codes" },
   { label: "Calculator Guide", href: "/build-a-ring-calculator" },
   { label: "Wiki Index", href: "/build-a-ring-wiki" },

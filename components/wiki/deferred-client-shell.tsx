@@ -5,6 +5,7 @@ import { LazyToaster } from "@/components/wiki/lazy-toaster"
 import { ClientConsentScripts } from "@/components/wiki/client-consent-scripts"
 import { GoogleAnalytics } from "@/components/wiki/google-analytics"
 import { DeferredAnalytics } from "@/components/wiki/deferred-analytics"
+import { RcrWrapperCleanup } from "@/components/wiki/rcr-wrapper-cleanup"
 import { scheduleIdle } from "@/lib/schedule-idle"
 
 /** Mount shell (GA + consent) right after hydration; Plausible/Clarity stay idle-deferred. */
@@ -20,6 +21,7 @@ export function DeferredClientShell() {
 
   return (
     <>
+      <RcrWrapperCleanup />
       <GoogleAnalytics />
       <LazyToaster />
       <ClientConsentScripts />

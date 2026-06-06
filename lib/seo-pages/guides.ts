@@ -178,7 +178,7 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "p",
-        text: "Parking fast carrots on Outer, ignoring events while crops are ready, and copying expired codes from old videos are the top three time sinks. Mark codes that fail and try the next active entry. Check the update log when a patch drops — balance changes can shift which commons are best without warning.",
+        text: "Parking fast carrots on Outer, ignoring events while crops are ready, and copying expired codes from old videos are the top three time sinks. See the dedicated beginner mistakes guide for ten fixes with tool links. Mark codes that fail and try the next active entry. Check the updates hub when a new code drops — balance changes can shift which commons are best without warning.",
       },
       {
         type: "h2",
@@ -188,6 +188,133 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       {
         type: "p",
         text: "buildaring.online is a companion toolkit, not a replacement for playing. Run the game in one window and keep this site in another for codes and tables. Community data can lag patches — if a harvest looks wrong, trust a single in-game test over any table row.",
+      },
+    ],
+  },
+  "build-a-ring-beginner-mistakes": {
+    id: "build-a-ring-beginner-mistakes",
+    path: "/build-a-ring-beginner-mistakes",
+    metaKey: "build-a-ring-beginner-mistakes",
+    schema: "Article",
+    toolCta: {
+      href: "/progression",
+      label: "Open Progression Guide",
+      description: "Early to late upgrade order after you fix these mistakes.",
+    },
+    whatYouCanDo: [
+      "Spot the ten most common early and mid-game mistakes before they cost hours",
+      "Learn what to do instead — with links to seeds, rings, and calculator tools",
+      "Avoid code scams, bad ring placement, and premature spray purchases",
+      "Share one page with friends who just started on Roblox",
+    ],
+    blocks: [
+      {
+        type: "h2",
+        id: "beginner-mistakes-intro",
+        text: "Build A Ring Farm Beginner Mistakes — What to Avoid",
+      },
+      {
+        type: "p",
+        text: "This page lists mistakes that slow new and mid-game players — not a tutorial. If you have never planted a crop, start with the beginner guide first. If you already play daily but income feels stuck, scan this checklist before chasing rare seeds. Every item includes a fix you can run in one session. Numbers on this wiki are community-sourced; confirm expensive choices in-game.",
+      },
+      {
+        type: "h2",
+        id: "mistake-codes-last",
+        text: "Mistake 1: Redeeming Codes Last (or Never)",
+      },
+      {
+        type: "p",
+        text: "Codes grant seed packs, sprays, fertilizers, and time skips that compress your first hour. Many players grind empty plots before opening Settings → Codes. Fix: redeem every active string once at the start of each session — open the active codes page, copy from the top, paste in-game. Failed codes usually mean expiration, not a ban. Never enter your Roblox password on third-party sites.",
+      },
+      {
+        type: "h2",
+        id: "mistake-outer-commons",
+        text: "Mistake 2: Putting Fast Crops on the Outer Ring",
+      },
+      {
+        type: "p",
+        text: "Outer ring multipliers reward long grow timers and high base income. Parking commons or uncommons there wastes the 19x zone on crops that pay better with frequent Inner harvests. Fix: keep fast crops on Inner until Middle and Outer slots hold epics or legendaries worth the wait. Read the best rings guide for placement order.",
+      },
+      {
+        type: "h2",
+        id: "mistake-sprays-blind",
+        text: "Mistake 3: Buying Expensive Sprays Without Math",
+      },
+      {
+        type: "p",
+        text: "Rainbow-tier shop sprays cost billions. Players buy them because the multiplier looks high, then harvest on Inner with weak leveled plants. Fix: run the profit calculator with your real seed level, ring, and mutation before any Gear Shop purchase. Often a free Wet proc during Rain on a ready Outer crop beats a paid spray on Inner.",
+      },
+      {
+        type: "h2",
+        id: "mistake-random-plots",
+        text: "Mistake 4: Filling Every Plot With Random Roller Pulls",
+      },
+      {
+        type: "p",
+        text: "Empty plots earn nothing, but a field of mismatched commons slows reinvestment because you level twelve weak plants instead of six strong ones. Fix: fill slots early, then replace bottom earners using the seeds database — sort by income per minute for your play style. Mid game, consider the Big Lion two-crop focus described in the farm efficiency guide if you already hold Epic pets.",
+      },
+      {
+        type: "h2",
+        id: "mistake-ignore-events",
+        text: "Mistake 5: Ignoring Weather While Crops Are Ready",
+      },
+      {
+        type: "p",
+        text: "Harvesting during random logins throws away free mutation procs. Galaxy and Nuclear windows can multiply Outer harvests more than an extra hour of grinding. Fix: check the events page before login, note which plots mature during active weather, harvest high-ring mutated crops first. Practice with Rain and Wet before chasing rare Bee Swarm procs.",
+      },
+      {
+        type: "h2",
+        id: "mistake-transcended-rush",
+        text: "Mistake 6: Chasing Transcended Seeds Too Early",
+      },
+      {
+        type: "p",
+        text: "Transcended-tier crops have tiny roll weights. Burning roller budget before Outer holds strong epic or legendary income usually lowers total coins per week. Fix: follow the progression guide stage gates — stabilize Middle and Outer with epics and secrets first, then farm toward prismatic and transcended bands when calculator scenarios justify the grind.",
+      },
+      {
+        type: "h2",
+        id: "mistake-saw-first",
+        text: "Mistake 7: Upgrading Saw Before Crop Quality",
+      },
+      {
+        type: "p",
+        text: "Saw level amplifies every zone. Raising saw while Inner still runs weak plants multiplies small numbers. Fix: upgrade seed quality per ring tier first, then raise saw when Middle and Outer already hold leveled crops worth amplifying. Model combinations in the calculator before moving plants.",
+      },
+      {
+        type: "h2",
+        id: "mistake-expired-codes",
+        text: "Mistake 8: Copying Codes From Old Videos",
+      },
+      {
+        type: "p",
+        text: "YouTube titles rarely remove expired strings. Players waste time on RELATED-style dead codes while active ones sit on the current list. Fix: bookmark the active codes page or updates hub — we sync weekly from public gaming lists and publish dedicated articles for major drops like 250KUSERS. Mark failures and try the next row.",
+      },
+      {
+        type: "h2",
+        id: "mistake-spread-upgrades",
+        text: "Mistake 9: Spreading Upgrades Everywhere at Once",
+      },
+      {
+        type: "p",
+        text: "Simultaneously unlocking Outer, buying sprays, and rerolling the entire field spreads income too thin. Fix: reinvest in order — fill plots, strengthen highest ring crops, then saw, then mutation budget. Codes and free packs should snap you to the next progression stage, not skip ten steps.",
+      },
+      {
+        type: "h2",
+        id: "mistake-harvest-order",
+        text: "Mistake 10: Harvesting Inner First During Events",
+      },
+      {
+        type: "p",
+        text: "When multiple rings have ready crops during Galaxy or Nuclear, harvesting Inner commons first can mean Outer exotics miss the proc window. Fix: harvest from highest ring outward when weather is active and mutations matter. Use the mutations matrix to know which procs stack with your crops.",
+      },
+      {
+        type: "h2",
+        id: "what-to-read-next",
+        text: "What to Read After Fixing These",
+      },
+      {
+        type: "p",
+        text: "New players: beginner guide checklist, then progression. Optimizers: farm efficiency guide and tier list framework. Before every big purchase: profit calculator. After patches: updates hub for code news and update log for data reviews. Together these pages turn one-time mistakes into habits that scale with your farm.",
       },
     ],
   },
@@ -345,7 +472,7 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "p",
-        text: "Calculator tool runs harvest math. Calculator guide explains scenarios. Codes tool copies strings. Codes guide explains redemption and expired handling. Farm guide covers efficiency; beginner guide covers first sessions; tier list framework groups crops by role; best rings guide focuses on unlock order. FAQ exists in both quick (/faq) and long-form (/build-a-ring-faq) formats for different search intents.",
+        text: "Calculator tool runs harvest math. Calculator guide explains scenarios. Codes tool copies strings. Codes guide explains redemption and expired handling. Updates hub publishes one page per major code drop or patch. Farm guide covers efficiency; beginner guide covers first sessions; beginner mistakes guide lists common errors; tier list framework groups crops by role; best rings guide focuses on unlock order. FAQ exists in both quick (/faq) and long-form (/build-a-ring-faq) formats for different search intents.",
       },
       {
         type: "h2",
@@ -354,7 +481,7 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "p",
-        text: "The update log summarizes site edits and community-reported game changes. After patches, check codes and mutations first, then seeds if new crops appear. We are not an official wiki — cross-check transcended-tier values and rare procs in-game when stakes are high.",
+        text: "The update log summarizes site edits and community-reported game changes. For shareable code and patch articles, open the updates hub — each major drop gets its own URL. After patches, check codes and mutations first, then seeds if new crops appear. We are not an official wiki — cross-check transcended-tier values and rare procs in-game when stakes are high.",
       },
     ],
   },
@@ -547,6 +674,15 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       {
         type: "p",
         text: "Codes: weekly GitHub Action (scripts/sync-codes.mjs) syncs from seven gaming-media code lists — no competitor wiki domains linked on-site. Community sync labels mean 2+ sources matched; never auto-marked Verified in-game.",
+      },
+      {
+        type: "h2",
+        id: "late-may-2026-content",
+        text: "Late May 2026 — Updates hub and beginner mistakes guide",
+      },
+      {
+        type: "p",
+        text: "Content: added /updates hub with dedicated Update 4 article for 250KUSERS, homepage latest-code sync banner, and build-a-ring-beginner-mistakes long-tail guide. Sitemap now includes update article URLs for patch and code news separate from this changelog.",
       },
       {
         type: "h2",
