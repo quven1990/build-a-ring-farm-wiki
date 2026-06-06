@@ -123,13 +123,13 @@ export type PageMeta = {
 
 export const pageMeta: Record<string, PageMeta> = {
   home: {
-    title: "Build A Ring Farm Wiki – Codes, Seeds, Mutations & Calculator (June 2026)",
+    title: "Build A Ring Farm Wiki — Codes, Seeds & Calculator (2026)",
     h1: "Build A Ring Farm Wiki — Codes, Seeds & Calculator",
     description:
-      "Active Build A Ring Farm codes, free profit calculator, full mutations list & 51-seed database — unofficial Roblox wiki. Updated June 2026.",
+      "Active Build A Ring Farm codes, free profit calculator, full mutations list & 51-seed database — unofficial fan wiki for Roblox players. Updated June 2026.",
     heroDescription:
       "Active redeem codes, profit calculator, mutations matrix, and 51-seed database — updated June 2026.",
-    ogTitle: "Build A Ring Farm Wiki — Codes, Seeds, Mutations & Calculator",
+    ogTitle: "Build A Ring Farm Wiki — Codes, Seeds & Calculator",
     ogImageAlt: "Build A Ring Farm wiki hero — farmer, crops, and glowing ring portal",
     breadcrumb: "Home",
     keywords: [
@@ -144,13 +144,13 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   seeds: {
-    title: "Build A Ring Farm Seeds List — 51 Crops & Rarities (May 2026)",
+    title: "Build A Ring Farm Seeds — 51 Crops & Rarities (2026)",
     h1: "Build A Ring Farm Seeds",
     description:
-      "Full Build A Ring Farm seeds list (May 2026): 51 crops, 10 rarities, base income, grow times & roll odds. Compare seeds and plan the most profitable farm layout.",
+      "Full Build A Ring Farm seeds list: 51 crops, 10 rarities, base income, grow times & roll odds. Compare crops and plan the most profitable layout. Updated 2026.",
     heroDescription:
       "Every seed — rarity, income, grow time, and roll weight in one database. Updated May 2026.",
-    ogTitle: "Build A Ring Farm Seeds — Full Database (May 2026)",
+    ogTitle: "Build A Ring Farm Seeds — Full Database (2026)",
     ogImageAlt: "Build A Ring Farm seeds guide showing crop rarities and farming plots",
     breadcrumb: "Seeds",
     keywords: [
@@ -162,13 +162,13 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   mutations: {
-    title: "Build A Ring Farm Mutations List — All Multipliers (June 2026)",
+    title: "Build A Ring Farm Mutations — Multipliers (June 2026)",
     h1: "Build A Ring Farm Mutations",
     description:
-      "Full Build A Ring Farm mutations list (June 2026): Wet 1.5x through Honeycomb 6.5x multipliers, Gear Shop prices, weather triggers & event-only buffs. Compare before you buy sprays.",
+      "Build A Ring Farm mutations (June 2026): Wet 1.5x to Honeycomb 6.5x, Gear Shop prices, weather triggers & event buffs. Compare multipliers before buying sprays.",
     heroDescription:
       "Every mutation multiplier — shop prices, weather triggers, and event-only tags. Updated June 2026.",
-    ogTitle: "Build A Ring Farm Mutations — Full Multiplier List (June 2026)",
+    ogTitle: "Build A Ring Farm Mutations — Multiplier List (June 2026)",
     ogImageAlt: "Build A Ring Farm mutation matrix with harvest multipliers",
     breadcrumb: "Mutations",
     keywords: [
@@ -199,13 +199,13 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   rings: {
-    title: "Build A Ring Farm Rings — 7x / 13x / 19x Multipliers (May 2026)",
+    title: "Build A Ring Farm Rings — 7x, 13x & 19x Guide (2026)",
     h1: "Build A Ring Farm Rings",
     description:
-      "Build A Ring Farm rings guide (May 2026): Inner 7x, Middle 13x & Outer 19x multipliers. Placement strategy, saw bonus synergy & endgame layout tips.",
+      "Build A Ring Farm rings guide (June 2026): Inner 7x, Middle 13x & Outer 19x multipliers. Placement strategy, saw bonus synergy & endgame layout tips.",
     heroDescription:
       "Inner, Middle, and Outer ring multipliers — where to plant each crop for max profit. Updated May 2026.",
-    ogTitle: "Build A Ring Farm Rings — Multipliers & Placement (May 2026)",
+    ogTitle: "Build A Ring Farm Rings — Multipliers & Placement (2026)",
     ogImageAlt: "Build A Ring Farm ring placement on circular farm plots",
     breadcrumb: "Rings",
     keywords: [
@@ -294,10 +294,10 @@ export const guidePageMeta: Record<
   PageMeta & { breadcrumb: string }
 > = {
   "build-a-ring-farm": {
-    title: "Build A Ring Farm Guide — Farming & Efficiency | buildaring.online",
+    title: "Build A Ring Farm Guide — Efficiency & Farming (2026)",
     h1: "Build A Ring Farm Efficiency Guide",
     description:
-      "Farming efficiency guide for Build A Ring Farm: Big Lion two-crop focus, Plant Rush and Cosmic Spray, harvest rhythm, rings, and reinvestment. Community data — verify in-game after patches.",
+      "Build A Ring Farm farm guide: Big Lion two-crop focus, Plant Rush, Cosmic Spray, harvest rhythm, rings & reinvestment. Community tips — verify stats in-game.",
     heroDescription:
       "Plan faster sessions, post-update money metas, smarter harvests, and better reinvestment — without repeating a beginner tutorial.",
     ogTitle: "Build A Ring Farm Efficiency Guide",
@@ -314,10 +314,10 @@ export const guidePageMeta: Record<
     ],
   },
   "build-a-ring-guide": {
-    title: "Build A Ring Beginner Guide — Start on Roblox | buildaring.online",
+    title: "Build A Ring Farm Beginner Guide — Roblox (2026)",
     h1: "Build A Ring Farm Beginner Guide",
     description:
-      "New player guide for Build A Ring Farm: first session checklist, codes, seeds, rings, and what to read next on Roblox.",
+      "New player guide for Build A Ring Farm on Roblox: first-session checklist, codes, seeds, rings, and what to read next. Start smart without grinding blind.",
     heroDescription:
       "First hours on Roblox — clear steps from planting your first crop to your first smart upgrade.",
     ogTitle: "Build A Ring Farm Beginner Guide",
@@ -326,7 +326,7 @@ export const guidePageMeta: Record<
     keywords: ["build a ring beginner guide", "how to play", "new player", "Roblox"],
   },
   "build-a-ring-codes": {
-    title: "How to Redeem Build A Ring Farm Codes | buildaring.online",
+    title: "How to Redeem Build A Ring Farm Codes (2026)",
     h1: "Build A Ring Farm Codes Guide",
     description:
       "Step-by-step guide to redeem Build A Ring Farm codes, read status labels, and handle expired strings. For the copy-paste list see the active codes page.",
@@ -338,7 +338,7 @@ export const guidePageMeta: Record<
     keywords: ["build a ring codes guide", "redeem codes", "promo codes", "Roblox codes"],
   },
   "build-a-ring-calculator": {
-    title: "Build A Ring Calculator Guide — Profit Tool | buildaring.online",
+    title: "Build A Ring Calculator Guide — Profit Tool (2026)",
     h1: "Build A Ring Farm Calculator Guide",
     description:
       "When to use the Build A Ring Farm profit calculator, how each input maps to in-game settings, and how to debug mismatches with live harvests.",
@@ -350,10 +350,10 @@ export const guidePageMeta: Record<
     keywords: ["build a ring calculator guide", "profit tool", "earnings formula"],
   },
   "build-a-ring-wiki": {
-    title: "Build A Ring Wiki Index — Databases & Tools | buildaring.online",
+    title: "Build A Ring Wiki Index — Databases & Tools (2026)",
     h1: "Build A Ring Farm Wiki Index",
     description:
-      "Directory of Build A Ring Farm databases, calculators, codes, guides, and FAQ pages on buildaring.online.",
+      "Directory of Build A Ring Farm databases, calculators, active codes, written guides, and FAQ pages on buildaring.online — your map to every tool on this wiki.",
     heroDescription:
       "One hub to find seeds, mutations, events, rings, tools, and written guides.",
     ogTitle: "Build A Ring Farm Wiki Index",
@@ -362,10 +362,10 @@ export const guidePageMeta: Record<
     keywords: ["build a ring wiki", "database index", "Roblox wiki"],
   },
   "build-a-ring-faq": {
-    title: "Build A Ring FAQ Hub — Long-Tail Answers | buildaring.online",
+    title: "Build A Ring FAQ Hub — Long-Tail Answers (2026)",
     h1: "Build A Ring Farm FAQ Hub",
     description:
-      "Extended FAQ for Build A Ring Farm: codes, rings, calculator, official status, and mechanics. Conservative answers — verify in-game.",
+      "Extended FAQ for Build A Ring Farm: codes, rings, calculator, mechanics, and site data policy. Conservative answers — verify rewards in-game after patches.",
     heroDescription:
       "Long-tail questions in one place — codes, rings, mutations, calculator, and site data policy.",
     ogTitle: "Build A Ring Farm FAQ Hub",
@@ -374,10 +374,10 @@ export const guidePageMeta: Record<
     keywords: ["build a ring faq", "questions", "help"],
   },
   "build-a-ring-tier-list": {
-    title: "Build A Ring Tier List — Seeds by Rarity | buildaring.online",
+    title: "Build A Ring Tier List — Seeds by Rarity (2026)",
     h1: "Build A Ring Farm Tier List Framework",
     description:
-      "Tier list framework for Build A Ring Farm seeds by rarity and role — early, mid, and late game. Use the seeds database for exact stats.",
+      "Tier list framework for Build A Ring Farm seeds by rarity and role — early, mid, and late game paths. Open the seeds database for exact income and grow times.",
     heroDescription:
       "Compare crops by band and play style — not a stale single ranking chart.",
     ogTitle: "Build A Ring Farm Tier List Framework",
@@ -386,10 +386,10 @@ export const guidePageMeta: Record<
     keywords: ["build a ring tier list", "best seeds", "rarity tiers"],
   },
   "build-a-ring-best-rings": {
-    title: "Best Rings Build A Ring Farm — Placement Guide | buildaring.online",
+    title: "Best Rings in Build A Ring Farm — Placement (2026)",
     h1: "Best Rings in Build A Ring Farm",
     description:
-      "Which Build A Ring Farm ring to unlock first, where to plant crops, and how saw level synergizes with Inner, Middle, and Outer zones.",
+      "Which Build A Ring Farm ring to unlock first, where to plant each crop, and how saw level pairs with Inner, Middle, and Outer zones for maximum harvest value.",
     heroDescription:
       "Unlock order and placement — 7x Inner, 13x Middle, 19x Outer explained for real farms.",
     ogTitle: "Best Rings Build A Ring Farm Guide",
@@ -398,10 +398,10 @@ export const guidePageMeta: Record<
     keywords: ["build a ring best rings", "ring placement", "outer ring"],
   },
   "build-a-ring-update-log": {
-    title: "Build A Ring Update Log — Site Changelog | buildaring.online",
+    title: "Build A Ring Update Log — Site Changelog (2026)",
     h1: "Build A Ring Farm Update Log",
     description:
-      "Changelog for buildaring.online and community-reported Build A Ring Farm updates — codes, balance, and data reviews.",
+      "Changelog for buildaring.online and community-reported Build A Ring Farm updates — new codes, balance changes, and when we reviewed seeds and mutations data.",
     heroDescription:
       "Track site edits and what to re-check after Roblox patches.",
     ogTitle: "Build A Ring Farm Update Log",
