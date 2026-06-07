@@ -2,6 +2,15 @@
   "name": "build-a-ring-farm-wiki",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://buildaring.online",
+  "description": "Unofficial Build A Ring Farm wiki — codes, seeds, mutations, calculator (https://buildaring.online)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quven1990/build-a-ring-farm-wiki.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quven1990/build-a-ring-farm-wiki/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "opennextjs-cloudflare build",

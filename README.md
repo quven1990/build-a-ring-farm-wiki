@@ -1,8 +1,27 @@
-# build-a-ring-farm-wiki
+# Build A Ring Farm Wiki
 
-Production site: [https://buildaring.online](https://buildaring.online)
+**Live site:** [https://buildaring.online](https://buildaring.online)
 
-Unofficial fan wiki for **Build A Ring Farm** on Roblox — seeds, mutations, weather events, rings, redeem codes, profit calculator, and progression guides.
+Source code for the unofficial fan wiki deployed at **buildaring.online** — not affiliated with Roblox Corporation or the game developer.
+
+| Page | URL |
+|------|-----|
+| Wiki hub | [buildaring.online](https://buildaring.online) |
+| Active codes | [buildaring.online/codes](https://buildaring.online/codes) |
+| Updates | [buildaring.online/updates](https://buildaring.online/updates) |
+| Calculator | [buildaring.online/calculator](https://buildaring.online/calculator) |
+
+## GitHub repository setup (one-time)
+
+So visitors and search engines see the production domain from the repo page:
+
+1. Open **Settings** → General, or click the **⚙️ About** pencil on the repo home page.
+2. **Description:** `Unofficial Build A Ring Farm wiki — codes, seeds, mutations, calculator`
+3. **Website:** `https://buildaring.online` ← main external link on GitHub
+4. **Topics (optional):** `roblox`, `wiki`, `nextjs`, `build-a-ring-farm`
+5. Save.
+
+`package.json` already declares `"homepage": "https://buildaring.online"` for npm/GitHub metadata. README links are `nofollow` on GitHub — the **Website** field is still the canonical place to point at your domain.
 
 ## Stack
 
