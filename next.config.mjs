@@ -43,7 +43,8 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, s-maxage=3600, stale-while-revalidate=86400",
+            // Short CDN TTL — stale HTML after deploy references removed /_next/static/*.css hashes → unstyled page.
+            value: "public, max-age=0, s-maxage=300, stale-while-revalidate=600",
           },
         ],
       },
