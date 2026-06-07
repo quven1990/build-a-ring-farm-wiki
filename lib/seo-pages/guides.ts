@@ -668,6 +668,15 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "late-may-2026-calculator-reliability",
+        text: "Late May 2026 — Calculator UX and page load reliability",
+      },
+      {
+        type: "p",
+        text: "Site reliability: shortened homepage HTML cache and added post-deploy Cloudflare cache purge so visitors no longer intermittently load stale HTML pointing at removed CSS bundles (unstyled page flash). Calculator: mobile layout shows earnings first with a bottom summary bar while you scroll configuration; desktop keeps the earnings panel sticky beside settings. Also fixed garbled formula text from Unicode math symbols and emoji font fallbacks, and added translate=\"no\" on interactive tool pages to reduce browser auto-translate DOM errors.",
+      },
+      {
+        type: "h2",
         id: "late-may-2026-sync",
         text: "Late May 2026 — Automated codes sync",
       },

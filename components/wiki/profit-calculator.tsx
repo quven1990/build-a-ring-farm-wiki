@@ -40,10 +40,13 @@ import {
 } from "@/lib/seeds-data"
 import { pageMeta } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
-import { Calculator, Sparkles } from "lucide-react"
+import { Calculator, ChevronDown, ChevronUp, Coins, Sparkles } from "lucide-react"
 import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 
 const calculatorSeeds = seeds.filter((s) => (s.baseIncome ?? 0) > 0)
+
+const earningsHighlightClass =
+  "font-mono font-bold tabular-nums text-primary transition-all duration-300"
 
 function clamp(n: number, min: number, max: number) {
   return Math.min(max, Math.max(min, n))
@@ -179,6 +182,164 @@ function OptionTile({
   )
 }
 
+type CalculatorMobileDockProps = {
+  visible: boolean
+  perPlant: string
+  totalEarnings: string
+  onScrollToDetails: () => void
+}
+
+/** Mobile bottom dock — appears when earnings panel scrolls off screen. */
+function CalculatorMobileDock({
+  visible,
+  perPlant,
+  totalEarnings,
+  onScrollToDetails,
+}: CalculatorMobileDockProps) {
+  if (!visible) return null
+
+  return (
+    <div
+      role="region"
+      aria-label="Live calculator results"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-primary/25 bg-card/95 shadow-[0_-8px_32px_rgba(0,0,0,0.1)] backdrop-blur supports-[backdrop-filter]:bg-card/90 lg:hidden"
+      style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+    >
+      <div className="container mx-auto flex items-center gap-3 px-4 py-3">
+        <div className="min-w-0 flex-1">
+          <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+            Total earnings
+          </p>
+          <p className={cn(earningsHighlightClass, "truncate text-xl leading-tight")}>
+            {totalEarnings}
+          </p>
+        </div>
+        <div className="shrink-0 text-right">
+          <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+            Per plant
+          </p>
+          <p className={cn(earningsHighlightClass, "text-base leading-tight")}>{perPlant}</p>
+        </div>
+        <button
+          type="button"
+          onClick={onScrollToDetails}
+          className="inline-flex shrink-0 flex-col items-center gap-0.5 rounded-xl border border-border/80 bg-muted/60 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-foreground transition-colors hover:border-primary/40 hover:bg-primary/10"
+        >
+          <ChevronUp className="h-4 w-4" aria-hidden />
+          Details
+        </button>
+      </div>
+    </div>
+  )
+}
+
+type CalculationBreakdownTableProps = {
+  result: NonNullable<ReturnType<typeof calculateEarnings>>
+  ring: RingPlacement
+  mutation: (typeof calculatorMutationOptions)[number]
+  cashMultiplier: CashMultiplier
+  plants: number
+}
+
+function CalculationBreakdownTable({
+  result,
+  ring,
+  mutation,
+  cashMultiplier,
+  plants,
+}: CalculationBreakdownTableProps) {
+  return (
+    <div className="wiki-table-scroll overflow-x-auto rounded-xl border border-border/60">
+      <Table>
+        <TableHeader>
+          <TableRow className="hover:bg-transparent">
+            <TableHead className="min-w-[8rem]">Factor</TableHead>
+            <TableHead className="text-right">Value</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell className="max-w-[14rem] sm:max-w-none">Seed value (current level)</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              {formatCalculatorMoneyFull(result.unitPriceAtLevel)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Level multiplier</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              x {result.levelMultiplier.toFixed(2)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>After level</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              {formatCalculatorMoneyFull(result.unitPriceAtLevel)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Cash multiplier (Robux)</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              x {cashMultiplier}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>After cash multi</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              {formatCalculatorMoneyFull(result.afterCash)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Mutation multiplier</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              x {mutation.multiplier}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Unit value (base x level x cash x mut)</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              {formatCalculatorMoneyFull(result.moneyPerUnit)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Ring placement</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              x {PLACEMENT_MULTIPLIERS[ring]}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Saw bonus (floor(saw * 2/3))</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              + {result.sawBonus}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Combined multiplier</TableCell>
+            <TableCell className="text-right font-mono text-sm">
+              {result.combinedMultiplier.toFixed(1)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Per plant / harvest</TableCell>
+            <TableCell className="text-right font-mono text-sm font-semibold text-primary">
+              {formatCalculatorMoneyFull(result.perPlant)}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Plants</TableCell>
+            <TableCell className="text-right font-mono text-sm">{plants}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Total</TableCell>
+            <TableCell className="text-right font-mono text-sm font-semibold text-primary">
+              {formatCalculatorMoneyFull(result.totalEarnings)}
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
+  )
+}
+
 export function ProfitCalculator() {
   const [rarityFilter, setRarityFilter] = useState<RarityFilter>("all")
   const [selectedSeedId, setSelectedSeedId] = useState(
@@ -249,6 +410,40 @@ export function ProfitCalculator() {
 
   const ringLabel = ringOptions.find((r) => r.key === ring)?.label ?? ring
 
+  const earningsPanelRef = useRef<HTMLDivElement>(null)
+  const [mobileDockVisible, setMobileDockVisible] = useState(false)
+
+  const scrollToEarnings = useCallback(() => {
+    earningsPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, [])
+
+  useEffect(() => {
+    const panel = earningsPanelRef.current
+    if (!panel) return
+
+    const mq = window.matchMedia("(max-width: 1023px)")
+
+    const syncDock = (isIntersecting: boolean) => {
+      setMobileDockVisible(mq.matches && !isIntersecting)
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => syncDock(entry.isIntersecting),
+      { root: null, rootMargin: "-64px 0px 0px 0px", threshold: 0 }
+    )
+    observer.observe(panel)
+
+    const onMqChange = () => {
+      if (!mq.matches) setMobileDockVisible(false)
+    }
+    mq.addEventListener("change", onMqChange)
+
+    return () => {
+      observer.disconnect()
+      mq.removeEventListener("change", onMqChange)
+    }
+  }, [result, selectedSeedId])
+
   // Track calculator usage without spamming events on every slider tick.
   const lastTrackedKeyRef = useRef<string>("")
   const trackTimerRef = useRef<number | null>(null)
@@ -298,14 +493,13 @@ export function ProfitCalculator() {
   ])
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-16">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.12,transparent)]"
-        aria-hidden
-      />
+    <section className="relative py-8 sm:py-12 lg:py-14">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.12,transparent)]" />
+      </div>
 
       <div className="container relative mx-auto px-4">
-        <div className="mx-auto mb-10 max-w-2xl text-center">
+        <div className="mx-auto mb-6 max-w-2xl text-center sm:mb-8">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-1.5 text-sm font-medium text-primary shadow-sm">
             <Calculator className="h-4 w-4" />
             Profit Calculator
@@ -318,9 +512,14 @@ export function ProfitCalculator() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2 lg:gap-8">
-          {/* Configuration */}
-          <div className="overflow-hidden rounded-2xl border border-border/80 bg-card/95 shadow-sm backdrop-blur-sm">
+        <div
+          className={cn(
+            "mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_min(26rem,42%)] lg:items-start lg:gap-8",
+            mobileDockVisible && "pb-[5.5rem] lg:pb-0"
+          )}
+        >
+          {/* Configuration — below earnings on mobile */}
+          <div className="order-2 overflow-hidden rounded-2xl border border-border/80 bg-card/95 shadow-sm backdrop-blur-sm lg:order-1">
             <div className="h-1 bg-gradient-to-r from-primary via-primary/70 to-secondary/60" />
             <div className="space-y-6 p-5 sm:p-6">
               <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
@@ -333,10 +532,10 @@ export function ProfitCalculator() {
                   Verified formula
                 </p>
                 <code className="block break-all rounded-lg bg-background/80 px-3 py-2 font-mono text-xs text-foreground sm:text-sm">
-                  unitPrice × 1.25^(Level−1) × Cash × Mutation × Ring × (1 + SawBonus/7)
+                  unitPrice * 1.25^(Level-1) * Cash * Mutation * Ring * (1 + SawBonus/7)
                 </code>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  💧 Sprinkler = speed only · 🪚 SawBonus = ⌊Saw × 2/3⌋ · 📐 Units = Ring × (1 +
+                  Sprinkler = speed only · SawBonus = floor(Saw * 2/3) · Units = Ring * (1 +
                   SawBonus/7)
                 </p>
               </div>
@@ -535,11 +734,18 @@ export function ProfitCalculator() {
             </div>
           </div>
 
-          {/* Earnings */}
-          <div className="overflow-hidden rounded-2xl border border-border/80 bg-card/95 shadow-sm backdrop-blur-sm">
+          {/* Earnings — first on mobile; sticky sidebar on desktop */}
+          <div
+            id="calculator-earnings"
+            ref={earningsPanelRef}
+            className="order-1 scroll-mt-20 rounded-2xl border border-border/80 bg-card/95 shadow-sm backdrop-blur-sm lg:order-2 lg:sticky lg:top-[4.5rem] lg:z-10 lg:max-h-[calc(100vh-5rem)] lg:self-start lg:overflow-y-auto"
+          >
             <div className="h-1 bg-gradient-to-r from-primary via-secondary/80 to-chart-5/70" />
             <div className="space-y-5 p-5 sm:p-6">
-              <h2 className="text-lg font-bold text-foreground">💰 Earnings</h2>
+              <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
+                <Coins className="h-5 w-5 text-primary" aria-hidden />
+                Earnings
+              </h2>
 
               {!result || !selectedSeed ? (
                 <p className="py-12 text-center text-muted-foreground">Select a seed to calculate</p>
@@ -550,7 +756,7 @@ export function ProfitCalculator() {
                       <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                         Money per unit
                       </p>
-                      <p className="font-mono text-2xl font-bold tabular-nums text-foreground transition-all duration-300">
+                      <p className={cn(earningsHighlightClass, "text-2xl")}>
                         {formatCalculatorMoney(result.moneyPerUnit)}
                       </p>
                     </div>
@@ -570,7 +776,7 @@ export function ProfitCalculator() {
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                       Per plant / harvest
                     </p>
-                    <p className="bg-gradient-to-r from-primary to-secondary bg-clip-text font-mono text-3xl font-bold tabular-nums text-transparent transition-all duration-300">
+                    <p className={cn(earningsHighlightClass, "text-3xl")}>
                       {formatCalculatorMoney(result.perPlant)}
                     </p>
                     <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
@@ -597,7 +803,7 @@ export function ProfitCalculator() {
                       <div>
                         <p className="text-muted-foreground">Cash multi</p>
                         <p className="font-medium">
-                          {cashMultiplier === 1 ? "None (1x)" : `×${cashMultiplier}`}
+                          {cashMultiplier === 1 ? "None (1x)" : `x${cashMultiplier}`}
                         </p>
                       </div>
                     </div>
@@ -607,7 +813,7 @@ export function ProfitCalculator() {
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                       Total earnings
                     </p>
-                    <p className="bg-gradient-to-r from-primary to-chart-5 bg-clip-text font-mono text-2xl font-bold tabular-nums text-transparent transition-all duration-300 sm:text-3xl md:text-4xl">
+                    <p className={cn(earningsHighlightClass, "text-2xl sm:text-3xl md:text-4xl")}>
                       {formatCalculatorMoney(result.totalEarnings)}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-4 text-sm">
@@ -631,96 +837,33 @@ export function ProfitCalculator() {
                   </div>
 
                   <div>
-                    <p className="mb-3 text-sm font-bold text-foreground">Calculation breakdown</p>
-                    <div className="wiki-table-scroll overflow-hidden rounded-xl border border-border/60 sm:mx-0 sm:px-0">
-                      <Table>
-                        <TableHeader>
-                          <TableRow className="hover:bg-transparent">
-                            <TableHead className="min-w-[8rem]">Factor</TableHead>
-                            <TableHead className="text-right">Value</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          <TableRow>
-                            <TableCell className="max-w-[14rem] sm:max-w-none">Seed value (current level)</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              {formatCalculatorMoneyFull(result.unitPriceAtLevel)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Level multiplier</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              × {result.levelMultiplier.toFixed(2)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>After level</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              {formatCalculatorMoneyFull(result.unitPriceAtLevel)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Cash multiplier (Robux)</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              × {cashMultiplier}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>After cash multi</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              {formatCalculatorMoneyFull(result.afterCash)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Mutation multiplier</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              × {mutation.multiplier}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Unit value (base × level × cash × mut)</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              {formatCalculatorMoneyFull(result.moneyPerUnit)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Ring placement</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              × {PLACEMENT_MULTIPLIERS[ring]}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Saw bonus (floor(saw × 2/3))</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              + {result.sawBonus}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Combined multiplier</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              {result.combinedMultiplier.toFixed(1)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Per plant / harvest</TableCell>
-                            <TableCell className="text-right font-mono text-sm font-semibold text-primary">
-                              {formatCalculatorMoneyFull(result.perPlant)}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Plants</TableCell>
-                            <TableCell className="text-right font-mono text-sm">
-                              {plants}
-                            </TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Total</TableCell>
-                            <TableCell className="text-right font-mono text-sm font-semibold text-primary">
-                              {formatCalculatorMoneyFull(result.totalEarnings)}
-                            </TableCell>
-                          </TableRow>
-                        </TableBody>
-                      </Table>
+                    <details className="group rounded-xl border border-border/60 lg:hidden">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-bold text-foreground [&::-webkit-details-marker]:hidden">
+                        Calculation breakdown
+                        <ChevronDown
+                          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+                          aria-hidden
+                        />
+                      </summary>
+                      <div className="border-t border-border/60 p-3 pt-0">
+                        <CalculationBreakdownTable
+                          result={result}
+                          ring={ring}
+                          mutation={mutation}
+                          cashMultiplier={cashMultiplier}
+                          plants={plants}
+                        />
+                      </div>
+                    </details>
+                    <div className="hidden lg:block">
+                      <p className="mb-3 text-sm font-bold text-foreground">Calculation breakdown</p>
+                      <CalculationBreakdownTable
+                        result={result}
+                        ring={ring}
+                        mutation={mutation}
+                        cashMultiplier={cashMultiplier}
+                        plants={plants}
+                      />
                     </div>
                   </div>
                 </>
@@ -729,6 +872,15 @@ export function ProfitCalculator() {
           </div>
         </div>
       </div>
+
+      {result && selectedSeed ? (
+        <CalculatorMobileDock
+          visible={mobileDockVisible}
+          perPlant={formatCalculatorMoney(result.perPlant)}
+          totalEarnings={formatCalculatorMoney(result.totalEarnings)}
+          onScrollToDetails={scrollToEarnings}
+        />
+      ) : null}
     </section>
   )
 }
