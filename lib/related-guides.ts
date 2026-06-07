@@ -26,6 +26,7 @@ export type RelatedPageKey =
   | "build-a-ring-beginner-mistakes"
   | "updates"
   | "updates-250kusers-code-update-4"
+  | "updates-update-5-carnival-pass"
 
 const LINKS = {
   home: { href: "/", title: "Home", description: "Player toolkit hub and quick links" },
@@ -92,6 +93,11 @@ const LINKS = {
     title: "250KUSERS Update 4",
     description: "Update 4 redeem code and time skip guide",
   },
+  update5: {
+    href: "/updates/update-5-carnival-pass",
+    title: "Update 5 Carnival Pass",
+    description: "Carnival event, bundles, and prize tickets guide",
+  },
   beginnerMistakes: {
     href: "/build-a-ring-beginner-mistakes",
     title: "Beginner Mistakes",
@@ -107,7 +113,7 @@ export const relatedGuidesByPage: Record<RelatedPageKey, RelatedGuideLink[]> = {
   events: [LINKS.mutations, LINKS.farm, LINKS.calculator, LINKS.seeds, LINKS.rings, LINKS.updates, LINKS.wiki, LINKS.codes],
   rings: [LINKS.bestRings, LINKS.calculator, LINKS.seeds, LINKS.farm, LINKS.progression, LINKS.tierList, LINKS.mutations, LINKS.wiki],
   calculator: [LINKS.calcGuide, LINKS.seeds, LINKS.rings, LINKS.mutations, LINKS.farm, LINKS.tierList, LINKS.progression, LINKS.wiki],
-  codes: [LINKS.codesGuide, LINKS.updates, LINKS.update250k, LINKS.guide, LINKS.farm, LINKS.seeds, LINKS.progression, LINKS.faq],
+  codes: [LINKS.codesGuide, LINKS.updates, LINKS.update5, LINKS.update250k, LINKS.guide, LINKS.farm, LINKS.seeds, LINKS.progression, LINKS.faq],
   progression: [LINKS.guide, LINKS.beginnerMistakes, LINKS.farm, LINKS.seeds, LINKS.rings, LINKS.calculator, LINKS.codes, LINKS.tierList],
   faq: [LINKS.faqGuide, LINKS.guide, LINKS.beginnerMistakes, LINKS.codes, LINKS.calculator, LINKS.wiki, LINKS.farm, LINKS.updates],
   "build-a-ring-farm": [LINKS.seeds, LINKS.rings, LINKS.events, LINKS.calculator, LINKS.tierList, LINKS.progression, LINKS.codes, LINKS.updates],
@@ -120,8 +126,9 @@ export const relatedGuidesByPage: Record<RelatedPageKey, RelatedGuideLink[]> = {
   "build-a-ring-tier-list": [LINKS.seeds, LINKS.calculator, LINKS.farm, LINKS.rings, LINKS.mutations, LINKS.progression, LINKS.wiki, LINKS.bestRings],
   "build-a-ring-best-rings": [LINKS.rings, LINKS.calculator, LINKS.seeds, LINKS.farm, LINKS.tierList, LINKS.mutations, LINKS.progression, LINKS.wiki],
   "build-a-ring-update-log": [LINKS.updates, LINKS.codes, LINKS.wiki, LINKS.seeds, LINKS.mutations, LINKS.farm, LINKS.faqGuide, LINKS.calculator],
-  updates: [LINKS.codes, LINKS.update250k, LINKS.codesGuide, LINKS.updateLog, LINKS.guide, LINKS.farm, LINKS.wiki, LINKS.seeds],
-  "updates-250kusers-code-update-4": [LINKS.codes, LINKS.codesGuide, LINKS.updates, LINKS.updateLog, LINKS.guide, LINKS.calculator, LINKS.progression, LINKS.wiki],
+  updates: [LINKS.update5, LINKS.codes, LINKS.update250k, LINKS.codesGuide, LINKS.updateLog, LINKS.guide, LINKS.farm, LINKS.wiki, LINKS.seeds],
+  "updates-250kusers-code-update-4": [LINKS.codes, LINKS.codesGuide, LINKS.updates, LINKS.update5, LINKS.updateLog, LINKS.guide, LINKS.calculator, LINKS.progression, LINKS.wiki],
+  "updates-update-5-carnival-pass": [LINKS.codes, LINKS.mutations, LINKS.events, LINKS.calculator, LINKS.seeds, LINKS.updates, LINKS.updateLog, LINKS.farm],
 }
 
 export function getUpdateArticleRelatedKey(slug: string): RelatedPageKey {

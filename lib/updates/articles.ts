@@ -13,12 +13,178 @@ export const updatesHubMeta = {
   keywords: [
     "build a ring farm update",
     "build a ring farm codes update",
+    "build a ring farm update 5",
+    "carnival pass",
     "patch notes",
     "250KUSERS",
   ],
 } as const
 
 export const updateArticles: UpdateArticle[] = [
+  {
+    slug: "update-5-carnival-pass",
+    publishedAt: "2026-05-29",
+    tags: ["patch", "pets"],
+    updateLabel: "Update 5",
+    meta: {
+      title: "Build A Ring Farm Update 5 — Carnival Pass & Event Guide (2026)",
+      h1: "Build A Ring Farm Update 5 — Carnival Pass",
+      description:
+        "Community-reported Update 5 overview: Carnival Pass, Whack-a-Crop, Carnival Spray, new bundles, prize tickets, and limited-time admin events — with links to codes, mutations, and calculator.",
+      heroDescription:
+        "Update 5 adds a battle-pass-style Carnival event, new plants and crates, and limited-time admin abuse — summarized from player reports, not official patch notes.",
+      ogTitle: "Update 5 Carnival Pass — Build A Ring Farm",
+      ogImageAlt: "Build A Ring Farm Update 5 Carnival Pass event guide",
+      breadcrumb: "Update 5 Carnival",
+      keywords: [
+        "build a ring farm update 5",
+        "carnival pass",
+        "whack-a-crop",
+        "carnival spray",
+        "build a ring farm bundles",
+      ],
+    },
+    whatYouCanDo: [
+      "See what Update 5 reportedly adds before spending Robux on passes or bundles",
+      "Understand Carnival Pass tracks, prize tickets, and the ~two-week event window",
+      "Compare the three reported Robux bundles and when to skip them",
+      "Redeem existing active codes, then check mutations and calculator after any balance rumors",
+    ],
+    blocks: [
+      {
+        type: "h2",
+        id: "update-5-summary",
+        text: "What Changed in Update 5 (Community Reports)",
+      },
+      {
+        type: "p",
+        text: "Players and community gameplay videos report a major Build A Ring Farm patch — often called Update 5 — centered on a Carnival-themed season. Reported additions include a Carnival Pass (free and premium tracks), Whack-a-Crop minigame, Carnival Spray mutation, prize-ticket spins, four new crate types, two new gears, a new map area, corrupted visual effects, and roughly sixteen new plants. Admin-abuse sessions with a Jester NPC, prize wheel, and tomato-launcher fight also ran during the launch window. This page is not official developer patch notes; we summarize what the community shares so you can plan before spending Robux or fertilizer.",
+      },
+      {
+        type: "h2",
+        id: "carnival-pass",
+        text: "Carnival Pass — Free vs Premium Track",
+      },
+      {
+        type: "p",
+        text: "The Carnival Pass works like a seasonal battle pass. Community reports describe a free reward track and a premium track unlock for about 64 Robux, with optional instant tier skips for Robux. Reported free and premium rewards include strong fertilizer, Carnival Spray, wheat spray, spray crates, fertilizer crates, rainbow spray, prize tickets, and a Carnival seed pack on higher tiers. Hourly and daily quests (play time, compost runs, contracts, fertilizer use, plant upgrades) grant pass XP. Finish quests to claim tier rewards before the event ends — community sources describe a roughly two-week Carnival window, but confirm the in-game timer after you log in.",
+      },
+      {
+        type: "h2",
+        id: "prize-tickets-crates",
+        text: "Prize Tickets, Crates, and Carnival Spray",
+      },
+      {
+        type: "p",
+        text: "Prize tickets are a Carnival currency used on a prize wheel or spin UI. Players report spending tickets for spray crates, fertilizer crates, or long-shot pulls toward a Carnival seed pack — one community video cited about 0.1% odds on the pack, and about 0.5% for carnival-tier fertilizer inside fertilizer crates. Spray crates can reportedly roll Carnival Spray; players describe it as a new shop-tier spray that is weaker than Fire for raw multiplier value — meaning existing Fire-focused farms may stay relevant. Treat every percentage as single-source until our weekly mutations sync and public wikis agree. When Carnival Spray appears in multiple lists, the mutations database on buildaring.online will pick it up automatically.",
+      },
+      {
+        type: "h2",
+        id: "whack-a-crop-admin",
+        text: "Whack-a-Crop and Admin-Abuse Events",
+      },
+      {
+        type: "p",
+        text: "Whack-a-Crop is a reported interactive minigame during Carnival admin sessions: whack crops for score, combo multipliers, and bonus prize tickets. Separate wheel events can trigger prize drops, temporary money boosts (community reports mention up to two-week earning boosts), crop-destruction jokes, or a Jester boss fight using a tomato launcher. Rewards from these sessions vary — sprays, pit trees, gift boxes, and ticket bundles show up in player footage, but nothing is guaranteed every server. If you care about a mature garden, harvest or screenshot before joining destructive event votes on public servers.",
+      },
+      {
+        type: "h2",
+        id: "carnival-seed-pack",
+        text: "Carnival Seed Pack (Reported Drops)",
+      },
+      {
+        type: "p",
+        text: "The Carnival seed pack reportedly opens multiple plants at once. One community showcase pulled Cotton Candy Cactus and Funnel Cake Fern with roughly twenty-five percent odds each on those slots — other rarities fill the rest of the table. Reported base income examples from that footage: Funnel Cake Fern around 900,000 per unit (Secret-tier in the video), Cotton Candy Cactus around 145,000 per unit (Divine-tier in the video). Numbers change with level, ring, and patches — confirm in your own inventory and cross-check the seeds database once sync sources list the new crops.",
+      },
+      {
+        type: "h2",
+        id: "robux-bundles",
+        text: "Three Robux Bundles (Community Comparison)",
+      },
+      {
+        type: "p",
+        text: "Update 5 reportedly ships three optional Robux bundles alongside Carnival Pass. Treat prices and pet abilities as player-reported until you verify in the Roblox shop.",
+      },
+      {
+        type: "h3",
+        text: "Disco Bundle (~1,600 Robux, limited stock in reports)",
+      },
+      {
+        type: "p",
+        text: "Includes a Disco Dodo pet, Disco farm skin, and Boom Bloom seed. Community footage labels Boom Bloom as Exotic with roughly 2.1M base income per unit — strong, but not top-tier for the price in that review. The Disco Dodo pet reportedly grants about +64% grow speed on floor plants for 25 seconds on a ~131-second cooldown. Impression from one creator: flashy cosmetics, modest earning boost, poor value versus grinding existing pets like the Stafful Griffin.",
+      },
+      {
+        type: "h3",
+        text: "Gummy Kingdom Bundle",
+      },
+      {
+        type: "p",
+        text: "Includes Gummy Gator pet, candy-themed farm skin, and Jelly Vine seed. Reported Jelly Vine income around 7.6M per unit (Transcended in the video) — slightly above Aurora Lotus in the same showcase. Giant Gummy Gator reportedly offers about 7.6× earning boost and a chance to apply prismatic fertilizer on a cooldown. Community sentiment ranked this bundle highest of the three for plant stats, though still optional if you are free-to-play.",
+      },
+      {
+        type: "h3",
+        text: "Captain Popper Pirate Bundle",
+      },
+      {
+        type: "p",
+        text: "Includes pirate farm skin, Cannon Fruit seed (~820,000 per unit in one video), and a pirate pet with about 5.4× earning boost plus random plant stage advances on a timer. Reviewers called it the weakest plant stat line of the three bundles. All three skins reportedly add about +6% cash — similar to existing farm skins such as Steampunk.",
+      },
+      {
+        type: "h2",
+        id: "should-you-spend",
+        text: "Should You Buy the Pass or Bundles?",
+      },
+      {
+        type: "p",
+        text: "Free track: worth doing if you already play daily — quests stack fertilizer, tickets, and sprays without premium Robux. Premium track (~64 Robux): only if you will finish enough tiers before the event ends; skip instant tier bundles unless you value time more than coins. Robux bundles: optional cosmetics and convenience; run the profit calculator on any new seed before assuming it beats your current Outer-ring setup. Stafful Griffin and other pre-update pets still dominate mutation proc value in community comparisons — bundles do not automatically replace them.",
+      },
+      {
+        type: "h2",
+        id: "codes-and-wiki",
+        text: "Codes, Database Sync, and What We Updated",
+      },
+      {
+        type: "p",
+        text: "Update 5 did not replace the need to redeem existing active codes — check the codes page for weekly sync status. New redeem strings, if any, will appear there automatically before we mention them here. Seeds and mutations tables update through our community sync jobs when public gaming lists agree on new crops or Carnival Spray stats; until then, use this article for event mechanics and bundle context. After any Roblox patch: redeem codes first, read this page for Carnival timing, then spot-check mutations and events if balance rumors spread.",
+      },
+      {
+        type: "h2",
+        id: "sources",
+        text: "Sources and Disclaimer",
+      },
+      {
+        type: "p",
+        text: "Summary based on community gameplay reporting and auto-generated video captions (May 2026), cross-checked against general wiki patterns — not an official Gamecreates or Roblox announcement. Percentages, pet cooldowns, and income examples can be wrong or outdated after hotfixes. buildaring.online is an independent fan wiki. Confirm prices, rewards, and timers in-game before spending Robux.",
+      },
+    ],
+    faq: [
+      {
+        question: "Is Carnival Spray better than Fire?",
+        answer:
+          "Community reports from Update 5 launch describe Carnival Spray as weaker than Fire for multiplier value. Check the mutations page after sync sources list it, and test harvests in-game after any balance patch.",
+      },
+      {
+        question: "How long does the Carnival event last?",
+        answer:
+          "Players report a roughly two-week window on the in-game Carnival Pass timer. Log in and read the event countdown — extensions or early ends are possible without notice.",
+      },
+      {
+        question: "Are the Update 5 bundles worth it?",
+        answer:
+          "Optional. Community reviews rank Gummy Kingdom highest for plant stats, Disco as cosmetic-heavy, Pirate as the weakest income line. Free-to-play players can still earn pass rewards and codes without buying bundles.",
+      },
+      {
+        question: "Is this official patch notes?",
+        answer:
+          "No. This is a fan wiki summary of player-reported Update 5 content. Use in-game notices and the developer Discord for authoritative announcements.",
+      },
+      {
+        question: "Will new plants appear on the seeds database?",
+        answer:
+          "Yes, once multiple public sources agree on names and stats. Until sync picks them up, treat seed pack results as in-game confirmation only.",
+      },
+    ],
+  },
   {
     slug: "250kusers-code-update-4",
     publishedAt: "2026-05-31",
@@ -141,3 +307,7 @@ export function getUpdateArticleByCode(code: string): UpdateArticle | undefined 
 export const updateArticlesSorted = [...updateArticles].sort(
   (a, b) => b.publishedAt.localeCompare(a.publishedAt)
 )
+
+export function getLatestUpdateArticle(): UpdateArticle | undefined {
+  return updateArticlesSorted[0]
+}

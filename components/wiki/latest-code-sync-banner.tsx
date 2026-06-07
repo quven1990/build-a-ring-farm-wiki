@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Sparkles } from "lucide-react"
 import { codesSyncMeta, formatSyncDate, wikiCodesSorted } from "@/lib/codes-data"
-import { getUpdateArticleByCode } from "@/lib/updates/articles"
+import { getLatestUpdateArticle, getUpdateArticleByCode } from "@/lib/updates/articles"
 
 function getBannerCode() {
   return wikiCodesSorted.find((c) => c.isNew) ?? wikiCodesSorted[0]
@@ -11,7 +11,9 @@ export function LatestCodeSyncBanner() {
   const codeEntry = getBannerCode()
   if (!codeEntry) return null
 
-  const updateArticle = getUpdateArticleByCode(codeEntry.code)
+  const latestArticle = getLatestUpdateArticle()
+  const codeMatchedArticle = getUpdateArticleByCode(codeEntry.code)
+  const updateArticle = latestArticle ?? codeMatchedArticle
   const newCount = wikiCodesSorted.filter((c) => c.isNew).length
 
   return (
@@ -39,7 +41,7 @@ export function LatestCodeSyncBanner() {
               href={`/updates/${updateArticle.slug}`}
               className="font-medium text-primary underline-offset-4 hover:underline"
             >
-              Read Update 4 article →
+              Read {updateArticle.updateLabel ?? "Update"} article →
             </Link>
           ) : null}
           <Link href="/codes" className="text-primary underline-offset-4 hover:underline">

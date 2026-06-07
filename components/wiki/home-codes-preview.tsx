@@ -19,7 +19,7 @@ import {
   formatSyncDate,
   wikiCodesSorted,
 } from "@/lib/codes-data"
-import { getUpdateArticleByCode } from "@/lib/updates/articles"
+import { getLatestUpdateArticle, getUpdateArticleByCode } from "@/lib/updates/articles"
 import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
 import { scheduleIdle } from "@/lib/schedule-idle"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
@@ -34,7 +34,8 @@ function shortenReward(reward: string, max = 56): string {
 export function HomeCodesPreview() {
   const previewCodes = wikiCodesSorted.slice(0, PREVIEW_COUNT)
   const headlineNewCode = wikiCodesSorted.find((c) => c.isNew)
-  const headlineUpdate = headlineNewCode
+  const headlineUpdate = getLatestUpdateArticle()
+  const codeMatchedUpdate = headlineNewCode
     ? getUpdateArticleByCode(headlineNewCode.code)
     : undefined
 
@@ -143,7 +144,10 @@ export function HomeCodesPreview() {
                 href={`/updates/${headlineUpdate.slug}`}
                 className="text-primary underline-offset-4 hover:underline"
               >
-                {headlineUpdate.updateLabel ?? "Update"} article ({headlineNewCode?.code})
+                {headlineUpdate.updateLabel ?? "Update"} article
+                {codeMatchedUpdate?.slug === headlineUpdate.slug && headlineNewCode
+                  ? ` (${headlineNewCode.code})`
+                  : ""}
               </Link>
             </>
           ) : null}
