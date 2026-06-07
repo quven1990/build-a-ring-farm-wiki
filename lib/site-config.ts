@@ -1,5 +1,8 @@
 import type { GuidePageId } from "@/lib/seo-pages/types"
 
+/** Canonical production domain — GEO, llms.txt, and share links always cite this, not localhost. */
+export const canonicalSiteOrigin = "https://buildaring.online" as const
+
 export const siteConfig = {
   name: "Build A Ring Farm Wiki",
   tagline: "Data, codes & profit tools for Roblox players",
@@ -15,6 +18,16 @@ export const siteConfig = {
     "https://www.roblox.com/games/107646426076756/Build-A-Ring-Farm",
   /** Optional @handle for Twitter Card site attribution (e.g. "@buildaringonline"). */
   twitterSite: process.env.NEXT_PUBLIC_TWITTER_SITE?.trim() || undefined,
+}
+
+export function getPublicSiteOrigin(): string {
+  const configured = siteConfig.url.replace(/\/$/, "")
+  const isLocal =
+    configured.includes("localhost") ||
+    configured.includes("127.0.0.1") ||
+    /:\/\/192\.168\./.test(configured)
+
+  return isLocal ? canonicalSiteOrigin : configured || canonicalSiteOrigin
 }
 
 export const navItems = [

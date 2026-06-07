@@ -31,6 +31,7 @@ import { CloudRain, Coins, ShoppingBag, Sparkles, Zap } from "lucide-react"
 
 type MutationMatrixProps = {
   showTitle?: boolean
+  afterIntro?: React.ReactNode
 }
 
 function sortMutations(list: WikiMutation[], sort: MutationSortOption): WikiMutation[] {
@@ -136,7 +137,7 @@ function MutationCard({ mutation, rank }: { mutation: WikiMutation; rank: number
   )
 }
 
-export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
+export function MutationMatrix({ showTitle = true, afterIntro }: MutationMatrixProps) {
   const [sort, setSort] = useState<MutationSortOption>("multiplier-desc")
   const [eventOnly, setEventOnly] = useState(false)
 
@@ -175,6 +176,7 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
               </Link>{" "}
               before buying shop sprays.
             </p>
+            {afterIntro}
             <div className="mt-6 text-left">
               <DataConfidenceLegend
                 lastReviewed={formatGameDataSyncDate(gameDataSyncMeta.lastSyncedAt)}

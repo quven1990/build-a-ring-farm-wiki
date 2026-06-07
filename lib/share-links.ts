@@ -1,19 +1,11 @@
-import { siteConfig } from "@/lib/site-config"
+import { getPublicSiteOrigin } from "@/lib/site-config"
 import { absoluteUrl } from "@/lib/sitemap"
 
 export type SharePlatform = "twitter" | "facebook" | "reddit" | "whatsapp" | "telegram"
 
-const PRODUCTION_ORIGIN = "https://buildaring.online"
-
 /** Canonical URL for social share buttons — never localhost (useful in local dev). */
 export function getShareUrl(path: string): string {
-  const configured = siteConfig.url.replace(/\/$/, "")
-  const isLocal =
-    configured.includes("localhost") ||
-    configured.includes("127.0.0.1") ||
-    /:\/\/192\.168\./.test(configured)
-
-  const base = isLocal ? PRODUCTION_ORIGIN : configured
+  const base = getPublicSiteOrigin()
   if (!path || path === "/") return base
   return `${base}${path.startsWith("/") ? path : `/${path}`}`
 }

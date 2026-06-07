@@ -33,9 +33,10 @@ const statusConfig: Record<
 
 type CodesSectionProps = {
   showTitle?: boolean
+  afterIntro?: React.ReactNode
 }
 
-export function CodesSection({ showTitle = true }: CodesSectionProps) {
+export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps) {
   const copyToClipboard = async (code: string) => {
     try {
       await navigator.clipboard.writeText(code)
@@ -73,6 +74,7 @@ export function CodesSection({ showTitle = true }: CodesSectionProps) {
               </Link>{" "}
               (how-to only — this page is the live copy list).
             </p>
+            {afterIntro}
             <PageShareButtons
               path="/codes"
               title={pageMeta.codes.title}

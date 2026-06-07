@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { CitableSummary } from "@/components/wiki/citable-summary"
 import { MutationGuide } from "@/components/wiki/mutation-guide"
 import { EnhancedSeoSection } from "@/components/wiki/enhanced-seo-section"
 import { MutationMatrix } from "@/components/wiki/mutation-matrix"
@@ -14,7 +15,9 @@ export default function MutationsPage() {
   return (
     <WikiPageShell pageKey="mutations" showHero={false}>
       <JsonLdScript data={faqPageJsonLd(getFaqForPage("mutations"))} />
-      <MutationMatrix />
+      <MutationMatrix
+        afterIntro={<CitableSummary page="mutations" className="mt-6 text-left" />}
+      />
       <MutationGuide />
       <EnhancedSeoSection pageKey="mutations" relatedKey="mutations" />
     </WikiPageShell>

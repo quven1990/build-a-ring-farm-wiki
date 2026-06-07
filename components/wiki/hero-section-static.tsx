@@ -5,6 +5,7 @@ import { HeroCarouselDeferred } from "@/components/wiki/hero-carousel-deferred"
 import { HeroCopyLatest } from "@/components/wiki/hero-copy-latest"
 import { wikiStats } from "@/lib/wiki-stats"
 import { siteConfig, pageMeta } from "@/lib/site-config"
+import { CitableSummary } from "@/components/wiki/citable-summary"
 import { PageShareButtons } from "@/components/wiki/page-share-buttons"
 import { wikiCodesSorted } from "@/lib/codes-data"
 import {
@@ -48,13 +49,15 @@ export function HeroSectionStatic() {
               Build A Ring Farm Wiki — Codes, Seeds &amp; Calculator
             </h1>
 
-            <p className="mx-auto mb-8 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
+            <p className="mx-auto mb-6 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg md:text-xl lg:mx-0">
               Active <strong className="font-medium text-foreground">redeem codes</strong>, free{" "}
               <strong className="font-medium text-foreground">profit calculator</strong>, full{" "}
               <strong className="font-medium text-foreground">mutations list</strong>, and a{" "}
               <strong className="font-medium text-foreground">51-seed database</strong> for Build A
               Ring Farm on Roblox — updated for June 2026.
             </p>
+
+            <CitableSummary page="home" className="mx-auto mb-8 max-w-xl text-left lg:mx-0" />
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:justify-start">
               <Button size="lg" className="w-full sm:w-auto" asChild>
