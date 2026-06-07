@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   robots: homeMetadata.robots,
   other: {
     "google-adsense-account": "ca-pub-9101692675645964",
+    /** Discourage Chrome translate — it mutates the DOM and breaks React (removeChild errors). */
+    google: "notranslate",
   },
 }
 
@@ -34,8 +36,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background" suppressHydrationWarning>
-      <body className="font-sans antialiased" suppressHydrationWarning>
+    <html
+      lang="en"
+      translate="no"
+      className="notranslate bg-background"
+      suppressHydrationWarning
+    >
+      <body className="notranslate font-sans antialiased" suppressHydrationWarning>
         {children}
         <DeferredClientShell />
       </body>

@@ -149,7 +149,7 @@ export function MutationMatrix({ showTitle = true, afterIntro }: MutationMatrixP
   }, [sort, eventOnly])
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-16">
+    <section className="relative overflow-hidden py-12 sm:py-16" translate="no">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.12,transparent)]"
         aria-hidden
