@@ -642,14 +642,14 @@
     "name": "Queen Blossom",
     "emoji": "👑",
     "rarity": "transcended",
-    "baseIncome": 0,
+    "baseIncome": 550000,
     "growTimeSeconds": null,
     "rollWeight": 0,
     "seedCost": 0,
     "source": "Rolling",
     "notes": "Stats TBA — Queen Bee event crop; confirm in-game.",
     "confidence": "needs-testing",
-    "sourceCount": 0
+    "sourceCount": 1
   },
   {
     "id": "truckers delight",

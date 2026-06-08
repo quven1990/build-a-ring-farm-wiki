@@ -109,7 +109,7 @@ export const wikiMutationsGenerated: WikiMutation[] = [
     trigger: "Rain",
     price: "$10M",
     eventOnly: false,
-    confidence: "community",
+    confidence: "conflicting",
     chanceIsEstimate: true,
     sourceCount: 1,
   }
