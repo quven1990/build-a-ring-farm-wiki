@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-06-01T14:52:42.474Z",
+  "lastSyncedAt": "2026-06-08T12:59:53.628Z",
   "sources": [
     {
       "id": "progameguides",
@@ -50,14 +50,14 @@
       "name": "Pocket Tactics",
       "url": "https://www.pockettactics.com/build-a-ring-farm-codes",
       "ok": true,
-      "count": 8
+      "count": 7
     },
     {
       "sourceId": "radiotimes",
       "name": "Radio Times",
       "url": "https://www.radiotimes.com/technology/gaming/roblox-build-a-ring-farm-codes/",
       "ok": true,
-      "count": 14
+      "count": 16
     },
     {
       "sourceId": "gamesradar",
@@ -85,7 +85,7 @@
       "name": "AllThings.how",
       "url": "https://allthings.how/build-a-ring-farm-codes-latest-working-list/",
       "ok": true,
-      "count": 6
+      "count": 7
     }
   ],
   "codeFirstSeen": {
@@ -106,8 +106,8 @@
     "THANKYOU": "Autumn Spray",
     "UPDATE1": "3 Strong Fertilizers",
     "UPDATE2": "Tropical Seed Pack",
-    "PLANTRUSH": "1x Plant Rush Boss Box",
-    "250KUSERS": "3-minute Time Skip"
+    "250KUSERS": "1x Time Skip",
+    "PLANTRUSH": "1x Plant Rush Boss Box"
   },
   "archived": [
     {
@@ -117,6 +117,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-06-08",
+      "summary": "8 codes matched across 7 public gaming lists. Dropped: RELATED."
+    },
     {
       "date": "2026-06-01",
       "summary": "8 codes matched across 7 public gaming lists. New: 250KUSERS. Dropped: RELATED."

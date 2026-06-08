@@ -71,17 +71,17 @@ export const wikiCodes: WikiCode[] = [
     isNew: true,
   },
   {
-    code: "PLANTRUSH",
-    reward: "1x Plant Rush Boss Box",
+    code: "250KUSERS",
+    reward: "1x Time Skip",
     status: "community",
     sourceCount: 6,
     isNew: true,
   },
   {
-    code: "250KUSERS",
-    reward: "3-minute Time Skip",
+    code: "PLANTRUSH",
+    reward: "1x Plant Rush Boss Box",
     status: "community",
-    sourceCount: 4,
+    sourceCount: 6,
     isNew: true,
   }
 ]
