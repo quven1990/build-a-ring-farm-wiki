@@ -103,25 +103,25 @@ function SeedCard({ seed }: { seed: Seed }) {
       <dl className="mt-4 space-y-2 text-sm">
         <div className="flex items-center justify-between gap-2">
           <dt className="text-muted-foreground">Base Income</dt>
-          <dd className={cn("font-semibold tabular-nums", config.color)}>
+          <dd className={cn("notranslate font-semibold", config.color)}>
             {formatBaseIncome(seed.baseIncome)}
           </dd>
         </div>
         <div className="flex items-center justify-between gap-2">
           <dt className="text-muted-foreground">Grow Time</dt>
-          <dd className={cn("font-semibold tabular-nums", config.color)}>
+          <dd className={cn("notranslate font-semibold", config.color)}>
             {formatGrowTime(seed.growTimeSeconds)}
           </dd>
         </div>
         <div className="flex items-center justify-between gap-2">
           <dt className="text-muted-foreground">Roll Chance</dt>
-          <dd className={cn("font-semibold tabular-nums", config.color)}>
+          <dd className={cn("notranslate font-semibold", config.color)}>
             {formatRollChance(seed.rollWeight)}
           </dd>
         </div>
         <div className="flex items-center justify-between gap-2">
           <dt className="text-muted-foreground">Seed Cost</dt>
-          <dd className={cn("font-semibold tabular-nums", config.color)}>
+          <dd className={cn("notranslate font-semibold", config.color)}>
             {formatCompactNumber(seed.seedCost)}
           </dd>
         </div>
@@ -154,7 +154,7 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
   }, [rarity, search, sort])
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-16">
+    <section className="notranslate relative overflow-hidden py-12 sm:py-16" translate="no">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.1,transparent)]"
         aria-hidden

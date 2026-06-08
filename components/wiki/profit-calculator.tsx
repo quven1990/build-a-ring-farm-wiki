@@ -202,8 +202,11 @@ function CalculatorMobileDock({
     <div
       role="region"
       aria-label="Live calculator results"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-primary/25 bg-card/95 shadow-[0_-8px_32px_rgba(0,0,0,0.1)] backdrop-blur supports-[backdrop-filter]:bg-card/90 lg:hidden"
-      style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+      className="fixed inset-x-0 z-[60] border-t border-primary/25 bg-card/95 shadow-[0_-8px_32px_rgba(0,0,0,0.1)] backdrop-blur supports-[backdrop-filter]:bg-card/90 lg:hidden"
+      style={{
+        bottom: "var(--cookie-banner-height, 0px)",
+        paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
+      }}
     >
       <div className="container mx-auto flex items-center gap-3 px-4 py-3">
         <div className="min-w-0 flex-1">
@@ -493,7 +496,7 @@ export function ProfitCalculator() {
   ])
 
   return (
-    <section className="relative py-8 sm:py-12 lg:py-14">
+    <section className="notranslate relative py-8 sm:py-12 lg:py-14" translate="no">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.12,transparent)]" />
       </div>
@@ -515,7 +518,8 @@ export function ProfitCalculator() {
         <div
           className={cn(
             "mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_min(26rem,42%)] lg:items-start lg:gap-8",
-            mobileDockVisible && "pb-[5.5rem] lg:pb-0"
+            mobileDockVisible &&
+              "pb-[calc(5.5rem+var(--cookie-banner-height,0px))] lg:pb-0"
           )}
         >
           {/* Configuration — below earnings on mobile */}

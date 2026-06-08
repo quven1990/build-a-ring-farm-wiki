@@ -51,7 +51,7 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
   }
 
   return (
-    <section className="py-16">
+    <section className="notranslate py-16" translate="no">
       <div className="container mx-auto px-4">
         {!showTitle && (
           <div className="mx-auto mb-10 max-w-3xl text-center">
@@ -99,8 +99,11 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
         )}
 
         <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-muted-foreground">
-          Updated {formatSyncDate(codesSyncMeta.lastSyncedAt)} · {wikiCodesSorted.length} active
-          codes · weekly sync from {codesSyncMeta.sourceCount} public gaming lists (not play-tested)
+          Updated{" "}
+          <span className="notranslate">{formatSyncDate(codesSyncMeta.lastSyncedAt)}</span> ·{" "}
+          <span className="notranslate">{wikiCodesSorted.length}</span> active codes · weekly sync
+          from <span className="notranslate">{codesSyncMeta.sourceCount}</span> public gaming lists
+          (not play-tested)
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -111,7 +114,7 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
               <Card key={item.code} className="group relative overflow-hidden transition-shadow hover:shadow-lg">
                 <CardHeader className="pb-2">
                   <div className="flex items-start justify-between gap-2">
-                    <code className="rounded bg-muted px-2 py-1 font-mono text-lg font-bold text-foreground">
+                    <code className="notranslate rounded bg-muted px-2 py-1 text-lg font-bold tracking-wide text-foreground">
                       {item.code}
                     </code>
                     <div className="flex flex-wrap items-center justify-end gap-2">
@@ -158,7 +161,9 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
             <ul className="space-y-2 text-sm text-muted-foreground">
               {wikiCodesArchived.map((item) => (
                 <li key={item.code} className="rounded-lg border border-border/70 px-3 py-2">
-                  <span className="font-mono font-semibold text-foreground">{item.code}</span>
+                  <span className="notranslate font-semibold tracking-wide text-foreground">
+                    {item.code}
+                  </span>
                   {" — "}
                   {item.reward}
                 </li>

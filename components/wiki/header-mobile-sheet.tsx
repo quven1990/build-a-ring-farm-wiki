@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet"
 import { ExternalLink } from "lucide-react"
 import { SiteLogo } from "@/components/wiki/site-logo"
 import { navItems, siteConfig } from "@/lib/site-config"
@@ -26,6 +26,7 @@ export function HeaderMobileSheet({
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+        <SheetTitle className="sr-only">Navigation menu</SheetTitle>
         <div className="flex flex-col gap-4 pt-8">
           <div className="flex items-center gap-2.5 border-b pb-4">
             <SiteLogo size={36} />
