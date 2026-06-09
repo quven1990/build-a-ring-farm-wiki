@@ -138,25 +138,21 @@ export type PageMeta = {
 
 export const pageMeta: Record<string, PageMeta> = {
   home: {
-    title: "Build A Ring Farm Wiki — Codes, Seeds & Calculator (2026)",
+    title: "Build A Ring Farm Wiki — Best Seeds, Rings & Calculator",
     h1: "Build A Ring Farm Wiki — Codes, Seeds & Calculator",
     description:
-      "Active Build A Ring Farm codes, free profit calculator, full mutations list & 51-seed database — unofficial fan wiki for Roblox players. Updated June 2026.",
+      "Build A Ring Farm Wiki with calculator, seeds, mutations, codes & rings. Plan layouts and maximize Roblox harvests.",
     heroDescription:
       "Active redeem codes, profit calculator, mutations matrix, and 51-seed database — updated June 2026.",
-    ogTitle: "Build A Ring Farm Wiki — Codes, Seeds & Calculator",
+    ogTitle: "Build A Ring Farm Wiki — Best Seeds, Rings & Calculator",
     ogImage: "/images/og-share.png",
     ogImageAlt: "Build A Ring Farm wiki hero — farmer, crops, and glowing ring portal",
     breadcrumb: "Home",
     keywords: [
-      "build a ring farm",
-      "Build A Ring Farm",
       "build a ring farm wiki",
+      "build a ring farm calculator",
       "build a ring farm codes",
       "Roblox farm wiki",
-      "build a ring farm calculator",
-      "build a ring farm mutations",
-      "build a ring farm seeds",
     ],
   },
   seeds: {
