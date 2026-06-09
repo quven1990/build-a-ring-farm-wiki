@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
+import { HeroResponsiveImage } from "@/components/wiki/hero-responsive-image"
+import { heroLcpImage } from "@/components/wiki/hero-lcp-fallback"
 import {
   Carousel,
   CarouselContent,
@@ -15,10 +17,10 @@ import { cn } from "@/lib/utils"
 const heroSlides = [
   {
     src: "/images/home-hero-farm.webp",
-    srcSet: "/images/home-hero-farm-640.webp 640w, /images/home-hero-farm.webp 1024w",
     alt: "Build A Ring Farm — farmer in the crop field with a glowing ring portal",
     width: 1024,
     height: 512,
+    responsive: true,
   },
   {
     src: "/images/home-hero-farm-2.webp",
@@ -77,19 +79,28 @@ export function HeroCarousel() {
           {heroSlides.map((slide, index) => (
             <CarouselItem key={slide.src} className="basis-full pl-0">
               <div className="relative aspect-[16/9] w-full overflow-hidden sm:aspect-[2/1]">
-                <Image
-                  src={slide.src}
-                  {...("srcSet" in slide && slide.srcSet
-                    ? { srcSet: slide.srcSet, sizes: "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw" }
-                    : { sizes: "(max-width: 1024px) 100vw, 50vw" })}
-                  alt={slide.alt}
-                  width={slide.width}
-                  height={slide.height}
-                  priority={index === 0}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "low"}
-                  className="h-full w-full object-cover"
-                />
+                {"responsive" in slide && slide.responsive ? (
+                  <HeroResponsiveImage
+                    src={heroLcpImage.src}
+                    mobileSrc={heroLcpImage.mobileSrc}
+                    alt={slide.alt}
+                    width={slide.width}
+                    height={slide.height}
+                    priority={index === 0}
+                  />
+                ) : (
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    width={slide.width}
+                    height={slide.height}
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                    className="h-full w-full object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                )}
               </div>
             </CarouselItem>
           ))}
