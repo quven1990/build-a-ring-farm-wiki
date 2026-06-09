@@ -107,3 +107,9 @@ jobs:
           else
             echo "::warning::Cache purge failed. Add Zone → Cache Purge → Purge to your API token, or purge manually in Cloudflare dashboard."
           fi
+
+      - name: Notify IndexNow (Bing)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        env:
+          NEXT_PUBLIC_SITE_URL: https://buildaring.online
+        run: pnpm run indexnow

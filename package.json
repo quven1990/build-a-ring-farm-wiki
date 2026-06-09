@@ -18,6 +18,7 @@
     "lint": "eslint .",
     "sync:codes": "node scripts/sync-codes.mjs",
     "sync:game-data": "node scripts/sync-game-data.mjs",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "next:build": "next build",
     "preview": "pnpm run build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
