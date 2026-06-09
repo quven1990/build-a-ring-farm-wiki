@@ -668,6 +668,15 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "early-june-2026-site-polish",
+        text: "Early June 2026 — Cookie consent, mobile polish, and homepage performance",
+      },
+      {
+        type: "p",
+        text: "Cookie banner: clearer Accept and Reject actions, bottom padding, and calculator earnings bar stacking above the banner on mobile. Codes, seeds, and calculator pages: improved text rendering when browsers auto-translate. Homepage: wiki-focused SEO metadata refresh and smaller responsive hero images (~33KB on phones) for faster load. Mobile nav: screen-reader title fix for the menu sheet.",
+      },
+      {
+        type: "h2",
         id: "late-may-2026-calculator-reliability",
         text: "Late May 2026 — Calculator UX and page load reliability",
       },
