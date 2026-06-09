@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils"
 const heroSlides = [
   {
     src: "/images/home-hero-farm.webp",
+    srcSet: "/images/home-hero-farm-640.webp 640w, /images/home-hero-farm.webp 1024w",
     alt: "Build A Ring Farm — farmer in the crop field with a glowing ring portal",
     width: 1024,
     height: 512,
@@ -22,14 +23,14 @@ const heroSlides = [
   {
     src: "/images/home-hero-farm-2.webp",
     alt: "Build A Ring Farm — wiki overview with seeds, mutations, codes, and calculator",
-    width: 1200,
-    height: 676,
+    width: 1024,
+    height: 577,
   },
   {
     src: "/images/home-hero-farm-3.webp",
     alt: "Build A Ring Farm — colorful farm with glowing ring portals and crystal crops",
-    width: 1200,
-    height: 676,
+    width: 1024,
+    height: 577,
   },
 ] as const
 
@@ -78,6 +79,9 @@ export function HeroCarousel() {
               <div className="relative aspect-[16/9] w-full overflow-hidden sm:aspect-[2/1]">
                 <Image
                   src={slide.src}
+                  {...("srcSet" in slide && slide.srcSet
+                    ? { srcSet: slide.srcSet, sizes: "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw" }
+                    : { sizes: "(max-width: 1024px) 100vw, 50vw" })}
                   alt={slide.alt}
                   width={slide.width}
                   height={slide.height}
@@ -85,7 +89,6 @@ export function HeroCarousel() {
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "low"}
                   className="h-full w-full object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </CarouselItem>

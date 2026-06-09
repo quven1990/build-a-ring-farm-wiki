@@ -1,5 +1,5 @@
-import { preload } from "react-dom"
 import { HeroSectionStatic } from "@/components/wiki/hero-section-static"
+import { heroLcpImage } from "@/components/wiki/hero-lcp-fallback"
 import { LatestCodeSyncBanner } from "@/components/wiki/latest-code-sync-banner"
 import { HomeWikiSections } from "@/components/wiki/home-wiki-sections"
 import { QuickNavigation } from "@/components/wiki/quick-navigation"
@@ -19,10 +19,22 @@ export const dynamic = "force-static"
 export const revalidate = 3600
 
 export default function HomePage() {
-  preload("/images/home-hero-farm.webp", { as: "image", fetchPriority: "high" })
-
   return (
     <>
+      <link
+        rel="preload"
+        as="image"
+        href="/images/home-hero-farm-640.webp"
+        media="(max-width: 640px)"
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href={heroLcpImage.src}
+        media="(min-width: 641px)"
+        fetchPriority="high"
+      />
       <JsonLdScript data={webSiteJsonLd()} />
       <JsonLdScript data={faqPageJsonLd(getFaqForPage("home"))} />
       <HeroSectionStatic />
