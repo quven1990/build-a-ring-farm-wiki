@@ -2,14 +2,14 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet"
+import { Sheet, SheetClose, SheetContent, SheetTitle } from "@/components/ui/sheet"
 import { ExternalLink } from "lucide-react"
 import { SiteLogo } from "@/components/wiki/site-logo"
 import { navItems, siteConfig } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
 const navLinkClass =
-  "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground"
+  "block w-full rounded-md px-3 py-2.5 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground"
 
 type HeaderMobileSheetProps = {
   open: boolean
@@ -25,7 +25,11 @@ export function HeaderMobileSheet({
 }: HeaderMobileSheetProps) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+      <SheetContent
+        side="right"
+        overlayClassName="z-[100]"
+        className="z-[100] w-[280px] overflow-y-auto sm:w-[350px]"
+      >
         <SheetTitle className="sr-only">Navigation menu</SheetTitle>
         <div className="flex flex-col gap-4 pt-8">
           <div className="flex items-center gap-2.5 border-b pb-4">
@@ -34,20 +38,19 @@ export function HeaderMobileSheet({
           </div>
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => onOpenChange(false)}
-                className={cn(
-                  navLinkClass,
-                  "text-left",
-                  isActive(item.href)
-                    ? "bg-muted text-foreground"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.label}
-              </Link>
+              <SheetClose asChild key={item.label}>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    navLinkClass,
+                    isActive(item.href)
+                      ? "bg-muted text-foreground"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </SheetClose>
             ))}
           </nav>
           <Button asChild className="mt-4" variant="secondary">

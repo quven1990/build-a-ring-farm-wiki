@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -19,11 +19,16 @@ const HeaderMobileSheet = dynamic(
 )
 
 const navLinkClass =
-  "shrink-0 rounded-md px-2 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground xl:px-3"
+  "relative z-[1] shrink-0 rounded-md px-2 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground xl:px-3"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [mobileNavReady, setMobileNavReady] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setMobileNavReady(true)
+  }, [])
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href)
@@ -41,9 +46,10 @@ export function Header() {
           </span>
         </Link>
 
+        {/* Full nav only on xl+ — lg–xl uses the sheet to avoid Play-button overlap */}
         <nav
           aria-label="Main"
-          className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto [scrollbar-width:none] lg:flex [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto [scrollbar-width:none] xl:flex [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {navItems.map((item) => (
             <Link
@@ -62,7 +68,13 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-          <Button asChild size="icon" className="sm:hidden" variant="secondary" title="Play on Roblox">
+          <Button
+            asChild
+            size="icon"
+            className="xl:hidden"
+            variant="secondary"
+            title="Play on Roblox"
+          >
             <a
               href={siteConfig.robloxGameUrl}
               target="_blank"
@@ -72,7 +84,7 @@ export function Header() {
               <span className="sr-only">Play on Roblox</span>
             </a>
           </Button>
-          <Button asChild className="hidden sm:flex" variant="secondary">
+          <Button asChild className="hidden xl:flex" variant="secondary">
             <a
               href={siteConfig.robloxGameUrl}
               target="_blank"
@@ -87,22 +99,23 @@ export function Header() {
             type="button"
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="xl:hidden"
             aria-expanded={isOpen}
             aria-label="Open menu"
             onClick={() => setIsOpen(true)}
           >
             <Menu className="h-5 w-5" />
           </Button>
-          {isOpen ? (
-            <HeaderMobileSheet
-              open={isOpen}
-              onOpenChange={setIsOpen}
-              isActive={isActive}
-            />
-          ) : null}
         </div>
       </div>
+
+      {mobileNavReady ? (
+        <HeaderMobileSheet
+          open={isOpen}
+          onOpenChange={setIsOpen}
+          isActive={isActive}
+        />
+      ) : null}
     </header>
   )
 }
