@@ -10,7 +10,7 @@ import { RelatedGuides } from "@/components/wiki/related-guides"
 import { getUpdateArticleRelatedKey } from "@/lib/related-guides"
 import { JsonLdScript } from "@/components/wiki/json-ld-script"
 import { AdsenseAd } from "@/components/wiki/adsense-ad"
-import type { UpdateArticle } from "@/lib/updates/types"
+import type { UpdateArticle, UpdateArticleBlock } from "@/lib/updates/types"
 import { articleJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/json-ld"
 import { getSitemapLastModified } from "@/lib/sitemap"
 import { Calendar, Gift } from "lucide-react"
@@ -20,7 +20,7 @@ type UpdateArticlePageProps = {
   article: UpdateArticle
 }
 
-function renderBlocks(blocks: UpdateArticle["blocks"]) {
+function renderBlocks(blocks: UpdateArticleBlock[]) {
   return blocks.map((block, index) => {
     if (block.type === "h2") {
       return (
@@ -31,6 +31,22 @@ function renderBlocks(blocks: UpdateArticle["blocks"]) {
     }
     if (block.type === "h3") {
       return <h3 key={index}>{block.text}</h3>
+    }
+    if (block.type === "image") {
+      return (
+        <figure
+          key={index}
+          className="not-prose my-8 overflow-hidden rounded-xl border border-border/80 bg-card shadow-sm"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={block.src} alt={block.alt} className="h-auto w-full" loading="lazy" />
+          {block.caption ? (
+            <figcaption className="border-t border-border/60 px-4 py-3 text-sm text-muted-foreground">
+              {block.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      )
     }
     return <p key={index}>{block.text}</p>
   })
@@ -121,7 +137,7 @@ export function UpdateArticlePage({ article }: UpdateArticlePageProps) {
           ) : null}
 
           <AdsenseAd placement="article" />
-          <PageTableOfContents blocks={article.blocks} />
+          <PageTableOfContents blocks={article.blocks.filter((b): b is Extract<UpdateArticleBlock, { type: "h2" }> => b.type === "h2")} />
           <article className="prose prose-sm max-w-none sm:prose-base dark:prose-invert prose-headings:scroll-mt-24 prose-h2:text-balance prose-h2:text-xl sm:prose-h2:text-2xl prose-h3:text-base sm:prose-h3:text-lg prose-p:text-pretty prose-p:text-muted-foreground prose-p:leading-relaxed">
             {renderBlocks(article.blocks)}
           </article>

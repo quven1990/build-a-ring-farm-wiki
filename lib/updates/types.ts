@@ -2,6 +2,10 @@ import type { SeoBlock } from "@/lib/seo-article-content"
 
 export type UpdateArticleTag = "codes" | "patch" | "pets" | "site"
 
+export type UpdateArticleBlock =
+  | SeoBlock
+  | { type: "image"; src: string; alt: string; caption?: string }
+
 export type UpdateArticleMeta = {
   title: string
   h1: string
@@ -22,6 +26,6 @@ export type UpdateArticle = {
   updateLabel?: string
   meta: UpdateArticleMeta
   whatYouCanDo: string[]
-  blocks: SeoBlock[]
+  blocks: UpdateArticleBlock[]
   faq?: { question: string; answer: string }[]
 }

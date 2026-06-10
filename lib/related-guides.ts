@@ -27,6 +27,7 @@ export type RelatedPageKey =
   | "updates"
   | "updates-250kusers-code-update-4"
   | "updates-update-5-carnival-pass"
+  | "updates-best-money-method-june-2026"
 
 const LINKS = {
   home: { href: "/", title: "Home", description: "Player toolkit hub and quick links" },
@@ -98,6 +99,11 @@ const LINKS = {
     title: "Update 5 Carnival Pass",
     description: "Carnival event, bundles, and prize tickets guide",
   },
+  updateMoneyMethod: {
+    href: "/updates/best-money-method-june-2026",
+    title: "Best Money Method (June 2026)",
+    description: "Transcendent farming, pets, and fertilizer loop",
+  },
   beginnerMistakes: {
     href: "/build-a-ring-beginner-mistakes",
     title: "Beginner Mistakes",
@@ -126,9 +132,20 @@ export const relatedGuidesByPage: Record<RelatedPageKey, RelatedGuideLink[]> = {
   "build-a-ring-tier-list": [LINKS.seeds, LINKS.calculator, LINKS.farm, LINKS.rings, LINKS.mutations, LINKS.progression, LINKS.wiki, LINKS.bestRings],
   "build-a-ring-best-rings": [LINKS.rings, LINKS.calculator, LINKS.seeds, LINKS.farm, LINKS.tierList, LINKS.mutations, LINKS.progression, LINKS.wiki],
   "build-a-ring-update-log": [LINKS.updates, LINKS.codes, LINKS.wiki, LINKS.seeds, LINKS.mutations, LINKS.farm, LINKS.faqGuide, LINKS.calculator],
-  updates: [LINKS.update5, LINKS.codes, LINKS.update250k, LINKS.codesGuide, LINKS.updateLog, LINKS.guide, LINKS.farm, LINKS.wiki, LINKS.seeds],
+  updates: [LINKS.updateMoneyMethod, LINKS.update5, LINKS.codes, LINKS.update250k, LINKS.codesGuide, LINKS.updateLog, LINKS.guide, LINKS.farm, LINKS.wiki, LINKS.seeds],
   "updates-250kusers-code-update-4": [LINKS.codes, LINKS.codesGuide, LINKS.updates, LINKS.update5, LINKS.updateLog, LINKS.guide, LINKS.calculator, LINKS.progression, LINKS.wiki],
   "updates-update-5-carnival-pass": [LINKS.codes, LINKS.mutations, LINKS.events, LINKS.calculator, LINKS.seeds, LINKS.updates, LINKS.updateLog, LINKS.farm],
+  "updates-best-money-method-june-2026": [
+    LINKS.calculator,
+    LINKS.seeds,
+    LINKS.mutations,
+    LINKS.rings,
+    LINKS.progression,
+    LINKS.codes,
+    LINKS.farm,
+    LINKS.updates,
+    LINKS.events,
+  ],
 }
 
 export function getUpdateArticleRelatedKey(slug: string): RelatedPageKey {
