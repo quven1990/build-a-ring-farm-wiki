@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-  <title id="title">Ring priority for transcendent seeds</title>
-  <desc id="desc">Diagram showing outer ring highest income, middle second, inner lowest</desc>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Ring priority for transcendent seeds">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#f7f5ef"/>
@@ -21,32 +20,32 @@
   </defs>
   <rect width="960" height="540" rx="24" fill="url(#bg)"/>
   <text x="480" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#1e293b">Plant Transcendent Seeds by Ring Priority</text>
-  <text x="480" y="82" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Outer pays most  don&apos;t waste top seeds on inner plots</text>
+  <text x="480" y="82" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#64748b">Outer pays most - do not waste top seeds on inner plots</text>
 
   <circle cx="480" cy="300" r="210" fill="none" stroke="url(#outer)" stroke-width="28" opacity="0.95"/>
   <circle cx="480" cy="300" r="140" fill="none" stroke="url(#mid)" stroke-width="24" opacity="0.95"/>
   <circle cx="480" cy="300" r="72" fill="none" stroke="url(#inner)" stroke-width="20" opacity="0.95"/>
 
-  <text x="480" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#b45309">OUTER  Best $</text>
+  <text x="480" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#b45309">OUTER - Best income</text>
   <text x="480" y="142" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#92400e">Transcendent / top rolls here first</text>
 
-  <text x="680" y="300" text-anchor="start" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#166534">MIDDLE</text>
-  <text x="680" y="322" text-anchor="start" font-family="system-ui,sans-serif" font-size="13" fill="#15803d">2nd priority</text>
+  <text x="680" y="300" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#166534">MIDDLE</text>
+  <text x="680" y="322" font-family="system-ui,sans-serif" font-size="13" fill="#15803d">2nd priority</text>
 
   <text x="480" y="308" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#475569">INNER</text>
   <text x="480" y="328" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Lowest multiplier</text>
 
   <g font-family="system-ui,sans-serif">
     <rect x="48" y="430" width="260" height="72" rx="14" fill="#fff" stroke="#e2e8f0"/>
-    <text x="68" y="458" font-size="14" font-weight="700" fill="#166534"> Garden Devour+</text>
+    <text x="68" y="458" font-size="14" font-weight="700" fill="#166534">+ Garden Devour+</text>
     <text x="68" y="482" font-size="13" fill="#64748b">Minimum tier for late game</text>
 
     <rect x="350" y="430" width="260" height="72" rx="14" fill="#fff" stroke="#e2e8f0"/>
-    <text x="370" y="458" font-size="14" font-weight="700" fill="#b45309"> Capibara on layers</text>
+    <text x="370" y="458" font-size="14" font-weight="700" fill="#b45309">+ Capibara on layers</text>
     <text x="370" y="482" font-size="13" fill="#64748b">~120% stacked seed luck</text>
 
     <rect x="652" y="430" width="260" height="72" rx="14" fill="#fff" stroke="#e2e8f0"/>
-    <text x="672" y="458" font-size="14" font-weight="700" fill="#dc2626"> Legendary filler</text>
+    <text x="672" y="458" font-size="14" font-weight="700" fill="#dc2626">- Legendary filler</text>
     <text x="672" y="482" font-size="13" fill="#64748b">Rip out when transcendent ready</text>
   </g>
 </svg>

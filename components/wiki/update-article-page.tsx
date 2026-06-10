@@ -39,7 +39,15 @@ function renderBlocks(blocks: UpdateArticleBlock[]) {
           className="not-prose my-8 overflow-hidden rounded-xl border border-border/80 bg-card shadow-sm"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={block.src} alt={block.alt} className="h-auto w-full" loading="lazy" />
+          <img
+            src={block.src}
+            alt={block.alt}
+            width={960}
+            height={540}
+            className="block h-auto w-full bg-muted/20"
+            loading="lazy"
+            decoding="async"
+          />
           {block.caption ? (
             <figcaption className="border-t border-border/60 px-4 py-3 text-sm text-muted-foreground">
               {block.caption}
