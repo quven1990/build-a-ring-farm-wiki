@@ -19,6 +19,7 @@
     "sync:codes": "node scripts/sync-codes.mjs",
     "sync:game-data": "node scripts/sync-game-data.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
+    "article:png": "node scripts/svg-to-png.mjs",
     "next:build": "next build",
     "preview": "pnpm run build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
@@ -78,6 +79,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^22",
     "@types/react": "^19",

@@ -72,7 +72,7 @@ export const updateArticles: UpdateArticle[] = [
       },
       {
         type: "image",
-        src: "/images/articles/money-method-ring-priority.svg",
+        src: "/images/articles/money-method-ring-priority.png",
         alt: "Infographic: outer ring pays the most, middle ring second, inner ring least — plant transcendent seeds on outer plots first",
         caption: "Ring priority cheat sheet — Capibara luck on lower layers, rip legendaries once transcendent seeds are ready.",
       },
@@ -116,7 +116,7 @@ export const updateArticles: UpdateArticle[] = [
       },
       {
         type: "image",
-        src: "/images/articles/money-method-pet-mutations.svg",
+        src: "/images/articles/money-method-pet-mutations.png",
         alt: "Infographic: apply Frozen spray first, AFK with Mammoth or Hydra pets, upgrade mutations to Fire Cosmic Alien",
         caption: "Pet AFK path beats waiting on gear shop Fire — Mammoth ~54% upgrade every 10 min, Hydra is stronger.",
       },
@@ -140,7 +140,7 @@ export const updateArticles: UpdateArticle[] = [
       },
       {
         type: "image",
-        src: "/images/articles/money-method-fertilizer-loop.svg",
+        src: "/images/articles/money-method-fertilizer-loop.png",
         alt: "Infographic: composter to super fertilizer to 6x harvest loop with saw sprinkler and soil upgrades",
         caption: "Repeat this loop every session — 6× window is the biggest active-income spike outside mutations.",
       },
