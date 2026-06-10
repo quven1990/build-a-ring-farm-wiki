@@ -62,12 +62,6 @@ export const updateArticles: UpdateArticle[] = [
         text: "Community creator MistyLemon (June 2026) runs this loop for passive billions while AFK: plant only transcendent crops (Garden Devour / Durian floor or higher), stack Capibara for seed luck, put Mammoth or Hydra on every layer, slap any cheap mutation spray first, level plants, keep super fertilizer active, max soil quality on outer rings, buy Outer Ring before filling inner plots, and ignore contracts if you want efficiency over busywork. Gear shop Fire sprays are too rare to rely on — pets upgrade mutations while you idle.",
       },
       {
-        type: "image",
-        src: "/images/home-hero-farm.webp",
-        alt: "Build A Ring Farm ring layout with crops on inner, middle, and outer plots",
-        caption: "Outer ring pays the most — fill it with transcendent seeds first, not legendaries on inner plots.",
-      },
-      {
         type: "h2",
         id: "transcendent-only",
         text: "1. Transcendent Seeds Only (Late Game)",
@@ -75,6 +69,12 @@ export const updateArticles: UpdateArticle[] = [
       {
         type: "p",
         text: "Once you are far enough in, stop wasting plots on legendaries and below. Open the index and treat Garden Devour and Durian as the floor — anything weaker is not worth leveling. Pull the lever until you land top-tier transcendent seeds; the rarest rolls belong on the outer ring because it pays the highest multiplier, middle second, inner last.",
+      },
+      {
+        type: "image",
+        src: "/images/articles/money-method-ring-priority.svg",
+        alt: "Infographic: outer ring pays the most, middle ring second, inner ring least — plant transcendent seeds on outer plots first",
+        caption: "Ring priority cheat sheet — Capibara luck on lower layers, rip legendaries once transcendent seeds are ready.",
       },
       {
         type: "h2",
@@ -116,9 +116,9 @@ export const updateArticles: UpdateArticle[] = [
       },
       {
         type: "image",
-        src: "/images/home-hero-farm-2.webp",
-        alt: "Build A Ring Farm crops with mutation multipliers stacked on ring plots",
-        caption: "Level high-value plants and let Mammoth/Hydra push mutations toward Fire while you AFK.",
+        src: "/images/articles/money-method-pet-mutations.svg",
+        alt: "Infographic: apply Frozen spray first, AFK with Mammoth or Hydra pets, upgrade mutations to Fire Cosmic Alien",
+        caption: "Pet AFK path beats waiting on gear shop Fire — Mammoth ~54% upgrade every 10 min, Hydra is stronger.",
       },
       {
         type: "h2",
@@ -139,6 +139,12 @@ export const updateArticles: UpdateArticle[] = [
         text: "Super fertilizer (easy from the composter) gives about 6× income for ~15 minutes. Loop: compost → super fertilizer → apply to every ready plot → repeat. Strong fertilizer is the fallback; prismatic is best if you have it. The bottom composter tier also drops mutation sprays — still better odds than staring at an empty gear shop.",
       },
       {
+        type: "image",
+        src: "/images/articles/money-method-fertilizer-loop.svg",
+        alt: "Infographic: composter to super fertilizer to 6x harvest loop with saw sprinkler and soil upgrades",
+        caption: "Repeat this loop every session — 6× window is the biggest active-income spike outside mutations.",
+      },
+      {
         type: "h2",
         id: "upgrades-rings",
         text: "6. Saw, Sprinkler, Soil Quality, Ring Order",
@@ -146,12 +152,6 @@ export const updateArticles: UpdateArticle[] = [
       {
         type: "p",
         text: "Always push saw yield and sprinkler power. On outer layers, max soil quality for roughly +50% income. Buy and fill the Outer Ring before you finish inner rings — inner plots are the weakest multiplier. Match each ring’s recommended crop value for the +20% garden bonus (late upgrades can cost tens of SX — plan with the calculator).",
-      },
-      {
-        type: "image",
-        src: "/images/home-hero-farm-3.webp",
-        alt: "Expanded Build A Ring Farm with multiple ring layers and upgraded plots",
-        caption: "Soil quality on outer layers and saw/sprinkler upgrades multiply everything you already planted.",
       },
       {
         type: "h2",
