@@ -37,52 +37,52 @@ const nextConfig = {
   },
   trailingSlash: false,
   async headers() {
+    const htmlCacheControl = {
+      key: "Cache-Control",
+      // Short CDN TTL — stale HTML after deploy references removed /_next/static/*.css hashes → unstyled page.
+      value: "public, max-age=0, s-maxage=300, stale-while-revalidate=600",
+    }
+    const staticCacheControl = {
+      key: "Cache-Control",
+      value: "public, max-age=31536000, immutable",
+    }
+
     return [
       {
-        source: "/",
-        headers: [
-          {
-            key: "Cache-Control",
-            // Short CDN TTL — stale HTML after deploy references removed /_next/static/*.css hashes → unstyled page.
-            value: "public, max-age=0, s-maxage=300, stale-while-revalidate=600",
-          },
-        ],
+        source: "/_next/static/:path*",
+        headers: [staticCacheControl],
       },
       {
         source: "/images/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [staticCacheControl],
       },
       {
         source: "/:path*.webp",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [staticCacheControl],
       },
       {
         source: "/:path*.png",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [staticCacheControl],
       },
       {
         source: "/:path*.ico",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [staticCacheControl],
+      },
+      {
+        source: "/:path*.svg",
+        headers: [staticCacheControl],
+      },
+      {
+        source: "/:path*.txt",
+        headers: [staticCacheControl],
+      },
+      {
+        source: "/",
+        headers: [htmlCacheControl],
+      },
+      {
+        source: "/:path*",
+        headers: [htmlCacheControl],
       },
     ]
   },
