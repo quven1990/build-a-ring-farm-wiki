@@ -19,7 +19,7 @@ const HeaderMobileSheet = dynamic(
 )
 
 const navLinkClass =
-  "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground"
+  "shrink-0 rounded-md px-2 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground xl:px-3"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,15 +33,18 @@ export function Header() {
       className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80"
       suppressHydrationWarning
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex min-w-0 items-center gap-2">
+      <div className="container mx-auto flex h-16 items-center gap-2 px-4 sm:gap-3">
+        <Link href="/" className="flex shrink-0 items-center gap-2">
           <SiteLogo size={36} className="shrink-0" />
           <span className="max-w-[9.5rem] truncate font-bold text-sm text-foreground sm:max-w-none sm:text-base">
             Build A Ring Farm
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav
+          aria-label="Main"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto [scrollbar-width:none] lg:flex [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
           {navItems.map((item) => (
             <Link
               key={item.label}
