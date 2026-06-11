@@ -83,6 +83,26 @@ export const faqByPage: Record<string, FAQEntry[]> = {
   ],
   codes: [
     {
+      question: "Are codes case-sensitive?",
+      answer:
+        "Yes. Enter codes exactly as shown on this page. UPDATE2 must be typed in all caps — update2 or Update2 will not work.",
+    },
+    {
+      question: "Can I redeem a code more than once?",
+      answer:
+        "Each code can only be redeemed once per account. If you see an error after entering a code, you may have already redeemed it on that account.",
+    },
+    {
+      question: "What happens if a code says expired but it is listed as active here?",
+      answer:
+        "Codes can be removed by developers without notice. This page is synced weekly but there may be a brief window where a recently expired code still appears active. Try the next code on the list and check back soon for an updated status.",
+    },
+    {
+      question: "Do codes work across all platforms?",
+      answer:
+        "Yes. Build A Ring Farm codes work on all platforms where the game is available (PC, mobile, Xbox). The redemption interface may look slightly different but the steps are the same.",
+    },
+    {
       question: "How often are codes updated?",
       answer:
         "An automated job refreshes this list every Monday from major gaming-media code roundups. We do not play-test every string — always redeem in-game to confirm.",
@@ -91,11 +111,6 @@ export const faqByPage: Record<string, FAQEntry[]> = {
       question: "Where do I paste Build A Ring Farm codes?",
       answer:
         "Open the in-game Settings menu, find the Codes section, paste the string, and tap Redeem. Use only codes listed on trusted community pages — never enter account passwords on third-party sites.",
-    },
-    {
-      question: "Why did my code stop working?",
-      answer:
-        "Developers retire codes after milestones or updates without notice. Try newer strings from the active list and mark failed codes in community channels so others avoid wasting time.",
     },
   ],
   mutations: [

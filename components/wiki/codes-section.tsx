@@ -18,6 +18,32 @@ import { pageMeta } from "@/lib/site-config"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 import { PageShareButtons } from "@/components/wiki/page-share-buttons"
 
+const CODE_DISPLAY_ORDER = [
+  "250KUSERS",
+  "PLANTRUSH",
+  "UPDATE2",
+  "THANKYOU",
+  "BARF3",
+  "100KVISITS",
+  "2KLIKES",
+  "UPDATE1",
+] as const
+
+function sortCodesForDisplay(codes: typeof wikiCodesSorted) {
+  return [...codes].sort((a, b) => {
+    const ai = CODE_DISPLAY_ORDER.indexOf(a.code as (typeof CODE_DISPLAY_ORDER)[number])
+    const bi = CODE_DISPLAY_ORDER.indexOf(b.code as (typeof CODE_DISPLAY_ORDER)[number])
+    if (ai !== -1 && bi !== -1) return ai - bi
+    if (ai !== -1) return -1
+    if (bi !== -1) return 1
+    const aNew = a.isNew ? 1 : 0
+    const bNew = b.isNew ? 1 : 0
+    if (bNew !== aNew) return bNew - aNew
+    if (b.sourceCount !== a.sourceCount) return b.sourceCount - a.sourceCount
+    return a.code.localeCompare(b.code)
+  })
+}
+
 const statusConfig: Record<
   CodeStatus,
   { label: string; variant: "default" | "secondary" | "outline"; icon: typeof HelpCircle }
@@ -37,6 +63,9 @@ type CodesSectionProps = {
 }
 
 export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps) {
+  const displayCodes = sortCodesForDisplay(wikiCodesSorted)
+  const activeCount = displayCodes.length
+
   const copyToClipboard = async (code: string) => {
     try {
       await navigator.clipboard.writeText(code)
@@ -98,16 +127,21 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
           </div>
         )}
 
-        <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-muted-foreground">
-          Updated{" "}
-          <span className="notranslate">{formatSyncDate(codesSyncMeta.lastSyncedAt)}</span> ·{" "}
-          <span className="notranslate">{wikiCodesSorted.length}</span> active codes · weekly sync
-          from <span className="notranslate">{codesSyncMeta.sourceCount}</span> public gaming lists
-          (not play-tested)
-        </p>
+        <div className="mx-auto mb-8 max-w-3xl text-center">
+          <h2 className="mb-2 text-xl font-semibold text-foreground sm:text-2xl">
+            Active Codes — {activeCount} Available
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Updated{" "}
+            <span className="notranslate">{formatSyncDate(codesSyncMeta.lastSyncedAt)}</span>
+            {" · "}
+            weekly sync from{" "}
+            <span className="notranslate">{codesSyncMeta.sourceCount}</span> public gaming lists
+          </p>
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {wikiCodesSorted.map((item) => {
+          {displayCodes.map((item) => {
             const status = statusConfig[item.status]
             const StatusIcon = status.icon
             return (
@@ -152,25 +186,31 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
           })}
         </div>
 
-        {wikiCodesArchived.length > 0 && (
-          <div className="mx-auto mt-10 max-w-3xl">
-            <h3 className="mb-3 text-lg font-semibold text-foreground">Recently dropped codes</h3>
-            <p className="mb-4 text-sm text-muted-foreground">
-              No longer on our synced lists — may still work in-game.
+        <div className="mx-auto mt-10 max-w-3xl">
+          <h3 className="mb-3 text-lg font-semibold text-foreground">Expired Codes</h3>
+          {wikiCodesArchived.length > 0 ? (
+            <>
+              <p className="mb-4 text-sm text-muted-foreground">
+                No longer on our synced lists — may still work in-game.
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {wikiCodesArchived.map((item) => (
+                  <li key={item.code} className="rounded-lg border border-border/70 px-3 py-2">
+                    <span className="notranslate font-semibold tracking-wide text-foreground">
+                      {item.code}
+                    </span>
+                    {" — "}
+                    {item.reward}
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              No expired codes currently. All listed codes above are active and redeemable.
             </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {wikiCodesArchived.map((item) => (
-                <li key={item.code} className="rounded-lg border border-border/70 px-3 py-2">
-                  <span className="notranslate font-semibold tracking-wide text-foreground">
-                    {item.code}
-                  </span>
-                  {" — "}
-                  {item.reward}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          )}
+        </div>
 
         <p className="mx-auto mt-8 max-w-xl text-center text-xs text-muted-foreground">
           Community sync labels mean multiple gaming sites listed this code — not an in-game test.

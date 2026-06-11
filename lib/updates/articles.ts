@@ -468,7 +468,7 @@ export const updateArticles: UpdateArticle[] = [
       },
       {
         type: "p",
-        text: "Update 4 did not remove the rest of the working list. PLANTRUSH, UPDATE1, UPDATE2, THANKYOU, BARF:3, 100KVISITS, and 2KLIKES still appear on multiple public lists — seed packs, sprays, and fertilizers often beat a short skip for brand-new accounts. Redeem every active string once, then spend rewards using the progression guide stage that matches your farm.",
+        text: "Update 4 did not remove the rest of the working list. PLANTRUSH, UPDATE1, UPDATE2, THANKYOU, BARF3, 100KVISITS, and 2KLIKES still appear on multiple public lists — seed packs, sprays, and fertilizers often beat a short skip for brand-new accounts. Redeem every active string once, then spend rewards using the progression guide stage that matches your farm.",
       },
       {
         type: "h2",

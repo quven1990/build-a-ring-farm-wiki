@@ -34,7 +34,7 @@ const CODE_DENYLIST = new Set([
 
 /** Known typos / alternate spellings on third-party lists. */
 const CODE_ALIASES = {
-  BARF3: "BARF:3",
+  "BARF:3": "BARF3",
 }
 
 /** @param {string} code */

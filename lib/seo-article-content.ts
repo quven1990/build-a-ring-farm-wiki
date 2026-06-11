@@ -241,38 +241,83 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
   codes: [
     {
       type: "h2",
-      id: "redeem-codes",
-      text: "Build A Ring Farm Codes and How to Redeem",
+      id: "how-to-redeem",
+      text: "How To Redeem Codes",
     },
     {
       type: "p",
-      text: "Redeem codes distribute free sprays, seed packs, fertilizers, and time skips in Build A Ring Farm. This page is the live copy list with weekly sync status — for redemption steps and label meanings, use the [codes redemption guide](/build-a-ring-codes). Tap Active on any card to copy, then paste in-game before the offer ends.",
+      text: "Follow these steps to redeem any active code in Build A Ring Farm:",
+    },
+    {
+      type: "p",
+      text: "1. Open Build A Ring Farm — Launch the game in Roblox.",
+    },
+    {
+      type: "p",
+      text: "2. Click the Settings Gear — Look for the gear icon, typically on the left or right side of your screen.",
+    },
+    {
+      type: "p",
+      text: '3. Find "Codes" or "Redeem" — Open the Codes section within Settings.',
+    },
+    {
+      type: "p",
+      text: "4. Paste the Exact Code — Copy a code from the list above and paste it into the text field. Codes are case-sensitive — type them exactly as shown.",
+    },
+    {
+      type: "p",
+      text: "5. Confirm and Collect — Hit submit or confirm. Your reward appears in your inventory or is applied immediately.",
+    },
+    {
+      type: "p",
+      text: "Tip: Codes can expire without notice. Redeem them as soon as possible. If a code from the active list no longer works, it may have been removed in a recent update — try the next string and check the [update log](/build-a-ring-update-log).",
+    },
+    {
+      type: "h2",
+      id: "code-rewards",
+      text: "Code Rewards and Value",
+    },
+    {
+      type: "p",
+      text: "Each code provides a specific reward that can accelerate your progression. Seed Packs like the Tropical Seed Pack from UPDATE2 and 2KLIKES give you a chance to obtain higher-rarity seeds without rolling. Sprays like the Autumn Spray and Acid Spray from THANKYOU and BARF3 are consumable items that can provide temporary boosts during harvest cycles.",
+    },
+    {
+      type: "p",
+      text: "The 100KVISITS code grants a 5 Minute Time Skip, which is useful for speeding through grow cycles on slow-growing crops. UPDATE1 provides three Strong Fertilizer items, which can improve your farm's output. PLANTRUSH and 250KUSERS add event and time-skip utility — check the [events](/events) page before spending boss boxes or skips on an empty farm.",
+    },
+    {
+      type: "h3",
+      text: "Maximizing Code Rewards",
+    },
+    {
+      type: "p",
+      text: "Seed Packs are most valuable early in your playthrough when your seed library is limited. Opening a Tropical Seed Pack as a new player has a higher relative impact than opening one when you already own most seeds. Similarly, time skips and fertilizers are best used when you have a full farm of high-value crops actively growing — using a time skip on an empty farm wastes the duration.",
+    },
+    {
+      type: "p",
+      text: "If a code gives a Seed Pack, consider waiting to open it until you have the Middle Ring or Outer Ring unlocked, since the value of any seed you obtain scales with your ring multiplier. A seed that sells for $100 with the Base Ring would sell for much more on Outer at the same seed level — a significant difference that compounds with [mutation](/mutations) multipliers during [events](/events). Run the [profit calculator](/calculator) before moving a pack pull to Outer.",
+    },
+    {
+      type: "h2",
+      id: "new-codes",
+      text: "Where Do New Codes Come From?",
+    },
+    {
+      type: "p",
+      text: "Game developers release codes through several channels: the game's Roblox page description, developer social media accounts, milestone announcements (likes count, visits count), and update patch notes. Codes like 100KVISITS and 2KLIKES are tied to community milestones. UPDATE1, UPDATE2, and BARF3 are tied to game version updates. THANKYOU codes often accompany community appreciation events.",
+    },
+    {
+      type: "p",
+      text: "This page is updated as new codes are confirmed on multiple public gaming lists. Codes that stop working are moved to the expired section below the active table. Bookmark this page and check back after each game update — or open the [updates hub](/updates) when a major drop like 250KUSERS lands.",
     },
     {
       type: "h2",
       id: "code-status",
-      text: "Verified vs Community-Reported Codes",
+      text: "How We Label Codes on This Page",
     },
     {
       type: "p",
-      text: "We label each Build A Ring Farm code as verified, community reported, or needs testing. Verified entries worked for multiple players recently. Community reported codes likely work but may vary by region or patch. Needs testing means the reward is plausible but unconfirmed — try them early in a session before you grind upgrades. Never share account passwords for fake code sites; legitimate Roblox experiences only need the public string inside the official game UI.",
-    },
-    {
-      type: "h3",
-      text: "Maximizing Rewards From Free Codes",
-    },
-    {
-      type: "p",
-      text: "Use code rewards to skip slow early progression. Sprays and packs accelerate mutation testing; time skips help you align harvests with weather events. After redeeming, read the mutations page to apply new items correctly and the seeds page if you receive unfamiliar crops. Codes will not replace solid ring placement, but they compress hours of grinding into minutes when timed around an active Galaxy or Nuclear window.",
-    },
-    {
-      type: "h2",
-      id: "stay-current",
-      text: "Keeping Your Build A Ring Farm Codes List Current",
-    },
-    {
-      type: "p",
-      text: "Bookmark this page and check after every announced update or social milestone. When a code fails, report it so we can mark it expired. Pair fresh codes with the progression guide to know which reward helps your current stage — a tropical pack matters more to mid-game players than to someone still filling Inner plots with commons. Free resources are the fastest bridge between beginner and competitive Build A Ring Farm income.",
+      text: "We sync weekly from seven gaming-media code roundups — not daily in-game tests. Community sync means the string appeared on two or more sources in our last run. We never auto-mark codes as verified without play-testing. Always redeem in-game to confirm rewards; never enter your Roblox password on third-party sites.",
     },
   ],
   progression: [

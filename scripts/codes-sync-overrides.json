@@ -1,5 +1,26 @@
 {
+  "250KUSERS": {
+    "reward": "Time Skip (3 minutes)"
+  },
+  "PLANTRUSH": {
+    "reward": "1x Plant Rush Boss Box"
+  },
+  "UPDATE2": {
+    "reward": "1x Tropical Seed Pack"
+  },
+  "THANKYOU": {
+    "reward": "1x Autumn Spray"
+  },
+  "BARF3": {
+    "reward": "1x Acid Spray"
+  },
   "100KVISITS": {
-    "reward": "5-minute Time Skip (some sources report cash instead — check in-game)"
+    "reward": "5 Minute Time Skip"
+  },
+  "2KLIKES": {
+    "reward": "1x Tropical Seed Pack"
+  },
+  "UPDATE1": {
+    "reward": "3x Strong Fertilizer"
   }
 }

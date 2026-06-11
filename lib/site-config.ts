@@ -247,12 +247,12 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   codes: {
-    title: "Build A Ring Farm Codes (June 2026) — Active Redeem List",
-    h1: "Build A Ring Farm Codes",
+    title: "Build A Ring Farm Codes (2026) — Free Seeds, Cash & Rewards List",
+    h1: "Build A Ring Farm Codes (2026)",
     description:
-      "Active Build A Ring Farm redeem codes (June 2026) — copy strings with one click. Synced weekly from public gaming lists with community status labels.",
+      "Latest working Build A Ring Farm codes for seed packs, sprays, fertilizer, and time skips. Copy active redeem strings and route rewards into progression, mutations, and ring setup.",
     heroDescription:
-      "Active redeem codes with copy buttons — synced weekly from public sources with status labels.",
+      "Use the latest working code list for seed packs, sprays, fertilizer, and time skips — then route those rewards into early progression, mutation timing, and ring setup decisions.",
     ogTitle: "Build A Ring Farm Active Codes (June 2026)",
     ogImageAlt: "Build A Ring Farm active promo and redeem codes list",
     breadcrumb: "Codes",

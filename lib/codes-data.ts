@@ -29,50 +29,8 @@ export type ArchivedCode = {
 
 export const wikiCodes: WikiCode[] = [
   {
-    code: "100KVISITS",
-    reward: "5-minute Time Skip (some sources report cash instead — check in-game)",
-    status: "community",
-    sourceCount: 7,
-    isNew: true,
-  },
-  {
-    code: "2KLIKES",
-    reward: "Tropical Seed Pack",
-    status: "community",
-    sourceCount: 7,
-    isNew: true,
-  },
-  {
-    code: "BARF:3",
-    reward: "Acid Spray",
-    status: "community",
-    sourceCount: 7,
-    isNew: true,
-  },
-  {
-    code: "THANKYOU",
-    reward: "Autumn Spray",
-    status: "community",
-    sourceCount: 7,
-    isNew: true,
-  },
-  {
-    code: "UPDATE1",
-    reward: "3 Strong Fertilizers",
-    status: "community",
-    sourceCount: 7,
-    isNew: true,
-  },
-  {
-    code: "UPDATE2",
-    reward: "Tropical Seed Pack",
-    status: "community",
-    sourceCount: 7,
-    isNew: true,
-  },
-  {
     code: "250KUSERS",
-    reward: "1x Time Skip",
+    reward: "Time Skip (3 minutes)",
     status: "community",
     sourceCount: 6,
     isNew: true,
@@ -83,16 +41,52 @@ export const wikiCodes: WikiCode[] = [
     status: "community",
     sourceCount: 6,
     isNew: true,
-  }
+  },
+  {
+    code: "UPDATE2",
+    reward: "1x Tropical Seed Pack",
+    status: "community",
+    sourceCount: 7,
+    isNew: true,
+  },
+  {
+    code: "THANKYOU",
+    reward: "1x Autumn Spray",
+    status: "community",
+    sourceCount: 7,
+    isNew: true,
+  },
+  {
+    code: "BARF3",
+    reward: "1x Acid Spray",
+    status: "community",
+    sourceCount: 7,
+    isNew: true,
+  },
+  {
+    code: "100KVISITS",
+    reward: "5 Minute Time Skip",
+    status: "community",
+    sourceCount: 7,
+    isNew: true,
+  },
+  {
+    code: "2KLIKES",
+    reward: "1x Tropical Seed Pack",
+    status: "community",
+    sourceCount: 7,
+    isNew: true,
+  },
+  {
+    code: "UPDATE1",
+    reward: "3x Strong Fertilizer",
+    status: "community",
+    sourceCount: 7,
+    isNew: true,
+  },
 ]
 
-export const wikiCodesArchived: ArchivedCode[] = [
-  {
-    code: "RELATED",
-    reward: "left corner.",
-    removedAt: "2026-05-31",
-  }
-]
+export const wikiCodesArchived: ArchivedCode[] = []
 
 /** Display ordering: new codes first, then higher source consensus, then alphabetical. */
 export const wikiCodesSorted = [...wikiCodes].sort((a, b) => {

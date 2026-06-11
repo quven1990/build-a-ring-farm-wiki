@@ -91,31 +91,24 @@
   "codeFirstSeen": {
     "100KVISITS": "2026-05-31",
     "2KLIKES": "2026-05-31",
-    "BARF:3": "2026-05-31",
+    "BARF3": "2026-05-31",
     "PLANTRUSH": "2026-05-31",
     "THANKYOU": "2026-05-31",
     "UPDATE1": "2026-05-31",
     "UPDATE2": "2026-05-31",
-    "RELATED": "2026-05-31",
     "250KUSERS": "2026-06-01"
   },
   "lastRewards": {
-    "100KVISITS": "5-minute Time Skip (some sources report cash instead — check in-game)",
-    "2KLIKES": "Tropical Seed Pack",
-    "BARF:3": "Acid Spray",
-    "THANKYOU": "Autumn Spray",
-    "UPDATE1": "3 Strong Fertilizers",
-    "UPDATE2": "Tropical Seed Pack",
-    "250KUSERS": "1x Time Skip",
+    "100KVISITS": "5 Minute Time Skip",
+    "2KLIKES": "1x Tropical Seed Pack",
+    "BARF3": "1x Acid Spray",
+    "THANKYOU": "1x Autumn Spray",
+    "UPDATE1": "3x Strong Fertilizer",
+    "UPDATE2": "1x Tropical Seed Pack",
+    "250KUSERS": "Time Skip (3 minutes)",
     "PLANTRUSH": "1x Plant Rush Boss Box"
   },
-  "archived": [
-    {
-      "code": "RELATED",
-      "reward": "left corner.",
-      "removedAt": "2026-05-31"
-    }
-  ],
+  "archived": [],
   "changelog": [
     {
       "date": "2026-06-08",

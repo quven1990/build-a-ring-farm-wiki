@@ -15,7 +15,7 @@ export const pageIntros: Partial<Record<SeoPageKey, string>> = {
   calculator:
     "Interactive profit tool with step-by-step breakdown. Read the [calculator guide](/build-a-ring-calculator) for when to run scenarios; use [seeds](/seeds) and [rings](/rings) pages to pick inputs.",
   codes:
-    "Active redeem codes with copy buttons and status labels. For redemption steps and expired-code policy, see the [codes guide](/build-a-ring-codes); patch notes appear in the [update log](/build-a-ring-update-log).",
+    "Copy any active code from the table above, redeem in Settings → Codes inside Roblox, and spend sprays, packs, and time skips where they matter most. Labels show how many public gaming lists matched each string — always confirm rewards in-game.",
   progression:
     "Staged upgrade path from first harvest to endgame layout. New players should start with the [beginner guide](/build-a-ring-guide); efficiency-focused players prefer the [farm guide](/build-a-ring-farm).",
   faq:
