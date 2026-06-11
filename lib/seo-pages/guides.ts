@@ -677,6 +677,19 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "june-2026-reliability-content-codes",
+        text: "June 2026 — IndexNow, deploy cache, navigation, updates article, and codes refresh",
+      },
+      {
+        type: "p",
+        text: "Search indexing: added Bing IndexNow key hosting and a post-deploy script (pnpm run indexnow) so new and updated URLs are submitted automatically after each release. Deploy reliability: shortened HTML CDN cache (s-maxage=300) on all page routes so visitors no longer load year-old HTML that references deleted CSS bundles — static assets stay long-cache immutable. Navigation: fixed Events and other header links blocked by the Play on Roblox button on mid-width desktops; mobile menu sheet now closes cleanly without leaving a stuck overlay.",
+      },
+      {
+        type: "p",
+        text: "Content: published /updates/best-money-method-june-2026 (MistyLemon late-game money loop — transcendent-only plots, Capibara luck, Mammoth/Hydra pets, outer ring first) with three inline infographics; switched article images from SVG to PNG after browser/CDN render failures. Codes page: expanded /codes with redeem steps, reward value guide, maximizing tips, source FAQ, Active Codes count header, expired-codes empty state, corrected BARF3 spelling, and cleaner reward labels for all eight active strings.",
+      },
+      {
+        type: "h2",
         id: "late-may-2026-calculator-reliability",
         text: "Late May 2026 — Calculator UX and page load reliability",
       },
