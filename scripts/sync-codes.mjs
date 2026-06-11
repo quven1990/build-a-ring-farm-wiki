@@ -72,6 +72,25 @@ function isWithinDays(isoDate, days) {
   return now - then <= days * 24 * 60 * 60 * 1000
 }
 
+/** Only the most recently added batch gets NEW — matches single-badge competitor lists. */
+function latestFirstSeenDate(codeFirstSeen, codes) {
+  let latest = ""
+  for (const code of codes) {
+    const seen = codeFirstSeen[code] ?? ""
+    if (seen > latest) latest = seen
+  }
+  return latest
+}
+
+/** @param {string} firstSeen @param {string} latestFirstSeen */
+function isNewCode(firstSeen, latestFirstSeen) {
+  return (
+    latestFirstSeen !== "" &&
+    firstSeen === latestFirstSeen &&
+    isWithinDays(firstSeen, NEW_CODE_DAYS)
+  )
+}
+
 async function main() {
   const overrides = readOverrides()
   const previousState = readState()
@@ -226,13 +245,16 @@ async function main() {
  * @param {{ lastSyncedAt: string, archived?: Array<{ code: string, reward: string, removedAt: string }> }} syncState
  */
 function generateCodesDataTs(merged, overrides, codeFirstSeen, syncState) {
+  const activeCodes = merged.map((item) => item.code)
+  const latestFirstSeen = latestFirstSeenDate(codeFirstSeen, activeCodes)
+
   const entries = merged.map((item) => {
     const sourceCount = item.sourceIds.length
     const status =
       sourceCount >= MIN_SOURCES_FOR_COMMUNITY ? "community" : "needs-testing"
     const reward = overrides[item.code]?.reward ?? item.reward ?? "See in-game reward"
     const firstSeen = codeFirstSeen[item.code] ?? syncState.lastSyncedAt.slice(0, 10)
-    const isNew = isWithinDays(firstSeen, NEW_CODE_DAYS)
+    const isNew = isNewCode(firstSeen, latestFirstSeen)
 
     return {
       code: item.code,
