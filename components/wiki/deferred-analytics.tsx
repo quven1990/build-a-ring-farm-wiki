@@ -6,6 +6,7 @@ import Script from "next/script"
 const PLAUSIBLE_SRC =
   "https://plausible.shipsolo.io/js/pa-fRMIEoUqLkrWCpfCd6Q0h.js"
 const CLARITY_ID = "wx6wv9epyf"
+const AHREFS_ANALYTICS_KEY = "GW8Ndre3F4aXvFiywGTmgQ"
 
 /** Non-blocking analytics — client-only to avoid Script hydration mismatch. */
 export function DeferredAnalytics() {
@@ -38,6 +39,12 @@ plausible.init()`,
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "${CLARITY_ID}");`,
         }}
+      />
+      <Script
+        id="ahrefs-analytics"
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key={AHREFS_ANALYTICS_KEY}
+        strategy="lazyOnload"
       />
     </>
   )
