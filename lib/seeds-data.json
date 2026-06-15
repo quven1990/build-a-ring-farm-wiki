@@ -543,7 +543,7 @@
     "rollWeight": 0.0000035,
     "seedCost": 70000000000,
     "source": "Rolling",
-    "confidence": "community",
+    "confidence": "conflicting",
     "sourceCount": 1
   },
   {
@@ -582,7 +582,7 @@
     "rollWeight": 2.5e-7,
     "seedCost": 50000000000,
     "source": "Rolling",
-    "confidence": "community",
+    "confidence": "conflicting",
     "sourceCount": 1
   },
   {
