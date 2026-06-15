@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-06-08T12:59:53.628Z",
+  "lastSyncedAt": "2026-06-15T14:58:04.083Z",
   "sources": [
     {
       "id": "progameguides",
@@ -43,14 +43,14 @@
       "name": "Pro Game Guides",
       "url": "https://progameguides.com/roblox/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 8
+      "count": 10
     },
     {
       "sourceId": "pockettactics",
       "name": "Pocket Tactics",
       "url": "https://www.pockettactics.com/build-a-ring-farm-codes",
       "ok": true,
-      "count": 7
+      "count": 8
     },
     {
       "sourceId": "radiotimes",
@@ -64,21 +64,21 @@
       "name": "GamesRadar+",
       "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 8
+      "count": 10
     },
     {
       "sourceId": "destructoid",
       "name": "Destructoid",
       "url": "https://www.destructoid.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 8
+      "count": 9
     },
     {
       "sourceId": "beebom",
       "name": "Beebom",
       "url": "https://beebom.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 8
+      "count": 10
     },
     {
       "sourceId": "allthings",
@@ -96,7 +96,9 @@
     "THANKYOU": "2026-05-31",
     "UPDATE1": "2026-05-31",
     "UPDATE2": "2026-05-31",
-    "250KUSERS": "2026-06-01"
+    "250KUSERS": "2026-06-01",
+    "CARNIVAL": "2026-06-15",
+    "UPDATE5": "2026-06-15"
   },
   "lastRewards": {
     "100KVISITS": "5 Minute Time Skip",
@@ -106,10 +108,16 @@
     "UPDATE1": "3x Strong Fertilizer",
     "UPDATE2": "1x Tropical Seed Pack",
     "250KUSERS": "Time Skip (3 minutes)",
-    "PLANTRUSH": "1x Plant Rush Boss Box"
+    "PLANTRUSH": "1x Plant Rush Boss Box",
+    "CARNIVAL": "100 Carnival Pass Tickets",
+    "UPDATE5": "Super Pet Treat"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-06-15",
+      "summary": "10 codes matched across 7 public gaming lists. New: CARNIVAL, UPDATE5."
+    },
     {
       "date": "2026-06-08",
       "summary": "8 codes matched across 7 public gaming lists. Dropped: RELATED."

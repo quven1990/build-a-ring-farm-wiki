@@ -29,37 +29,6 @@ export type ArchivedCode = {
 
 export const wikiCodes: WikiCode[] = [
   {
-    code: "250KUSERS",
-    reward: "Time Skip (3 minutes)",
-    status: "community",
-    sourceCount: 6,
-    isNew: true,
-  },
-  {
-    code: "PLANTRUSH",
-    reward: "1x Plant Rush Boss Box",
-    status: "community",
-    sourceCount: 6,
-  },
-  {
-    code: "UPDATE2",
-    reward: "1x Tropical Seed Pack",
-    status: "community",
-    sourceCount: 7,
-  },
-  {
-    code: "THANKYOU",
-    reward: "1x Autumn Spray",
-    status: "community",
-    sourceCount: 7,
-  },
-  {
-    code: "BARF3",
-    reward: "1x Acid Spray",
-    status: "community",
-    sourceCount: 7,
-  },
-  {
     code: "100KVISITS",
     reward: "5 Minute Time Skip",
     status: "community",
@@ -72,14 +41,60 @@ export const wikiCodes: WikiCode[] = [
     sourceCount: 7,
   },
   {
+    code: "BARF3",
+    reward: "1x Acid Spray",
+    status: "community",
+    sourceCount: 7,
+  },
+  {
+    code: "THANKYOU",
+    reward: "1x Autumn Spray",
+    status: "community",
+    sourceCount: 7,
+  },
+  {
     code: "UPDATE1",
     reward: "3x Strong Fertilizer",
     status: "community",
     sourceCount: 7,
   },
+  {
+    code: "UPDATE2",
+    reward: "1x Tropical Seed Pack",
+    status: "community",
+    sourceCount: 7,
+  },
+  {
+    code: "250KUSERS",
+    reward: "Time Skip (3 minutes)",
+    status: "community",
+    sourceCount: 6,
+  },
+  {
+    code: "PLANTRUSH",
+    reward: "1x Plant Rush Boss Box",
+    status: "community",
+    sourceCount: 6,
+  },
+  {
+    code: "CARNIVAL",
+    reward: "100 Carnival Pass Tickets",
+    status: "community",
+    sourceCount: 4,
+    isNew: true,
+  },
+  {
+    code: "UPDATE5",
+    reward: "Super Pet Treat",
+    status: "community",
+    sourceCount: 4,
+    isNew: true,
+  }
 ]
 
-export const wikiCodesArchived: ArchivedCode[] = []
+export const wikiCodesArchived: ArchivedCode[] = [
+
+]
 
 /** Display ordering: new codes first, then higher source consensus, then alphabetical. */
 export const wikiCodesSorted = [...wikiCodes].sort((a, b) => {
