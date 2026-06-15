@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { SiteLogo } from "@/components/wiki/site-logo"
-import { footerGuideLinks, footerLinks, footerPartnerSites, siteConfig } from "@/lib/site-config"
+import { footerDirectoryBadges, footerGuideLinks, footerLinks, footerPartnerSites, siteConfig } from "@/lib/site-config"
 import { formatSiteLastUpdatedLabel } from "@/lib/sitemap"
 
 const footerLinkClass =
@@ -86,9 +86,32 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            Last updated: {formatSiteLastUpdatedLabel()}
-          </p>
+          <div className="flex flex-col items-center gap-3 md:items-start">
+            <p className="text-sm text-muted-foreground">
+              Last updated: {formatSiteLastUpdatedLabel()}
+            </p>
+            {footerDirectoryBadges.length > 0 && (
+              <div className="flex flex-wrap items-center gap-3">
+                {footerDirectoryBadges.map((badge) => (
+                  <a
+                    key={badge.href}
+                    href={badge.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block opacity-90 transition-opacity hover:opacity-100"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element -- third-party verification badge */}
+                    <img
+                      src={badge.src}
+                      alt={badge.alt}
+                      height={badge.height}
+                      style={{ height: badge.height, width: "auto" }}
+                    />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-4 md:justify-end">
             <a
               href="mailto:contact@buildaring.online"

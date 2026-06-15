@@ -117,7 +117,15 @@ export const footerPartnerSites = [
   },
 ] as const
 
-/** SEO priority & crawl hints — keys must match every `navItems[].href` */
+/** Directory listing badges — required for backlink verification on some platforms. */
+export const footerDirectoryBadges = [
+  {
+    href: "https://saasfame.com/item/build-a-ring-farm-wiki-tools",
+    src: "https://saasfame.com/badge-light.svg",
+    alt: "Featured on saasfame.com",
+    height: 54,
+  },
+] as const
 export const sitemapRouteSettings: Record<
   (typeof navItems)[number]["href"],
   { priority: number; changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" }
