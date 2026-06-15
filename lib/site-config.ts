@@ -108,8 +108,8 @@ export const footerLinks = {
   ],
 } as const
 
-/** Independent fan wikis for other Roblox games — external, sitewide footer links. */
-export const footerPartnerSites = [
+/** Independent fan wikis for other Roblox games — shown on wiki index only, not sitewide footer. */
+export const partnerFanWikis = [
   {
     label: "Pickaxe Tycoon Guide",
     href: "https://pickaxe-tycoon.xyz/",
