@@ -32,10 +32,8 @@ if (process.env.NODE_ENV === "development" && shouldInitCloudflareDev()) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    /** Inline Tailwind CSS in HTML — removes render-blocking /_next/static/*.css on first paint. */
-    inlineCss: true,
-  },
+  // inlineCss removes the HTML→CSS critical chain but inflates the Worker bundle
+  // (~4MB gzip vs ~1.7MB), exceeding Cloudflare Free 3 MiB limit. Re-enable on paid Workers.
   images: {
     unoptimized: true,
   },
