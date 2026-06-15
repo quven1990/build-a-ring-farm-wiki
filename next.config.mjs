@@ -32,6 +32,10 @@ if (process.env.NODE_ENV === "development" && shouldInitCloudflareDev()) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    /** Inline Tailwind CSS in HTML — removes render-blocking /_next/static/*.css on first paint. */
+    inlineCss: true,
+  },
   images: {
     unoptimized: true,
   },
