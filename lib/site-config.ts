@@ -108,6 +108,15 @@ export const footerLinks = {
   ],
 } as const
 
+/** Independent fan wikis for other Roblox games — external, sitewide footer links. */
+export const footerPartnerSites = [
+  {
+    label: "Pickaxe Tycoon Guide",
+    href: "https://pickaxe-tycoon.xyz/",
+    description: "Merge calculator, tier list, codes & mining guides",
+  },
+] as const
+
 /** SEO priority & crawl hints — keys must match every `navItems[].href` */
 export const sitemapRouteSettings: Record<
   (typeof navItems)[number]["href"],

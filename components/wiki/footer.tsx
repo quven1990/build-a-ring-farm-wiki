@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { SiteLogo } from "@/components/wiki/site-logo"
-import { footerGuideLinks, footerLinks, siteConfig } from "@/lib/site-config"
+import { footerGuideLinks, footerLinks, footerPartnerSites, siteConfig } from "@/lib/site-config"
 import { formatSiteLastUpdatedLabel } from "@/lib/sitemap"
 
 const footerLinkClass =
@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <Link href="/" className="mb-4 flex items-center gap-2.5">
               <SiteLogo size={36} />
@@ -60,6 +60,25 @@ export function Footer() {
                   <Link href={link.href} className={footerLinkClass}>
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 font-semibold text-foreground">More Roblox Wikis</h3>
+            <ul className="space-y-3">
+              {footerPartnerSites.map((site) => (
+                <li key={site.href}>
+                  <a
+                    href={site.href}
+                    className="block text-sm font-medium text-foreground transition-colors hover:text-primary"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {site.label}
+                  </a>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{site.description}</p>
                 </li>
               ))}
             </ul>
