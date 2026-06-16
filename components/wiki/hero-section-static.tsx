@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { HeroCarouselDeferred } from "@/components/wiki/hero-carousel-deferred"
 import { HeroCopyLatest } from "@/components/wiki/hero-copy-latest"
+import { PlayOnRobloxLink } from "@/components/wiki/play-on-roblox-link"
 import { wikiStats } from "@/lib/wiki-stats"
-import { siteConfig, pageMeta } from "@/lib/site-config"
+import { pageMeta } from "@/lib/site-config"
 import { CitableSummary } from "@/components/wiki/citable-summary"
 import { PageShareButtons } from "@/components/wiki/page-share-buttons"
 import { wikiCodesSorted } from "@/lib/codes-data"
@@ -61,15 +62,11 @@ export function HeroSectionStatic() {
 
             <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:justify-start">
               <Button size="lg" className="w-full sm:w-auto" asChild>
-                <a
-                  href={siteConfig.robloxGameUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <PlayOnRobloxLink location="hero">
                   <Gamepad2 className="mr-2 h-5 w-5" />
                   Play on Roblox
                   <ExternalLink className="ml-2 h-4 w-4 opacity-70" aria-hidden />
-                </a>
+                </PlayOnRobloxLink>
               </Button>
               {latestCode ? <HeroCopyLatest code={latestCode} /> : null}
               <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>

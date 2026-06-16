@@ -3,7 +3,7 @@
 import { startTransition, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Copy } from "lucide-react"
-import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { trackCodeCopy } from "@/lib/plausible-events"
 import { scheduleIdle } from "@/lib/schedule-idle"
 
 type HeroCopyLatestProps = {
@@ -16,10 +16,7 @@ export function HeroCopyLatest({ code }: HeroCopyLatestProps) {
       void navigator.clipboard.writeText(code).then(
         () => {
           scheduleIdle(() => {
-            trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
-              props: { code, placement: "hero" },
-              interactive: true,
-            })
+            trackCodeCopy(code, "hero")
             void import("sonner").then(({ toast }) => toast(`✅ Copied ${code}`))
           })
         },

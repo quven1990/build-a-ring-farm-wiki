@@ -1,5 +1,24 @@
 # Plausible analytics setup
 
+Register these **custom event** goals in [Plausible](https://plausible.shipsolo.io/buildaring.online) → **Site settings → Goals**:
+
+| Goal name | Fired when |
+|-----------|------------|
+| `Code Copy` | User copies a redeem code (`source`: `hero` / `home-preview` / `codes`) |
+| `Calculator Run` | Profit calculator inputs change (debounced) |
+| `Play on Roblox` | User clicks Play (`location`: `hero` / `header` / `header-compact` / `mobile-menu`) |
+| `Page Share` | Share button used |
+| `Cookie Banner View` / `Cookie Consent Accept` / `Cookie Consent Reject` | Cookie banner |
+
+## Weekly report (Plausible + GA4 + GSC)
+
+```bash
+pnpm analytics        # writes memory/analytics/weekly-YYYY-MM-DD.md
+pnpm analytics:json   # raw JSON to stdout
+```
+
+Requires `.env.local` keys — see `.env.example`.
+
 ## Custom event goal: Code Copy
 
 The site fires `Code Copy` when a user copies a redeem code (`lib/plausible-events.ts`).

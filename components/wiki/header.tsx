@@ -6,8 +6,9 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, ExternalLink } from "lucide-react"
+import { PlayOnRobloxLink } from "@/components/wiki/play-on-roblox-link"
 import { SiteLogo } from "@/components/wiki/site-logo"
-import { navItems, siteConfig } from "@/lib/site-config"
+import { navItems } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
 const HeaderMobileSheet = dynamic(
@@ -75,24 +76,16 @@ export function Header() {
             variant="secondary"
             title="Play on Roblox"
           >
-            <a
-              href={siteConfig.robloxGameUrl}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
+            <PlayOnRobloxLink location="header-compact">
               <ExternalLink className="h-4 w-4" />
               <span className="sr-only">Play on Roblox</span>
-            </a>
+            </PlayOnRobloxLink>
           </Button>
           <Button asChild className="hidden xl:flex" variant="secondary">
-            <a
-              href={siteConfig.robloxGameUrl}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
+            <PlayOnRobloxLink location="header">
               <ExternalLink className="mr-2 h-4 w-4" />
               Play on Roblox
-            </a>
+            </PlayOnRobloxLink>
           </Button>
 
           <Button

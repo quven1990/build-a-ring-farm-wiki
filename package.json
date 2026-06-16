@@ -19,6 +19,8 @@
     "sync:codes": "node scripts/sync-codes.mjs",
     "sync:game-data": "node scripts/sync-game-data.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
+    "analytics": "node scripts/analytics-report.mjs",
+    "analytics:json": "node scripts/pull-analytics.mjs",
     "article:png": "node scripts/svg-to-png.mjs",
     "next:build": "next build",
     "preview": "pnpm run build && opennextjs-cloudflare preview",

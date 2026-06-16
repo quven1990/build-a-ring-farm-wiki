@@ -20,7 +20,7 @@ import {
   wikiCodesSorted,
 } from "@/lib/codes-data"
 import { getLatestUpdateArticle, getUpdateArticleByCode } from "@/lib/updates/articles"
-import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { trackCodeCopy } from "@/lib/plausible-events"
 import { scheduleIdle } from "@/lib/schedule-idle"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 
@@ -44,10 +44,7 @@ export function HomeCodesPreview() {
       void navigator.clipboard.writeText(code).then(
         () => {
           scheduleIdle(() => {
-            trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
-              props: { code, placement: "home" },
-              interactive: true,
-            })
+            trackCodeCopy(code, "home-preview")
             toast("✅ Code copied to clipboard!")
           })
         },

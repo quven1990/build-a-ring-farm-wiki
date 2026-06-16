@@ -13,7 +13,7 @@ import {
   wikiCodesSorted,
   type CodeStatus,
 } from "@/lib/codes-data"
-import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { trackCodeCopy } from "@/lib/plausible-events"
 import { pageMeta } from "@/lib/site-config"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 import { PageShareButtons } from "@/components/wiki/page-share-buttons"
@@ -69,10 +69,7 @@ export function CodesSection({ showTitle = true, afterIntro }: CodesSectionProps
   const copyToClipboard = async (code: string) => {
     try {
       await navigator.clipboard.writeText(code)
-      trackPlausibleEvent(PLAUSIBLE_GOALS.codeCopy, {
-        props: { code },
-        interactive: true,
-      })
+      trackCodeCopy(code, "codes")
       toast("✅ Code copied to clipboard!")
     } catch {
       toast.error("Could not copy code. Please copy manually.")
