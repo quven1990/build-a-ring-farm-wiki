@@ -125,6 +125,12 @@ export const footerDirectoryBadges = [
     alt: "Featured on saasfame.com",
     height: 54,
   },
+  {
+    href: "https://newtool.site/item/build-a-ring-farm-wiki-tools",
+    src: "https://newtool.site/badges/newtool-light.svg",
+    alt: "Featured on NewTool.site",
+    height: 54,
+  },
 ] as const
 export const sitemapRouteSettings: Record<
   (typeof navItems)[number]["href"],
