@@ -197,19 +197,20 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   mutations: {
-    title: "Build A Ring Farm Mutations — Multipliers (June 2026)",
-    h1: "Build A Ring Farm Mutations",
+    title: "Build A Ring Farm Mutation Matrix — Multipliers & Weather Rates",
+    h1: "Build A Ring Farm Mutation Matrix",
     description:
-      "Build A Ring Farm mutations (June 2026): Wet 1.5x to Honeycomb 6.5x, Gear Shop prices, weather triggers & event buffs. Compare multipliers before buying sprays.",
+      "Mutations are the primary income multiplier in Build A Ring Farm. All 9 mutations from Wet (1.5x) to Honeycomb (6.5x) — Gear Shop spray prices, weather triggers, and event-only tags.",
     heroDescription:
-      "Every mutation multiplier — shop prices, weather triggers, and event-only tags. Updated June 2026.",
-    ogTitle: "Build A Ring Farm Mutations — Multiplier List (June 2026)",
+      "All 9 mutations ranked by multiplier — shop spray prices, weather triggers, and event-only tags.",
+    ogTitle: "Build A Ring Farm Mutation Matrix — Multipliers & Weather Rates",
     ogImageAlt: "Build A Ring Farm mutation matrix with harvest multipliers",
     breadcrumb: "Mutations",
     keywords: [
       "build a ring farm mutations",
-      "build a ring farm mutations list",
-      "mutation multipliers 2026",
+      "build a ring farm mutation matrix",
+      "mutation multipliers",
+      "weather mutation rates",
       "Wet mutation",
       "Rainbow mutation",
       "Honeycomb",

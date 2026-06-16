@@ -13,11 +13,12 @@ export const metadata: Metadata = createPageMetadata("mutations", "/mutations")
 
 export default function MutationsPage() {
   return (
-    <WikiPageShell pageKey="mutations" showHero={false}>
+    <WikiPageShell pageKey="mutations" showHero={false} showShare={false}>
       <JsonLdScript data={faqPageJsonLd(getFaqForPage("mutations"))} />
-      <MutationMatrix
-        afterIntro={<CitableSummary page="mutations" className="mt-6 text-left" />}
-      />
+      <MutationMatrix />
+      <div className="container mx-auto px-4 pb-4">
+        <CitableSummary page="mutations" />
+      </div>
       <MutationGuide />
       <EnhancedSeoSection pageKey="mutations" relatedKey="mutations" />
     </WikiPageShell>

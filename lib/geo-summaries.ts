@@ -42,7 +42,7 @@ export function getCitableSummary(page: GeoSummaryPage): CitableSummaryData {
     case "mutations":
       return {
         canonicalPath: "/mutations",
-        text: `Build A Ring Farm has ${mutationSummary.total} harvest mutations (${period}): ${mutationSummary.purchasable} purchasable Gear Shop sprays from Wet (1.5x) to Rainbow (5x), plus ${mutationSummary.eventOnly} event-only procs up to Honeycomb (6.5x). Full multiplier matrix: ${origin}/mutations.`,
+        text: `Mutations are the primary income multiplier in Build A Ring Farm. ${mutationSummary.total} harvest mutations (${period}): ${mutationSummary.purchasable} Gear Shop sprays from Wet (1.5x) to Rainbow (5x), plus ${mutationSummary.eventOnly} event-only procs up to Honeycomb (6.5x). Full matrix: ${origin}/mutations.`,
       }
   }
 }

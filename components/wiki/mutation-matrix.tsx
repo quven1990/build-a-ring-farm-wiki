@@ -27,11 +27,10 @@ import {
 import { pageMeta } from "@/lib/site-config"
 import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
-import { CloudRain, Coins, ShoppingBag, Sparkles, Zap } from "lucide-react"
+import { Coins } from "lucide-react"
 
 type MutationMatrixProps = {
   showTitle?: boolean
-  afterIntro?: React.ReactNode
 }
 
 function sortMutations(list: WikiMutation[], sort: MutationSortOption): WikiMutation[] {
@@ -137,7 +136,7 @@ function MutationCard({ mutation, rank }: { mutation: WikiMutation; rank: number
   )
 }
 
-export function MutationMatrix({ showTitle = true, afterIntro }: MutationMatrixProps) {
+export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
   const [sort, setSort] = useState<MutationSortOption>("multiplier-desc")
   const [eventOnly, setEventOnly] = useState(false)
 
@@ -149,7 +148,7 @@ export function MutationMatrix({ showTitle = true, afterIntro }: MutationMatrixP
   }, [sort, eventOnly])
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-16" translate="no">
+    <section className="relative overflow-hidden py-8 sm:py-10" translate="no">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.12,transparent)]"
         aria-hidden
@@ -157,53 +156,24 @@ export function MutationMatrix({ showTitle = true, afterIntro }: MutationMatrixP
 
       <div className="container relative mx-auto px-4">
         {showTitle && (
-          <div className="mx-auto mb-10 max-w-2xl text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-1.5 text-sm font-medium text-primary shadow-sm">
-              <Sparkles className="h-4 w-4" />
-              Mutation Matrix
-            </div>
-            <h1 className="mb-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <div className="mx-auto mb-6 max-w-2xl text-center">
+            <h1 className="mb-2 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {pageMeta.mutations.h1}
             </h1>
-            <div className="mb-4 flex justify-center">
+            <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
               <LastUpdatedBadge />
+              <span className="text-sm text-muted-foreground">
+                {mutationSummary.total} mutations · {mutationSummary.purchasable} shop ·{" "}
+                {mutationSummary.eventOnly} event-only
+              </span>
             </div>
-            <p className="text-pretty text-base text-muted-foreground sm:text-lg">
-              {pageMeta.mutations.heroDescription} Browse all {mutationSummary.total}{" "}
-              mutations ranked by multiplier and event rarity.{" "}
-              <Link href="/calculator" className="text-primary underline-offset-4 hover:underline">
-                Test harvest value in the calculator
-              </Link>{" "}
-              before buying shop sprays.
+            <p className="text-pretty text-sm text-muted-foreground sm:text-base">
+              {pageMeta.mutations.heroDescription}
             </p>
-            {afterIntro}
-            <div className="mt-6 text-left">
-              <DataConfidenceLegend
-                lastReviewed={formatGameDataSyncDate(gameDataSyncMeta.lastSyncedAt)}
-                summary={`Multipliers & shop prices — weekly sync from ${gameDataSyncMeta.okSourceCount} public lists. Event chance % are estimates.`}
-              />
-            </div>
           </div>
         )}
 
-        <div className="mb-8 grid grid-cols-3 gap-3 sm:mx-auto sm:max-w-xl">
-          {[
-            { label: "Total", value: mutationSummary.total, icon: Zap },
-            { label: "Shop", value: mutationSummary.purchasable, icon: ShoppingBag },
-            { label: "Events", value: mutationSummary.eventOnly, icon: CloudRain },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="flex flex-col items-center rounded-2xl border border-border/80 bg-card/90 px-3 py-4 text-center shadow-sm backdrop-blur-sm"
-            >
-              <item.icon className="mb-2 h-4 w-4 text-primary" />
-              <span className="text-2xl font-bold tabular-nums text-foreground">{item.value}</span>
-              <span className="text-xs font-medium text-muted-foreground">{item.label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="mb-8 rounded-2xl border border-border/80 bg-card/90 p-4 shadow-sm backdrop-blur-sm sm:p-5">
+        <div className="mb-6 rounded-2xl border border-border/80 bg-card/90 p-4 shadow-sm backdrop-blur-sm sm:p-5">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
             <Select value={sort} onValueChange={(v) => setSort(v as MutationSortOption)}>
               <SelectTrigger className="h-11 w-full rounded-xl border-border/80 bg-background sm:w-[240px]">
@@ -244,7 +214,14 @@ export function MutationMatrix({ showTitle = true, afterIntro }: MutationMatrixP
           </div>
         )}
 
-        <div className="mt-10 flex flex-col items-center gap-3 rounded-2xl border border-primary/15 bg-primary/5 px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div className="mt-6">
+          <DataConfidenceLegend
+            lastReviewed={formatGameDataSyncDate(gameDataSyncMeta.lastSyncedAt)}
+            summary={`Multipliers & shop prices — weekly sync from ${gameDataSyncMeta.okSourceCount} public lists. Event chance % are estimates.`}
+          />
+        </div>
+
+        <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl border border-primary/15 bg-primary/5 px-6 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
           <p className="max-w-xl text-sm text-muted-foreground">
             Six mutations are sold in the Gear Shop; Alien, Farm, and Honeycomb are event-only.
             Stack multipliers with rings and seed level for maximum harvest value.
