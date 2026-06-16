@@ -20,11 +20,11 @@ import {
 } from "lucide-react"
 
 const stats = [
-  { icon: Database, label: "SEEDS", value: wikiStats.seeds },
-  { icon: GitBranch, label: "RARITIES", value: wikiStats.rarities },
-  { icon: Calculator, label: "MUTATIONS", value: wikiStats.mutations },
-  { icon: Gift, label: "CODES", value: wikiStats.codes },
-]
+  { icon: Database, label: "SEEDS", value: wikiStats.seeds, href: "/seeds" },
+  { icon: GitBranch, label: "RARITIES", value: wikiStats.rarities, href: "/seeds" },
+  { icon: Calculator, label: "MUTATIONS", value: wikiStats.mutations, href: "/mutations" },
+  { icon: Gift, label: "CODES", value: wikiStats.codes, href: "/codes" },
+] as const
 
 /** Server-rendered hero — LCP image + copy in first HTML; carousel JS deferred. */
 export function HeroSectionStatic() {
@@ -130,13 +130,20 @@ export function HeroSectionStatic() {
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {stats.map((stat) => (
-            <Card key={stat.label} className="border-primary/10 bg-card/80 backdrop-blur">
-              <CardContent className="flex flex-col items-center p-4">
-                <stat.icon className="mb-2 h-6 w-6 text-primary" />
-                <span className="text-xl font-bold text-foreground sm:text-2xl">{stat.value}</span>
-                <span className="text-xs text-muted-foreground sm:text-sm">{stat.label}</span>
-              </CardContent>
-            </Card>
+            <Link
+              key={stat.label}
+              href={stat.href}
+              className="group rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              aria-label={`${stat.value} ${stat.label} — open ${stat.label === "RARITIES" ? "seeds" : stat.label.toLowerCase()} page`}
+            >
+              <Card className="h-full border-primary/10 bg-card/80 backdrop-blur transition-colors group-hover:border-primary/30 group-hover:bg-card">
+                <CardContent className="flex flex-col items-center p-4">
+                  <stat.icon className="mb-2 h-6 w-6 text-primary" />
+                  <span className="text-xl font-bold text-foreground sm:text-2xl">{stat.value}</span>
+                  <span className="text-xs text-muted-foreground sm:text-sm">{stat.label}</span>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
