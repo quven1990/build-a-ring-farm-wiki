@@ -668,6 +668,19 @@ export const guidePages: Record<GuidePageConfig["id"], GuidePageConfig> = {
       },
       {
         type: "h2",
+        id: "mid-june-2026-badges-analytics-home",
+        text: "Mid June 2026 — Directory badges, analytics, homepage shortcuts, and wiki linking",
+      },
+      {
+        type: "p",
+        text: "Footer: added SaaS Fame and NewTool.site directory verification badges (sitewide) so free listings stay valid without cluttering content pages. Partner links: moved Pickaxe Tycoon wiki cross-link from the global footer to the wiki index only (/build-a-ring-wiki) so related fan wikis appear in context, not on every route.",
+      },
+      {
+        type: "p",
+        text: "Analytics: Ahrefs Web Analytics loads deferred (lazyOnload) alongside existing Plausible and Clarity — no change to cookie-consent behavior. Homepage: hero stat cards (Seeds, Mutations, Codes) now link directly to /seeds, /mutations, and /codes. Codes: NEW badge shows only on the latest community batch (250KUSERS), not every active string. Infrastructure: reverted experimental inlineCss after Cloudflare Free Worker bundle exceeded the 3 MiB limit; weekly community codes and seeds sync continues via GitHub Actions.",
+      },
+      {
+        type: "h2",
         id: "early-june-2026-site-polish",
         text: "Early June 2026 — Cookie consent, mobile polish, and homepage performance",
       },
