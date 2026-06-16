@@ -1,7 +1,6 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
   Select,
@@ -27,6 +26,8 @@ import {
 import { pageMeta } from "@/lib/site-config"
 import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
+import { TrackedLink } from "@/components/wiki/tracked-link"
+import { trackDatabaseFilter } from "@/lib/plausible-events"
 import { Coins } from "lucide-react"
 
 type MutationMatrixProps = {
@@ -175,7 +176,13 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
 
         <div className="mb-6 rounded-2xl border border-border/80 bg-card/90 p-4 shadow-sm backdrop-blur-sm sm:p-5">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
-            <Select value={sort} onValueChange={(v) => setSort(v as MutationSortOption)}>
+            <Select
+              value={sort}
+              onValueChange={(v) => {
+                setSort(v as MutationSortOption)
+                trackDatabaseFilter("mutations", "sort", v)
+              }}
+            >
               <SelectTrigger className="h-11 w-full rounded-xl border-border/80 bg-background sm:w-[240px]">
                 <SelectValue placeholder="Sort by..." />
               </SelectTrigger>
@@ -191,7 +198,12 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
                 "h-11 rounded-xl border-border/80",
                 eventOnly && "bg-primary text-primary-foreground hover:bg-primary/90"
               )}
-              onClick={() => setEventOnly((v) => !v)}
+              onClick={() => {
+                setEventOnly((v) => {
+                  trackDatabaseFilter("mutations", "event-only", !v)
+                  return !v
+                })
+              }}
             >
               Event only
             </Button>
@@ -227,10 +239,13 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
             Stack multipliers with rings and seed level for maximum harvest value.
           </p>
           <Button asChild variant="secondary" className="shrink-0 rounded-xl font-semibold">
-            <Link href="/calculator">
+            <TrackedLink
+              href="/calculator"
+              tracking={{ kind: "cta", source: "mutations-matrix", label: "open-calculator" }}
+            >
               <Coins className="mr-2 h-4 w-4" />
               Open calculator
-            </Link>
+            </TrackedLink>
           </Button>
         </div>
       </div>

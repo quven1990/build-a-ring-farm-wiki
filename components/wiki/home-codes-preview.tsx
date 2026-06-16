@@ -1,7 +1,6 @@
 "use client"
 
 import { startTransition } from "react"
-import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -21,6 +20,7 @@ import {
 } from "@/lib/codes-data"
 import { getLatestUpdateArticle, getUpdateArticleByCode } from "@/lib/updates/articles"
 import { trackCodeCopy } from "@/lib/plausible-events"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { scheduleIdle } from "@/lib/schedule-idle"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 
@@ -128,33 +128,36 @@ export function HomeCodesPreview() {
         </div>
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-          <Link
+          <TrackedLink
             href="/codes"
+            tracking={{ kind: "cta", source: "home-codes-preview", label: "full-codes-list" }}
             className="font-medium text-primary underline-offset-4 hover:underline"
           >
             View full Build A Ring Farm codes list →
-          </Link>
+          </TrackedLink>
           {headlineUpdate ? (
             <>
               {" · "}
-              <Link
+              <TrackedLink
                 href={`/updates/${headlineUpdate.slug}`}
+                tracking={{ kind: "cta", source: "home-codes-preview", label: "update-article" }}
                 className="text-primary underline-offset-4 hover:underline"
               >
                 {headlineUpdate.updateLabel ?? "Update"} article
                 {codeMatchedUpdate?.slug === headlineUpdate.slug && headlineNewCode
                   ? ` (${headlineNewCode.code})`
                   : ""}
-              </Link>
+              </TrackedLink>
             </>
           ) : null}
           {" · "}
-          <Link
+          <TrackedLink
             href="/build-a-ring-codes"
+            tracking={{ kind: "cta", source: "home-codes-preview", label: "how-to-redeem" }}
             className="text-primary underline-offset-4 hover:underline"
           >
             How to redeem
-          </Link>
+          </TrackedLink>
         </p>
       </div>
     </section>

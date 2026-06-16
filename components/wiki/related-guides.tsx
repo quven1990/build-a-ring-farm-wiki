@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { relatedGuidesByPage, type RelatedPageKey } from "@/lib/related-guides"
 import { ArrowRight } from "lucide-react"
 
@@ -26,7 +26,11 @@ export function RelatedGuides({
           {links.map((link) => (
             <li key={link.href}>
               <Card className="h-full transition-colors hover:border-primary/40 hover:bg-muted/30">
-                <Link href={link.href} className="group block h-full">
+                <TrackedLink
+                  href={link.href}
+                  tracking={{ kind: "related", fromPage: pageKey }}
+                  className="group block h-full"
+                >
                   <CardHeader className="pb-2">
                     <CardTitle className="flex items-center justify-between gap-2 text-base group-hover:text-primary">
                       {link.title}
@@ -36,7 +40,7 @@ export function RelatedGuides({
                   <CardContent>
                     <CardDescription>{link.description}</CardDescription>
                   </CardContent>
-                </Link>
+                </TrackedLink>
               </Card>
             </li>
           ))}

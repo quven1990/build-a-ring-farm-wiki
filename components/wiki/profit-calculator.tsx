@@ -41,7 +41,7 @@ import {
 import { pageMeta } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 import { Calculator, ChevronDown, ChevronUp, Coins, Sparkles } from "lucide-react"
-import { PLAUSIBLE_GOALS, trackPlausibleEvent } from "@/lib/plausible-events"
+import { PLAUSIBLE_GOALS, trackCalculatorInteraction, trackPlausibleEvent } from "@/lib/plausible-events"
 
 const calculatorSeeds = seeds.filter((s) => (s.baseIncome ?? 0) > 0)
 
@@ -225,7 +225,10 @@ function CalculatorMobileDock({
         </div>
         <button
           type="button"
-          onClick={onScrollToDetails}
+          onClick={() => {
+            trackCalculatorInteraction("scroll-to-details")
+            onScrollToDetails()
+          }}
           className="inline-flex shrink-0 flex-col items-center gap-0.5 rounded-xl border border-border/80 bg-muted/60 px-3 py-2 text-[10px] font-bold uppercase tracking-wide text-foreground transition-colors hover:border-primary/40 hover:bg-primary/10"
         >
           <ChevronUp className="h-4 w-4" aria-hidden />

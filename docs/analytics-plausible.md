@@ -6,7 +6,12 @@ Register these **custom event** goals in [Plausible](https://plausible.shipsolo.
 |-----------|------------|
 | `Code Copy` | User copies a redeem code (`source`: `hero` / `home-preview` / `codes`) |
 | `Calculator Run` | Profit calculator inputs change (debounced) |
+| `Calculator Interaction` | Calculator mobile dock actions (`action`: e.g. `scroll-to-details`) |
 | `Play on Roblox` | User clicks Play (`location`: `hero` / `header` / `header-compact` / `mobile-menu`) |
+| `CTA Click` | Internal navigation CTAs (`source`, `destination`, optional `label`) |
+| `Nav Click` | Header / mobile menu nav (`location`, `destination`) |
+| `Related Guide Click` | Related guides cards (`fromPage`, `toHref`) |
+| `Database Filter` | Mutations / seeds filters (`page`, `filter`, `value`) |
 | `Page Share` | Share button used |
 | `Cookie Banner View` / `Cookie Consent Accept` / `Cookie Consent Reject` | Cookie banner |
 
@@ -19,14 +24,22 @@ pnpm analytics:json   # raw JSON to stdout
 
 Requires `.env.local` keys — see `.env.example`.
 
-## Custom event goal: Code Copy
+## CTA `source` values (for funnel analysis)
 
-The site fires `Code Copy` when a user copies a redeem code (`lib/plausible-events.ts`).
+| source | Where |
+|--------|--------|
+| `home-hero` | Homepage hero buttons & inline links |
+| `home-hero-stats` | Homepage stat cards (SEEDS / MUTATIONS / CODES) |
+| `home-quick-nav` | Quick Navigation tool cards |
+| `home-hub-tools` / `home-hub-guides` / `home-hub-databases` | Explore Tools & Guides section |
+| `home-wiki-sections` | Mutations/seeds tables & farm guide link |
+| `home-codes-preview` | Codes preview footer links |
+| `sync-banner` | Top update sync banner |
+| `mutations-matrix` / `seeds-database` / `events-guide` | Open calculator CTAs |
+| `updates-hub` / `update-article` | Updates funnel |
+| `guide-page` | SEO guide → live tool CTA |
 
-1. Open [Plausible](https://plausible.shipsolo.io/buildaring.online) (log in if required).
-2. **Site settings** → **Goals** → **Add goal** → **Custom event**.
-3. Event name: `Code Copy` (must match exactly).
-4. After real traffic, confirm under **Goal conversions** on the dashboard.
+Filter **CTA Click** by `source` + `destination` in Plausible to see e.g. mutations → calculator conversion.
 
 ## Lock the public dashboard
 

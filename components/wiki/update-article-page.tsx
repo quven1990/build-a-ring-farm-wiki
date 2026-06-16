@@ -1,7 +1,7 @@
-import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { PageHero } from "@/components/wiki/page-hero"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { PageTableOfContents } from "@/components/wiki/page-table-of-contents"
 import { WhatYouCanDo } from "@/components/wiki/what-you-can-do"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
@@ -136,10 +136,13 @@ export function UpdateArticlePage({ article }: UpdateArticlePageProps) {
                 Full list with sync status and archived codes on the codes page.
               </p>
               <Button asChild>
-                <Link href="/codes">
+                <TrackedLink
+                  href="/codes"
+                  tracking={{ kind: "cta", source: "update-article", label: article.slug }}
+                >
                   <Gift className="mr-2 h-4 w-4" />
                   Open active codes
-                </Link>
+                </TrackedLink>
               </Button>
             </div>
           ) : null}

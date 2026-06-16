@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { PageHero } from "@/components/wiki/page-hero"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { PageTableOfContents } from "@/components/wiki/page-table-of-contents"
 import { WhatYouCanDo } from "@/components/wiki/what-you-can-do"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
@@ -115,10 +115,17 @@ export function GuidePage({ pageId }: GuidePageProps) {
               <p className="mb-3 text-sm font-medium text-foreground">Open the live tool</p>
               <p className="mb-4 text-sm text-muted-foreground">{config.toolCta.description}</p>
               <Button asChild>
-                <Link href={config.toolCta.href}>
+                <TrackedLink
+                  href={config.toolCta.href}
+                  tracking={{
+                    kind: "cta",
+                    source: "guide-page",
+                    label: pageId,
+                  }}
+                >
                   {config.toolCta.label}
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </TrackedLink>
               </Button>
             </div>
           )}

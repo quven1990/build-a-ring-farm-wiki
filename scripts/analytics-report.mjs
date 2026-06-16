@@ -115,7 +115,7 @@ function formatReport(data) {
     }
     lines.push("")
     lines.push(
-      "> 新埋点 `Play on Roblox` / Code Copy `source` 需部署后积累数据；请在 Plausible Goals 注册 **Play on Roblox**。"
+      "> 请在 Plausible Goals 注册全部自定义事件（含 **CTA Click**、**Nav Click**、**Related Guide Click**、**Database Filter**、**Calculator Interaction**）。"
     )
     lines.push("")
   }

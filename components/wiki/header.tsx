@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, ExternalLink } from "lucide-react"
 import { PlayOnRobloxLink } from "@/components/wiki/play-on-roblox-link"
 import { SiteLogo } from "@/components/wiki/site-logo"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { navItems } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
@@ -53,9 +54,10 @@ export function Header() {
           className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto [scrollbar-width:none] xl:flex [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {navItems.map((item) => (
-            <Link
+            <TrackedLink
               key={item.label}
               href={item.href}
+              tracking={{ kind: "nav", location: "header" }}
               className={cn(
                 navLinkClass,
                 isActive(item.href)
@@ -64,7 +66,7 @@ export function Header() {
               )}
             >
               {item.label}
-            </Link>
+            </TrackedLink>
           ))}
         </nav>
 

@@ -1,9 +1,9 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { HeroCarouselDeferred } from "@/components/wiki/hero-carousel-deferred"
 import { HeroCopyLatest } from "@/components/wiki/hero-copy-latest"
 import { PlayOnRobloxLink } from "@/components/wiki/play-on-roblox-link"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { wikiStats } from "@/lib/wiki-stats"
 import { pageMeta } from "@/lib/site-config"
 import { CitableSummary } from "@/components/wiki/citable-summary"
@@ -70,47 +70,59 @@ export function HeroSectionStatic() {
               </Button>
               {latestCode ? <HeroCopyLatest code={latestCode} /> : null}
               <Button size="lg" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="#latest-codes">
+                <TrackedLink href="#latest-codes" tracking={{ kind: "cta", source: "home-hero", label: "working-codes" }}>
                   <Gift className="mr-2 h-5 w-5" />
                   Working codes
-                </Link>
+                </TrackedLink>
               </Button>
             </div>
 
             <div className="mt-4 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:justify-start">
               <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="/calculator">
+                <TrackedLink href="/calculator" tracking={{ kind: "cta", source: "home-hero", label: "calculator" }}>
                   <Calculator className="mr-2 h-4 w-4" />
                   Calculator
-                </Link>
+                </TrackedLink>
               </Button>
               <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="/mutations">
+                <TrackedLink href="/mutations" tracking={{ kind: "cta", source: "home-hero", label: "mutations" }}>
                   <Sparkles className="mr-2 h-4 w-4" />
                   Mutations
-                </Link>
+                </TrackedLink>
               </Button>
               <Button size="default" className="w-full sm:w-auto" variant="outline" asChild>
-                <Link href="/seeds">
+                <TrackedLink href="/seeds" tracking={{ kind: "cta", source: "home-hero", label: "seeds" }}>
                   <Database className="mr-2 h-4 w-4" />
                   51 Seeds
-                </Link>
+                </TrackedLink>
               </Button>
             </div>
 
             <p className="mx-auto mt-5 max-w-xl text-sm text-muted-foreground lg:mx-0">
               Jump to{" "}
-              <Link href="/mutations" className="font-medium text-primary underline-offset-4 hover:underline">
+              <TrackedLink
+                href="/mutations"
+                tracking={{ kind: "cta", source: "home-hero", label: "mutations-inline" }}
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
                 full mutations list
-              </Link>
+              </TrackedLink>
               ,{" "}
-              <Link href="/codes" className="font-medium text-primary underline-offset-4 hover:underline">
+              <TrackedLink
+                href="/codes"
+                tracking={{ kind: "cta", source: "home-hero", label: "codes-inline" }}
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
                 active redeem codes
-              </Link>
+              </TrackedLink>
               , or the{" "}
-              <Link href="/seeds" className="font-medium text-primary underline-offset-4 hover:underline">
+              <TrackedLink
+                href="/seeds"
+                tracking={{ kind: "cta", source: "home-hero", label: "seeds-inline" }}
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
                 seeds database
-              </Link>
+              </TrackedLink>
               .
             </p>
 
@@ -127,9 +139,10 @@ export function HeroSectionStatic() {
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {stats.map((stat) => (
-            <Link
+            <TrackedLink
               key={stat.label}
               href={stat.href}
+              tracking={{ kind: "cta", source: "home-hero-stats", label: stat.label.toLowerCase() }}
               className="group rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               aria-label={`${stat.value} ${stat.label} — open ${stat.label === "RARITIES" ? "seeds" : stat.label.toLowerCase()} page`}
             >
@@ -140,7 +153,7 @@ export function HeroSectionStatic() {
                   <span className="text-xs text-muted-foreground sm:text-sm">{stat.label}</span>
                 </CardContent>
               </Card>
-            </Link>
+            </TrackedLink>
           ))}
         </div>
       </div>

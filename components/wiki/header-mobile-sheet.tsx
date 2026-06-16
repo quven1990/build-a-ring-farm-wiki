@@ -1,11 +1,11 @@
 "use client"
 
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetClose, SheetContent, SheetTitle } from "@/components/ui/sheet"
 import { ExternalLink } from "lucide-react"
 import { SiteLogo } from "@/components/wiki/site-logo"
 import { PlayOnRobloxLink } from "@/components/wiki/play-on-roblox-link"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { navItems } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 
@@ -40,8 +40,9 @@ export function HeaderMobileSheet({
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => (
               <SheetClose asChild key={item.label}>
-                <Link
+                <TrackedLink
                   href={item.href}
+                  tracking={{ kind: "nav", location: "mobile-menu" }}
                   className={cn(
                     navLinkClass,
                     isActive(item.href)
@@ -50,7 +51,7 @@ export function HeaderMobileSheet({
                   )}
                 >
                   {item.label}
-                </Link>
+                </TrackedLink>
               </SheetClose>
             ))}
           </nav>

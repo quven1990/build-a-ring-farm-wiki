@@ -1,4 +1,3 @@
-import Link from "next/link"
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +6,7 @@ import {
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import {
   Table,
   TableBody,
@@ -65,12 +65,13 @@ function EventCard({
             <span role="img" aria-hidden>
               {event.mutationEmoji}
             </span>{" "}
-            <Link
+            <TrackedLink
               href="/mutations"
+              tracking={{ kind: "cta", source: "events-guide", label: "mutation-link" }}
               className="font-semibold text-primary hover:underline"
             >
               {event.mutationName}
-            </Link>{" "}
+            </TrackedLink>{" "}
             <span className="text-muted-foreground">
               ({formatRollChance(event.rollChancePercent)} per roll)
             </span>
@@ -153,15 +154,16 @@ export function EventsGuide() {
                       {formatMultiplier(event.multiplier)}
                     </TableCell>
                     <TableCell>
-                      <Link
+                      <TrackedLink
                         href="/mutations"
+                        tracking={{ kind: "cta", source: "events-guide", label: "mutation-table" }}
                         className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
                       >
                         <span role="img" aria-hidden>
                           {event.mutationEmoji}
                         </span>
                         {event.mutationName}
-                      </Link>
+                      </TrackedLink>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -283,18 +285,30 @@ export function EventsGuide() {
               <p>
                 Ring tier amplifies impact: Rainbow (5x) during Galaxy with the Outer
                 Ring (19x) yields 95x before seed level adjustments. Use the{" "}
-                <Link href="/calculator" className="font-medium text-primary hover:underline">
+                <TrackedLink
+                  href="/calculator"
+                  tracking={{ kind: "cta", source: "events-guide", label: "calculator-inline" }}
+                  className="font-medium text-primary hover:underline"
+                >
                   profit calculator
-                </Link>{" "}
+                </TrackedLink>{" "}
                 to simulate event + ring + seed combinations. Start from your crop
                 table on the{" "}
-                <Link href="/seeds" className="font-medium text-primary hover:underline">
+                <TrackedLink
+                  href="/seeds"
+                  tracking={{ kind: "cta", source: "events-guide", label: "seeds-inline" }}
+                  className="font-medium text-primary hover:underline"
+                >
                   Seeds
-                </Link>{" "}
+                </TrackedLink>{" "}
                 guide, then check{" "}
-                <Link href="/progression" className="font-medium text-primary hover:underline">
+                <TrackedLink
+                  href="/progression"
+                  tracking={{ kind: "cta", source: "events-guide", label: "progression-inline" }}
+                  className="font-medium text-primary hover:underline"
+                >
                   Progression
-                </Link>{" "}
+                </TrackedLink>{" "}
                 to see whether waiting fits your stage.
               </p>
             </div>
@@ -336,10 +350,13 @@ export function EventsGuide() {
             value.
           </p>
           <Button asChild variant="secondary" className="shrink-0 rounded-xl font-semibold">
-            <Link href="/calculator">
+            <TrackedLink
+              href="/calculator"
+              tracking={{ kind: "cta", source: "events-guide", label: "open-calculator" }}
+            >
               <Coins className="mr-2 h-4 w-4" />
               Open calculator
-            </Link>
+            </TrackedLink>
           </Button>
         </div>
       </div>

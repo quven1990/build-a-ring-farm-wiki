@@ -1,6 +1,6 @@
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { guideCards } from "@/lib/site-config"
 import {
   Sprout,
@@ -42,7 +42,12 @@ export function QuickNavigation() {
           {guideCards.map((guide) => {
             const Icon = iconMap[guide.title as keyof typeof iconMap]
             return (
-              <Link key={guide.title} href={guide.href} className="block group">
+              <TrackedLink
+                key={guide.title}
+                href={guide.href}
+                tracking={{ kind: "cta", source: "home-quick-nav", label: guide.title }}
+                className="block group"
+              >
                 <Card className="h-full transition-all hover:shadow-lg hover:border-primary/30 cursor-pointer">
                   <CardHeader className="pb-2">
                     <div
@@ -58,7 +63,7 @@ export function QuickNavigation() {
                     <CardDescription>{guide.description}</CardDescription>
                   </CardContent>
                 </Card>
-              </Link>
+              </TrackedLink>
             )
           })}
         </div>

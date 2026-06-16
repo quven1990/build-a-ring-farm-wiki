@@ -1,6 +1,6 @@
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { guideCards, footerGuideLinks } from "@/lib/site-config"
 import { LayoutGrid } from "lucide-react"
 
@@ -30,14 +30,18 @@ export function HomeHubSection() {
         <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {toolLinks.map((item) => (
             <Card key={item.href} className="h-full transition-colors hover:border-primary/40">
-              <Link href={item.href} className="group block h-full">
+              <TrackedLink
+                href={item.href}
+                tracking={{ kind: "cta", source: "home-hub-tools", label: item.title }}
+                className="group block h-full"
+              >
                 <CardHeader className="pb-2">
                   <CardTitle className="text-base group-hover:text-primary">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>{item.description}</CardDescription>
                 </CardContent>
-              </Link>
+              </TrackedLink>
             </Card>
           ))}
         </div>
@@ -46,12 +50,13 @@ export function HomeHubSection() {
         <ul className="mb-10 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {footerGuideLinks.map((link) => (
             <li key={link.href}>
-              <Link
+              <TrackedLink
                 href={link.href}
+                tracking={{ kind: "cta", source: "home-hub-guides", label: link.label }}
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
-              </Link>
+              </TrackedLink>
             </li>
           ))}
         </ul>
@@ -59,9 +64,14 @@ export function HomeHubSection() {
         <h3 className="mb-4 text-lg font-semibold text-foreground">All databases</h3>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {guideCards.map((guide) => (
-            <Link key={guide.href} href={guide.href} className="text-sm text-primary hover:underline">
+            <TrackedLink
+              key={guide.href}
+              href={guide.href}
+              tracking={{ kind: "cta", source: "home-hub-databases", label: guide.title }}
+              className="text-sm text-primary hover:underline"
+            >
               {guide.title} →
-            </Link>
+            </TrackedLink>
           ))}
         </div>
       </div>

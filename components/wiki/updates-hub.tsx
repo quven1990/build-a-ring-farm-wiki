@@ -1,7 +1,7 @@
-import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { PageHero } from "@/components/wiki/page-hero"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
 import { JsonLdScript } from "@/components/wiki/json-ld-script"
 import { RelatedGuides } from "@/components/wiki/related-guides"
@@ -64,13 +64,21 @@ export function UpdatesHub() {
             Each major code drop or community-reported patch gets a dedicated page — easier to
             bookmark and share than scrolling a single changelog. For site maintenance history, see
             the{" "}
-            <Link href="/build-a-ring-update-log" className="text-primary underline-offset-4 hover:underline">
+            <TrackedLink
+              href="/build-a-ring-update-log"
+              tracking={{ kind: "cta", source: "updates-hub", label: "update-log" }}
+              className="text-primary underline-offset-4 hover:underline"
+            >
               update log
-            </Link>
+            </TrackedLink>
             . For copy-paste strings, open{" "}
-            <Link href="/codes" className="text-primary underline-offset-4 hover:underline">
+            <TrackedLink
+              href="/codes"
+              tracking={{ kind: "cta", source: "updates-hub", label: "active-codes" }}
+              className="text-primary underline-offset-4 hover:underline"
+            >
               active codes
-            </Link>
+            </TrackedLink>
             .
           </p>
 
@@ -78,7 +86,15 @@ export function UpdatesHub() {
             {updateArticlesSorted.map((article) => (
               <li key={article.slug}>
                 <Card className="transition-colors hover:border-primary/40">
-                  <Link href={`/updates/${article.slug}`} className="group block">
+                  <TrackedLink
+                    href={`/updates/${article.slug}`}
+                    tracking={{
+                      kind: "cta",
+                      source: "updates-hub",
+                      label: article.slug,
+                    }}
+                    className="group block"
+                  >
                     <CardHeader className="pb-2">
                       <div className="mb-2 flex flex-wrap items-center gap-2">
                         {article.updateLabel ? (
@@ -110,7 +126,7 @@ export function UpdatesHub() {
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{article.meta.description}</p>
                     </CardContent>
-                  </Link>
+                  </TrackedLink>
                 </Card>
               </li>
             ))}

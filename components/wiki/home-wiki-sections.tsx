@@ -1,6 +1,6 @@
-import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import {
   Table,
   TableBody,
@@ -125,12 +125,13 @@ export function HomeWikiSections() {
                 </Table>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                <Link
+                <TrackedLink
                   href="/mutations"
+                  tracking={{ kind: "cta", source: "home-wiki-sections", label: "mutations-list" }}
                   className="font-medium text-primary underline-offset-4 hover:underline"
                 >
                   Full mutations list &amp; shop prices →
-                </Link>
+                </TrackedLink>
               </p>
             </div>
 
@@ -165,12 +166,13 @@ export function HomeWikiSections() {
                 </Table>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                <Link
+                <TrackedLink
                   href="/seeds"
+                  tracking={{ kind: "cta", source: "home-wiki-sections", label: "seeds-list" }}
                   className="font-medium text-primary underline-offset-4 hover:underline"
                 >
                   Browse all {seeds.length} seeds →
-                </Link>
+                </TrackedLink>
               </p>
             </div>
           </div>
@@ -197,12 +199,13 @@ export function HomeWikiSections() {
             <p className="text-pretty text-muted-foreground sm:text-lg">
               Ring placement and harvest timing matter as much as seed rarity. Use these goals for
               early, mid, and late game — then read the{" "}
-              <Link
+              <TrackedLink
                 href="/build-a-ring-farm"
+                tracking={{ kind: "cta", source: "home-wiki-sections", label: "farm-guide" }}
                 className="font-medium text-primary underline-offset-4 hover:underline"
               >
                 farm efficiency guide
-              </Link>{" "}
+              </TrackedLink>{" "}
               for event sessions and reinvestment order.
             </p>
           </div>

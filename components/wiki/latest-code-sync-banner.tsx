@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { Sparkles } from "lucide-react"
+import { TrackedLink } from "@/components/wiki/tracked-link"
 import { codesSyncMeta, formatSyncDate, wikiCodesSorted } from "@/lib/codes-data"
 import { getLatestUpdateArticle, getUpdateArticleByCode } from "@/lib/updates/articles"
 
@@ -37,19 +37,28 @@ export function LatestCodeSyncBanner() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
           {updateArticle ? (
-            <Link
+            <TrackedLink
               href={`/updates/${updateArticle.slug}`}
+              tracking={{ kind: "cta", source: "sync-banner", label: "update-article" }}
               className="font-medium text-primary underline-offset-4 hover:underline"
             >
               Read {updateArticle.updateLabel ?? "Update"} article →
-            </Link>
+            </TrackedLink>
           ) : null}
-          <Link href="/codes" className="text-primary underline-offset-4 hover:underline">
+          <TrackedLink
+            href="/codes"
+            tracking={{ kind: "cta", source: "sync-banner", label: "all-codes" }}
+            className="text-primary underline-offset-4 hover:underline"
+          >
             All active codes
-          </Link>
-          <Link href="/updates" className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline">
+          </TrackedLink>
+          <TrackedLink
+            href="/updates"
+            tracking={{ kind: "cta", source: "sync-banner", label: "updates-hub" }}
+            className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+          >
             Updates hub
-          </Link>
+          </TrackedLink>
         </div>
       </div>
     </div>

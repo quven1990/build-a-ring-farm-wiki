@@ -1,7 +1,6 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import {
@@ -29,6 +28,8 @@ import {
 } from "@/lib/seeds-data"
 import { DataConfidenceBadge, DataConfidenceLegend } from "@/components/wiki/data-confidence-badge"
 import { LastUpdatedBadge } from "@/components/wiki/last-updated-badge"
+import { TrackedLink } from "@/components/wiki/tracked-link"
+import { trackDatabaseFilter } from "@/lib/plausible-events"
 import { pageMeta } from "@/lib/site-config"
 import { Calculator, Search } from "lucide-react"
 
@@ -210,7 +211,10 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
                     type="button"
                     aria-pressed={isActive}
                     {...(isActive ? { "data-active": "true" as const } : {})}
-                    onClick={() => setRarity(filter)}
+                    onClick={() => {
+                      setRarity(filter)
+                      trackDatabaseFilter("seeds", "rarity", filter)
+                    }}
                     className={cn(
                       "rounded-lg border border-border/80 bg-background px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
                       tabClass
@@ -222,7 +226,13 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
               })}
             </div>
 
-            <Select value={sort} onValueChange={(v) => setSort(v as SortOption)}>
+            <Select
+              value={sort}
+              onValueChange={(v) => {
+                setSort(v as SortOption)
+                trackDatabaseFilter("seeds", "sort", v)
+              }}
+            >
               <SelectTrigger className="h-10 w-full max-w-xs rounded-xl border-border/80 bg-background">
                 <SelectValue placeholder="Sort by..." />
               </SelectTrigger>
@@ -258,10 +268,13 @@ export function SeedDatabase({ showTitle = true }: SeedDatabaseProps) {
             Picked a seed? Run the profit calculator with your ring tier, mutation, and plant count to see exact harvest earnings before you reorganize plots.
           </p>
           <Button asChild variant="secondary" className="shrink-0 rounded-xl font-semibold">
-            <Link href="/calculator">
+            <TrackedLink
+              href="/calculator"
+              tracking={{ kind: "cta", source: "seeds-database", label: "open-calculator" }}
+            >
               <Calculator className="mr-2 h-4 w-4" />
               Open calculator
-            </Link>
+            </TrackedLink>
           </Button>
         </div>
 
