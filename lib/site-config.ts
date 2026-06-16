@@ -197,13 +197,13 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   mutations: {
-    title: "Build A Ring Farm Mutation Matrix — Multipliers & Weather Rates",
+    title: "Build A Ring Farm Mutation Matrix — Multipliers & Weather",
     h1: "Build A Ring Farm Mutation Matrix",
     description:
       "Mutations are the primary income multiplier in Build A Ring Farm. All 9 mutations from Wet (1.5x) to Honeycomb (6.5x) — Gear Shop spray prices, weather triggers, and event-only tags.",
     heroDescription:
       "All 9 mutations ranked by multiplier — shop spray prices, weather triggers, and event-only tags.",
-    ogTitle: "Build A Ring Farm Mutation Matrix — Multipliers & Weather Rates",
+    ogTitle: "Build A Ring Farm Mutation Matrix — Multipliers & Weather",
     ogImageAlt: "Build A Ring Farm mutation matrix with harvest multipliers",
     breadcrumb: "Mutations",
     keywords: [
