@@ -115,6 +115,11 @@ export const partnerFanWikis = [
     href: "https://pickaxe-tycoon.xyz/",
     description: "Merge calculator, tier list, codes & mining guides",
   },
+  {
+    label: "Merge a Nuke Wiki",
+    href: "https://mergeanuke.site/",
+    description: "Codes, merge guides, raid strategy & nuke tier list",
+  },
 ] as const
 
 /** Directory listing badges — required for backlink verification on some platforms. */
