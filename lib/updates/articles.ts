@@ -17,10 +17,116 @@ export const updatesHubMeta = {
     "carnival pass",
     "patch notes",
     "250KUSERS",
+    "CARNIVAL",
+    "UPDATE5",
   ],
 } as const
 
 export const updateArticles: UpdateArticle[] = [
+  {
+    slug: "carnival-update5-codes-june-2026",
+    publishedAt: "2026-06-21",
+    tags: ["codes", "patch"],
+    featuredCodes: ["CARNIVAL", "UPDATE5"],
+    updateLabel: "Update 5 codes",
+    meta: {
+      title: "CARNIVAL & UPDATE5 Codes — Build A Ring Farm (June 2026)",
+      h1: "CARNIVAL & UPDATE5 Codes — June 2026 Drop",
+      description:
+        "Two new Build A Ring Farm codes landed with the Carnival / Update 5 wave: CARNIVAL (100 pass tickets) and UPDATE5 (Super Pet Treat). Redeem order, rewards, and what to check after.",
+      heroDescription:
+        "Patch-day short guide — copy CARNIVAL and UPDATE5, then jump to Carnival Pass progress or the full Update 5 overview.",
+      ogTitle: "CARNIVAL & UPDATE5 Codes — Build A Ring Farm",
+      ogImageAlt: "Build A Ring Farm CARNIVAL and UPDATE5 redeem codes June 2026",
+      breadcrumb: "CARNIVAL & UPDATE5",
+      keywords: [
+        "CARNIVAL code build a ring farm",
+        "UPDATE5 code",
+        "build a ring farm codes june 2026",
+        "carnival pass tickets",
+        "super pet treat",
+      ],
+    },
+    whatYouCanDo: [
+      "Redeem CARNIVAL and UPDATE5 before event codes rotate out",
+      "Spend 100 Carnival Pass tickets on the pass track you care about",
+      "Use the Super Pet Treat on your main mutation pet",
+      "Open the full Update 5 guide if Carnival Pass is new to you",
+    ],
+    blocks: [
+      {
+        type: "h2",
+        id: "tldr",
+        text: "TL;DR — Redeem These First",
+      },
+      {
+        type: "p",
+        text: "Community code lists picked up two strings tied to the Update 5 / Carnival window: CARNIVAL (100 Carnival Pass tickets) and UPDATE5 (1 Super Pet Treat). Redeem both in Settings → Codes, then spend tickets on the Carnival Pass before farming as usual. This is a fan wiki summary from public gaming-media sync — not official developer patch notes. Confirm rewards in-game after each redeem.",
+      },
+      {
+        type: "h2",
+        id: "carnival-code",
+        text: "CARNIVAL — 100 Carnival Pass Tickets",
+      },
+      {
+        type: "p",
+        text: "Code: CARNIVAL. Reported reward: 100 Carnival Pass tickets. Use these on the seasonal Carnival Pass track (free and premium tiers) to claim fertilizer, sprays, crates, and higher-tier rewards without grinding every daily quest first. Event-linked codes often expire faster than milestone codes like 250KUSERS — redeem on the same day you see it listed if you are chasing the pass.",
+      },
+      {
+        type: "h2",
+        id: "update5-code",
+        text: "UPDATE5 — Super Pet Treat",
+      },
+      {
+        type: "p",
+        text: "Code: UPDATE5. Reported reward: 1 Super Pet Treat. Feed it to a pet that upgrades mutations or boosts harvest value (Mammoth, Hydra, or your best roller) so passive mutation upgrades keep running while you AFK. Low opportunity cost — redeem even if you save the treat for your next exotic pull.",
+      },
+      {
+        type: "h2",
+        id: "redeem-steps",
+        text: "How to Redeem (30 Seconds)",
+      },
+      {
+        type: "p",
+        text: "Launch Build A Ring Farm on Roblox → tap the gear (Settings) → scroll to Codes → paste CARNIVAL, tap Redeem, repeat for UPDATE5. Codes are case-sensitive. Never enter your Roblox password on third-party sites. If a code fails, rejoin a fresh server or check the active codes page for sync status.",
+      },
+      {
+        type: "h2",
+        id: "after-redeem",
+        text: "After Redeeming — Quick Checklist",
+      },
+      {
+        type: "p",
+        text: "1) Open Carnival Pass and spend tickets on tiers you can finish before the event timer ends. 2) Apply the Super Pet Treat to your best mutation pet. 3) Redeem the rest of the active list (250KUSERS, PLANTRUSH, etc.) if you have not already — see the codes page. 4) If Carnival Spray or new crops show up in your inventory, cross-check the mutations and seeds databases. 5) Run the profit calculator if a new plant changes your outer-ring layout.",
+      },
+      {
+        type: "h2",
+        id: "full-update-5",
+        text: "Need the Full Carnival / Update 5 Picture?",
+      },
+      {
+        type: "p",
+        text: "This page is the patch-day codes brief. For Whack-a-Crop, prize wheels, Robux bundles, Carnival Spray odds, and the long event overview, read the dedicated Update 5 Carnival Pass article on this wiki. Site maintenance (deploy, SEO, calculator UX) stays on the update log — not here.",
+      },
+    ],
+    faq: [
+      {
+        question: "Are CARNIVAL and UPDATE5 still working?",
+        answer:
+          "Both appeared on multiple public code lists in mid-June 2026. Codes expire without notice — redeem in-game and check the active codes page for current sync labels.",
+      },
+      {
+        question: "Should I redeem CARNIVAL or UPDATE5 first?",
+        answer:
+          "Either order works for one-time rewards. If the Carnival event timer is short, redeem CARNIVAL first so you can spend tickets on pass tiers immediately.",
+      },
+      {
+        question: "Is this official patch notes?",
+        answer:
+          "No. buildaring.online is an independent fan wiki. We summarize community and media reports — use in-game notices or Gamecreates Discord for developer announcements.",
+      },
+    ],
+  },
   {
     slug: "best-money-method-june-2026",
     publishedAt: "2026-06-10",
