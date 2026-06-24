@@ -95,13 +95,13 @@ export function HomeWikiSections() {
               <h3 className="mb-3 text-lg font-semibold text-foreground">
                 Mutation multipliers
               </h3>
-              <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
+              <div className="wiki-table-scroll overflow-x-auto rounded-lg border border-border bg-card shadow-sm">
                 <Table>
                   <TableHeader>
                     <TableRow>
                       <TableHead>Mutation</TableHead>
                       <TableHead>Effect</TableHead>
-                      <TableHead>Trigger</TableHead>
+                      <TableHead className="min-w-[7rem]">Trigger</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -111,7 +111,7 @@ export function HomeWikiSections() {
                           <span aria-hidden>{m.emoji}</span> {m.name}
                         </TableCell>
                         <TableCell>{formatMultiplier(m.multiplier)}</TableCell>
-                        <TableCell className="text-sm text-muted-foreground">
+                        <TableCell className="max-w-[10rem] truncate text-sm text-muted-foreground sm:max-w-none sm:whitespace-normal">
                           {m.trigger}
                           {m.eventOnly ? (
                             <Badge variant="outline" className="ml-2 text-xs">

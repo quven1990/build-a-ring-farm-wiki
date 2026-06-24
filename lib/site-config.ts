@@ -189,7 +189,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Full Build A Ring Farm seeds list: 51 crops, 10 rarities, base income, grow times & roll odds. Compare crops and plan the most profitable layout. Updated 2026.",
     heroDescription:
-      "Every seed — rarity, income, grow time, and roll weight in one database. Updated May 2026.",
+      "Every seed — rarity, income, grow time, and roll weight in one database. Updated June 2026.",
     ogTitle: "Build A Ring Farm Seeds — Full Database (2026)",
     ogImageAlt: "Build A Ring Farm seeds guide showing crop rarities and farming plots",
     breadcrumb: "Seeds",
@@ -202,23 +202,27 @@ export const pageMeta: Record<string, PageMeta> = {
     ],
   },
   mutations: {
-    title: "Build A Ring Farm Mutation Matrix — Multipliers & Weather",
-    h1: "Build A Ring Farm Mutation Matrix",
+    title: "Build A Ring Farm Mutations — All Multipliers & How to Get (2026)",
+    h1: "All Build A Ring Farm Mutations & Multipliers",
     description:
-      "Mutations are the primary income multiplier in Build A Ring Farm. All 9 mutations from Wet (1.5x) to Honeycomb (6.5x) — Gear Shop spray prices, weather triggers, and event-only tags.",
+      "All 9 mutations ranked (1.5x–6.5x): Gear Shop spray prices, weather odds & event-only tags. Free Hydra/Mammoth pet upgrades + when to skip bad sprays.",
     heroDescription:
-      "All 9 mutations ranked by multiplier — shop spray prices, weather triggers, and event-only tags.",
-    ogTitle: "Build A Ring Farm Mutation Matrix — Multipliers & Weather",
-    ogImageAlt: "Build A Ring Farm mutation matrix with harvest multipliers",
+      "Sortable table of all 9 mutations — multiplier, spray cost, and how to get each one. Shop, weather, or event-only; Hydra/Mammoth pets can upgrade crops overnight without top-tier sprays.",
+    ogTitle: "All Build A Ring Farm Mutations — Multipliers & Spray Prices",
+    ogImageAlt: "Build A Ring Farm mutations list with income multipliers and spray prices",
     breadcrumb: "Mutations",
     keywords: [
       "build a ring farm mutations",
-      "build a ring farm mutation matrix",
-      "mutation multipliers",
-      "weather mutation rates",
+      "build a ring farm all mutations",
+      "all mutations build a ring farm",
+      "mutation multipliers build a ring farm",
+      "how to get mutations build a ring farm",
+      "build a ring farm mutation sprays",
+      "best mutations build a ring farm",
+      "mutations in build a ring farm",
       "Wet mutation",
       "Rainbow mutation",
-      "Honeycomb",
+      "Honeycomb mutation",
     ],
   },
   events: {
@@ -245,7 +249,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       "Build A Ring Farm rings reference (June 2026): Inner 7x, Middle 13x & Outer 19x multipliers. Compare zones, saw bonus synergy & ring unlock costs.",
     heroDescription:
-      "Inner, Middle, and Outer ring multipliers — where to plant each crop for max profit. Updated May 2026.",
+      "Inner, Middle, and Outer ring multipliers — where to plant each crop for max profit. Updated June 2026.",
     ogTitle: "Build A Ring Farm Rings — Multipliers & Placement (2026)",
     ogImageAlt: "Build A Ring Farm ring placement on circular farm plots",
     breadcrumb: "Rings",

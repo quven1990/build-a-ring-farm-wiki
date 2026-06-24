@@ -31,17 +31,17 @@ export const faqByPage: Record<string, FAQEntry[]> = {
     {
       question: "How do mutations work in Build A Ring Farm?",
       answer:
-        "Mutations multiply sell value on harvested crops. Some are bought in the Gear Shop (Wet through Rainbow); others proc from weather events (Alien, Farm, Honeycomb). See the mutations summary table on this page or the full matrix for every multiplier and trigger.",
+        "Mutations multiply sell value on harvested crops. Six Gear Shop sprays (Wet through Rainbow) plus weather rolls; Alien, Farm, and Honeycomb are event-only. See the full sortable list on the mutations page for every multiplier and trigger.",
     },
     {
       question: "How many seeds are in the game?",
       answer:
-        "Our database tracks 51 crops across ten rarities with base income, grow time, and roll weights. The seeds summary on this page highlights beginner and endgame examples — open the seeds database for the complete sortable list.",
+        "Our database tracks 51 crops across ten rarities with base income, grow time, and roll weights. Open the seeds database for the complete sortable list and confidence labels.",
     },
     {
       question: "What is the best early-game farm layout?",
       answer:
-        "Fill every plot with fast crops on Inner ring first, redeem codes for sprays and packs, then expand to Middle when epics are affordable. Keep paths short for quick harvests. The farm layout section on this page outlines early, mid, and late goals — read the full farm efficiency guide for event timing.",
+        "Fill every plot with fast crops on Inner ring first, redeem codes for sprays and packs, then expand to Middle when epics are affordable. Read the farm efficiency guide for event timing and layout goals.",
     },
     {
       question: "Which ring should I use first?",
@@ -117,7 +117,7 @@ export const faqByPage: Record<string, FAQEntry[]> = {
     {
       question: "How many mutations are in Build A Ring Farm?",
       answer:
-        "Nine total: six purchasable from the Gear Shop (Wet through Rainbow) and three event-only entries (Alien, Farm, Honeycomb). The matrix on this page lists every multiplier, trigger, and shop price.",
+        "Nine total: six Gear Shop sprays (Wet through Rainbow, including Autumn) and three event-only entries (Alien, Farm, Honeycomb). Wet, Frozen, Void, Radioactive, and Rainbow can also proc from weather — filter the table for triggers and prices.",
     },
     {
       question: "What is the highest mutation multiplier?",

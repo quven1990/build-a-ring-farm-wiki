@@ -107,7 +107,16 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
     },
     {
       type: "p",
-      text: "Purchasable mutations in Build A Ring Farm range from Wet at 1.5x up to Rainbow at 5x with billion-trillion level pricing on the top sprays. They are reliable: you pay once, apply the logic of the shop, and harvest on your schedule. Event mutations are unpredictable but free aside from the opportunity cost of waiting. Rain and Wet appear often; Galaxy and Rainbow are rare but powerful. Honeycomb at 6.5x sits at the top of the table with a tiny event proc rate, making it a trophy buff more than a planning baseline. Mark event-only rows in our matrix so you do not save currency for a spray that cannot be bought.",
+      text: "Purchasable mutations in Build A Ring Farm range from Wet at 1.5x up to Rainbow at 5x — six Gear Shop sprays including Autumn ($850M) with billion-to-trillion pricing on top tiers. They are reliable: you pay once, apply the spray, and harvest on your schedule. Event mutations are unpredictable but free aside from the opportunity cost of waiting. Rain and Wet appear often; Galaxy and Rainbow are rare but powerful. Honeycomb at 6.5x sits at the top of the table with a tiny event proc rate, making it a trophy buff more than a planning baseline. Mark event-only rows in our table so you do not save currency for a spray that cannot be bought.",
+    },
+    {
+      type: "h2",
+      id: "free-mutation-methods",
+      text: "Free Ways to Get Mutations (Beyond the Gear Shop)",
+    },
+    {
+      type: "p",
+      text: "Many players skip expensive top-tier sprays and still land strong buffs. **Hydra** and **Mammoth** pets (from the purple Elite egg) can upgrade a crop's mutation on a timer when fully leveled — AFK overnight with pets active is a common community strategy. **Weather events** remain the zero-cash path for Void, Radioactive, Rainbow, and event-only tags like Honeycomb. **Composters**, **Plant Rush** boss drops, and **Admin events** can also yield sprays according to player reports — confirm any reward in-game. If you do use the Gear Shop, apply costly sprays only to your highest-value crops; Wet on commons is fine for learning, but Rainbow-tier cash belongs on transcended or secret plants you plan to keep on Outer.",
     },
     {
       type: "h3",
@@ -120,11 +129,11 @@ export const seoArticles: Record<SeoPageKey, SeoBlock[]> = {
     {
       type: "h2",
       id: "mutation-matrix",
-      text: "Using the Mutation Matrix on This Page",
+      text: "Using the Mutation List on This Page",
     },
     {
       type: "p",
-      text: "The interactive matrix above sorts Build A Ring Farm mutations by multiplier or event rarity, filters event-only entries, and links to weather details on the events page. When a new patch drops, compare shop prices and proc rates here first, then validate in-game with a single test harvest. Mutations are the highest-leverage free mechanic in the game — mastering them separates players who plateau at epic-tier income from players who break into transcended farming loops within a week of focused play.",
+      text: "The sortable table above lists every Build A Ring Farm mutation we track — multiplier, spray price, weather trigger, and event-only tags. Filter event-only rows, compare Wet through Honeycomb at a glance, and jump to [weather events](/events) for timing. When a patch drops, check prices and proc rates here first, then validate with one in-game harvest. Mutations are the highest-leverage income mechanic in the game — pairing the right buff with ring placement and seed tier is what separates mid-game farms from endgame money printers.",
     },
   ],
   events: [

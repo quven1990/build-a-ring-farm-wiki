@@ -118,7 +118,7 @@ export function ClientConsentScripts() {
           <div
             ref={bannerRef}
             className={cn(
-              "fixed inset-x-0 bottom-0 z-50 border-t border-primary/25 bg-background shadow-[0_-10px_40px_rgba(0,0,0,0.12)]"
+              "fixed inset-x-0 bottom-0 z-50 border-t border-primary/25 bg-background pb-[max(0px,env(safe-area-inset-bottom))] shadow-[0_-10px_40px_rgba(0,0,0,0.12)]"
             )}
             role="dialog"
             aria-labelledby="cookie-consent-title"

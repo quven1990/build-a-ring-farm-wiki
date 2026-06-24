@@ -8,7 +8,7 @@ import { DeferredAnalytics } from "@/components/wiki/deferred-analytics"
 import { RcrWrapperCleanup } from "@/components/wiki/rcr-wrapper-cleanup"
 import { scheduleIdle } from "@/lib/schedule-idle"
 
-/** Mount shell (GA + consent) right after hydration; Plausible/Clarity stay idle-deferred. */
+/** Mount consent shell after hydration; GA + Plausible/Clarity load after 3s idle. */
 export function DeferredClientShell() {
   const [phase, setPhase] = useState<"off" | "shell" | "analytics">("off")
 
@@ -22,10 +22,14 @@ export function DeferredClientShell() {
   return (
     <>
       <RcrWrapperCleanup />
-      <GoogleAnalytics />
       <LazyToaster />
       <ClientConsentScripts />
-      {phase === "analytics" ? <DeferredAnalytics /> : null}
+      {phase === "analytics" ? (
+        <>
+          <GoogleAnalytics />
+          <DeferredAnalytics />
+        </>
+      ) : null}
     </>
   )
 }

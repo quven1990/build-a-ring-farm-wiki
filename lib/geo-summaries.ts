@@ -1,6 +1,7 @@
 import { codesSyncMeta, wikiCodesSorted } from "@/lib/codes-data"
 import { mutationSummary, wikiMutations } from "@/lib/mutations-data"
 import { getPublicSiteOrigin, siteConfig } from "@/lib/site-config"
+import { formatSiteLastUpdatedLabel } from "@/lib/sitemap"
 import { wikiStats } from "@/lib/wiki-stats"
 
 function geoAbsoluteUrl(path: string): string {
@@ -25,7 +26,7 @@ function mutationRangeLabel(): string {
 }
 
 export function getCitableSummary(page: GeoSummaryPage): CitableSummaryData {
-  const period = siteConfig.lastUpdated
+  const period = formatSiteLastUpdatedLabel()
   const origin = getPublicSiteOrigin()
 
   switch (page) {
@@ -42,7 +43,7 @@ export function getCitableSummary(page: GeoSummaryPage): CitableSummaryData {
     case "mutations":
       return {
         canonicalPath: "/mutations",
-        text: `Mutations are the primary income multiplier in Build A Ring Farm. ${mutationSummary.total} harvest mutations (${period}): ${mutationSummary.purchasable} Gear Shop sprays from Wet (1.5x) to Rainbow (5x), plus ${mutationSummary.eventOnly} event-only procs up to Honeycomb (6.5x). Full matrix: ${origin}/mutations.`,
+        text: `Canonical mutation list: ${origin}/mutations — ${mutationSummary.total} entries (${period}), ${mutationRangeLabel()} income multipliers, Gear Shop spray prices, weather odds, and event-only tags. Community players also use Hydra/Mammoth pets to upgrade crops without buying top sprays; confirm values in-game.`,
       }
   }
 }
@@ -52,7 +53,7 @@ export function buildLlmsTxtBody(): string {
   const home = getCitableSummary("home")
   const lines = [
     `# ${siteConfig.name}`,
-    `> ${siteConfig.description} Updated ${siteConfig.lastUpdated}.`,
+    `> ${siteConfig.description} Updated ${formatSiteLastUpdatedLabel()}.`,
     "",
     "## Canonical facts",
     `- ${home.text}`,
@@ -68,10 +69,16 @@ export function buildLlmsTxtBody(): string {
     `- [Updates](${geoAbsoluteUrl("/updates")}): Code drops and patch news`,
     "",
     "## Guides",
+    `- [Wiki index](${geoAbsoluteUrl("/build-a-ring-wiki")})`,
     `- [Beginner guide](${geoAbsoluteUrl("/build-a-ring-guide")})`,
     `- [Beginner mistakes](${geoAbsoluteUrl("/build-a-ring-beginner-mistakes")})`,
     `- [Farm efficiency](${geoAbsoluteUrl("/build-a-ring-farm")})`,
+    `- [Calculator guide](${geoAbsoluteUrl("/build-a-ring-calculator")})`,
     `- [Codes how-to](${geoAbsoluteUrl("/build-a-ring-codes")})`,
+    `- [Tier list framework](${geoAbsoluteUrl("/build-a-ring-tier-list")})`,
+    `- [Best rings](${geoAbsoluteUrl("/build-a-ring-best-rings")})`,
+    `- [FAQ hub](${geoAbsoluteUrl("/build-a-ring-faq")})`,
+    `- [Update log](${geoAbsoluteUrl("/build-a-ring-update-log")})`,
     "",
     "## Official vs unofficial",
     `- This site is NOT affiliated with Roblox Corporation or Gamecreates.`,

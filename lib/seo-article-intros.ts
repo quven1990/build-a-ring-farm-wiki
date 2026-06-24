@@ -7,7 +7,7 @@ export const pageIntros: Partial<Record<SeoPageKey, string>> = {
   seeds:
     "This page is the live seed database only: sort fifty-one crops by rarity, income, grow time, and roll weight. After picking crops, run the [profit calculator](/calculator) with your ring and mutation. For farming strategy without table noise, read the [farm efficiency guide](/build-a-ring-farm).",
   mutations:
-    "Every harvest multiplier in one matrix — shop sprays, weather procs, and event-only tags. This page does not re-explain ring placement; pair it with [weather events](/events) for timing and the [profit calculator](/calculator) before you buy Rainbow-tier sprays.",
+    "Every harvest multiplier in one sortable table — Gear Shop spray prices, free weather rolls, and event-only tags. Community players also upgrade crops with Hydra/Mammoth pets overnight instead of buying top sprays; we cover shop vs event strategy below. Pair with [weather events](/events) for timing and the [profit calculator](/calculator) before big purchases.",
   events:
     "Weather events control free mutation rolls. Use this reference for activation rates and per-plant odds — then plan harvests using the [mutations matrix](/mutations) and [farm efficiency guide](/build-a-ring-farm).",
   rings:

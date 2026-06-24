@@ -53,7 +53,7 @@ function StatCell({
 }) {
   return (
     <div className="rounded-xl bg-background/80 px-3 py-2.5 text-center ring-1 ring-border/60">
-      <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
         {label}
       </p>
       <p
@@ -149,7 +149,7 @@ export function MutationMatrix({ showTitle = true }: MutationMatrixProps) {
   }, [sort, eventOnly])
 
   return (
-    <section className="relative overflow-hidden py-8 sm:py-10" translate="no">
+    <section className="notranslate relative overflow-hidden py-8 sm:py-10" translate="no">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/0.12,transparent)]"
         aria-hidden

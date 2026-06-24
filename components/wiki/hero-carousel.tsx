@@ -108,27 +108,31 @@ export function HeroCarousel() {
 
         <CarouselPrevious
           variant="secondary"
-          className="left-3 size-9 border-border/80 bg-background/90 shadow-md backdrop-blur-sm"
+          className="left-2 size-11 border-border/80 bg-background/90 shadow-md backdrop-blur-sm sm:left-3"
         />
         <CarouselNext
           variant="secondary"
-          className="right-3 size-9 border-border/80 bg-background/90 shadow-md backdrop-blur-sm"
+          className="right-2 size-11 border-border/80 bg-background/90 shadow-md backdrop-blur-sm sm:right-3"
         />
 
-        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+        <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1">
           {heroSlides.map((slide, index) => (
             <button
               key={slide.src}
               type="button"
               aria-label={`Go to slide ${index + 1}`}
               onClick={() => api?.scrollTo(index)}
-              className={cn(
-                "h-2 rounded-full transition-all duration-300",
-                activeIndex === index
-                  ? "w-6 bg-primary"
-                  : "w-2 bg-background/80 ring-1 ring-border/80 hover:bg-primary/60"
-              )}
-            />
+              className="flex min-h-11 min-w-11 items-center justify-center rounded-full"
+            >
+              <span
+                className={cn(
+                  "block h-2 rounded-full transition-all duration-300",
+                  activeIndex === index
+                    ? "w-6 bg-primary"
+                    : "w-2 bg-background/80 ring-1 ring-border/80"
+                )}
+              />
+            </button>
           ))}
         </div>
       </Carousel>

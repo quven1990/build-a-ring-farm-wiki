@@ -40,7 +40,7 @@ export function HeroSectionStatic() {
 
       <div className="container relative mx-auto px-4">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-          <div className="text-center lg:text-left">
+          <div className="order-2 text-center lg:order-1 lg:text-left">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Sprout className="h-4 w-4" />
               <span>Unofficial Player Toolkit</span>
@@ -134,7 +134,9 @@ export function HeroSectionStatic() {
             />
           </div>
 
-          <HeroCarouselDeferred />
+          <div className="order-1 lg:order-2">
+            <HeroCarouselDeferred />
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
