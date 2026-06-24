@@ -126,6 +126,7 @@
   }
   html {
     @apply overflow-x-clip;
+    scroll-padding-top: calc(4rem + env(safe-area-inset-top, 0px));
   }
   body {
     @apply min-w-0 overflow-x-clip bg-background text-foreground;
