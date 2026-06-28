@@ -21,7 +21,8 @@ function hasRejectedConsent(): boolean {
 }
 
 /**
- * Loads GA after idle defer (with Plausible/Clarity) — skipped when user chose Reject.
+ * Loads GA soon after hydration (afterInteractive) so short sessions are
+ * captured. Runs for new/accepted visitors; skipped only when the user chose Reject.
  */
 export function GoogleAnalytics() {
   const [blocked, setBlocked] = useState(false)
@@ -36,9 +37,9 @@ export function GoogleAnalytics() {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="lazyOnload">
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
