@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-06-22T14:29:10.541Z",
+  "lastSyncedAt": "2026-06-29T12:59:05.443Z",
   "sources": [
     {
       "id": "progameguides",
@@ -43,14 +43,14 @@
       "name": "Pro Game Guides",
       "url": "https://progameguides.com/roblox/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 11
+      "count": 12
     },
     {
       "sourceId": "pockettactics",
       "name": "Pocket Tactics",
       "url": "https://www.pockettactics.com/build-a-ring-farm-codes",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "sourceId": "radiotimes",
@@ -64,21 +64,21 @@
       "name": "GamesRadar+",
       "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 10
+      "count": 12
     },
     {
       "sourceId": "destructoid",
       "name": "Destructoid",
       "url": "https://www.destructoid.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 10
+      "count": 11
     },
     {
       "sourceId": "beebom",
       "name": "Beebom",
       "url": "https://beebom.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 11
+      "count": 12
     },
     {
       "sourceId": "allthings",
@@ -99,7 +99,8 @@
     "250KUSERS": "2026-06-01",
     "CARNIVAL": "2026-06-15",
     "UPDATE5": "2026-06-15",
-    "BZZBZZ": "2026-06-22"
+    "BZZBZZ": "2026-06-22",
+    "BEESPART2": "2026-06-29"
   },
   "lastRewards": {
     "100KVISITS": "5 Minute Time Skip",
@@ -109,13 +110,18 @@
     "THANKYOU": "1x Autumn Spray",
     "UPDATE1": "3x Strong Fertilizer",
     "UPDATE2": "1x Tropical Seed Pack",
-    "UPDATE5": "Super Pet Treat",
+    "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "CARNIVAL": "100x Carnival Pass Tickets",
-    "BZZBZZ": "100 Carnival Pass Tickets"
+    "CARNIVAL": "100 Carnival Pass Tickets",
+    "BEESPART2": "3 Honey Tokens",
+    "BZZBZZ": "50 Honey Tokens"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-06-29",
+      "summary": "12 codes matched across 7 public gaming lists. New: BEESPART2."
+    },
     {
       "date": "2026-06-22",
       "summary": "11 codes matched across 7 public gaming lists. New: BZZBZZ."

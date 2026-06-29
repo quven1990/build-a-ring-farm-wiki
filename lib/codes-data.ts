@@ -72,7 +72,7 @@ export const wikiCodes: WikiCode[] = [
   },
   {
     code: "UPDATE5",
-    reward: "Super Pet Treat",
+    reward: "1x Super Pet Treat",
     status: "community",
     sourceCount: 7,
   },
@@ -84,16 +84,22 @@ export const wikiCodes: WikiCode[] = [
   },
   {
     code: "CARNIVAL",
-    reward: "100x Carnival Pass Tickets",
+    reward: "100 Carnival Pass Tickets",
+    status: "community",
+    sourceCount: 6,
+  },
+  {
+    code: "BEESPART2",
+    reward: "3 Honey Tokens",
     status: "community",
     sourceCount: 5,
+    isNew: true,
   },
   {
     code: "BZZBZZ",
-    reward: "100 Carnival Pass Tickets",
+    reward: "50 Honey Tokens",
     status: "community",
     sourceCount: 4,
-    isNew: true,
   }
 ]
 
