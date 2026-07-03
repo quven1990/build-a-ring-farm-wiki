@@ -120,6 +120,11 @@ export const partnerFanWikis = [
     href: "https://mergeanuke.site/",
     description: "Codes, merge guides, raid strategy & nuke tier list",
   },
+  {
+    label: "Evomon Wiki",
+    href: "https://evomon.cc/",
+    description: "Codes, dex, team builder, type chart & guides",
+  },
 ] as const
 
 /** Directory listing badges — required for backlink verification on some platforms. */
