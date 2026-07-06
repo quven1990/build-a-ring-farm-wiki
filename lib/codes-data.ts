@@ -83,23 +83,23 @@ export const wikiCodes: WikiCode[] = [
     sourceCount: 6,
   },
   {
+    code: "BEESPART2",
+    reward: "3x Honey Tokens",
+    status: "community",
+    sourceCount: 6,
+    isNew: true,
+  },
+  {
     code: "CARNIVAL",
     reward: "100 Carnival Pass Tickets",
     status: "community",
     sourceCount: 6,
   },
   {
-    code: "BEESPART2",
-    reward: "3 Honey Tokens",
+    code: "BZZBZZ",
+    reward: "50x Honey Tokens",
     status: "community",
     sourceCount: 5,
-    isNew: true,
-  },
-  {
-    code: "BZZBZZ",
-    reward: "50 Honey Tokens",
-    status: "community",
-    sourceCount: 4,
   }
 ]
 

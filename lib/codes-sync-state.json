@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-06-29T12:59:05.443Z",
+  "lastSyncedAt": "2026-07-06T12:38:09.572Z",
   "sources": [
     {
       "id": "progameguides",
@@ -57,7 +57,7 @@
       "name": "Radio Times",
       "url": "https://www.radiotimes.com/technology/gaming/roblox-build-a-ring-farm-codes/",
       "ok": true,
-      "count": 20
+      "count": 24
     },
     {
       "sourceId": "gamesradar",
@@ -112,12 +112,16 @@
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
+    "BEESPART2": "3x Honey Tokens",
     "CARNIVAL": "100 Carnival Pass Tickets",
-    "BEESPART2": "3 Honey Tokens",
-    "BZZBZZ": "50 Honey Tokens"
+    "BZZBZZ": "50x Honey Tokens"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-07-06",
+      "summary": "12 codes matched across 7 public gaming lists."
+    },
     {
       "date": "2026-06-29",
       "summary": "12 codes matched across 7 public gaming lists. New: BEESPART2."
