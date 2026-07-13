@@ -87,7 +87,6 @@ export const wikiCodes: WikiCode[] = [
     reward: "3x Honey Tokens",
     status: "community",
     sourceCount: 6,
-    isNew: true,
   },
   {
     code: "CARNIVAL",
