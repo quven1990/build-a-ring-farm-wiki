@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-07-13T12:20:29.135Z",
+  "lastSyncedAt": "2026-07-20T12:01:13.711Z",
   "sources": [
     {
       "id": "pgg-seeds",
@@ -31,12 +31,14 @@
     {
       "sourceId": "pgg-seeds",
       "name": "Pro Game Guides — Seeds Index",
-      "ok": true
+      "ok": false,
+      "error": "HTTP 403"
     },
     {
       "sourceId": "pgg-mutations",
       "name": "Pro Game Guides — Mutations Guide",
-      "ok": true
+      "ok": false,
+      "error": "HTTP 403"
     },
     {
       "sourceId": "gamerant-codes",
@@ -65,7 +67,7 @@
       "trigger": "Bee Swarm",
       "price": null,
       "eventOnly": true,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Rainbow",
@@ -75,7 +77,7 @@
       "trigger": "Galaxy",
       "price": "$1T",
       "eventOnly": false,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Farm",
@@ -85,7 +87,7 @@
       "trigger": "Mega Farm",
       "price": null,
       "eventOnly": true,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Alien",
@@ -95,7 +97,7 @@
       "trigger": "UFO",
       "price": null,
       "eventOnly": true,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Radioactive",
@@ -105,7 +107,7 @@
       "trigger": "Nuclear",
       "price": "$10B",
       "eventOnly": false,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Void",
@@ -115,7 +117,7 @@
       "trigger": "Black Hole",
       "price": "$1B",
       "eventOnly": false,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Autumn",
@@ -125,7 +127,7 @@
       "trigger": "Harvest",
       "price": "$850M",
       "eventOnly": false,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Frozen",
@@ -135,7 +137,7 @@
       "trigger": "Blizzard",
       "price": "$750M",
       "eventOnly": false,
-      "confidence": "community"
+      "confidence": "needs-testing"
     },
     {
       "name": "Wet",
@@ -145,10 +147,14 @@
       "trigger": "Rain",
       "price": "$10M",
       "eventOnly": false,
-      "confidence": "conflicting"
+      "confidence": "needs-testing"
     }
   ],
   "changelog": [
+    {
+      "date": "2026-07-20",
+      "summary": "Synced 51 seeds & 9 mutations from 3 public lists. No consensus field changes this run."
+    },
     {
       "date": "2026-07-13",
       "summary": "Synced 51 seeds & 9 mutations from 5 public lists. No consensus field changes this run."
