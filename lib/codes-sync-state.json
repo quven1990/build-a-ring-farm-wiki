@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-07-13T11:53:38.666Z",
+  "lastSyncedAt": "2026-07-20T11:37:12.968Z",
   "sources": [
     {
       "id": "progameguides",
@@ -42,8 +42,9 @@
       "sourceId": "progameguides",
       "name": "Pro Game Guides",
       "url": "https://progameguides.com/roblox/build-a-ring-farm-codes/",
-      "ok": true,
-      "count": 12
+      "ok": false,
+      "error": "HTTP 403",
+      "count": 0
     },
     {
       "sourceId": "pockettactics",
@@ -71,21 +72,21 @@
       "name": "Destructoid",
       "url": "https://www.destructoid.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 11
+      "count": 12
     },
     {
       "sourceId": "beebom",
       "name": "Beebom",
       "url": "https://beebom.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 12
+      "count": 13
     },
     {
       "sourceId": "allthings",
       "name": "AllThings.how",
       "url": "https://allthings.how/build-a-ring-farm-codes-latest-working-list/",
       "ok": true,
-      "count": 10
+      "count": 12
     }
   ],
   "codeFirstSeen": {
@@ -100,24 +101,30 @@
     "CARNIVAL": "2026-06-15",
     "UPDATE5": "2026-06-15",
     "BZZBZZ": "2026-06-22",
-    "BEESPART2": "2026-06-29"
+    "BEESPART2": "2026-06-29",
+    "3MONTHS": "2026-07-20"
   },
   "lastRewards": {
     "100KVISITS": "5 Minute Time Skip",
     "2KLIKES": "1x Tropical Seed Pack",
     "BARF3": "1x Acid Spray",
+    "BZZBZZ": "50x Honey Tokens",
+    "CARNIVAL": "100x Carnival Pass Tickets",
     "PLANTRUSH": "1x Plant Rush Boss Box",
     "THANKYOU": "1x Autumn Spray",
     "UPDATE1": "3x Strong Fertilizer",
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "BEESPART2": "3x Honey Tokens",
-    "CARNIVAL": "100 Carnival Pass Tickets",
-    "BZZBZZ": "50x Honey Tokens"
+    "3MONTHS": "3 Honey Tokens",
+    "BEESPART2": "3x Honey Tokens"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-07-20",
+      "summary": "13 codes matched across 6 public gaming lists. New: 3MONTHS."
+    },
     {
       "date": "2026-07-13",
       "summary": "12 codes matched across 7 public gaming lists."
