@@ -96,9 +96,9 @@ export const wikiCodes: WikiCode[] = [
   },
   {
     code: "3MONTHS",
-    reward: "3 Honey Tokens",
+    reward: "time skip",
     status: "community",
-    sourceCount: 3,
+    sourceCount: 5,
     isNew: true,
   },
   {

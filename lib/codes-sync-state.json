@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-07-20T11:37:12.968Z",
+  "lastSyncedAt": "2026-07-27T12:12:37.574Z",
   "sources": [
     {
       "id": "progameguides",
@@ -51,7 +51,7 @@
       "name": "Pocket Tactics",
       "url": "https://www.pockettactics.com/build-a-ring-farm-codes",
       "ok": true,
-      "count": 10
+      "count": 11
     },
     {
       "sourceId": "radiotimes",
@@ -65,7 +65,7 @@
       "name": "GamesRadar+",
       "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 12
+      "count": 13
     },
     {
       "sourceId": "destructoid",
@@ -116,11 +116,15 @@
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "3MONTHS": "3 Honey Tokens",
+    "3MONTHS": "time skip",
     "BEESPART2": "3x Honey Tokens"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-07-27",
+      "summary": "13 codes matched across 6 public gaming lists."
+    },
     {
       "date": "2026-07-20",
       "summary": "13 codes matched across 6 public gaming lists. New: 3MONTHS."
