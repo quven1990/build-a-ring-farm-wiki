@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-07-27T12:12:37.574Z",
+  "lastSyncedAt": "2026-08-03T12:13:27.347Z",
   "sources": [
     {
       "id": "progameguides",
@@ -116,11 +116,15 @@
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "3MONTHS": "time skip",
+    "3MONTHS": "3 Honey Tokens",
     "BEESPART2": "3x Honey Tokens"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-08-03",
+      "summary": "13 codes matched across 6 public gaming lists."
+    },
     {
       "date": "2026-07-27",
       "summary": "13 codes matched across 6 public gaming lists."
