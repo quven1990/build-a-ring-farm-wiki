@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-08-03T12:13:27.347Z",
+  "lastSyncedAt": "2026-08-10T10:09:18.110Z",
   "sources": [
     {
       "id": "progameguides",
@@ -121,6 +121,10 @@
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-08-10",
+      "summary": "13 codes matched across 6 public gaming lists."
+    },
     {
       "date": "2026-08-03",
       "summary": "13 codes matched across 6 public gaming lists."
