@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-10-05T17:36:51.108Z",
+  "lastSyncedAt": "2026-10-12T18:23:30.739Z",
   "sources": [
     {
       "id": "progameguides",
@@ -65,7 +65,7 @@
       "name": "GamesRadar+",
       "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 13
+      "count": 0
     },
     {
       "sourceId": "destructoid",
@@ -108,8 +108,8 @@
     "100KVISITS": "5 Minute Time Skip",
     "2KLIKES": "1x Tropical Seed Pack",
     "BARF3": "1x Acid Spray",
-    "BZZBZZ": "50x Honey Tokens",
-    "CARNIVAL": "100x Carnival Pass Tickets",
+    "BZZBZZ": "50 Honey Tokens",
+    "CARNIVAL": "100 Carnival Pass Tickets",
     "PLANTRUSH": "1x Plant Rush Boss Box",
     "THANKYOU": "1x Autumn Spray",
     "UPDATE1": "3x Strong Fertilizer",
@@ -121,6 +121,10 @@
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-10-12",
+      "summary": "13 codes matched across 6 public gaming lists."
+    },
     {
       "date": "2026-10-05",
       "summary": "13 codes matched across 6 public gaming lists."
