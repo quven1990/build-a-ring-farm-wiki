@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-10-19T16:02:31.269Z",
+  "lastSyncedAt": "2026-10-26T15:39:32.874Z",
   "sources": [
     {
       "id": "progameguides",
@@ -79,7 +79,7 @@
       "name": "Beebom",
       "url": "https://beebom.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 13
+      "count": 1
     },
     {
       "sourceId": "allthings",
@@ -108,19 +108,28 @@
     "100KVISITS": "5 Minute Time Skip",
     "2KLIKES": "1x Tropical Seed Pack",
     "BARF3": "1x Acid Spray",
-    "BZZBZZ": "50 Honey Tokens",
-    "CARNIVAL": "100 Carnival Pass Tickets",
+    "BZZBZZ": "50x Honey Tokens",
+    "CARNIVAL": "100x Carnival Pass Tickets",
     "PLANTRUSH": "1x Plant Rush Boss Box",
     "THANKYOU": "1x Autumn Spray",
     "UPDATE1": "3x Strong Fertilizer",
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "3MONTHS": "3 Honey Tokens",
-    "BEESPART2": "3x Honey Tokens"
+    "3MONTHS": "3 Honey Tokens"
   },
-  "archived": [],
+  "archived": [
+    {
+      "code": "BEESPART2",
+      "reward": "3x Honey Tokens",
+      "removedAt": "2026-10-26"
+    }
+  ],
   "changelog": [
+    {
+      "date": "2026-10-26",
+      "summary": "12 codes matched across 6 public gaming lists. Dropped: BEESPART2."
+    },
     {
       "date": "2026-10-19",
       "summary": "13 codes matched across 6 public gaming lists."

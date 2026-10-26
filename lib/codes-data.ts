@@ -32,84 +32,82 @@ export const wikiCodes: WikiCode[] = [
     code: "100KVISITS",
     reward: "5 Minute Time Skip",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "2KLIKES",
     reward: "1x Tropical Seed Pack",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "BARF3",
     reward: "1x Acid Spray",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "BZZBZZ",
-    reward: "50 Honey Tokens",
+    reward: "50x Honey Tokens",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "CARNIVAL",
-    reward: "100 Carnival Pass Tickets",
+    reward: "100x Carnival Pass Tickets",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "PLANTRUSH",
     reward: "1x Plant Rush Boss Box",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "THANKYOU",
     reward: "1x Autumn Spray",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "UPDATE1",
     reward: "3x Strong Fertilizer",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "UPDATE2",
     reward: "1x Tropical Seed Pack",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "UPDATE5",
     reward: "1x Super Pet Treat",
     status: "community",
-    sourceCount: 5,
+    sourceCount: 4,
   },
   {
     code: "250KUSERS",
     reward: "Time Skip (3 minutes)",
     status: "community",
-    sourceCount: 4,
+    sourceCount: 3,
   },
   {
     code: "3MONTHS",
     reward: "3 Honey Tokens",
     status: "community",
-    sourceCount: 4,
-  },
-  {
-    code: "BEESPART2",
-    reward: "3x Honey Tokens",
-    status: "community",
-    sourceCount: 2,
+    sourceCount: 3,
   }
 ]
 
 export const wikiCodesArchived: ArchivedCode[] = [
-
+  {
+    code: "BEESPART2",
+    reward: "3x Honey Tokens",
+    removedAt: "2026-10-26",
+  }
 ]
 
 /** Display ordering: new codes first, then higher source consensus, then alphabetical. */
