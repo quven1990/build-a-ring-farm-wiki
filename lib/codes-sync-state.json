@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-02T18:59:07.969Z",
+  "lastSyncedAt": "2026-11-09T19:21:39.794Z",
   "sources": [
     {
       "id": "progameguides",
@@ -65,7 +65,7 @@
       "name": "GamesRadar+",
       "url": "https://www.gamesradar.com/games/simulation/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 0
+      "count": 13
     },
     {
       "sourceId": "destructoid",
@@ -116,16 +116,15 @@
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "3MONTHS": "3 Honey Tokens"
+    "3MONTHS": "3 Honey Tokens",
+    "BEESPART2": "3x Honey Tokens"
   },
-  "archived": [
-    {
-      "code": "BEESPART2",
-      "reward": "3x Honey Tokens",
-      "removedAt": "2026-10-26"
-    }
-  ],
+  "archived": [],
   "changelog": [
+    {
+      "date": "2026-11-09",
+      "summary": "13 codes matched across 6 public gaming lists."
+    },
     {
       "date": "2026-11-02",
       "summary": "12 codes matched across 6 public gaming lists. Dropped: BEESPART2."
