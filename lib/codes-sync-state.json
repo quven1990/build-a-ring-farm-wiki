@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-09T19:21:39.794Z",
+  "lastSyncedAt": "2026-11-16T19:05:20.138Z",
   "sources": [
     {
       "id": "progameguides",
@@ -79,7 +79,7 @@
       "name": "Beebom",
       "url": "https://beebom.com/build-a-ring-farm-codes/",
       "ok": true,
-      "count": 1
+      "count": 2
     },
     {
       "sourceId": "allthings",
@@ -121,6 +121,10 @@
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-11-16",
+      "summary": "13 codes matched across 6 public gaming lists."
+    },
     {
       "date": "2026-11-09",
       "summary": "13 codes matched across 6 public gaming lists."
