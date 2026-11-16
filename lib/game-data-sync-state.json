@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-09T19:57:46.303Z",
+  "lastSyncedAt": "2026-11-16T19:46:26.270Z",
   "sources": [
     {
       "id": "pgg-seeds",
@@ -87,7 +87,7 @@
       "trigger": "Mega Farm",
       "price": null,
       "eventOnly": true,
-      "confidence": "needs-testing"
+      "confidence": "conflicting"
     },
     {
       "name": "Alien",
@@ -127,7 +127,7 @@
       "trigger": "Harvest",
       "price": "$850M",
       "eventOnly": false,
-      "confidence": "needs-testing"
+      "confidence": "community"
     },
     {
       "name": "Frozen",
@@ -151,6 +151,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-16",
+      "summary": "Synced 51 seeds & 9 mutations from 3 public lists. No consensus field changes this run."
+    },
     {
       "date": "2026-11-09",
       "summary": "Synced 51 seeds & 9 mutations from 3 public lists. No consensus field changes this run."

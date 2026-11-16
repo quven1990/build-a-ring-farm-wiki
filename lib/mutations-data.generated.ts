@@ -37,9 +37,9 @@ export const wikiMutationsGenerated: WikiMutation[] = [
     trigger: "Mega Farm",
     price: null,
     eventOnly: true,
-    confidence: "needs-testing",
+    confidence: "conflicting",
     chanceIsEstimate: true,
-    sourceCount: 0,
+    sourceCount: 1,
   },
   {
     name: "Alien",
@@ -85,9 +85,9 @@ export const wikiMutationsGenerated: WikiMutation[] = [
     trigger: "Harvest",
     price: "$850M",
     eventOnly: false,
-    confidence: "needs-testing",
+    confidence: "community",
     chanceIsEstimate: true,
-    sourceCount: 0,
+    sourceCount: 1,
   },
   {
     name: "Frozen",
