@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-16T19:46:26.270Z",
+  "lastSyncedAt": "2026-11-23T21:37:12.307Z",
   "sources": [
     {
       "id": "pgg-seeds",
@@ -151,6 +151,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-23",
+      "summary": "Synced 51 seeds & 9 mutations from 3 public lists. No consensus field changes this run."
+    },
     {
       "date": "2026-11-16",
       "summary": "Synced 51 seeds & 9 mutations from 3 public lists. No consensus field changes this run."
