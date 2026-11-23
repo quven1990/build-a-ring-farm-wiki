@@ -1,5 +1,5 @@
 {
-  "lastSyncedAt": "2026-11-16T19:05:20.138Z",
+  "lastSyncedAt": "2026-11-23T20:44:25.183Z",
   "sources": [
     {
       "id": "progameguides",
@@ -71,8 +71,9 @@
       "sourceId": "destructoid",
       "name": "Destructoid",
       "url": "https://www.destructoid.com/build-a-ring-farm-codes/",
-      "ok": true,
-      "count": 12
+      "ok": false,
+      "error": "HTTP 403",
+      "count": 0
     },
     {
       "sourceId": "beebom",
@@ -116,11 +117,15 @@
     "UPDATE2": "1x Tropical Seed Pack",
     "UPDATE5": "1x Super Pet Treat",
     "250KUSERS": "Time Skip (3 minutes)",
-    "3MONTHS": "3 Honey Tokens",
+    "3MONTHS": "time skip",
     "BEESPART2": "3x Honey Tokens"
   },
   "archived": [],
   "changelog": [
+    {
+      "date": "2026-11-23",
+      "summary": "13 codes matched across 5 public gaming lists."
+    },
     {
       "date": "2026-11-16",
       "summary": "13 codes matched across 6 public gaming lists."
@@ -236,10 +241,6 @@
     {
       "date": "2026-05-31",
       "summary": "Synced 8 codes from 10/10 public sources. Added: RELATED."
-    },
-    {
-      "date": "2026-05-31",
-      "summary": "Synced 7 codes from 4/4 public sources. Added: 100KVISITS, 2KLIKES, BARF:3, PLANTRUSH, THANKYOU, UPDATE1, UPDATE2."
     }
   ]
 }
